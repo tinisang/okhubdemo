@@ -1,0 +1,120 @@
+.our-services{
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: black;
+    padding-top: 144px;
+    padding-bottom: 150px;
+}
+
+
+.our-services .introduction{
+   
+    margin-bottom: 76px;
+    position: relative;
+    /* background-color: red; */
+
+}
+
+.our-services .introduction .title{
+    font-family: Be Vietnam Pro;
+    font-size: 130px;
+    font-weight: 800;
+    line-height: 120px;
+    letter-spacing: 0.0025em;
+    text-align: left;
+    color:var(--lightTransparentGrey);
+    
+    position: absolute;
+    top: 0;
+
+}
+.our-services .introduction .description{
+    font-family: Be Vietnam Pro;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 36px;
+    letter-spacing: 0em;
+    text-align: left;
+    max-width: 538px;
+    color:white;
+    margin-top:14px ;
+    margin-left: auto;
+
+}
+.our-services .services-list .row a{
+    display: inline-block;
+}
+
+.our-services .row .separator{
+    font-family: Be Vietnam Pro;
+    font-size: 70px;
+    font-weight: 300;
+    line-height: 100px;
+    letter-spacing: 0em;
+    text-align: left;
+    color:rgba(118, 118, 118, 1);
+    margin-left: 14px;
+    margin-right: 74px;
+
+}
+.our-services .services-list .row .service-item{
+    display: inline-flex;
+    align-items: flex-start;
+
+}
+.our-services .services-list .row .service-item .name{
+    color:white;
+    font-family: Be Vietnam Pro;
+    font-size: 70px;
+    font-weight: 300;
+    line-height: 100px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+.our-services .services-list .row .service-item .index{
+    color:rgba(118, 118, 118, 1);
+    font-family: Be Vietnam Pro;
+    font-size: 28px;
+    font-weight: 500;
+    margin-left:5px;
+    letter-spacing: 0em;
+    text-align: left;
+
+
+}
+
+.our-services .row:not(:last-child){
+    margin-bottom: 13px;
+}
+
+.our-services .cursor-box{
+    position: fixed;
+    top: 0;
+    width: 340px;
+    height: 393px;
+    overflow:hidden;
+    display: grid;
+    flex-direction: column;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 100%;
+    border-radius: 8px;
+    transition: 0.2;
+    opacity: 0;
+    /* padding: 20px; */
+    border: 3px solid white;
+    cursor: pointer;
+}
+
+.our-services .cursor-box .service-item-image{
+    height: 100% !important;
+    width: 100% !important;
+
+  
+}
+.our-services .cursor-box .service-item-image img{
+    display: block;
+    height: 100% !important;
+    object-fit: cover;
+}
