@@ -1,6 +1,7 @@
 import { Base } from '../components/Base';
 
 import '../styles/globals.css'
+import '../styles/HOME/OurServices.css'
 
 
 function MyApp({ Component, pageProps }) {
