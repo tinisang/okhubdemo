@@ -1,7 +1,7 @@
 import { Base } from '../components/Base';
-
 import '../styles/globals.css'
 import '../styles/HOME/OurServices.css'
+// import '../styles/Footer/Footer.js'
 
 
 function MyApp({ Component, pageProps }) {
