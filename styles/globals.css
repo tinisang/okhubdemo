@@ -15,12 +15,36 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
+@media (min-width: 1024px) {
+  .hideOnDesktop {
+    display: none;
   }
 }
+
+@media (max-width: 768px) {
+  .hideOnMobile {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .hideOnTablet {
+    display: none;
+  }
+}
+
+.image-container {
+  width: 100%;
+  position: relative;
+}
+.image-container > span {
+  height: 100%;
+  width: 100%;
+  position: relative !important;
+}
+.image-item {
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
+}
+
