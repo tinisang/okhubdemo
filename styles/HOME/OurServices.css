@@ -1,10 +1,21 @@
 .our-services{
     width: 100%;
     min-height: 100vh;
+    
     overflow: hidden;
     background-color: black;
     padding-top: 144px;
     padding-bottom: 150px;
+    overflow: hidden !important;
+    /* position: relative; */
+    /* z-index: 10; */
+}
+
+.services{
+    
+overflow-x: hidden;
+position: relative;
+    z-index: 10;
 }
 
 
@@ -109,7 +120,7 @@
     margin-bottom: 13px;
 }
 
-.our-services .cursor-box{
+.cursor-box{
     position: fixed;
     top: 0;
     width: 340px;
@@ -125,7 +136,7 @@
     opacity: 0;
 }
 
-.our-services .cursor-box .cursor-wrapper{
+.cursor-box .cursor-wrapper{
     transition: 0.2;
     display: grid;
     overflow:hidden;
@@ -137,7 +148,7 @@
     
 }
 
-.our-services .cursor-box .service-item-image{
+.cursor-box .service-item-image{
     height: 100% !important;
     width: 100% !important;
 
@@ -145,14 +156,14 @@
 
   
 }
-.our-services .cursor-box .service-item-image img{
+.cursor-box .service-item-image img{
     display: block;
     height: 100% !important;
     object-fit: cover;
 }
 
  .view-button{
-    position: fixed;
+    position: fixed !important;
     z-index: 2;
     top: 0;
     /* top: 50%;
@@ -169,4 +180,6 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    opacity: 0;
 }
+

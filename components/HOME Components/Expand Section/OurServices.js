@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import anna from '../../../public/imgs/anna.png'
+
 import image1 from '../../../public/imgs/image1.jpg'
 import image2 from '../../../public/imgs/image2.jpg'
 import image3 from '../../../public/imgs/image3.jpg'
@@ -13,7 +13,8 @@ import { useEffect, useRef } from 'react';
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
 
 
-export const OurServices = ()=>{
+export const OurServices = ({heightTotal})=>{
+    console.log(heightTotal)
     gsap.registerPlugin(ScrollToPlugin);
 
     const cursor= useRef()
@@ -129,30 +130,30 @@ export const OurServices = ()=>{
         window.addEventListener('mousemove',function(e){
             var servicesFromTop=background.current.offsetTop;
             var servicesHeight= background.current.clientHeight;
-
-            if (e.pageY > servicesFromTop && e.pageY< (servicesHeight + servicesFromTop) ){
-                console.log('true')
-                gsap.to(cursor.current,{
-                    x: e.clientX - cursor.current.clientWidth/2, 
-                    y: e.clientY - cursor.current.clientHeight/2, 
-                    ease:"power2.out",
-                    duration:1,
-                    delay:0.04
-                })
-
-            }
-            
-            var viewButton= document.querySelector('.view-button');
-            gsap.to(viewButton,{
-                x: e.clientX - viewButton.clientWidth/2, 
-                y: e.clientY - viewButton.clientHeight/2, 
+           
+            gsap.to(cursor.current,{
+                left: e.clientX - cursor.current.clientWidth/2, 
+                top: e.clientY - cursor.current.clientHeight/2, 
                 ease:"power2.out",
+                duration:1,
+                delay:0.04
+            })
+            var viewButton= document.querySelector('.view-button');
+            
+            gsap.to(viewButton,{
+                left: e.clientX - viewButton.clientWidth/2, 
+                top: e.clientY - viewButton.clientHeight/2, 
+                ease:"power2.out",
+                opacity:1,
                 duration:1
             })
+                
+           
+            
         })
         return ()=>{
             window.removeEventListener('mousemove',function(){})
-            background.current.removeEventListener('mousemove',function(){})
+         
         }
     })
     
