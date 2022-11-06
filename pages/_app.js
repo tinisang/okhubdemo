@@ -1,6 +1,8 @@
 import { Base } from '../components/Base';
 import '../styles/globals.css'
 import '../styles/HOME/OurServices.css'
+import '../styles/Header/Header.css'
+import '../styles/HOME/HeroSection.css'
 // import '../styles/Footer/Footer.js'
 
 
