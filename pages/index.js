@@ -6,7 +6,7 @@ import { ExpandSection } from '../components/HOME Components/Expand Section/Expa
 export default function Home() {
   return (
     <>
-       <div className="fixed">red</div>
+       
       <ExpandSection/>
    
 

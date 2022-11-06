@@ -153,12 +153,13 @@ export const OurServices = ({heightTotal})=>{
         })
         return ()=>{
             window.removeEventListener('mousemove',function(){})
-         
+            
         }
     })
     
     return (
         <>
+ 
             <div className="our-services" ref={background}>
                 <div className="introduction container-padding">
                     <div className="title">Our Services</div>
@@ -167,81 +168,7 @@ export const OurServices = ({heightTotal})=>{
                     </div>
                 </div>
                 <div className="services-container">
-                    <div className="services-list container-padding">
-                        
-                        <div className="row">
-
-                        <Link href="#">
-                            <span className="service-item" onMouseOver={()=>handleHover(1)} onMouseOut={handleMouseOut}>
-                                <span className="name">UI/UX Design</span>
-                                <span className="index">01</span>
-                            </span>
-                        </Link>
-                        <span className="separator">/</span>
-
-                        <Link href="#">
-                            <span className="service-item"  onMouseOver={()=>handleHover(2)} onMouseOut={handleMouseOut}>
-                                <span className="name">Branding</span>
-                                <span className="index">02</span>
-                            </span>
-                        </Link>
-
-                        
-                            
-                        </div>
-                        
-                        <div className="row">
-                            <Link href="#">
-                                <span className="service-item"  onMouseOver={()=>handleHover(3)} onMouseOut={handleMouseOut}>
-                                    <span className="name">Web + App Development</span>
-                                    <span className="index">03</span>
-                                </span>
-                            </Link>
-                        </div>
-                        
-                        
-                        <div className="row">
-                            <Link href="#">
-                                <span className="service-item"  onMouseOver={()=>handleHover(4)} onMouseOut={handleMouseOut}>
-                                    <span className="name">Quảng cáo</span>
-                                    <span className="index">04</span>
-                                </span>
-                            </Link>
-                        
-
-                            <span className="separator">/</span>
-
-                            <Link href="#">
-                                <span className="service-item" onMouseOver={()=>handleHover(5)} onMouseOut={handleMouseOut}>
-                                    <span className="name">S.E.O</span>
-                                    <span className="index">05</span>
-                                </span>
-                            </Link>
-                            
-                        </div>
-
-                        <div className="row">
-                            <Link href="#">
-                                <span className="service-item" onMouseOver={()=>handleHover(6)} onMouseOut={handleMouseOut}>
-                                    <span className="name">Quản trị Website</span>
-                                    <span className="index">06</span>
-                                </span>
-                            </Link>
-                        
-
-                            <span className="separator">/</span>
-
-                            <Link href="#">
-                                <span className="service-item"  onMouseOver={()=>handleHover(7)} onMouseOut={handleMouseOut}>
-                                    <span className="name">Quản trị Fanpage</span>
-                                    <span className="index">07</span>
-                                </span>
-                            </Link>
-                            
-                        </div>
-
-
-                    </div>
+                    
                     <div className="services-list services-list-clone container-padding">
                         
                         <div className="row">
