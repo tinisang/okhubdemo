@@ -1,9 +1,16 @@
+import Image from "next/image";
+import imgFooter1 from "../../public/imgs/imgfooter1.png";
+import imgFooter2 from "../../public/imgs/imgFooter2.png";
+import imgFooter3 from "../../public/imgs/imgFooter3.png";
+
 export const Footer = () => {
   return (
     <>
       <div className="footer">
         <div className="footer__form">
-          <div className="footer__form--title"></div>
+          <div className="footer__form--title">
+            Hãy kết nối <br></br> với chúng tôi ngay
+          </div>
           <p className="footer__form--name">
             {" "}
             Tên của bạn
@@ -41,7 +48,7 @@ export const Footer = () => {
               placeholder="Xin chào, tôi cần OkHub tư vấn về... *"
             ></input>
           </div>
-          <button>Submit</button>
+          <button className = "footer__btn">Submit</button>
         </div>
         {/*Contact */}
         <div className="footer__contact">
@@ -58,40 +65,46 @@ export const Footer = () => {
           </p>
           <p className="footer__contact--title">WEBSITE</p>
           <p className="footer__contact--des">www.okhub.vn</p>
-          <img className="footer__contact--img1" src = ""></img>
-          <img className="footer__contact--img2" src = ""></img>
-          <img className="footer__contact--img3" src = ""></img>
+          <div className="footer__contact--img1">
+            <Image src={imgFooter1} />
+          </div>
+          <div className="footer__contact--img2">
+            <Image src={imgFooter2} />
+          </div>
+          <div className="footer__contact--img3">
+            <Image src={imgFooter3} />
+          </div>
         </div>
       </div>
 
       {/*  */}
 
       <div className="footer__nav">
-          <div className="footer__nav--sub">
-              <div>
-                  <img src = "footer__nav--logo"></img>
-                  <p className="footer__nav--name"></p>
-              </div>
-              <div className="footer__nav--icon">
-                    <img className="footer__nav--fb" src = ""></img>
-                    <img className="footer__nav--ins" src = ""></img>
-                    <img className="footer__nav--be" src = ""></img>
-                    <img className="footer__nav--other" src = ""></img>
-                    <img className="footer__nav--tiktok" src = ""></img>
-              </div>
+        <div className="footer__nav--sub">
+          <div>
+            <img src="footer__nav--logo"></img>
+            <p className="footer__nav--name"></p>
           </div>
-          {/*  */}
-          <div className="footer__nav--primary">
-                <p>Trang chủ</p>
-                <p>Giới thiệu</p>
-                <p>Dự án</p>
-                <p>Dịch vụ</p>
-                <p>Liên hệ</p>
+          <div className="footer__nav--icon">
+            <img className="footer__nav--fb" src=""></img>
+            <img className="footer__nav--ins" src=""></img>
+            <img className="footer__nav--be" src=""></img>
+            <img className="footer__nav--other" src=""></img>
+            <img className="footer__nav--tiktok" src=""></img>
           </div>
-          {/*  */}
-          <div className="footer__nav--note">
-              <p>@2022 Bản quyền thuộc về OkHub Việt Nam</p>
-          </div>
+        </div>
+        {/*  */}
+        <div className="footer__nav--primary">
+          <p>Trang chủ</p>
+          <p>Giới thiệu</p>
+          <p>Dự án</p>
+          <p>Dịch vụ</p>
+          <p>Liên hệ</p>
+        </div>
+        {/*  */}
+        <div className="footer__nav--note">
+          <p>@2022 Bản quyền thuộc về OkHub Việt Nam</p>
+        </div>
       </div>
     </>
   );
