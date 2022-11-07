@@ -17,15 +17,15 @@ export const Footer = () => {
       <div className="footer__nav">
         <div className="footer__nav--sub">
           <div>
-            <img src="footer__nav--logo"></img>
+            <div src="footer__nav--logo"></div>
             <p className="footer__nav--name"></p>
           </div>
           <div className="footer__nav--icon">
-            <img className="footer__nav--fb" src=""></img>
-            <img className="footer__nav--ins" src=""></img>
-            <img className="footer__nav--be" src=""></img>
-            <img className="footer__nav--other" src=""></img>
-            <img className="footer__nav--tiktok" src=""></img>
+            <div className="footer__nav--fb" src=""></div>
+            <div className="footer__nav--ins" src=""></div>
+            <div className="footer__nav--be" src=""></div>
+            <div className="footer__nav--other" src=""></div>
+            <div className="footer__nav--tiktok" src=""></div>
           </div>
         </div>
         {/*  */}
