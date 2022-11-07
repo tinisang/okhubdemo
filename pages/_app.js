@@ -6,6 +6,8 @@ import '../styles/HOME/HeroSection.css'
 import '../styles/HOME/IconicProjects.css'
 // import '../styles/Footer/Footer.js'
 import '../styles/Footer/Footer.css'
+import '../styles/Footer/FooterForm.css'
+import '../styles/Footer/FooterContact.css'
 
 
 function MyApp({ Component, pageProps }) {
