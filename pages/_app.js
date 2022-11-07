@@ -5,6 +5,7 @@ import '../styles/Header/Header.css'
 import '../styles/HOME/HeroSection.css'
 import '../styles/HOME/IconicProjects.css'
 // import '../styles/Footer/Footer.js'
+import '../styles/Footer/Footer.css'
 
 
 function MyApp({ Component, pageProps }) {
