@@ -1,0 +1,211 @@
+:root {
+  --boder-bottom-footer: 0.5px solid #ffffff;
+}
+input {
+  padding: 0;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
+  background: rgba(17, 18, 21, 0.95);
+  padding-top: 141px;
+  font-family: "Be Vietnam Pro";
+}
+
+.footer__form {
+  width: 50%;
+  margin: 0 72px 0 118px;
+  position: relative;
+}
+.footer__contact {
+  width: 50%;
+  margin-left: 72px;
+}
+
+.footer__form--title {
+  width: 100%;
+  font-weight: 700;
+  font-size: 52px;
+  line-height: 66px;
+  border-bottom: var(--boder-bottom-footer);
+  padding-bottom: 50px;
+}
+
+.footer__form--name,
+.footer__form--note {
+  display: flex;
+  flex-direction: column;
+  /* width: fit-content; */
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  padding-bottom: 43px;
+  border-bottom: var(--boder-bottom-footer);
+}
+.footer__form--name > input,
+.footer__form--note > input {
+  outline: none;
+  background-color: transparent;
+  border: none;
+  color: #787878;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  padding-top: 6px;
+}
+
+.footer__form--email-and-phone,
+.footer__form-company-and-service {
+  display: flex;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  flex-wrap: wrap;
+  padding-bottom: 40px;
+  border-bottom: var(--boder-bottom-footer);
+}
+
+.footer__form--email,
+.footer__form--company-name {
+  margin-right: 226px;
+}
+.footer__form--email > p,
+.footer__form--phone > p,
+.footer__form--company-name > p,
+.footer__form--service > p {
+  margin-bottom: 9px;
+}
+
+.footer__form--email > input,
+.footer__form--phone > input,
+.footer__form--company-name > input,
+.footer__form--service > input {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  color: #787878;
+}
+
+.footer__form--note > p {
+  margin-bottom: 9px;
+  font-style: normal;
+}
+
+.footer__form--note {
+  padding-bottom: 110px;
+}
+
+.footer__btn {
+  width: 180px;
+  height: 180px;
+  border: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 24px;
+  color: #ffffff;
+  background-color: #000000;
+  border-radius: 50%;
+  position: absolute;
+  right: 8%;
+  top: 50%;
+  cursor: pointer;
+}
+
+.footer__form--name,
+.footer__form--email,
+.footer__form--company-name,
+.footer__form--note,
+
+.footer__form--phone,
+.footer__form--service {
+  position: relative;
+  padding-left: 40px;
+}
+
+
+.footer__form--name::after {
+  content: "01";
+  position: absolute;
+  left: 0%;
+  top: 14%;
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  color: #787878;
+}
+.footer__form--email::after {
+    content: "02";
+    position: absolute;
+    left: 0%;
+    top: 25%;
+    font-family: "Be Vietnam Pro";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    color: #787878;
+  }
+
+  .footer__form--phone::after {
+    content: "03";
+    position: absolute;
+    left: 0%;
+    top: 25%;
+    font-family: "Be Vietnam Pro";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    color: #787878;
+  }
+
+  .footer__form--company-name::after {
+    content: "04";
+    position: absolute;
+    left: 0%;
+    top: 25%;
+    font-family: "Be Vietnam Pro";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    color: #787878;
+  }
+
+  .footer__form--service::after {
+    content: "04";
+    position: absolute;
+    left: 0%;
+    top: 25%;
+    font-family: "Be Vietnam Pro";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    color: #787878;
+  }
+
+  .footer__form--note::after {
+    content: "06";
+    position: absolute;
+    left: 0%;
+    top: 10%;
+    font-family: "Be Vietnam Pro";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    color: #787878;
+  }

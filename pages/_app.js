@@ -4,6 +4,7 @@ import '../styles/HOME/OurServices.css'
 import '../styles/Header/Header.css'
 import '../styles/HOME/HeroSection.css'
 import '../styles/Footer/Footer.css'
+import '../styles/Footer/FooterForm.css'
 
 
 function MyApp({ Component, pageProps }) {
