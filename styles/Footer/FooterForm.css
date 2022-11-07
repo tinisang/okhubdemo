@@ -125,13 +125,11 @@ input {
 .footer__form--email,
 .footer__form--company-name,
 .footer__form--note,
-
 .footer__form--phone,
 .footer__form--service {
   position: relative;
   padding-left: 40px;
 }
-
 
 .footer__form--name::after {
   content: "01";
@@ -146,66 +144,76 @@ input {
   color: #787878;
 }
 .footer__form--email::after {
-    content: "02";
-    position: absolute;
-    left: 0%;
-    top: 25%;
-    font-family: "Be Vietnam Pro";
-    font-style: normal;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 24px;
-    color: #787878;
-  }
+  content: "02";
+  position: absolute;
+  left: 0%;
+  top: 25%;
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  color: #787878;
+}
 
-  .footer__form--phone::after {
-    content: "03";
-    position: absolute;
-    left: 0%;
-    top: 25%;
-    font-family: "Be Vietnam Pro";
-    font-style: normal;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 24px;
-    color: #787878;
-  }
+.footer__form--phone::after {
+  content: "03";
+  position: absolute;
+  left: 0%;
+  top: 25%;
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  color: #787878;
+}
 
-  .footer__form--company-name::after {
-    content: "04";
-    position: absolute;
-    left: 0%;
-    top: 25%;
-    font-family: "Be Vietnam Pro";
-    font-style: normal;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 24px;
-    color: #787878;
-  }
+.footer__form--company-name::after {
+  content: "04";
+  position: absolute;
+  left: 0%;
+  top: 25%;
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  color: #787878;
+}
 
-  .footer__form--service::after {
-    content: "04";
-    position: absolute;
-    left: 0%;
-    top: 25%;
-    font-family: "Be Vietnam Pro";
-    font-style: normal;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 24px;
-    color: #787878;
-  }
+.footer__form--service::after {
+  content: "04";
+  position: absolute;
+  left: 0%;
+  top: 25%;
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  color: #787878;
+}
 
-  .footer__form--note::after {
-    content: "06";
-    position: absolute;
-    left: 0%;
-    top: 10%;
-    font-family: "Be Vietnam Pro";
-    font-style: normal;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 24px;
-    color: #787878;
-  }
+.footer__form--note::after {
+  content: "06";
+  position: absolute;
+  left: 0%;
+  top: 10%;
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  color: #787878;
+}
+
+.footer__form--service > input::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 15px;
+  height: 15px;
+  border-width: 0 15px 15px 15px;
+  border-color: transparent transparent #ff0080 transparent;
+}
