@@ -180,7 +180,7 @@ export const ExpandSection = ()=>{
            
             
         })
-
+        tl.scrollTrigger.refresh()
         return ()=>{
             window.removeEventListener('mousemove',function(){})
             ScrollTrigger.getAll().forEach(ST => ST.kill());
