@@ -1,0 +1,31 @@
+.iconic-projects-slide{
+    min-height: 100vh;
+    width: 100%;
+    padding-top: 138px;
+}
+
+.iconic-projects-slide .heading{
+    font-family: Be Vietnam Pro;
+    font-size: 52px;
+    font-weight: 500;
+    line-height: 73px;
+    letter-spacing: 0.0025em;
+    text-align: left;
+
+}
+.iconic-projects-slide .introduction{
+    position: relative;
+}
+.iconic-projects-slide .introduction .heading-english{
+    font-family: Be Vietnam Pro;
+    font-size: 130px;
+    font-weight: 800;
+    line-height: 73px;
+    letter-spacing: 0.0025em;
+    text-align: left;
+
+    position: absolute;
+    top: 37px;
+    color: rgba(0, 0, 0, 0.03);
+    
+}
