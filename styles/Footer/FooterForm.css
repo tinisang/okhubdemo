@@ -65,7 +65,7 @@ input {
   font-weight: 300;
   font-size: 20px;
   line-height: 24px;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   padding-bottom: 40px;
   border-bottom: var(--boder-bottom-footer);
 }

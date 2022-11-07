@@ -1,8 +1,7 @@
 import Image from "next/image";
-import imgFooter1 from "../../public/imgs/imgfooter1.png";
-import imgFooter2 from "../../public/imgs/imgFooter2.png";
-import imgFooter3 from "../../public/imgs/imgFooter3.png";
+
 import { FooterForm } from "./FooterForm";
+import { FooterContact } from "./FooterContact";
 
 export const Footer = () => {
   return (
@@ -10,30 +9,7 @@ export const Footer = () => {
       <div className="footer">
         <FooterForm/>
         {/*Contact */}
-        <div className="footer__contact">
-          <img className="footer__contact--logo"></img>
-          <p className="footer__contact--title">Thông tiin liên hệ</p>
-          <p className="footer__contact--des">
-            info@okhub.vn <br></br> +84 962 582 380
-          </p>
-          <p className="footer__contact--title">ĐỊA CHỈ VĂN PHÒNG ĐẠI DIỆN</p>
-          <p className="footer__contact--des">
-            1917 HPC Landmark 105 Văn Khê, <br></br>
-            Phường La Khê, Quận Hà Đông, Thành phố <br></br>
-            Hà Nội, Việt Nam.
-          </p>
-          <p className="footer__contact--title">WEBSITE</p>
-          <p className="footer__contact--des">www.okhub.vn</p>
-          <div className="footer__contact--img1">
-            <Image src={imgFooter1} />
-          </div>
-          <div className="footer__contact--img2">
-            <Image src={imgFooter2} />
-          </div>
-          <div className="footer__contact--img3">
-            <Image src={imgFooter3} />
-          </div>
-        </div>
+      <FooterContact/>
       </div>
 
       {/*  */}

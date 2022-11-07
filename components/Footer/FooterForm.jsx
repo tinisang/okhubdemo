@@ -64,7 +64,6 @@ export const FooterForm = () => {
           
             ]}
             showCheckbox
-           
             placeholder="Chọn dịch vụ quan tâm"
             
           />
