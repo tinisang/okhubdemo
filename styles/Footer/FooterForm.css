@@ -207,13 +207,68 @@ input {
   line-height: 24px;
   color: #787878;
 }
+/* .footer__form--service {
+  padding-right: 50px;
+} */
 
-.footer__form--service > input::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  width: 15px;
-  height: 15px;
-  border-width: 0 15px 15px 15px;
-  border-color: transparent transparent #ff0080 transparent;
+
+/* custom select react */
+.basic-multi-select {
+  outline: none;
+  background: transparent;
 }
+
+.searchWrapper {
+  border: none !important;
+  padding: 0 !important;
+}
+
+.multiSelectContainer input {
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  color: #787878;
+  margin: 0 !important;
+  padding-right: 50px;
+ 
+}
+.checkbox{
+    border-radius: 50% !important;
+}
+.multiSelectContainer::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 10%;
+    cursor: pointer;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 8px 12px 8px;
+    border-color: transparent transparent #787878 transparent;
+    transform: rotate(180deg);
+  }
+
+  .optionListContainer{
+      background-color: rgba(255, 255, 255, 0.45) !important;
+      
+  }
+  .multiSelectContainer ul{
+    border: none !important;
+  }
+
+  .option{
+      padding-left: 27px!important;
+  }
+
+  .highlightOption{
+      background-color: none!important;
+  }
+  .multiSelectContainer li:hover{
+      background: none !important;
+  }
+  .highlight{
+      background: none!important;
+  }
