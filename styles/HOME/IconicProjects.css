@@ -54,8 +54,11 @@
     overflow: hidden;
     position: relative;
     flex-shrink: 0;
+    transition: 0.3s;
 }
-
+.iconic-projects-slide .projects-slide .project-item.not-hover{
+    opacity: 0.3;
+}
 
 
 .iconic-projects-slide .projects-slide .project-item:nth-child(odd){
