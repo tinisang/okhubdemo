@@ -90,7 +90,12 @@ export const IconicSlide = ()=>{
 
     const handleMouseOver=(index)=>{
             var imageItem = document.querySelector(`.preview-image img:nth-child(${index})`);
+            var notHoverProjectItems = document.querySelectorAll(`.project-item:not(:nth-child(${index}))`);
             var active = document.querySelector(`.preview-image img.active`)
+            notHoverProjectItems.forEach(element => {
+                element.classList.add('not-hover')
+                
+            });
             // setPreview( data[index-1].image)
             if(cursor.current){cursor.current.classList.add('active')}
              if (active) {active.classList.remove('active')}
@@ -102,6 +107,11 @@ export const IconicSlide = ()=>{
         if (cursor.current){
             cursor.current.classList.remove('active')
         }
+        var ProjectItems = document.querySelectorAll(`.project-item`);
+        ProjectItems.forEach(element => {
+            element.classList.remove('not-hover')
+            
+        });
     }
     
     
