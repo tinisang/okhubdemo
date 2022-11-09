@@ -1,6 +1,7 @@
 import React from "react";
 import Select from "react-select";
 import Multiselect from "multiselect-react-dropdown";
+import { Button } from "../Button/Button";
 
 export const FooterForm = () => {
   return (
@@ -77,7 +78,7 @@ export const FooterForm = () => {
           placeholder="Xin chào, tôi cần OkHub tư vấn về... *"
         ></input>
       </div>
-      <button className="footer__btn">Submit</button>
+     <Button text = "Submit"/>
     </div>
   );
 };

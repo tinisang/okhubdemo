@@ -9,6 +9,7 @@ import '../styles/Footer/Footer.css'
 import '../styles/Footer/FooterForm.css'
 import '../styles/Footer/FooterContact.css'
 import '../styles/Footer/FooterNav.css'
+import '../styles/Button/Button.css'
 
 
 function MyApp({ Component, pageProps }) {
