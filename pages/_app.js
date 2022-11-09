@@ -8,6 +8,7 @@ import '../styles/HOME/IconicProjects.css'
 import '../styles/Footer/Footer.css'
 import '../styles/Footer/FooterForm.css'
 import '../styles/Footer/FooterContact.css'
+import '../styles/Footer/FooterNav.css'
 
 
 function MyApp({ Component, pageProps }) {
