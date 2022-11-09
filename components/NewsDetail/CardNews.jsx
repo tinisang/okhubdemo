@@ -28,7 +28,7 @@ export const CardNews = () => {
         </div>
         <div className="card__title">
           “Ngành mỹ phẩm đang bị thoái
-          <br></br> trào” - Điều này liệu có đúng?
+          trào” - Điều này liệu có đúng?
         </div>
         <div className="card__info">
           <div className="card__infor-time">

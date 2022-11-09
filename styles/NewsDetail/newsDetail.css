@@ -170,7 +170,8 @@
 }
 .NewsDetail__status-items{
   display: flex;
-  justify-content: space-between;
+  gap: 32px;
+  /* justify-content: space-between; */
 }
 .NewsDetail__status-items .card__container{
   /* margin-right: 32px; */
