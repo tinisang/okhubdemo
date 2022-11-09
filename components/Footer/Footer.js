@@ -4,7 +4,8 @@ import { FooterForm } from "./FooterForm";
 import { FooterContact } from "./FooterContact";
 import { FooterNav } from "./FooterNav";
 
-export const Footer = () => {
+export const Footer = ({active}) => {
+    
   return (
     <>
    <div className="footer__container">
@@ -16,7 +17,7 @@ export const Footer = () => {
 
       {/*  */}
 
-    <FooterNav/>
+        <FooterNav/>
    </div>
     </>
   );

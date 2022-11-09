@@ -14,7 +14,8 @@
   width: 50%;
   display: flex;
   margin-right: 100px;
-  justify-content: center;
+  justify-content: flex-end;
+
 }
 .footer__nav--company {
   width: 50%;
@@ -40,7 +41,7 @@
 }
 
 .footer__nav--icon > div {
-  margin-right: 50px;
+  margin-left: 50px;
 }
 
 .footer__nav--primary {
