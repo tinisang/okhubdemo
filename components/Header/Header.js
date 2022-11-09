@@ -1,14 +1,14 @@
-import logoNews from "../../public/imgs/logoNews.png";
-import menuNews from "../../public/imgs/menuNews.png";
+import logoNewsDetail from "../../public/imgs/logoNewsDetail.png";
+import menuNewsDetail from "../../public/imgs/menuNewsDetail.png";
 import Image from "next/image";
 
 export const Header = () => {
   return (
     <>
       <div className="header">
-        <div className="news__header">
-          <Image src={logoNews} />
-          <Image src={menuNews} />
+        <div className="NewsDetail__header">
+          <Image src={logoNewsDetail} />
+          <Image src={menuNewsDetail} />
         </div>
       </div>
     </>

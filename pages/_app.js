@@ -10,7 +10,9 @@ import '../styles/Footer/FooterForm.css'
 import '../styles/Footer/FooterContact.css'
 import '../styles/Footer/FooterNav.css'
 import '../styles/Button/Button.css'
-import '../styles/News/news.css'
+import '../styles/NewsDetail/newsDetail.css'
+import '../styles/NewsDetail/cardNews.css'
+import '../styles/NewsDetail/NoteBtn.css'
 
 
 function MyApp({ Component, pageProps }) {
