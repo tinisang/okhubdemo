@@ -56,7 +56,7 @@ export const IconicSlide = ()=>{
         var tl = gsap.timeline({
             scrollTrigger:{
                 trigger: triggerContainer.current,
-                // markers:true,
+                markers:true,
                 start:'top 0%',
                 end:'300% 0%',
                 scrub:true,
