@@ -99,3 +99,14 @@ a {
   height: unset !important;
 }
 
+.isLoading{
+
+}
+
+@keyframes loading {
+  0%   {opacity: 0.2;}
+  25%   {opacity: 0.4;}
+  50%   {opacity: 0.6;}
+  75%   {opacity: 0.4;}
+  100%  {opacity: 0.2;}
+}
