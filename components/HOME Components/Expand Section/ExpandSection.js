@@ -17,7 +17,7 @@ import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
 
 import { OurServices } from "./OurServices"
 
-export const ExpandSection = ()=>{
+const ExpandSection = ()=>{
     gsap.registerPlugin(ScrollTrigger)
     const pin=useRef()
     const services =useRef()
@@ -131,7 +131,10 @@ export const ExpandSection = ()=>{
     }
 
     useEffect(()=>{
-
+        // const scroll = new LocomotiveScroll({
+        //     el: document.querySelector('.trigger-pin'),
+        //     smooth: true
+        // });
         var dot =document.querySelector('.row1 svg')
         console.log(dot.offsetTop)
         var tl = gsap.timeline({
@@ -181,10 +184,14 @@ export const ExpandSection = ()=>{
             
         })
         tl.scrollTrigger.refresh()
+
+       
+        
+        
         return ()=>{
             window.removeEventListener('mousemove',function(){})
-            ScrollTrigger.getAll().forEach(ST => ST.kill());
-            gsap.globalTimeline.clear();
+            // ScrollTrigger.getAll().forEach(ST => ST.kill());
+            // gsap.globalTimeline.clear();
           }
     
     })
@@ -220,6 +227,8 @@ export const ExpandSection = ()=>{
             </div>
         </div>
     
+            
+           
         <div className="trigger-pin" ref={pin}>
 
     
@@ -376,6 +385,10 @@ export const ExpandSection = ()=>{
             </div>
            
         </div>
+
+    
         </>
     )
 }
+
+export default ExpandSection
