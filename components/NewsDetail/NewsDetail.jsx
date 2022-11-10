@@ -100,9 +100,9 @@ export const NewsDetail = () => {
         {/*  */}
         <div className="NewsDetail__share-content">
           <p>
-            What will it take to power the planet in a way that doesn't hurt it?
+            What will it take to power the planet in a way that doesn&#39;t hurt it?
             In a collective call to action, energy expert Chris Roe, Director of
-            Energy & Sustainable Operations at Amazon, shares the company’s
+            Energy & Sustainable Operations at Amazon, shares the company&#39;s
             commitment to get to net-zero carbon and fully operate all
             buildings—data centers, distribution centers, warehouses, commercial
             offices, and grocery stores—on 100% renewable energy by 2025. He
