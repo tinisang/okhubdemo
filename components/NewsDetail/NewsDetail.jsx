@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, clickable, Autoplay} from 'swiper';
 import { CardNews } from "./CardNews";
 import { NoteBtn } from "./NoteBtn";
 import aroowLeft from "../../public/imgs/arrow-up-left-NewsDetail.png";
@@ -10,6 +11,7 @@ import imagePrimaryNewsDetail from "../../public/imgs/imageNewsDetailPrimary.png
 import NewsDetailFbIcon from "../../public/imgs/NewsDetailFbIcon.png";
 import NewsDetailInsIcon from "../../public/imgs/NewDetailInsIcon.png";
 import NewDetailBeIcon from "../../public/imgs/NewsDetailBeIcon.png";
+import arrow from "../../public/imgs/arowNextCard.png";
 
 import Image from "next/image";
 export const NewsDetail = () => {
@@ -100,18 +102,18 @@ export const NewsDetail = () => {
         {/*  */}
         <div className="NewsDetail__share-content">
           <p>
-            What will it take to power the planet in a way that doesn&#39;t hurt it?
-            In a collective call to action, energy expert Chris Roe, Director of
-            Energy & Sustainable Operations at Amazon, shares the company&#39;s
-            commitment to get to net-zero carbon and fully operate all
-            buildings—data centers, distribution centers, warehouses, commercial
-            offices, and grocery stores—on 100% renewable energy by 2025. He
-            reveals the most critical part of achieving these goals: partnering
-            with companies around the globe to spearhead new wind and solar
-            projects. Modeling a collaborative approach to a climate-friendly
-            future, Roe invites leaders and companies everywhere to set their
-            ambitions high and create a world that runs on green energy–because
-            we can only achieve this together. <br></br>
+            What will it take to power the planet in a way that doesn&#39;t hurt
+            it? In a collective call to action, energy expert Chris Roe,
+            Director of Energy & Sustainable Operations at Amazon, shares the
+            company&#39;s commitment to get to net-zero carbon and fully operate
+            all buildings—data centers, distribution centers, warehouses,
+            commercial offices, and grocery stores—on 100% renewable energy by
+            2025. He reveals the most critical part of achieving these goals:
+            partnering with companies around the globe to spearhead new wind and
+            solar projects. Modeling a collaborative approach to a
+            climate-friendly future, Roe invites leaders and companies
+            everywhere to set their ambitions high and create a world that runs
+            on green energy–because we can only achieve this together. <br></br>
             <br></br> In The Green: The Business of Climate Action showcases
             steps Climate Pledge signatories are taking to transform business
             and industry on their path to net-zero carbon by 2040—or
@@ -125,11 +127,38 @@ export const NewsDetail = () => {
           <p className="NewsDetail__title--primary">Bài viết liên quan</p>
           <p className="NewsDetail__title--bg">Related Posts</p>
         </div>
-        <div className="NewsDetail__status-items">
+        <div className="" style={{
+          margin: "0 100px"
+        }}>
           {/* content item */}
-          <CardNews />
-          <CardNews />
-          <CardNews />
+          <Swiper
+            className="NewsDetail__status-items "
+            slidesPerView={3}
+            // spaceBetween={30}
+            slidesPerGroup={1}
+            loop={true}
+            // loopFillGroupWithBlank={true}
+            pagination={{
+              clickable: true,
+            }}
+            navigation={true}
+            modules={[Pagination, Navigation, Autoplay]}
+            autoplay = {true}
+            speed = {200}
+          >
+            <SwiperSlide>
+              <CardNews />
+            </SwiperSlide>
+            <SwiperSlide>
+              <CardNews />
+            </SwiperSlide>
+            <SwiperSlide>
+              <CardNews />
+            </SwiperSlide>
+            <SwiperSlide>
+              <CardNews />
+            </SwiperSlide>
+          </Swiper>
         </div>
       </div>
       <div className="NewsDetail__document"></div>
