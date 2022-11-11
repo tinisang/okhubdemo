@@ -51,8 +51,7 @@ export const IconicSlide = ()=>{
         var lastslide = document.querySelector('.projects-slide .project-item:last-child')
         var screenWidth = window.innerWidth
         var sliderWidth = slider.current.scrollWidth
-        console.log(sliderWidth)
-        console.log(screenWidth)
+       
         var tl = gsap.timeline({
             scrollTrigger:{
                 trigger: triggerContainer.current,
@@ -79,6 +78,7 @@ export const IconicSlide = ()=>{
         // ScrollTrigger.refresh()
         return ()=>{
             window.removeEventListener('mousemove',function(){})
+            tl.scrollTrigger.kill()
             // tl.kill();
             
             // ScrollTrigger.getAll().forEach(ST => ST.kill());
@@ -100,7 +100,7 @@ export const IconicSlide = ()=>{
             if(cursor.current){cursor.current.classList.add('active')}
              if (active) {active.classList.remove('active')}
             imageItem.classList.add('active')
-            console.log(image6.blurDataURL)
+           
     }
 
     const handleMouseOut=()=>{

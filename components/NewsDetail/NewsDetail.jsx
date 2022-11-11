@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, clickable, Autoplay} from 'swiper';
 import { CardNews } from "./CardNews";
 import { NoteBtn } from "./NoteBtn";
+import "swiper/css"
 import aroowLeft from "../../public/imgs/arrow-up-left-NewsDetail.png";
 import calendarNewsDetail from "../../public/imgs/calendar-edit-NewsDetail.png";
 import userNewsDetail from "../../public/imgs/user-edit-NewsDetail.png";

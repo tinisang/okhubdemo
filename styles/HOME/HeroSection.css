@@ -8,6 +8,7 @@
     overflow: hidden;
     background-color: var(--lightYellow);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     position: absolute;
@@ -15,6 +16,7 @@
     left:0;
     height: 100%;
     z-index: 1;
+    gap: 58px;
 }
 
 .hero-section-expand .big-text{
@@ -81,3 +83,80 @@
     bottom: 0px;
 }
 
+
+
+/*----Marquee Slide Posts-----*/
+
+
+.marquee-post-slide{
+    background-color: white;
+    width: 959px;
+    overflow: hidden;
+    padding: 27px 33px;
+    border-radius: 59px;
+    position: relative;
+}
+
+.marquee-post-slide .arrow{
+    position: absolute;
+    right:11px;
+    top: 50%;
+    z-index: 2;
+    width:64px ;
+    transform: translateY(-50%);
+}
+
+
+.marquee-post-slide:after{
+    content: '';
+    height: 100%;
+    width:90px;
+    background: linear-gradient(270deg, #FFFFFF 41.45%, rgba(255, 255, 255, 0) 106.12%);
+    position: absolute;
+    right:0;
+    top: 0;
+    display: block;
+    z-index: 1;
+}
+.marquee-post-slide:before{
+    content: '';
+    height: 100%;
+    width:90px;
+    background: linear-gradient(90deg, #FFFFFF 41.45%, rgba(255, 255, 255, 0) 106.12%);
+    position: absolute;
+    left:0;
+    top: 0;
+    display: block;
+    z-index: 1;
+}
+.marquee-post-slide .post-slide-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    gap: 57px;
+}
+
+
+.marquee-post-slide .post-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+    /* width: 100%; */
+}
+
+.marquee-post-slide .post-item .icon{
+    width: 32px;
+}
+
+.marquee-post-slide .post-item .title{
+    font-family: Be Vietnam Pro;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: center;
+
+}

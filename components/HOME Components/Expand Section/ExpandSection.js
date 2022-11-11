@@ -8,10 +8,13 @@ import image4 from '../../../public/imgs/image4.jpg'
 import image5 from '../../../public/imgs/image5.jpg'
 import image6 from '../../../public/imgs/image6.jpg'
 import image7 from '../../../public/imgs/image7.jpg'
+import newsicon from "../../../public/imgs/newsicon.svg"
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useEffect, useRef } from "react";
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
+
+import { PostMarqueSlide } from './PostMarqueeSlide';
 
 
 
@@ -136,7 +139,7 @@ const ExpandSection = ()=>{
         //     smooth: true
         // });
         var dot =document.querySelector('.row1 svg')
-        console.log(dot.offsetTop)
+  
         var tl = gsap.timeline({
             scrollTrigger:{
                 trigger: pin.current,
@@ -189,6 +192,7 @@ const ExpandSection = ()=>{
         
         
         return ()=>{
+            tl.scrollTrigger.kill()
             window.removeEventListener('mousemove',function(){})
             // ScrollTrigger.getAll().forEach(ST => ST.kill());
             // gsap.globalTimeline.clear();
@@ -233,7 +237,7 @@ const ExpandSection = ()=>{
 
     
             <div className="hero-section-expand">
-                <div className="marquee-post-slide"></div>
+               <PostMarqueSlide/>
                 <div className="content-area">
                     <div className="row1">
                         <span className="word-split big-text">Okhub</span>
