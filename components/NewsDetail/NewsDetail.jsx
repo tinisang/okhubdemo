@@ -7,7 +7,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { CardNews } from "../CardNews";
 import { NoteBtn } from "../NoteBtn";
-import {CardReport} from "../CardReport";
+import { CardReport } from "../CardReport";
 import aroowLeft from "../../public/imgs/arrow-up-left-NewsDetail.png";
 import calendarNewsDetail from "../../public/imgs/calendar-edit-NewsDetail.png";
 import userNewsDetail from "../../public/imgs/user-edit-NewsDetail.png";
@@ -146,7 +146,6 @@ export const NewsDetail = () => {
             }}
             modules={[Pagination, Navigation]}
           >
-           
             <SwiperSlide>
               <CardNews />
             </SwiperSlide>
@@ -159,25 +158,64 @@ export const NewsDetail = () => {
             <SwiperSlide>
               <CardNews />
             </SwiperSlide>
-
-            
           </Swiper>
-          
         </div>
         <div className="newsDetail__status--prev">
-              <Image src={newsDetailStatusBtnPrev} />
-            </div>
+          <Image src={newsDetailStatusBtnPrev} />
+        </div>
         <div className="newsDetail__status--next">
-              <Image src={newsDetailStatusBtnNext} />
-            </div>
-      </div>
-      <div className="NewsDetail__document">
-        <div className="NewsDetail__document--title">Tài liệu - Báo cáo</div>
-        <div className="NewsDetail__document--bg">Download</div>
-        <div className="NewsDetail__document--reports">
-            <CardReport/>
+          <Image src={newsDetailStatusBtnNext} />
         </div>
       </div>
+      <div className="NewsDetail__document">
+        <div className="NewsDetail__document--title">
+          <p>Tài liệu - Báo cáo</p>
+          <div className="NewsDetail__document--bg">Download</div>
+        </div>
+
+        <Swiper
+          className="NewsDetail__document--reports"
+          slidesPerView={3}
+          spaceBetween={34}
+          slidesPerGroup={1}
+          loop={true}
+          navigation={{
+            prevEl: ".NewsDetail__document--prev",
+            nextEl: ".NewsDetail__document--next",
+          }}
+          modules={[Navigation]}
+        >
+          <SwiperSlide>
+            <div>
+              <CardReport />
+              <CardReport />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div>
+              <CardReport />
+              <CardReport />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div>
+              <CardReport />
+              <CardReport />
+            </div>
+          </SwiperSlide>
+        </Swiper>
+        <div className="image-container">
+      <div className="NewsDetail__document--prev">
+        <Image src={newsDetailStatusBtnPrev} className = "image-item" />
+      </div>
+      <div className="NewsDetail__document--next">
+        <Image src={newsDetailStatusBtnNext} />
+      </div>
+      </div>
+      </div>
+
+      {/* arrow */}
+  
     </div>
   );
 };

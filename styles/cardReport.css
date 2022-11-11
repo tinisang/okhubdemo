@@ -1,0 +1,54 @@
+.card-report__container {
+  /* width: calc(100% / 3); */
+  border-top: solid 1px #d9d9d9;
+  padding-top: 23px;
+}
+
+.card-report__title p {
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 30px;
+  color: #000000;
+}
+
+.card-report__time-dow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.card-report__time,
+.card-report__dow {
+  display: flex;
+  align-items: center;
+  width: auto;
+  height: auto;
+}
+.card-report__time img {
+  margin-right: 4px;
+}
+
+.card-report__time p {
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 36px;
+  color: #777777;
+}
+
+.card-report__dow img {
+  margin-right: 13px;
+}
+
+.card-report__dow p {
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 36px;
+  color: #000000;
+
+}
