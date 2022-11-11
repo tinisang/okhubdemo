@@ -47,8 +47,9 @@
 
 .NewsDetail__primary-img {
   width: 100%;
-  height: auto;
+  height: 760px;
   object-fit: cover;
+  border-radius: 32px;
 }
 /* NewsDetail info */
 

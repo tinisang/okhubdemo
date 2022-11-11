@@ -48,8 +48,8 @@
     height: auto;
     margin-right: 4px;
 }
-.card__info-user{
-    /* margin-right: 33px; */
+.card__info-user p{
+    margin: 0;
 }
 
 .card__infor-time p{
@@ -63,6 +63,7 @@
 .card__btn-next{
     justify-content: flex-end;
     margin-bottom: 24px;
+    margin-top: 15px;
 }
 .card__btn{
     margin-right: 12px;

@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper";
+import { Navigation, Pagination, } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -179,6 +179,7 @@ export const NewsDetail = () => {
           spaceBetween={34}
           slidesPerGroup={1}
           loop={true}
+          speed = {200}
           navigation={{
             prevEl: ".NewsDetail__document--prev",
             nextEl: ".NewsDetail__document--next",
