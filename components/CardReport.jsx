@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export const CardReport = () => {
   return (
-   <div className= " card-report__container">
+   <div className= "card-report__container">
       <Link href="#" target="_blank" >
        <div className="card-report__title">
          <p>Báo cáo thị trường ngành hàng thời trang 3 quý đầu năm 2022</p>
