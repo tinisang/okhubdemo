@@ -23,6 +23,7 @@
 }
 .card__content {
   margin-left: 33px;
+  margin-right: 33px;
 }
 
 .card__title {
@@ -48,7 +49,7 @@
     margin-right: 4px;
 }
 .card__info-user{
-    margin-right: 33px;
+    /* margin-right: 33px; */
 }
 
 .card__infor-time p{
@@ -68,5 +69,5 @@
 }
 
 .card__next-text{
-    margin-right: 33px;
+    /* margin-right: 33px; */
 }

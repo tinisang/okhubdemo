@@ -11,8 +11,9 @@ import '../styles/Footer/FooterContact.css'
 import '../styles/Footer/FooterNav.css'
 import '../styles/Button/Button.css'
 import '../styles/NewsDetail/newsDetail.css'
-import '../styles/NewsDetail/cardNews.css'
-import '../styles/NewsDetail/NoteBtn.css'
+import '../styles/cardNews.css'
+import '../styles/NoteBtn.css'
+import '../styles/cardReport.css'
 
 
 function MyApp({ Component, pageProps }) {

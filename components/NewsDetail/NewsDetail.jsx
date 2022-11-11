@@ -1,9 +1,13 @@
 import React from "react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, clickable, Autoplay} from 'swiper';
-import { CardNews } from "./CardNews";
-import { NoteBtn } from "./NoteBtn";
+import { Navigation, Pagination } from "swiper";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { CardNews } from "../CardNews";
+import { NoteBtn } from "../NoteBtn";
+import {CardReport} from "../CardReport";
 import aroowLeft from "../../public/imgs/arrow-up-left-NewsDetail.png";
 import calendarNewsDetail from "../../public/imgs/calendar-edit-NewsDetail.png";
 import userNewsDetail from "../../public/imgs/user-edit-NewsDetail.png";
@@ -11,7 +15,8 @@ import imagePrimaryNewsDetail from "../../public/imgs/imageNewsDetailPrimary.png
 import NewsDetailFbIcon from "../../public/imgs/NewsDetailFbIcon.png";
 import NewsDetailInsIcon from "../../public/imgs/NewDetailInsIcon.png";
 import NewDetailBeIcon from "../../public/imgs/NewsDetailBeIcon.png";
-import arrow from "../../public/imgs/arowNextCard.png";
+import newsDetailStatusBtnPrev from "../../public/imgs/newsDetailStatusBtnPrev.png";
+import newsDetailStatusBtnNext from "../../public/imgs/newsDetailStatusBtnNext.png";
 
 import Image from "next/image";
 export const NewsDetail = () => {
@@ -102,15 +107,15 @@ export const NewsDetail = () => {
         {/*  */}
         <div className="NewsDetail__share-content">
           <p>
-            What will it take to power the planet in a way that doesn&#39;t hurt
-            it? In a collective call to action, energy expert Chris Roe,
-            Director of Energy & Sustainable Operations at Amazon, shares the
-            company&#39;s commitment to get to net-zero carbon and fully operate
-            all buildings—data centers, distribution centers, warehouses,
-            commercial offices, and grocery stores—on 100% renewable energy by
-            2025. He reveals the most critical part of achieving these goals:
-            partnering with companies around the globe to spearhead new wind and
-            solar projects. Modeling a collaborative approach to a
+            What will it take to power the planet in a way that doesn{`&#39`};t
+            hurt it? In a collective call to action, energy expert Chris Roe,
+            Director of Energy {`&`} Sustainable Operations at Amazon, shares
+            the company{`&#39;`} commitment to get to net-zero carbon and fully
+            operate all buildings—data centers, distribution centers,
+            warehouses, commercial offices, and grocery stores—on 100% renewable
+            energy by 2025. He reveals the most critical part of achieving these
+            goals: partnering with companies around the globe to spearhead new
+            wind and solar projects. Modeling a collaborative approach to a
             climate-friendly future, Roe invites leaders and companies
             everywhere to set their ambitions high and create a world that runs
             on green energy–because we can only achieve this together. <br></br>
@@ -127,25 +132,21 @@ export const NewsDetail = () => {
           <p className="NewsDetail__title--primary">Bài viết liên quan</p>
           <p className="NewsDetail__title--bg">Related Posts</p>
         </div>
-        <div className="" style={{
-          margin: "0 100px"
-        }}>
+        <div className="NewsDetail__status-container">
           {/* content item */}
           <Swiper
-            className="NewsDetail__status-items "
+            className="NewsDetail__status-items"
             slidesPerView={3}
-            // spaceBetween={30}
+            spaceBetween={32}
             slidesPerGroup={1}
             loop={true}
-            // loopFillGroupWithBlank={true}
-            pagination={{
-              clickable: true,
+            navigation={{
+              prevEl: ".newsDetail__status--prev",
+              nextEl: ".newsDetail__status--next",
             }}
-            navigation={true}
-            modules={[Pagination, Navigation, Autoplay]}
-            autoplay = {true}
-            speed = {200}
+            modules={[Pagination, Navigation]}
           >
+           
             <SwiperSlide>
               <CardNews />
             </SwiperSlide>
@@ -158,10 +159,25 @@ export const NewsDetail = () => {
             <SwiperSlide>
               <CardNews />
             </SwiperSlide>
+
+            
           </Swiper>
+          
+        </div>
+        <div className="newsDetail__status--prev">
+              <Image src={newsDetailStatusBtnPrev} />
+            </div>
+        <div className="newsDetail__status--next">
+              <Image src={newsDetailStatusBtnNext} />
+            </div>
+      </div>
+      <div className="NewsDetail__document">
+        <div className="NewsDetail__document--title">Tài liệu - Báo cáo</div>
+        <div className="NewsDetail__document--bg">Download</div>
+        <div className="NewsDetail__document--reports">
+            <CardReport/>
         </div>
       </div>
-      <div className="NewsDetail__document"></div>
     </div>
   );
 };
