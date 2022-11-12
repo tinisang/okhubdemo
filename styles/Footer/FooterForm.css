@@ -271,3 +271,9 @@ input {
   .highlight{
       background: none!important;
   }
+  .footer__form .button{
+    position: absolute;
+    right: 8%;
+    top: 38%;
+    cursor: pointer;
+  }

@@ -35,10 +35,6 @@ export const FooterForm = () => {
           <Multiselect
             displayValue="key"
             selectedValues = {true}
-            // onKeyPressFn={function noRefCheck(){}}
-            // onRemove={function noRefCheck(){}}
-            // onSearch={function noRefCheck(){}}
-            // onSelect={function noRefCheck(){}}
      
             options={[
               {
@@ -78,7 +74,7 @@ export const FooterForm = () => {
           placeholder="Xin chào, tôi cần OkHub tư vấn về... *"
         ></input>
       </div>
-     <Button text = "Submit"/>
+     <Button text = "Submit" className = "submit-btn"/>
     </div>
   );
 };
