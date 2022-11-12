@@ -129,12 +129,18 @@
     display: block;
     z-index: 1;
 }
+.marquee-post-slide .marquee-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
 .marquee-post-slide .post-slide-container{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     flex-shrink: 0;
     gap: 57px;
+    padding-right: 57px
 }
 
 

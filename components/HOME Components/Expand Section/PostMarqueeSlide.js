@@ -10,52 +10,102 @@ export const PostMarqueSlide = ()=>{
 
     useEffect(()=>{
 
-        var sliderWidth = document.querySelector('.post-slide-container').scrollWidth
-        console.log(sliderWidth)
-        gsap.to('.post-item',{
-            duration: 8,
+        var sliderWidth = document.querySelector('.post-slide-container:first-child').getBoundingClientRect()
+        var sliderWidth1 = document.querySelector('.post-slide-container:last-child')
+        var slider = document.querySelector('.marquee-post-slide')
+
+        var sliderValue= parseInt(getComputedStyle(sliderWidth1).width.replace('px',''));
+        console.log(parseInt(getComputedStyle(sliderWidth1).width.replace('px','')))
+        // console.log(sliderWidth.width)
+        console.log(slider.clientWidth)
+
+       
+        var tl =gsap.timeline()
+        tl.to('.marquee-container',{
+            duration: 12,
             ease: "none",
-            x: "-=959", //move each box 500px to right
-            modifiers: {
-                x: gsap.utils.unitize(x => parseFloat(x) % sliderWidth) //force x value to be between 0 and 500 using modulus
-            },
+            x: `-${sliderValue}px`,
+            // modifiers: {
+            //     x: gsap.utils.unitize(x => {
+            //         return parseFloat(x)
+            //     }) //force x value to be between 0 and 500 using modulus
+            // },
             repeat: -1
         })
+
+        return ()=>{
+            tl.kill()
+        }
     })
     
     return (
         <>
             <div className="marquee-post-slide">
-                    <div className="post-slide-container">
-                        <div className="post-item news">
-                            <div className="image-container icon">
-                                <Image alt="" src={newsicon} className="image-item"  />
-                            </div> 
-                            <div className="title">Báo cáo chỉ số thị trường quý IV năm 2021</div>
-                        </div>
-                        <div className="post-item noti">
+                <div className="marquee-container">
 
-                        <div className="image-container icon">
-                                <Image alt="" src={newsicon} className="image-item"  />
-                            </div> 
-                            <div className="title">Thông báo hợp tác chiến lược giữa OKHUB và Reika ngày 22/11/2022</div>
-                            
-                        </div>
-                        <div className="post-item news">
-                            <div className="image-container icon">
-                                <Image alt="" src={newsicon} className="image-item"  />
-                            </div> 
-                            <div className="title">Báo cáo chỉ số thị trường quý IV năm 2021</div>
-                        </div>
-                        <div className="post-item noti">
+                        <div className="post-slide-container" >
+                            <div className="post-item news">
+                                <div className="image-container icon">
+                                    <Image alt="" src={newsicon} className="image-item"  />
+                                </div> 
+                                <div className="title">Báo cáo chỉ số thị trường quý IV năm 2021</div>
+                            </div>
+                            <div className="post-item noti">
 
-                        <div className="image-container icon">
-                                <Image alt="" src={newsicon} className="image-item"  />
-                            </div> 
-                            <div className="title">Báo cáo chỉ số thị trường quý IV năm 2021</div>
-                            
+                            <div className="image-container icon">
+                                    <Image alt="" src={newsicon} className="image-item"  />
+                                </div> 
+                                <div className="title">Thông báo hợp tác chiến lược giữa OKHUB và Reika ngày 22/11/2022</div>
+                                
+                            </div>
+                            <div className="post-item news">
+                                <div className="image-container icon">
+                                    <Image alt="" src={newsicon} className="image-item"  />
+                                </div> 
+                                <div className="title">Báo cáo chỉ số thị trường quý IV năm 2021</div>
+                            </div>
+                            <div className="post-item noti">
+
+                            <div className="image-container icon">
+                                    <Image alt="" src={newsicon} className="image-item"  />
+                                </div> 
+                                <div className="title">Báo cáo chỉ số thị trường quý IV năm 2021</div>
+                                
+                            </div>
                         </div>
-                    </div>
+                        <div className="post-slide-container">
+                            <div className="post-item news">
+                                <div className="image-container icon">
+                                    <Image alt="" src={newsicon} className="image-item"  />
+                                </div> 
+                                <div className="title">Báo cáo chỉ số thị trường quý IV năm 2021</div>
+                            </div>
+                            <div className="post-item noti">
+
+                            <div className="image-container icon">
+                                    <Image alt="" src={newsicon} className="image-item"  />
+                                </div> 
+                                <div className="title">Thông báo hợp tác chiến lược giữa OKHUB và Reika ngày 22/11/2022</div>
+                                
+                            </div>
+                            <div className="post-item news">
+                                <div className="image-container icon">
+                                    <Image alt="" src={newsicon} className="image-item"  />
+                                </div> 
+                                <div className="title">Báo cáo chỉ số thị trường quý IV năm 2021</div>
+                            </div>
+                            <div className="post-item noti">
+
+                            <div className="image-container icon">
+                                    <Image alt="" src={newsicon} className="image-item"  />
+                                </div> 
+                                <div className="title">Báo cáo chỉ số thị trường quý IV năm 2021</div>
+                                
+                            </div>
+                        </div>
+            
+                </div>
+
                     <Link href="/news/fsdfsd">
 
                     <div className="image-container arrow">
