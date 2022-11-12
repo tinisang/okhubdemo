@@ -277,10 +277,10 @@
   margin-right: -55px;
 }
 
-.image-container{
+.NewsDetail__document .image-container{
   position: absolute;
   top: 46%;
-  /* z-index: 4; */
+  
 }
 .NewsDetail__document--next,
 .NewsDetail__document--prev {
