@@ -279,7 +279,7 @@
 
 .NewsDetail__document .image-container{
   position: absolute;
-  top: 46%;
+  top: 50%;
   
 }
 .NewsDetail__document--next,
@@ -287,11 +287,12 @@
   z-index: 3;
   cursor: pointer;
   position: absolute;
-  top: 0%;
+  /* top: 0%; */
 }
 .NewsDetail__document--prev {
   left: 0;
   margin-left: -50px;
+  
 
 }
 .NewsDetail__document--next {
