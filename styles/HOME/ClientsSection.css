@@ -1,0 +1,106 @@
+.client-section{
+    min-height: 100vh;
+    background-color:rgba(204, 204, 204, 0.15) ;
+    padding-top: 151px;
+}
+
+.client-section .clients-introduction .column-1 .value{
+    font-family: Be Vietnam Pro;
+    font-size: 142px;
+    font-weight: 700;
+    line-height: 150px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+.client-section .clients-introduction .column-1{
+    margin-left: 100px;
+}
+.client-section .clients-introduction .column-1 .description{
+    font-family: Be Vietnam Pro;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 50px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.client-section .clients-introduction{
+    display: flex;
+    justify-content: space-between;
+}
+.client-section .column-2{
+    position: relative;
+}
+.client-section .column-2 .svgImage{
+    padding-top: 76px;
+}
+.client-section .column-2 .contact-button{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.client-section .column-2 .contact-button a{
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: Be Vietnam Pro;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    transition: 0.2s;
+ 
+
+}
+.client-section .column-2 .contact-button a:hover{
+    color: black;
+    background-color: white;
+    box-shadow: 0px 0px 20px rgba(0,0,0,.05);
+
+}
+.clients-list{
+    margin-top:38px ;
+    padding-bottom:56px;
+}
+.clients-list .line .slide-client{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 40px;
+}
+.clients-list .row1-line{
+    margin-bottom:24px ;
+}
+.clients-list .line{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 40px;
+}
+.clients-list .line .slide-client .client-item{
+    flex-shrink: 0;
+}
+.clients-list .line .slide-client .client-item a{
+    height:192px;
+    width: 192px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:45px
+}
+.clients-list .line .slide-client .client-item a img{
+    display: block;
+    object-fit: contain;
+    object-position: center center;
+    max-width: 100%;
+    max-height: 100%;
+}

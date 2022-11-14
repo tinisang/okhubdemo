@@ -19,6 +19,7 @@
     "react-dom": "18.2.0",
     "react-locomotive-scroll": "^0.2.2",
     "react-select": "^5.6.0",
-    "swiper": "^8.4.4"
+    "swiper": "^8.4.4",
+    "video-react": "^0.16.0"
   }
 }
