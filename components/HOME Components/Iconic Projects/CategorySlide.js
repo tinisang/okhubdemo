@@ -71,11 +71,11 @@ export const CategorySlide = ()=>{
     const firstHalf = data.slice(0, half)
     const secondHalf = data.slice(half)
     useEffect(()=>{
-        const slide1 = document.querySelector('.row1-line')
-        const slide2 = document.querySelector('.row2-line')
+        const slide1 = document.querySelector('.iconic-category-slide .row1-line')
+        const slide2 = document.querySelector('.iconic-category-slide .row2-line')
        
-        const slide1Width = document.querySelector('.row1-line .main-slide').scrollWidth;
-        const slide2Width = document.querySelector('.row2-line .main-slide').scrollWidth;
+        const slide1Width = document.querySelector('.iconic-category-slide .row1-line .main-slide').scrollWidth;
+        const slide2Width = document.querySelector('.iconic-category-slide .row2-line .main-slide').scrollWidth;
         slide2.style.transform=`translateX(${-1*slide2Width}px)`
 
         const tl1=gsap.timeline({

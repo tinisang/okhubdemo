@@ -1,0 +1,44 @@
+.review-section .column-1 .review-content-description .review-text{
+    font-family: Be Vietnam Pro;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 45px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+
+.review-section .column-1 .review-footer .name{
+    font-family: Be Vietnam Pro;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: center;
+
+}
+.review-section .column-1 .review-footer .position{
+    font-family: Be Vietnam Pro;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+
+
+}
+.review-section .column-1 .review-footer{
+    display: flex;
+}
+.review-section .column-1 .review-footer .customer{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.review-section .column-1 .review-footer .customer .name{
+    text-align: left;
+}
+.review-section .column-1 .review-footer .customer .position{
+    text-align: left;
+}

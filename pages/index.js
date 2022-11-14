@@ -6,6 +6,7 @@ import { IconicSlide } from '../components/HOME Components/Iconic Projects/Iconi
 import { ClientsSection } from '../components/HOME Components/ClientsSection'
 import { Footer } from '../components/Footer/Footer'
 import dynamic from 'next/dynamic'
+import { ReviewSection } from '../components/HOME Components/ReviewSection'
 
 const ExpandSection = dynamic(() => import("../components/HOME Components/Expand Section/ExpandSection"), { ssr: true });
 
@@ -19,7 +20,7 @@ export default function Home() {
       <CategorySlide/>
 
       <ClientsSection/>
-      
+      <ReviewSection/>
    
 
 
