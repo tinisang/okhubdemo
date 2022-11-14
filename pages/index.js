@@ -3,6 +3,7 @@ import Image from 'next/image'
 // import { ExpandSection } from '../components/HOME Components/Expand Section/ExpandSection'
 import { CategorySlide } from '../components/HOME Components/Iconic Projects/CategorySlide'
 import { IconicSlide } from '../components/HOME Components/Iconic Projects/IconicSlide'
+import { ClientsSection } from '../components/HOME Components/ClientsSection'
 import { Footer } from '../components/Footer/Footer'
 import dynamic from 'next/dynamic'
 
@@ -16,6 +17,9 @@ export default function Home() {
       <ExpandSection/>
       <IconicSlide/>
       <CategorySlide/>
+
+      <ClientsSection/>
+      
    
 
 

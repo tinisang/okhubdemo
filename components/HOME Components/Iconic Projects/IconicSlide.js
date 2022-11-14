@@ -1,9 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-// import image3 from '../../../public/imgs/image3.jpg'
-// import image4 from '../../../public/imgs/image4.jpg'
-// import image5 from '../../../public/imgs/image5.jpg'
-// import image6 from '../../../public/imgs/image6.jpg'
+
 import arrow from '../../../public/imgs/arrow-up-right.svg'
 import image7 from '../../../public/imgs/image7.jpg'
 import image2 from '../../../public/imgs/image2.jpg'
@@ -55,7 +52,6 @@ export const IconicSlide = ()=>{
         var tl = gsap.timeline({
             scrollTrigger:{
                 trigger: triggerContainer.current,
-                markers:true,
                 start:'top 0%',
                 end:'300% 0%',
                 scrub:true,
@@ -192,6 +188,13 @@ export const IconicSlide = ()=>{
                         </div>
                         <span className="project-info">Website <span className='project-name'>Kính mắt Anna</span></span>
                     </div>
+                        <div className="view-more-projects">
+                        <Link href="/news">
+                           <span>
+                           View More
+                           </span> 
+                        </Link>
+                        </div>
                 </div>
             </div>
         </>
