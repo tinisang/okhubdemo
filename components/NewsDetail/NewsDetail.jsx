@@ -12,7 +12,7 @@ import aroowLeft from "../../public/imgs/arrow-up-left-NewsDetail.png";
 import calendarNewsDetail from "../../public/imgs/calendar-edit-NewsDetail.png";
 import userNewsDetail from "../../public/imgs/user-edit-NewsDetail.png";
 import imagePrimaryNewsDetail from "../../public/imgs/imageNewsDetailPrimary.png";
-import NewsDetailFbIcon from "../../public/imgs/NewsDetailFbIcon.png";
+import NewsDetailFbIcon from "../../public/imgs/newsDetailFbIcon.png";
 import NewsDetailInsIcon from "../../public/imgs/NewDetailInsIcon.png";
 import NewDetailBeIcon from "../../public/imgs/NewsDetailBeIcon.png";
 import newsDetailStatusBtnPrev from "../../public/imgs/newsDetailStatusBtnPrev.png";
