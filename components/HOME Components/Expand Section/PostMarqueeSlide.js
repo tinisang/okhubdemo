@@ -15,10 +15,7 @@ export const PostMarqueSlide = ()=>{
         var slider = document.querySelector('.marquee-post-slide')
 
         var sliderValue= parseInt(getComputedStyle(sliderWidth1).width.replace('px',''));
-        console.log(parseInt(getComputedStyle(sliderWidth1).width.replace('px','')))
-        // console.log(sliderWidth.width)
-        console.log(slider.clientWidth)
-
+       
        
         var tl =gsap.timeline()
         tl.to('.marquee-container',{
