@@ -64,7 +64,7 @@ export const NewsDetail = () => {
           </div>
         </div>
         <p className="NewsDetail__primary-title">
-          Bức tranh thị trường thời trang trong <br></br>
+          Bức tranh thị trường thời trang trong 
           thời kỳ suy thoái kinh tế toàn cầu
         </p>
         <Image

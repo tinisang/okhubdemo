@@ -17,6 +17,7 @@ import '../styles/cardReport.css'
 import '../styles/HOME/ClientsSection.css'
 import '../styles/HOME/ReviewSection.css'
 import '../styles/HOME/Video.css'
+import '../styles/News/News.css'
 
 
 function MyApp({ Component, pageProps }) {
