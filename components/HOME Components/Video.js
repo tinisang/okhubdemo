@@ -5,12 +5,28 @@ import thumbnail from '../../public/imgs/thumbnail.png'
 
 
 import Image from 'next/image';
+import { useRef } from 'react';
 // import 'video-react/dist/video-react.css'; 
 
 export const Video =()=>{
+
+    const playVideo= (video)=>{
+        video.play()
+    }
+    
+    const handleClick = ()=>{
+        // console.log('gfhgfgf')
+        if (ref.current){
+            var theVideo = ref.current.querySelector('video')
+                playVideo(theVideo)
+        }
+    }
+
+    const ref = useRef()
+    
     return (
         <>
-        <div className="video-wrapper">
+        <div ref={ref} className="video-wrapper" onClick={()=>{handleClick()}}>
 
         
         <div className="video-review" >

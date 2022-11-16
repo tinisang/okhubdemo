@@ -188,13 +188,13 @@ export const ReviewSection = ()=>{
                         <div className="navigation">
                             <div className="arrow prev-arrow">
                                 <svg width="11" height="18" viewBox="0 0 11 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M3.41436 9L10.7073 16.2929L9.29304 17.7071L0.585938 9L9.29304 0.292892L10.7073 1.70711L3.41436 9Z" fill="black"/>
+                                <path fillRule="evenodd" clipRule="evenodd" d="M3.41436 9L10.7073 16.2929L9.29304 17.7071L0.585938 9L9.29304 0.292892L10.7073 1.70711L3.41436 9Z" fill="black"/>
                                 </svg>
 
                             </div>
                             <div className=" arrow next-arrow">
                                 <svg width="11" height="18" viewBox="0 0 11 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M3.41436 9L10.7073 16.2929L9.29304 17.7071L0.585938 9L9.29304 0.292892L10.7073 1.70711L3.41436 9Z" fill="black"/>
+                                <path fillRule="evenodd" clipRule="evenodd" d="M3.41436 9L10.7073 16.2929L9.29304 17.7071L0.585938 9L9.29304 0.292892L10.7073 1.70711L3.41436 9Z" fill="black"/>
                                 </svg>
 
                             </div>
@@ -211,12 +211,15 @@ export const ReviewSection = ()=>{
                         speed={1500}
                         pagination={pagination}
                         navigation={navigation}
-                        spaceBetween={48}
-                        grabCursor={true}
+                        // spaceBetween={48}
+                        // grabCursor={true}
                         slideToClickedSlide={true}
                         slidesPerView={2}
-                        autoplay={true}
-                        freeMode={true}
+                        autoplay={false}
+                        // freeMode={true}
+                        preventClicks={false}
+                        preventClicksPropagation={false}
+                        // preventInteractionOnTransition={false}
                         
                     
                         >
