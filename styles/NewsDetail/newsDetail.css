@@ -157,6 +157,7 @@
 }
 .NewsDetail__status-items .swiper-wrapper {
   display: flex;
+  position: relative;
   /* gap: 32px; */
   /* justify-content: space-between; */
 }
@@ -166,29 +167,28 @@
 }
 
 .NewsDetail__status-container {
-  position: relative;
+  
 }
 .NewsDetail__status-items:after {
-  content: url("../../public/imgs/newsDetailStatusBlurLeft.png");
+  content: "";
+  background-image: linear-gradient(270deg, rgba(255, 255, 255, 0) 16.24%, rgba(255, 255, 255, 0.76) 52.97%);
   position: absolute;
-  width: auto;
-  height: auto;
+  width: 5%;
+  height: 61%;
   z-index: 2;
-  height: 0;
   left: 0;
   top: 0;
-  margin-left: -55px;
 }
 .NewsDetail__status-items::before {
-  content: url("../../public/imgs/newsDetailStatusBlurright.png");
+  content: "";
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 16.24%, rgba(255, 255, 255, 0.76) 52.97%);
   position: absolute;
-  width: auto;
-  height: auto;
+  width: 5%;
+  height: 61%;
   z-index: 2;
-  height: 0;
+
   right: 0;
   top: 0;
-  margin-right: -55px;
 }
 
 .newsDetail__status--next,
@@ -199,13 +199,15 @@
 }
 .newsDetail__status--prev {
   left: 0;
-  top: 59.5%;
+  top: 59%;
+  /* transform: translateY(40%); */
   margin-left: -50px;
 
 }
 .newsDetail__status--next {
   right: 0;
-  top: 59.5%;
+  top: 59%;
+  /* transform: translateY(100%); */
   margin-right: -50px;
 }
 
@@ -255,23 +257,24 @@
 }
 
 .NewsDetail__document--reports:after {
-  content: url("../../public/imgs/newsDetailStatusBlurLeft.png");
+  content: "";
+  background-image: linear-gradient(270deg, rgba(255, 255, 255, 0) 16.24%, rgba(255, 255, 255, 0.76) 52.97%);
   position: absolute;
-  width: auto;
-  height: auto;
+  width: 6%;
+  height: 100%;
   z-index: 2;
-  height: 0;
   left: 0;
   top: 0;
   margin-left: -55px;
 }
 .NewsDetail__document--reports::before {
-  content: url("../../public/imgs/newsDetailStatusBlurright.png");
+  content: "";
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 16.24%, rgba(255, 255, 255, 0.76) 52.97%);
   position: absolute;
-  width: auto;
-  height: auto;
+  width: 10%;
+  height: 100%;
   z-index: 2;
-  height: 0;
+  
   right: 0;
   top: 0;
   margin-right: -55px;
@@ -279,7 +282,7 @@
 
 .NewsDetail__document .image-container{
   position: absolute;
-  top: 50%;
+  top: 47%;
   
 }
 .NewsDetail__document--next,

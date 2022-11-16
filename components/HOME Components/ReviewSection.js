@@ -7,7 +7,7 @@ import "swiper/css/pagination";
 
 import Image from "next/image";
 import quote from '../../public/imgs/quote.svg'
-import { Player } from 'video-react';
+// import { Player } from 'video-react';
 import { Video } from "./Video";
 
 
