@@ -1,16 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "../Button/Button";
-import Select from "react-select";
-import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import FormControl from '@mui/material/FormControl';
-import NativeSelect from '@mui/material/NativeSelect';
+import {CardNews} from "../CardNews"
+// import Select from "react-select";
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import FormControl from "@mui/material/FormControl";
+import NativeSelect from "@mui/material/NativeSelect";
+import { SelectChangeEvent } from "@mui/material";
+import { MenuItem } from "@mui/material";
+import { Select } from "@mui/material";
+
 
 export const News = () => {
   const options = [
     { value: "chocolate", label: "Chocolate" },
     { value: "strawberry", label: "Strawberry" },
   ];
+  const [score, setScore] = useState("");
+  const scoreData = ["Tat ca", "nhieu luot xem nhat"];
+  const handelChange = (even) => {
+    console.log(even.value);
+  };
   return (
     <div className="news__container">
       <div className="news__title">
@@ -42,27 +52,22 @@ export const News = () => {
       <div className="news__selector">
         <div className="news__selector--order">
           <p>Sắp xếp theo: </p>
-          <Box sx={{ minWidth: 120 }}>
-      <FormControl fullWidth>
-        <InputLabel variant="standard" htmlFor="uncontrolled-native">
-        </InputLabel>
-        <NativeSelect
-          defaultValue={30}
-          inputProps={{
-            // name: 'age',
-            id: 'uncontrolled-native',
-          }}
-        >
-          <option value={10}>Ten</option>
-          <option value={20}>Twenty</option>
-          <option value={30}>Thirty</option>
-        </NativeSelect>
-      </FormControl>
-    </Box>
+          <FormControl sx={{ width: 343 }}>
+            <Select
+              label="custom-select-label"
+              id="custom-select"
+              value="hello"
+              onChange={handelChange}
+            >
+              {scoreData.map((scoreValue) => {
+                return <MenuItem value={scoreValue}>{scoreValue}</MenuItem>;
+              })}
+            </Select>
+          </FormControl>
         </div>
         <div className="news__selector--fileds">
-            <p>Theo lĩnh vực: </p>
-            <Select
+          <p>Theo lĩnh vực: </p>
+          <Select
             className="basic-single"
             classNamePrefix="select"
             defaultValue="default"
@@ -71,20 +76,25 @@ export const News = () => {
           />
         </div>
       </div>
-      <div className="news__primary"></div>
-
-      <div className="news__status">
-        <div className="news__status--items">
-          <div className="news__status--items-text"></div>
-          <div className="news__status--item">
-            <div className="news__status__item-other"></div>
+      <div className="news__primary">
+        <div className="news__status">
+          <div className="news__status--items">
+            <div className="news__status--items-text">
+                <p>Bài viết</p>
+            </div>
+            <div className="news__status--item">
+              <div className="news__status__item-other">
+                    <CardNews/>
+              </div>
+            </div>
+            <div className="news__status--item-btn"></div>
           </div>
-          <div className="news__status--item-btn"></div>
         </div>
-      </div>
-      <div className="news__documents">
-        <div className="news__documents-text"></div>
-        <div className="news__document--items"></div>
+        {/* ======= */}
+        <div className="news__documents">
+          <div className="news__documents-text"></div>
+          <div className="news__document--items"></div>
+        </div>
       </div>
     </div>
   );

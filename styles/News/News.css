@@ -158,14 +158,56 @@
 .css-1ptx2yq-MuiInputBase-root-MuiInput-root:before {
   border-bottom: none;
 }
-
-.css-19ygod6-MuiNativeSelect-select-MuiInputBase-input-MuiInput-input
-  .css-19ygod6-MuiNativeSelect-select-MuiInputBase-input-MuiInput-input
-  .css-19ygod6-MuiNativeSelect-select-MuiInputBase-input-MuiInput-input {
+/* ---------------------------------------------------------- */
+.news__status--items-text p {
   font-family: "Be Vietnam Pro";
   font-style: normal;
   font-weight: 700;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 33px;
+  line-height: 45px;
+  /* identical to box height, or 136% */
+
   color: #000000;
+}
+.news__primary {
+}
+
+.news__status {
+  width: 65%;
+  padding-bottom: 200px;
+  margin-left: 100px;
+}
+
+.news__documents {
+  width: 35px;
+}
+.news__status__item-other {
+  width: 100%;
+}
+.news__status__item-other .card__container{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 400px;
+}
+.news__status__item-other .card__container .card__content {
+    margin-left: 0;
+}
+
+.news__status__item-other .card__container .card__note{
+    margin-top: 60px;
+}
+.news__status__item-other .card__container .card__btn-next{
+    margin-top: 44px;
+    margin-bottom: 0;
+}
+.news__status__item-other .card__container .card__img {
+  width: 50%;
+  height: auto;
+}
+
+.news__status__item-other .card__container .card__img img {
+  height: 100%;
+  border-bottom-left-radius: 24px;
+  border-top-right-radius: 0px;
 }
