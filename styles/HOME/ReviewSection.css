@@ -1,3 +1,25 @@
+.review-section{
+    /* display: grid;
+    grid-template-columns: 1fr 1fr; */
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    width: 100% !important;
+   min-height: 695px;
+    padding-top: 87px;
+    padding-bottom: 75px;
+    background-color: rgba(204, 204, 204, 0.15);
+    padding-right: 100px;
+    padding-left: 100px;
+}
+
+.review-section .column-1{
+    width:50% !important
+}
+.review-section .column-2{
+    width:50% !important
+}
+
 .review-section .column-1 .review-content-description .review-text{
     font-family: Be Vietnam Pro;
     font-size: 28px;
@@ -27,13 +49,15 @@
 
 
 }
-.review-section .column-1 .review-footer{
-    display: flex;
-}
 .review-section .column-1 .review-footer .customer{
+    width: 80%;
+}
+.review-section .column-1 .review-footer .customer .customer-item{
     display: flex;
     flex-direction: column;
     justify-content: left;
+    background-color: rgba(247, 247, 247, 1);
+   
 }
 
 .review-section .column-1 .review-footer .customer .name{
@@ -41,4 +65,126 @@
 }
 .review-section .column-1 .review-footer .customer .position{
     text-align: left;
+}
+
+.divider{
+    height: 1px;
+    background-color: rgba(217, 217, 217, 1);
+}
+
+.dot-pagination{
+    position: relative !important;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 14px;
+}
+.dot-pagination .dot-item{
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background-color: rgba(217, 217, 217, 1);
+    opacity: 1 !important;
+    transition: .2s;
+    margin: 0px !important;
+    
+}
+
+.dot-pagination .dot-item.swiper-pagination-bullet-active{
+        background-color:rgba(17, 18, 21, 1) ;
+        width: 14px;
+        height: 14px;
+}
+.review-section .column-1{
+    display: flex;
+    flex-direction: column;
+}
+.review-section .column-1 .review-footer{
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+
+.review-section .column-1 .review-content-description{
+    display: flex;
+    margin-top: 30px;
+    gap: 18px;
+    background-color: rgba(247, 247, 247, 1);
+}
+
+.review-section .column-2 .swiper-slide{
+    transition: all 1s !important;
+    height: 394px !important;
+    opacity: 0.3;
+    /* width: 332px !important; */
+    
+}
+
+.review-section .column-2 .swiper-slide-active{
+    /* width: 332px !important; */
+    height: 560px !important;
+    opacity: 1;
+}
+.review-section .column-2 .swiper-slide-prev{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+.review-section .column-2 .swiper-slide-prev .video-wrapper{
+   
+    height: 150px !important;
+    opacity: 0;
+}
+.review-section .column-2 .swiper-slide-next .video-wrapper{
+   
+    width: 265px !important;
+    /* opacity: 0; */
+}
+
+
+.review-section .column-2 .swiper-wrapper{
+    align-items: center;
+    height: 560px;
+}
+
+.review-section .column-2 .swiper-slide .video-wrapper{
+    padding-left:48px
+}
+.review-section .column-2 .swiper-slide-active .video-wrapper{
+    padding-left:78px
+}
+.review-section .column-2 .swiper-slide .video-wrapper .client-company{
+    width: 0px;
+    height: 0px;
+}
+.review-section .column-2 .swiper-slide-active .video-wrapper .client-company{
+    width: 156px;
+    height: 156px;
+}
+.review-section .navigation{
+    display: flex;
+    gap:12px ;
+}
+.review-section .navigation .arrow{
+    background-color: white;
+    height: 68px;
+    width: 68px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s;
+    cursor: pointer;
+}
+.review-section .navigation .arrow.next-arrow{
+    transform: scale(-1);
+}
+
+.review-section .navigation .arrow:hover{
+    background-color: #111215;
+}
+.review-section .navigation .arrow:hover svg path{
+    fill:white
 }
