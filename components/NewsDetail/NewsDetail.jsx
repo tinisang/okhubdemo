@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, } from "swiper";
+import { Navigation, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -17,6 +17,8 @@ import NewsDetailInsIcon from "../../public/imgs/NewDetailInsIcon.png";
 import NewDetailBeIcon from "../../public/imgs/NewsDetailBeIcon.png";
 import newsDetailStatusBtnPrev from "../../public/imgs/newsDetailStatusBtnPrev.png";
 import newsDetailStatusBtnNext from "../../public/imgs/newsDetailStatusBtnNext.png";
+import arrowLeftNewsDetailDocuments from "../../public/imgs/arrowLeftNewsDetailDocuments.png";
+import arrowNextNewsDetailDocuments from "../../public/imgs/arrowNextNewsDetailDocuments.png";
 
 import Image from "next/image";
 export const NewsDetail = () => {
@@ -159,12 +161,12 @@ export const NewsDetail = () => {
               <CardNews />
             </SwiperSlide>
           </Swiper>
-        </div>
-        <div className="newsDetail__status--prev">
-          <Image src={newsDetailStatusBtnPrev} />
-        </div>
-        <div className="newsDetail__status--next">
-          <Image src={newsDetailStatusBtnNext} />
+          <div className="newsDetail__status--prev">
+            <Image src={newsDetailStatusBtnPrev} />
+          </div>
+          <div className="newsDetail__status--next">
+            <Image src={newsDetailStatusBtnNext} />
+          </div>
         </div>
       </div>
       <div className="NewsDetail__document">
@@ -179,7 +181,7 @@ export const NewsDetail = () => {
           spaceBetween={34}
           slidesPerGroup={1}
           loop={true}
-          speed = {200}
+          speed={200}
           navigation={{
             prevEl: ".NewsDetail__document--prev",
             nextEl: ".NewsDetail__document--next",
@@ -206,17 +208,16 @@ export const NewsDetail = () => {
           </SwiperSlide>
         </Swiper>
         <div className="image-container">
-      <div className="NewsDetail__document--prev">
-        <Image src={newsDetailStatusBtnPrev} className = "image-item" />
-      </div>
-      <div className="NewsDetail__document--next">
-        <Image src={newsDetailStatusBtnNext} />
-      </div>
-      </div>
+          <div className="NewsDetail__document--prev">
+            <Image src={arrowLeftNewsDetailDocuments} className="image-item" />
+          </div>
+          <div className="NewsDetail__document--next">
+            <Image src={arrowNextNewsDetailDocuments} />
+          </div>
+        </div>
       </div>
 
       {/* arrow */}
-  
     </div>
   );
 };
