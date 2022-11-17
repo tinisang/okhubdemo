@@ -1,5 +1,9 @@
 import { Button } from "../../components/Button/Button";
+import Image from "next/image";
 import { ButtonCategory } from "../../components/Button/ButtonCategory";
+import peojectOrderDisplayListBtn from "../../public/imgs/peojectOrderDisplayListBtn.png"
+import peojectOrderDisplayGridBtn from "../../public/imgs/peojectOrderDisplayGridBtn.png"
+import { CardProject } from "../../components/CardProject";
 
 export default function Projects() {
   return (
@@ -19,7 +23,7 @@ export default function Projects() {
               <div className="project__categories--item">
                   <ButtonCategory category = "Mỹ phẩm" active = {false}/>
                   <ButtonCategory category = "Tài chính" active = {false}/>
-                  <ButtonCategory category = "Tất cả dự án" active = {false}/>
+                  <ButtonCategory category = "Tất cả dự án" active = {true}/>
                   <ButtonCategory category = "Nội thất - kiến trúc" active = {false}/>
                   <ButtonCategory category = "Xây dựng" active = {false}/>
                   <ButtonCategory category = "Du lịch" active = {false}/>
@@ -27,8 +31,22 @@ export default function Projects() {
               </div>
           </div>
       </div>
-      <div className="project__order"></div>
-      <div className="project__list"></div>
+      <div className="project__order">
+          <div className="project__order--select">
+                    <p>Sắp xếp theo: </p>
+          </div>
+          <div className="project__order--display">
+                <div className="project__order--display-list">
+                    <Image src = {peojectOrderDisplayListBtn} alt = ""/>
+                </div>
+                <div className="project__order--display-grid">
+                <Image src = {peojectOrderDisplayGridBtn} alt = "" />
+                </div>
+          </div>
+      </div>
+      <div className="project__list">
+          <CardProject title = "Website Coteccons" toDo = {`Interaction & Development`} category = "Thời trang"/>
+      </div>
     </div>
   );
 }
