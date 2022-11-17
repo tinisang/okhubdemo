@@ -1,0 +1,27 @@
+.button__category {
+  padding: 30px 55px;
+  border: solid 1px #d9d9d9;
+  border-radius: 82px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.button__category p {
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.button__category.active {
+  background: #000;
+}
+.button__category.active p {
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ffffff;
+}

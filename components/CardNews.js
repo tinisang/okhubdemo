@@ -18,7 +18,7 @@ export const CardNews = () => {
   return (
     <div className="card__container">
       <div className="card__img">
-        <Image src = {imgCard}/>
+        <Image src = {imgCard} alt = ""/>
       </div>
       <div className="card__content">
         <div className="card__note">
@@ -32,17 +32,17 @@ export const CardNews = () => {
         </div>
         <div className="card__info">
           <div className="card__infor-time">
-            <Image src={calendarCard} />
+            <Image src={calendarCard} alt = ""/>
             <p>Posted on 05/11/2022</p>
           </div>
           <div className="card__info-user">
-            <Image src={userCard} />
+            <Image src={userCard} alt = ""/>
             <p>Tien Dung Tran</p>
           </div>
         </div>
         <div className="card__btn-next">
           <div className="card__btn">
-            <Image src={nextIcon} />
+            <Image src={nextIcon} alt = ""/>
           </div>
           <div className="card__next-text">ĐỌC TIẾP</div>
         </div>
