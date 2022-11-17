@@ -191,7 +191,7 @@
   height: 400px;
 }
 .news__status__item-other .card__container .card__content {
-    margin-left: 0;
+    margin-left: 32px;
 }
 
 .news__status__item-other .card__container .card__note{
