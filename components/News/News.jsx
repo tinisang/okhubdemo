@@ -59,8 +59,8 @@ export const News = () => {
               value="hello"
               onChange={handelChange}
             >
-              {scoreData.map((scoreValue) => {
-                return <MenuItem value={scoreValue}>{scoreValue}</MenuItem>;
+              {scoreData.map((scoreValue, index) => {
+                return <MenuItem key = {index} value={scoreValue}>{scoreValue}</MenuItem>;
               })}
             </Select>
           </FormControl>
