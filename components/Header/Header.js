@@ -7,8 +7,8 @@ export const Header = () => {
     <>
       {/* <div className="header">
         <div className="NewsDetail__header">
-          <Image src={logoNewsDetail} />
-          <Image src={menuNewsDetail} />
+          <Image src={logoNewsDetail} alt = ""/>
+          <Image src={menuNewsDetail} alt = ""/>
         </div>
       </div> */}
     </>

@@ -19,6 +19,8 @@ import '../styles/HOME/ReviewSection.css'
 import '../styles/HOME/Video.css'
 import '../styles/News/News.css'
 import '../styles/numberPage.css'
+import '../styles/Project/project.css'
+import '../styles/Button/ButtonCategory.css'
 
 function MyApp({ Component, pageProps }) {
   // console.log(headerData);

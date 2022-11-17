@@ -20,11 +20,11 @@ export const FooterNav = () => {
         </p>
       </div>
       <div className="footer__nav--icon">
-        <div className="footer__nav--fb" > <Image src = {fbIcon}/> </div>
-        <div className="footer__nav--ins" > <Image src = {insIcon}/> </div>
-        <div className="footer__nav--be" > <Image src = {beIcon}/> </div>
-        <div className="footer__nav--other" > <Image src = {otherIcon}/> </div>
-        <div className="footer__nav--tiktok" > <Image src = {tiktokIcon}/> </div>
+        <div className="footer__nav--fb" > <Image src = {fbIcon} alt = ""/> </div>
+        <div className="footer__nav--ins" > <Image src = {insIcon} alt = ""/> </div>
+        <div className="footer__nav--be" > <Image src = {beIcon} alt = ""/> </div>
+        <div className="footer__nav--other" > <Image src = {otherIcon} alt = ""/> </div>
+        <div className="footer__nav--tiktok" > <Image src = {tiktokIcon} alt = ""/> </div>
       </div>
     </div>
     {/*  */}

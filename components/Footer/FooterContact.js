@@ -12,7 +12,7 @@ export const FooterContact = () => {
     <>
       <div className="footer__contact">
           <div className="footer__contact--logo">
-            <Image src = {logo}/>
+            <Image src = {logo} alt = ""/>
           </div>
           <p className="footer__contact--title">THÔNG TIN LIÊN HỆ</p>
           <p className="footer__contact--des">
@@ -27,13 +27,13 @@ export const FooterContact = () => {
           <p className="footer__contact--title">WEBSITE</p>
           <p className="footer__contact--des">www.okhub.vn</p>
           <div className="footer__contact--img1">
-            <Image src={imgFooter1} />
+            <Image src={imgFooter1} alt = ""/>
           </div>
           <div className="footer__contact--img2">
-            <Image src={imgFooter2} />
+            <Image src={imgFooter2} alt = ""/>
           </div>
           <div className="footer__contact--img3">
-            <Image src={imgFooter3} />
+            <Image src={imgFooter3} alt = ""/>
           </div>
         </div>
     </>

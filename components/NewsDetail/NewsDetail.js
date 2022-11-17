@@ -49,18 +49,18 @@ export const NewsDetail = () => {
   return (
     <div className="container">
       <div className="NewsDetail__back">
-        <Image src={aroowLeft} />
+        <Image src={aroowLeft} alt = ""/>
         <p>Quay lại trang danh sách</p>
       </div>
       {/*  */}
       <div className="NewsDetail__primary">
         <div className="NewsDetail__primary-info">
           <div className="NewsDetail__primary-time">
-            <Image src={calendarNewsDetail} />
+            <Image src={calendarNewsDetail} alt = ""/>
             <p>Posted on 05/11/2022</p>
           </div>
           <div className="NewsDetail__primary-user">
-            <Image src={userNewsDetail} />
+            <Image src={userNewsDetail} alt = ""/>
             <p>Tien Dung Tran</p>
           </div>
         </div>
@@ -71,7 +71,7 @@ export const NewsDetail = () => {
         <Image
           src={imagePrimaryNewsDetail}
           className="NewsDetail__primary-img"
-        />
+          alt = "" />
       </div>
       <div className="NewsDetail__info">
         <div className="NewsDetail__info--categories">
@@ -94,16 +94,16 @@ export const NewsDetail = () => {
           <p>Chia sẻ</p>
           <div className="NewsDetail__share--icons-item">
             <Link href="facebook.com">
-              <Image src={NewsDetailFbIcon} />
+              <Image src={NewsDetailFbIcon} alt = ""/>
             </Link>
             <Link href="facebook.com">
-              <Image src={NewsDetailInsIcon} />
+              <Image src={NewsDetailInsIcon} alt = ""/>
             </Link>
             <Link href="facebook.com">
-              <Image src={NewDetailBeIcon} />
+              <Image src={NewDetailBeIcon} alt = ""/>
             </Link>
             <Link href="facebook.com">
-              <Image src={NewsDetailFbIcon} />
+              <Image src={NewsDetailFbIcon} alt = ""/>
             </Link>
           </div>
         </div>
@@ -163,10 +163,10 @@ export const NewsDetail = () => {
             </SwiperSlide>
           </Swiper>
           <div className="newsDetail__status--prev">
-            <Image src={newsDetailStatusBtnPrev} />
+            <Image src={newsDetailStatusBtnPrev} alt = ""/>
           </div>
           <div className="newsDetail__status--next">
-            <Image src={newsDetailStatusBtnNext} />
+            <Image src={newsDetailStatusBtnNext} alt = ""/>
           </div>
         </div>
       </div>
@@ -210,10 +210,10 @@ export const NewsDetail = () => {
         </Swiper>
         <div className="image-container">
           <div className="NewsDetail__document--prev">
-            <Image src={arrowLeftNewsDetailDocuments} className="image-item" />
+            <Image src={arrowLeftNewsDetailDocuments} className="image-item" alt = ""/>
           </div>
           <div className="NewsDetail__document--next">
-            <Image src={arrowNextNewsDetailDocuments} />
+            <Image src={arrowNextNewsDetailDocuments} alt = ""/>
           </div>
         </div>
       </div>

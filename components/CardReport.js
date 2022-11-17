@@ -14,11 +14,11 @@ export const CardReport = () => {
        </div>
        <div className="card-report__time-dow">
          <div className="card-report__time">
-           <Image src = {calendarCard}/>
+           <Image src = {calendarCard}alt = ""/>
            <p>Posted on 05/11/2022</p>
          </div>
          <div className="card-report__dow">
-          <Image src = {arrowDownCardReport} />
+          <Image src = {arrowDownCardReport} alt = ""/>
           <p>TẢI XUỐNG</p>
          </div>
        </div>
