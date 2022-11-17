@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper";
 import "swiper/css";
@@ -20,7 +21,7 @@ import newsDetailStatusBtnNext from "../../public/imgs/newsDetailStatusBtnNext.p
 import arrowLeftNewsDetailDocuments from "../../public/imgs/arrowLeftNewsDetailDocuments.png";
 import arrowNextNewsDetailDocuments from "../../public/imgs/arrowNextNewsDetailDocuments.png";
 
-import Image from "next/image";
+
 export const NewsDetail = () => {
   const dataInfoCategory = [
     {
@@ -64,7 +65,7 @@ export const NewsDetail = () => {
           </div>
         </div>
         <p className="NewsDetail__primary-title">
-          Bức tranh thị trường thời trang trong <br></br>
+          Bức tranh thị trường thời trang trong 
           thời kỳ suy thoái kinh tế toàn cầu
         </p>
         <Image
