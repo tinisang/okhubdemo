@@ -1,15 +1,171 @@
-.header{
+.header-section{
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(255,255,255,0.5);
-}
-.NewsDetail__header{
-    background: #FFFCFA;
-    width: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 1000;
+    background-color: white;
+    padding-top: 17px;
+    padding-bottom: 17px;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    /* margin-left: 100px; */
+    transition: 1s;
+}
+.header-section.opening{
+    background-color: transparent;
+}
+.header-section .logo-area{
+    width: fit-content;
+    height: 101px;
+}
+
+.header-section .logo-area .logo-icon{
+    height: 100%;
+}
+
+.header-section .logo-area .logo-icon img{
+    height: 100% !important;
+    object-fit: contain;
+    object-position: left;
+    transition: 0.5s;
+}
+
+.menu-trigger{
+    cursor: pointer;
+}
+
+
+
+.menu-trigger .hamburger-icon{
+    width: 66px;
+    height: 66px;
+    border: 2px solid black;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    align-items: center;
+    justify-content: center;
+}
+.menu-trigger .hamburger-icon .line{
+    height: 2px;
+    width:30px ;
+    background-color: black;
+    border-radius: 100px;
+    display: block;
+    transition: .3s;
+}
+
+.menu-trigger.opening .line2{
+    transform: translateX(-50px);
+    opacity: 0;
+}
+.menu-trigger.opening .line1{
+    transform-origin: center center;
+    transform: translateY(9px) rotate(45deg);
+    
+  
+}
+.menu-trigger.opening .line3{
+    transform-origin: center center;
+    transform: translateY(-9px) rotate(-45deg);
+  
+}
+
+
+.header-section.opening .menu-trigger .hamburger-icon{ 
+    border: 2px solid white;
+}
+
+.header-section.opening .menu-trigger .hamburger-icon .line{ 
+    background-color: white;
+}
+
+
+/*---------DROPDOWN---------*/
+.dropdown-section.opening{
+
+    width: 100vw;
+    padding-left: 100px;
+    padding-right: 100px;
+   
+}
+.dropdown-section{
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    transition: .8s;
+    color: white;
+    align-items: center;
+    width: 0;
+    overflow: hidden;
+    padding: 0px;
+    
+}
+.dropdown-section .menu-area{
+    opacity: 0;
+}
+.dropdown-section.opening .menu-area{
+    opacity: 1;
+}
+.content-all{
+    transition: .5s;
+}
+.content-all.opening{
+    transform: translateX(-200px);
+}
+
+.dropdown-section .parent{
+    font-family: Be Vietnam Pro;
+    font-size: 55px;
+    font-weight: 300;
+    line-height: 83px;
+    letter-spacing: 0em;
+    text-align: left;
+    transition: .3s;
+
+}
+.dropdown-section .menu-area{
+    position: relative;
+    transition: .3s;
+}
+.dropdown-section .menu-area ul.sub-menu{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-family: Be Vietnam Pro;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 83px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin: 0px;
+    height: 100%;
+    width: max-content;
+       
+    transform: translateX(calc(100% + 230px));
+    display: none;
+}
+
+.dropdown-section .menu-area ul.sub-menu li{
+    list-style: none;
+}
+.dropdown-section .menu-item:hover .sub-menu{
+    display: block;
+}
+.dropdown-section .menu-item:hover .parent{
+    font-family: Be Vietnam Pro;
+    font-size: 55px;
+    font-weight: 700;
+    line-height: 83px;
+    letter-spacing: 0em;
+    text-align: left;
+    letter-spacing: 2px;
+    text-shadow: 0px 0px 15px rgba(255,255,255,0.4);
+
 }

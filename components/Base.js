@@ -13,7 +13,10 @@ export const Base = (props) => {
       </Head>
       
       <Header/>
+      <div className="content-all">
+
       {props.children}
+      </div>
       <Footer/>
     </>
   );
