@@ -1,0 +1,7 @@
+.card__project--container {
+    width: 50%;
+    height: auto;
+}
+.card__project--container img {
+    width: 100%;
+}
