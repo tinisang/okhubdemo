@@ -179,7 +179,7 @@
 }
 
 .news__documents {
-  width: 35px;
+  width: 35%;
 }
 .news__status__item-other {
   width: 100%;
@@ -217,4 +217,31 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 32px;
   margin-top: 32px;
+}
+
+.news__status--item-btn{
+  display: flex;
+  justify-content: center;
+  margin-top: 62.7px;
+}
+/* -------------------------------------------- */
+.news__primary {
+  display: flex;
+}
+
+.news__documents{
+  margin-right: 100px;
+  margin-left: 32px;
+}
+
+.news__documents-text p{
+  font-family: 'Be Vietnam Pro';
+font-style: normal;
+font-weight: 700;
+font-size: 33px;
+line-height: 45px;
+/* identical to box height, or 136% */
+
+
+color: #000000;
 }
