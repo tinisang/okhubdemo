@@ -21,7 +21,7 @@ import newsDetailStatusBtnNext from "../../public/imgs/newsDetailStatusBtnNext.p
 import arrowLeftNewsDetailDocuments from "../../public/imgs/arrowLeftNewsDetailDocuments.png";
 import arrowNextNewsDetailDocuments from "../../public/imgs/arrowNextNewsDetailDocuments.png";
 
-import Image from "next/image";
+
 export const NewsDetail = () => {
   const dataInfoCategory = [
     {

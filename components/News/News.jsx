@@ -82,11 +82,18 @@ export const News = () => {
             <div className="news__status--items-text">
                 <p>Bài viết</p>
             </div>
-            <div className="news__status--item">
+            <div className="news__status--items">
               <div className="news__status__item-other">
                     <CardNews/>
               </div>
+              <div className = "news__status__item">
+                <CardNews/>
+                <CardNews/>
+                <CardNews/>
+                <CardNews/>
+              </div>
             </div>
+
             <div className="news__status--item-btn"></div>
           </div>
         </div>

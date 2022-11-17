@@ -211,3 +211,10 @@
   border-bottom-left-radius: 24px;
   border-top-right-radius: 0px;
 }
+/* ---------------------------------------------------------------------- */
+.news__status__item {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-top: 32px;
+}
