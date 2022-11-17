@@ -53,6 +53,12 @@
 }
 .card__info-user p {
   margin: 0;
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 36px;
+  color: #777777;
 }
 
 .card__infor-time p {

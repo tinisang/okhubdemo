@@ -174,7 +174,7 @@
 
 .news__status {
   width: 65%;
-  padding-bottom: 200px;
+  padding-bottom: 99px;
   margin-left: 100px;
 }
 
@@ -183,6 +183,12 @@
 }
 .news__status__item-other {
   width: 100%;
+}
+.news__status__item-other .cacrd__container .card__img{
+  width: 50%;
+}
+.news__status__item-other .cacrd__container .card__img img {
+  width: 50%;
 }
 .news__status__item-other .card__container {
   display: flex;
@@ -194,15 +200,16 @@
   margin-left: 32px;
 }
 
-.news__status__item-other .card__container .card__note {
+.news__status__item-other .card__container .card__note { 
   margin-top: 60px;
 }
 .news__status__item-other .card__container .card__btn-next {
   margin-top: 44px;
   margin-bottom: 0;
 }
+/* fix width image at item first */
 .news__status__item-other .card__container .card__img {
-  width: 50%;
+  width: 65%;
   height: auto;
 }
 
