@@ -126,11 +126,15 @@
 .dropdown-section .parent{
     font-family: Be Vietnam Pro;
     font-size: 55px;
-    font-weight: 300;
+    font-weight: 500;
     line-height: 83px;
     letter-spacing: 0em;
     text-align: left;
     transition: .3s;
+
+}
+.dropdown-section .parent:hover{
+   color:rgba(142, 103, 254, 1)
 
 }
 .dropdown-section .menu-area{
@@ -177,7 +181,7 @@
     letter-spacing: 0em;
     text-align: left; */
     /* letter-spacing: 2px; */
-    text-shadow: 0px 0px 15px rgba(255,255,255,0.4);
+    /* text-shadow: 0px 0px 15px rgba(255,255,255,0.4); */
 
 }
 .dropdown-section .menu-item .parent{
