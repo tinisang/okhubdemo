@@ -11,7 +11,7 @@
     justify-content: center;
 }
 
-.active{
+.number__page.active{
     background: #000000;
 }
 

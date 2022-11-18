@@ -6,6 +6,7 @@ import peojectOrderDisplayGridBtn from "../../public/imgs/peojectOrderDisplayGri
 import { CardProject } from "../../components/CardProject";
 import {NumberPage} from "../../components/NumberPage"
 import { useState } from "react";
+import { ListProject } from "../../components/ListProject";
 
 export default function Projects() {
   const [display, setDisplay] = useState(false);
@@ -52,7 +53,7 @@ export default function Projects() {
       </div>
       {
         display ? (
-          <div className="project__list">
+          <div className="project__grid">
           <CardProject title = "Website Coteccons" toDo = {`Interaction & Development`} category = "Thời trang"/>
           <CardProject title = "Website Coteccons" toDo = {`Interaction & Development`} category = "Thời trang"/>
           <CardProject title = "Website Coteccons" toDo = {`Interaction & Development`} category = "Thời trang"/>
@@ -61,7 +62,10 @@ export default function Projects() {
           <CardProject title = "Website Coteccons" toDo = {`Interaction & Development`} category = "Thời trang"/>
       </div>
         ) : (
-          <div className="project__grid"></div>
+          <div className="project__list">
+            <div className=""></div>
+            <ListProject/>
+          </div>
         )
       }
       <div className="project__number--page">
