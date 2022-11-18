@@ -5,8 +5,11 @@ import peojectOrderDisplayListBtn from "../../public/imgs/peojectOrderDisplayLis
 import peojectOrderDisplayGridBtn from "../../public/imgs/peojectOrderDisplayGridBtn.png"
 import { CardProject } from "../../components/CardProject";
 import {NumberPage} from "../../components/NumberPage"
+import { useState } from "react";
 
 export default function Projects() {
+  const [display, setDisplay] = useState(false);
+  console.log(display);
   return (
     <div className="project__container">
       <div className="project__header">
@@ -22,14 +25,14 @@ export default function Projects() {
               <div className="project__categories--title-bg"><p>Our Projects</p></div>
               </div>
               <div className="project__categories--item">
-                  <ButtonCategory category = "Mỹ phẩm" active = {false}/>
-                  <ButtonCategory category = "Tài chính" active = {false}/>
-                  <ButtonCategory category = "Tất cả dự án" active = {true}/>
-                  <ButtonCategory category = "Nội thất - kiến trúc" active = {false}/>
-                  <ButtonCategory category = "Xây dựng" active = {false}/>
-                  <ButtonCategory category = "Du lịch" active = {false}/>
-                  <ButtonCategory category = "Bất động sản" active = {false}/>
-              </div>
+                <ButtonCategory category = "Mỹ phẩm" active = {false}/>
+                <ButtonCategory category = "Tài chính" active = {false}/>
+                <ButtonCategory category = "Tất cả dự án" active = {true}/>
+                <ButtonCategory category = "Nội thất - kiến trúc" active = {false}/>
+                <ButtonCategory category = "Xây dựng" active = {false}/>
+                <ButtonCategory category = "Du lịch" active = {false}/>
+                <ButtonCategory category = "Bất động sản" active = {false}/>
+            </div>
           </div>
       </div>
       <div className="project__order">
@@ -38,14 +41,16 @@ export default function Projects() {
           </div>
           <div className="project__order--display">
                 <div className="project__order--display-list">
-                    <Image src = {peojectOrderDisplayListBtn} alt = ""/>
+                    <Image src = {peojectOrderDisplayListBtn} alt = "" onClick={() => setDisplay(true)}/>
                 </div>
                 <div className="project__order--display-grid">
-                <Image src = {peojectOrderDisplayGridBtn} alt = "" />
+                <Image src = {peojectOrderDisplayGridBtn} alt = ""  onClick={() => setDisplay(false)}/>
                 </div>
           </div>
       </div>
-      <div className="project__list">
+      {
+        display ? (
+          <div className="project__list">
           <CardProject title = "Website Coteccons" toDo = {`Interaction & Development`} category = "Thời trang"/>
           <CardProject title = "Website Coteccons" toDo = {`Interaction & Development`} category = "Thời trang"/>
           <CardProject title = "Website Coteccons" toDo = {`Interaction & Development`} category = "Thời trang"/>
@@ -53,6 +58,10 @@ export default function Projects() {
           <CardProject title = "Website Coteccons" toDo = {`Interaction & Development`} category = "Thời trang"/>
           <CardProject title = "Website Coteccons" toDo = {`Interaction & Development`} category = "Thời trang"/>
       </div>
+        ) : (
+          <div className="project__grid"></div>
+        )
+      }
       <div className="project__number--page">
         <NumberPage number = "1" active = {true}/>
         <NumberPage number = "2" active = {false}/>

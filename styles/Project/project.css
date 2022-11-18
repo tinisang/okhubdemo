@@ -120,6 +120,10 @@
 .project__list .card__project--container {
   margin-top: 70px;
 }
+/* ------------------------------------------- */
+.project__grid {
+  height: 100vh;
+}
 /* -------------------------------------- */
 .project__number--page {
   display: flex;
