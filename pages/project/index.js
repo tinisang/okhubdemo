@@ -4,6 +4,7 @@ import { ButtonCategory } from "../../components/Button/ButtonCategory";
 import peojectOrderDisplayListBtn from "../../public/imgs/peojectOrderDisplayListBtn.png"
 import peojectOrderDisplayGridBtn from "../../public/imgs/peojectOrderDisplayGridBtn.png"
 import { CardProject } from "../../components/CardProject";
+import {NumberPage} from "../../components/NumberPage"
 
 export default function Projects() {
   return (
@@ -46,6 +47,18 @@ export default function Projects() {
       </div>
       <div className="project__list">
           <CardProject title = "Website Coteccons" toDo = {`Interaction & Development`} category = "Thời trang"/>
+          <CardProject title = "Website Coteccons" toDo = {`Interaction & Development`} category = "Thời trang"/>
+          <CardProject title = "Website Coteccons" toDo = {`Interaction & Development`} category = "Thời trang"/>
+          <CardProject title = "Website Coteccons" toDo = {`Interaction & Development`} category = "Thời trang"/>
+          <CardProject title = "Website Coteccons" toDo = {`Interaction & Development`} category = "Thời trang"/>
+          <CardProject title = "Website Coteccons" toDo = {`Interaction & Development`} category = "Thời trang"/>
+      </div>
+      <div className="project__number--page">
+        <NumberPage number = "1" active = {true}/>
+        <NumberPage number = "2" active = {false}/>
+        <NumberPage number = "3" active = {false}/>
+        <NumberPage number = "4" active = {false}/>
+        <NumberPage number = "5" active = {false}/>
       </div>
     </div>
   );
