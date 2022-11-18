@@ -6,6 +6,11 @@ export const CardProject = (props) => {
   return (
     <div className='card__project--container'>
         <div className='card__project--img'>
+          <div className='card__project--img-sub'>
+            <div className='card__project--img-eclipse'></div>
+            <div className='card__project--img-eclipse'></div>
+            <div className='card__project--img-eclipse'></div>
+          </div>
             <Image src = {cardProjectImg} slt = '' />
         </div>
         <div className='card__project--title'>
