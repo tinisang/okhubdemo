@@ -12,7 +12,7 @@ export const ListProject = ({id, name, toDoData, category}) => {
         <div className='list__to-do'>
             {
                 toDoData?.map((name) => (
-                    <p>{name}</p>
+                    <p key = {name} >{name}</p>
                 ))
             }
         </div>
