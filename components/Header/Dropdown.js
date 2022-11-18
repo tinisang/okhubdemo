@@ -17,6 +17,8 @@ import imagefloat1 from '../../public/imgs/imagefloat1.png'
 
 export const DropDown = ({status})=>{
 
+    const currentIndex = useRef(0)
+
     const imagesMenu = [
         [
             'https://blog-frontend.envato.com/cdn-cgi/image/width=820,quality=75,format=auto/uploads/2020/04/SOC091_FreeTutsCourses_WebDesign@2x.png',
@@ -62,18 +64,23 @@ export const DropDown = ({status})=>{
     
     
     const HandleMenuHover =(index)=>{
+
+        if (currentIndex.current != index){
+
+  
+        
         imageItems.current = imageItems.current.filter(value => value != null)
        
         gsap.to(imageItems.current,{
               opacity:0,
-                duration: 0.15,
+                duration: 0.2,
                 ease:'out'
              
             })
+            function changeImage(){
             imageItems.current.forEach((element,i)=>{
                 element.querySelector('img').srcset = imagesMenu[index][i]
             })
-        function changeImage(){
             
             gsap.from(imageItems.current.filter((value, index) => index % 2 ==0),{
                 y:'-=80',
@@ -94,7 +101,9 @@ export const DropDown = ({status})=>{
            
            
         }
-        setTimeout(changeImage,200)
+        setTimeout(changeImage,300)
+        currentIndex.current = index
+    }
     }
     useLayoutEffect(()=>{
         
