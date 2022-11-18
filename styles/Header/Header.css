@@ -23,6 +23,9 @@
 .header-section .logo-area .logo-icon{
     height: 100%;
 }
+.header-section .logo-area .logo-icon path{
+    opacity: 1;
+}
 
 .header-section .logo-area .logo-icon img{
     height: 100% !important;
