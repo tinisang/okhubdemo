@@ -8,9 +8,41 @@ import { NumberPage } from "../../components/NumberPage";
 import { useState } from "react";
 import { ListProject } from "../../components/ListProject";
 
+import gsap from "gsap";
+import { useEffect, useRef } from 'react';
+import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
+
 export default function Projects() {
   const [display, setDisplay] = useState(false);
-  console.log(display);
+  const currentCategory = useRef(0)
+
+  const handleCatSelect=(index)=>{
+    var PrevselectedContent = document.querySelector(`.project__categories--item button:nth-child(${currentCategory.current +1})`)
+    var selectedContent = document.querySelector(`.project__categories--item button:nth-child(${index+1})`)
+
+    var offsetX = window.innerWidth/2 - selectedContent.clientWidth/2;
+
+
+    PrevselectedContent.classList.remove('active')
+    selectedContent.classList.add('active')
+    gsap.to('.project__categories--item',{
+      scrollTo:{
+        x: selectedContent,
+        offsetX: offsetX
+      },
+      duration:1,
+      ease:'easeOut'
+    })
+
+    currentCategory.current= index
+ 
+    
+    
+  }
+
+  gsap.registerPlugin(ScrollToPlugin);
+
+
   return (
     <div className="project__container">
       <div className="project__header">
@@ -31,15 +63,20 @@ export default function Projects() {
             </div>
           </div>
           <div className="project__categories--item">
-            <ButtonCategory category="Mỹ phẩm" active={false} />
-            <ButtonCategory category="Tài chính" active={false} />
-            <ButtonCategory category="Tất cả dự án" active={true} />
-            <ButtonCategory category="Nội thất - kiến trúc" active={false} />
-            <ButtonCategory category="Xây dựng" active={false} />
-            <ButtonCategory category="Du lịch" active={false} />
-            <ButtonCategory category="Bất động sản" active={false} />
-            <ButtonCategory category="Bất động sản" active={false} />
-            <ButtonCategory category="Bất động sản" active={false} />
+            <ButtonCategory category="Mỹ phẩm"  onClick={()=>{handleCatSelect(0)}} />
+            <ButtonCategory category="Tài chính"  onClick={()=>{handleCatSelect(1)}} />
+            <ButtonCategory category="Tất cả dự án" onClick={()=>{handleCatSelect(2)}} />
+            <ButtonCategory category="Nội thất - kiến trúc"  onClick={()=>{handleCatSelect(3)}} />
+            <ButtonCategory category="Xây dựng"  onClick={()=>{handleCatSelect(4)}} />
+            <ButtonCategory category="Du lịch"  onClick={()=>{handleCatSelect(5)}} />
+            <ButtonCategory category="Bất động sản"  onClick={()=>{handleCatSelect(6)}} />
+            <ButtonCategory category="Bất động sản"  onClick={()=>{handleCatSelect(7)}} />
+            <ButtonCategory category="Bất động sản"  onClick={()=>{handleCatSelect(8)}} />
+            <ButtonCategory category="Bất động sản"  onClick={()=>{handleCatSelect(9)}} />
+            <ButtonCategory category="Bất động sản"  onClick={()=>{handleCatSelect(10)}}/>
+            <ButtonCategory category="Bất động sản"  onClick={()=>{handleCatSelect(11)}}/>
+            <ButtonCategory category="Bất động sản"  onClick={()=>{handleCatSelect(12)}}/>
+            <ButtonCategory category="Bất động sản"  onClick={()=>{handleCatSelect(13)}}/>
           </div>
         </div>
       </div>
@@ -147,10 +184,10 @@ export default function Projects() {
       )}
       <div className="project__number--page">
         <NumberPage number="1" active={true} />
-        <NumberPage number="2" active={false} />
-        <NumberPage number="3" active={false} />
-        <NumberPage number="4" active={false} />
-        <NumberPage number="5" active={false} />
+        <NumberPage number="2"  />
+        <NumberPage number="3"  />
+        <NumberPage number="4"  />
+        <NumberPage number="5"  />
       </div>
     </div>
   );
