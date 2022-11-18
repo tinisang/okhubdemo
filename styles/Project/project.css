@@ -110,19 +110,20 @@
 }
 
 /* ----------------------------------- */
-.project__list {
+.project__grid {
   margin: 0 100px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 30px;
 }
 
-.project__list .card__project--container {
+.project__grid .card__project--container {
   margin-top: 70px;
 }
 /* ------------------------------------------- */
-.project__grid {
+.project__list {
   height: 100vh;
+  margin: 0 100px;
 }
 /* -------------------------------------- */
 .project__number--page {

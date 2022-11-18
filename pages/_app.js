@@ -21,7 +21,7 @@ import '../styles/News/News.css'
 import '../styles/numberPage.css'
 import '../styles/Project/project.css'
 import '../styles/Button/ButtonCategory.css'
-import '../styles/cardProject.css'
+import '../styles/Project/cardProject.css'
 
 function MyApp({ Component, pageProps }) {
   // console.log(headerData);
