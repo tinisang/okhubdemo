@@ -32,6 +32,8 @@ export default function Projects() {
                 <ButtonCategory category = "Xây dựng" active = {false}/>
                 <ButtonCategory category = "Du lịch" active = {false}/>
                 <ButtonCategory category = "Bất động sản" active = {false}/>
+                <ButtonCategory category = "Bất động sản" active = {false}/>
+                <ButtonCategory category = "Bất động sản" active = {false}/>
             </div>
           </div>
       </div>
@@ -41,10 +43,10 @@ export default function Projects() {
           </div>
           <div className="project__order--display">
                 <div className="project__order--display-list">
-                    <Image src = {peojectOrderDisplayListBtn} alt = "" onClick={() => setDisplay(true)}/>
+                    <Image src = {peojectOrderDisplayListBtn} alt = "" onClick={() => setDisplay(false)}/>
                 </div>
                 <div className="project__order--display-grid">
-                <Image src = {peojectOrderDisplayGridBtn} alt = ""  onClick={() => setDisplay(false)}/>
+                <Image src = {peojectOrderDisplayGridBtn} alt = ""  onClick={() => setDisplay(true)}/>
                 </div>
           </div>
       </div>
