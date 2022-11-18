@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const ButtonCategory = ({category, active}) => {
+export const ButtonCategory = ({category, onClick}) => {
     return (
         <>
-          <button className={`button__category ${active ? `active` : ``}`}>
+          <button onClick={onClick} className={`button__category`}>
             <p>{category}</p>
           </button>
         </>
