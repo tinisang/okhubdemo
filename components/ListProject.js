@@ -1,8 +1,9 @@
 import React from 'react'
+import Link from 'next/link'
 
 export const ListProject = ({id, name, toDoData, category}) => {
   return (
-    <div className='list--container'>
+    <Link href="#" className='list--container'>
         <div className='list__NO'>
             <p>{id}</p>
         </div>
@@ -19,6 +20,6 @@ export const ListProject = ({id, name, toDoData, category}) => {
         <div className='list__category'>
             <p>{category}</p>
         </div>
-    </div>
+    </Link>
   )
 }

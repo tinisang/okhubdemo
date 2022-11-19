@@ -2,6 +2,7 @@
   /* width: 50%; */
   height: auto;
 }
+
 .card__project--img {
   filter: drop-shadow(40px 40px 100px rgba(112, 143, 163, 0.16));
   backdrop-filter: blur(2px);
@@ -26,6 +27,7 @@
   width: 100%;
   height: 
   377.88px;
+  object-fit: cover;
 }
 
 .card__project--title p {

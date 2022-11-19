@@ -1,10 +1,11 @@
 import React from 'react'
 import Image from 'next/image';
 import cardProjectImg from "../public/imgs/cardProjectImg.png"
+import Link from 'next/link';
 
 export const CardProject = (props) => {
   return (
-    <div className='card__project--container'>
+    <Link href = "#" className='card__project--container'>
         <div className='card__project--img'>
           <div className='card__project--img-sub'>
             <div className='card__project--img-eclipse'></div>
@@ -20,7 +21,7 @@ export const CardProject = (props) => {
             <div className='card__project--des-todo'>{props.toDo}</div>
             <div className='card__project--des-category'>{props.category}</div>
         </div>
-    </div>
+    </Link>
 
   )
 }
