@@ -24,7 +24,13 @@
 }
 
 .project__header--text p span {
-  color: rgba(0, 0, 0, 0.03);
+  font-family: Be Vietnam Pro;
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 98px;
+  letter-spacing: 0em;
+  text-align: left;
+
 }
 
 /* ----------------------------------------------- */

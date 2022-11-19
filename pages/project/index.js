@@ -47,9 +47,9 @@ export default function Projects() {
     <div className="project__container">
       <div className="project__header">
         <Button text="Credential" />
-        <div className="project__header--text">
+        <div className="project__header--text" dangerouslySetInnerHTML={{}}>
           <p>
-            Với mỗi dự án<br></br> là sự đảm <span>bảo</span> <br></br> về{" "}
+            Với mỗi dự án<br></br> là <span>sự đảm bảo</span> <br></br> về{" "}
             <span>sản phẩm {`&`} dịch vụ</span>
           </p>
         </div>
