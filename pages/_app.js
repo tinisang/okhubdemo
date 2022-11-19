@@ -23,6 +23,7 @@ import '../styles/Project/project.css'
 import '../styles/Button/ButtonCategory.css'
 import '../styles/Project/cardProject.css'
 import "../styles/Project/listProject.css"
+import "../styles/Introduce/introduce.css"
 
 function MyApp({ Component, pageProps }) {
   // console.log(headerData);
