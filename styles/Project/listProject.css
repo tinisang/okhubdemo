@@ -55,8 +55,11 @@
   color: #111215;
 }
 
-
+.list--container p{
+  transition: 0.3s;
+}
 .list--container:hover p{
     color: #AEAEAE;
     cursor: pointer;
+   
 }

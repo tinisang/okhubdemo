@@ -12,7 +12,14 @@ export const CardProject = (props) => {
             <div className='card__project--img-eclipse'></div>
             <div className='card__project--img-eclipse'></div>
           </div>
-            <Image src = {cardProjectImg} slt = '' />
+
+          <div className="image-feature">
+
+            <img src = {props.image || cardProjectImg} alt = '' layout='fill' />
+            <div className="view-project">
+              View
+            </div>
+          </div>
         </div>
         <div className='card__project--title'>
             <p>{props.title}</p>

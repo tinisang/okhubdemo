@@ -66,3 +66,39 @@
   line-height: 25px;
   color: #111215;
 }
+
+.card__project--img .image-feature .view-project{
+  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%) scale(0);
+  background-color: rgba(0, 0, 0, 0.66);
+  color: white;
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Be Vietnam Pro;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: left;
+  overflow: hidden;
+  outline: 0px solid rgba(0,0,0,.3);
+
+  transition:all 0.2s ease-out;
+
+}
+
+.card__project--img:hover .image-feature .view-project{
+  transform: translate(-50%,-50%) scale(1);
+}
+
+.card__project--img .image-feature .view-project:hover{
+  outline: 20px solid rgba(0,0,0,.3);
+  transform: translate(-50%,-50%) scale(1.06);
+}

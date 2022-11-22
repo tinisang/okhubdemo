@@ -120,8 +120,7 @@ export const DropDown = ({status})=>{
         };
         
      
-        
-        console.log(center)
+ 
         
         if (status){
             document.addEventListener('mousemove',function(e){
