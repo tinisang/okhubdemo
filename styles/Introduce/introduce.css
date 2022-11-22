@@ -1,6 +1,6 @@
 .introduce__container {
   width: 100%;
-  height: 100vh;
+  height: 100%;
 }
 .introduce__header {
   position: relative;
@@ -70,4 +70,177 @@
   font-family: "Be Vietnam Pro";
   font-style: normal;
   color: #f0f0f0;
+}
+
+/* -----------overview--------- */
+.introduce__overview {
+  width: 100%;
+  height: auto;
+  margin-top: 60px;
+  padding: 0 100px;
+  /* padding-bottom: 500px; */
+}
+
+.introduce__overview .introduce__overview--header {
+  display: flex;
+  align-items: flex-start;
+}
+
+.introduce__overview
+  .introduce__overview--header
+  .introduce__overview--header-title {
+  width: 40%;
+  display: flex;
+  align-items: center;
+}
+.introduce__overview
+  .introduce__overview--header
+  .introduce__overview--header-title
+  .introduce__overview--header-title-text
+  p {
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.introduce__overview--header-title .introduce__overview--header-title-point {
+  width: 18px;
+  height: 18px;
+  background-color: #000000;
+  border-radius: 50%;
+  margin-right: 16px;
+}
+.introduce__overview--header-des {
+  width: 60%;
+}
+.introduce__overview--header-des p {
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 33px;
+  line-height: 60px;
+  text-align: justify;
+  color: #000000;
+  margin: 0;
+}
+
+.introduce__overview--header-des p:nth-child(2) {
+  padding-top: 12px;
+}
+
+/*  */
+.introduce__overview--body {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.introduce__overview--body .introduce__overview--body-text {
+}
+
+.introduce__overview--body .introduce__overview--body-text .body-text--title {
+  width: 40%;
+}
+
+.introduce__overview--body .introduce__overview--body-text .body-text--title p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 52px;
+  line-height: 68px;
+  color: #000000;
+}
+
+.introduce__overview--body .introduce__overview--body-text .body-text--des {
+  width: 50%;
+}
+
+.introduce__overview--body .introduce__overview--body-text .body-text--des p {
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 42px;
+  text-align: justify;
+  color: #000000;
+}
+/*  */
+.introduce__overview--img {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.introduce__overview--img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.introduce__overview--img .introduce__img--text {
+  width: 40%;
+  position: absolute;
+  left: 12%;
+  bottom: 5%;
+}
+
+.introduce__overview--img .introduce__img--text p {
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 72px;
+  line-height: 92px;
+  color: #ffffff;
+}
+
+.introduce__overview--img .introduce__img--icon {
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 9%;
+  bottom: 50%;
+}
+
+.introduce__overview--img .introduce__img--icon img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.introduce__overview .introduce__overview--bg-okhub {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  margin-left: -32px;
+}
+ .introduce__overview--bg-VN {
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  margin-bottom: -500px;
+}
+.introduce__overview .introduce__overview--bg-okhub p{
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 180px;
+  line-height: 228px;
+  color: rgba(0, 0, 0, 0.03);
+}
+
+
+.introduce__overview--bg-VN p {
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 180px;
+  line-height: 228px;
+  color: rgba(0, 0, 0, 0.03);
 }
