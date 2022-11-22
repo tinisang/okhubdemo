@@ -11,32 +11,133 @@ import { ListProject } from "../../components/ListProject";
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 export default function Projects() {
   const [display, setDisplay] = useState(false);
-  const [fillGrid, setFillGrid] = useState('none');
-  const [strokeGrid, setStrokeGrid] = useState('#292D32');
-  const [fillList, setFillList] = useState('none');
-  const [strokeList, setStrokeList] = useState('#000000');
+  const cursor = useRef()
+
+  const data =[
+    {
+      featureImage:'https://codecanyon.img.customer.envatousercontent.com/files/395609916/Preview_image.jpeg?auto=compress%2Cformat&q=80&fit=crop&crop=top&max-h=8000&max-w=590&s=cdf5c10dd72df30b6aaaaa70b9c61b4a',
+      imagesList:[
+        'https://images.squarespace-cdn.com/content/v1/5c439fd8266c07ff148f5765/1600913470294-NQVNUBEGXH78LK2ZVK2I/Top+20+Ecommerce+App+Inspiration+Ideas+%231-1.jpg',
+        'https://i.pinimg.com/736x/28/80/14/288014f69b594b2c84b3b7fdee363de3.jpg',
+        'https://uifreebies.net/wp-content/uploads/2021/05/Clothing-E-Commerce-App-Design-Free.jpg'
+      ]
+    },
+    {
+      featureImage:'https://i.pinimg.com/736x/e1/b7/79/e1b779efe1069f49afbf4cef7eb90235.jpg',
+      imagesList:[
+        'https://images.squarespace-cdn.com/content/v1/5c439fd8266c07ff148f5765/1600913470294-NQVNUBEGXH78LK2ZVK2I/Top+20+Ecommerce+App+Inspiration+Ideas+%231-1.jpg',
+        'https://i.pinimg.com/736x/28/80/14/288014f69b594b2c84b3b7fdee363de3.jpg',
+        'https://uifreebies.net/wp-content/uploads/2021/05/Clothing-E-Commerce-App-Design-Free.jpg'
+      ]
+    },
+    {
+      featureImage:'https://themes.getbootstrap.com/wp-content/uploads/2021/05/soft-ui-design-system-thumbnail.jpg',
+      imagesList:[
+        'https://images.squarespace-cdn.com/content/v1/5c439fd8266c07ff148f5765/1600913470294-NQVNUBEGXH78LK2ZVK2I/Top+20+Ecommerce+App+Inspiration+Ideas+%231-1.jpg',
+        'https://i.pinimg.com/736x/28/80/14/288014f69b594b2c84b3b7fdee363de3.jpg',
+        'https://uifreebies.net/wp-content/uploads/2021/05/Clothing-E-Commerce-App-Design-Free.jpg'
+      ]
+    },
+    {
+      featureImage:'https://caphe.sfo2.cdn.digitaloceanspaces.com/assets/images/marvie-ios-ui-kit-for-sketch-and-figma-thumb.jpg',
+      imagesList:[
+        'https://images.squarespace-cdn.com/content/v1/5c439fd8266c07ff148f5765/1600913470294-NQVNUBEGXH78LK2ZVK2I/Top+20+Ecommerce+App+Inspiration+Ideas+%231-1.jpg',
+        'https://i.pinimg.com/736x/28/80/14/288014f69b594b2c84b3b7fdee363de3.jpg',
+        'https://uifreebies.net/wp-content/uploads/2021/05/Clothing-E-Commerce-App-Design-Free.jpg'
+      ]
+    },
+    {
+      featureImage:'https://img.freepik.com/free-vector/realistic-ui-ux-landing-page-template_52683-68898.jpg',
+      imagesList:[
+        'https://images.squarespace-cdn.com/content/v1/5c439fd8266c07ff148f5765/1600913470294-NQVNUBEGXH78LK2ZVK2I/Top+20+Ecommerce+App+Inspiration+Ideas+%231-1.jpg',
+        'https://i.pinimg.com/736x/28/80/14/288014f69b594b2c84b3b7fdee363de3.jpg',
+        'https://uifreebies.net/wp-content/uploads/2021/05/Clothing-E-Commerce-App-Design-Free.jpg'
+      ]
+    },
+    {
+      featureImage:'https://img.freepik.com/free-vector/flat-design-ui-ux-landing-page_52683-72187.jpg',
+      imagesList:[
+        'https://images.squarespace-cdn.com/content/v1/5c439fd8266c07ff148f5765/1600913470294-NQVNUBEGXH78LK2ZVK2I/Top+20+Ecommerce+App+Inspiration+Ideas+%231-1.jpg',
+        'https://i.pinimg.com/736x/28/80/14/288014f69b594b2c84b3b7fdee363de3.jpg',
+        'https://uifreebies.net/wp-content/uploads/2021/05/Clothing-E-Commerce-App-Design-Free.jpg'
+      ]
+    },
+    
+  ]
+
+  
+ 
 
   const currentCategory = useRef(0);
-  const handelDisplayGrid = () => {
+  const handleDisplayGrid = () => {
     setDisplay(true);
-    setFillGrid('black');
-    setStrokeGrid("white");
-    setFillList('none');
-    setStrokeList("#000000");
+
 
   }
 
-  const handelDisplayList = () => {
+  const handleDisplayList = () => {
     setDisplay(false);
-    setFillGrid('none');
-    setStrokeGrid("#292D32");
-    setFillList('black');
-    setStrokeList("white");
-  }
     
+  }
+  
+  useEffect(()=>{
+    var tl = gsap.timeline({
+      scrollTrigger:{
+          trigger:'.project__header',
+          // markers:true,
+          start:'top 0%',
+          end:'bottom 0%',
+          scrub:4,
+          pin:'.project__header'
+      },
+      ease:'easeInOut'
+    });
+
+    tl.to('.clone-text',{
+      width:"100%",
+      stagger:0.4
+    })
+
+   
+
+
+
+    return ()=>{
+      tl.scrollTrigger.kill()
+      
+      // tl.kill()
+    }
+    
+  },[])
+
+  useEffect(()=>{
+    
+     window.addEventListener('mousemove',function(e){
+      if (cursor.current){
+
+        gsap.to(cursor.current,{
+          left: e.clientX - cursor.current.clientWidth/2, 
+          top: e.clientY - cursor.current.clientHeight/2, 
+          ease:"power2.out",
+          duration:1,
+          delay:0.04,
+          // opacity:1
+      })
+      }
+      })
+
+    
+
+    return ()=>{
+      
+      window.removeEventListener('mousemove', function(){})
+      // tl.kill()
+    }
+  })
   
 
   const handleCatSelect = (index) => {
@@ -65,7 +166,27 @@ export default function Projects() {
     currentCategory.current = index;
   };
 
+
+  const handleHover =(index)=>{
+    var elementToScroll = document.querySelector(`.cursor-project-item .cursor-item:nth-child(${index+1})`)
+    gsap.to('.cursor-project-item',{
+      scrollTo:{
+        y:elementToScroll,
+        
+      },
+      duration:0.5
+    })
+  }
+
+  const handleMouseOutList = ()=>{
+ 
+  }
+  const handleMouseOverList = ()=>{
+ 
+  }
+  
   gsap.registerPlugin(ScrollToPlugin);
+  gsap.registerPlugin(ScrollTrigger);
 
   return (
     <div className="project__container">
@@ -73,8 +194,26 @@ export default function Projects() {
         <Button text="Credential" />
         <div className="project__header--text">
           <p>
-            Với mỗi dự án<br></br> là sự đảm <span>bảo</span> <br></br> về{" "}
-            <span>sản phẩm {`&`} dịch vụ</span>
+            Với mỗi dự án<br></br> là  {" "}
+            <span className="animation-text">
+              <span className="main-text">
+                  sự đảm bảo
+              </span>
+              <span className="clone-text">
+                  sự đảm bảo
+              </span>
+            </span> 
+            <br></br> về{" "}
+            
+
+            <span className="animation-text">
+              <span className="main-text">
+              sản phẩm {`&`} dịch vụ
+              </span>
+              <span className="clone-text">
+              sản phẩm {`&`} dịch vụ
+              </span>
+            </span> 
           </p>
         </div>
       </div>
@@ -179,121 +318,73 @@ export default function Projects() {
           <p>Sắp xếp theo: </p>
         </div>
         <div className="project__order--display">
-          <div className="project__order--display-list">
-            <svg
-              onClick={handelDisplayList}
-              width="81"
-              height="81"
-              viewBox="0 0 81 81"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="40.5" cy="40.5" r="40.5" fill={fillList} stroke = "#D9D9D9"
-              />
-              <path
-                d="M28.05 33.45H52.35"
-                stroke={strokeList}
-                stroke-width="1.5"
-                stroke-linecap="round"
-              />
-              <path
-                d="M28.05 40.2H52.35"
-                stroke={strokeList}
-                stroke-width="1.5"
-                stroke-linecap="round"
-              />
-              <path
-                d="M28.05 46.95H52.35"
-                stroke={strokeList}
-                stroke-width="1.5"
-                stroke-linecap="round"
-              />
-            </svg>
+          <div className={"project__order--display-list " + (display ?'':'active' )}  onClick={()=> handleDisplayList()}>
+              <svg width="81" height="81" viewBox="0 0 81 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="40.5" cy="40.5" r="40.5" fill="black"/>
+              <path d="M28.05 33.45H52.35" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M28.05 40.2H52.35" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M28.05 46.95H52.35" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+
 
            
           </div>
-          <div className="project__order--display-grid">
-            <svg
-              
-              onClick={ handelDisplayGrid}
-              width="81"
-              height="81"
-              viewBox="0 0 81 81"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="40.5" cy="40.5" r="40" stroke="#D9D9D9" fill = {fillGrid} />
-              <path
-                d="M30.75 37.5H33.45C36.15 37.5 37.5 36.15 37.5 33.45V30.75C37.5 28.05 36.15 26.7 33.45 26.7H30.75C28.05 26.7 26.7 28.05 26.7 30.75V33.45C26.7 36.15 28.05 37.5 30.75 37.5Z"
-                stroke={strokeGrid}
-                stroke-width="1.5"
-                stroke-miterlimit="10"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M46.9499 37.5H49.6499C52.3499 37.5 53.6999 36.15 53.6999 33.45V30.75C53.6999 28.05 52.3499 26.7 49.6499 26.7H46.9499C44.2499 26.7 42.8999 28.05 42.8999 30.75V33.45C42.8999 36.15 44.2499 37.5 46.9499 37.5Z"
-                stroke={strokeGrid}
-                stroke-width="1.5"
-                stroke-miterlimit="10"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M46.9499 53.6999H49.6499C52.3499 53.6999 53.6999 52.3499 53.6999 49.6499V46.9499C53.6999 44.2499 52.3499 42.8999 49.6499 42.8999H46.9499C44.2499 42.8999 42.8999 44.2499 42.8999 46.9499V49.6499C42.8999 52.3499 44.2499 53.6999 46.9499 53.6999Z"
-                stroke={strokeGrid}
-                stroke-width="1.5"
-                stroke-miterlimit="10"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M30.75 53.6999H33.45C36.15 53.6999 37.5 52.3499 37.5 49.6499V46.9499C37.5 44.2499 36.15 42.8999 33.45 42.8999H30.75C28.05 42.8999 26.7 44.2499 26.7 46.9499V49.6499C26.7 52.3499 28.05 53.6999 30.75 53.6999Z"
-                stroke={strokeGrid}
-                stroke-width="1.5"
-                stroke-miterlimit="10"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
+          <div className={"project__order--display-grid " + (display? 'active':'')} onClick={()=> handleDisplayGrid()}>
+            <svg width="81" height="81" viewBox="0 0 81 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="40.5" cy="40.5" r="40" stroke="#D9D9D9"/>
+            <path d="M30.75 37.5H33.45C36.15 37.5 37.5 36.15 37.5 33.45V30.75C37.5 28.05 36.15 26.7 33.45 26.7H30.75C28.05 26.7 26.7 28.05 26.7 30.75V33.45C26.7 36.15 28.05 37.5 30.75 37.5Z" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M46.9499 37.5H49.6499C52.3499 37.5 53.6999 36.15 53.6999 33.45V30.75C53.6999 28.05 52.3499 26.7 49.6499 26.7H46.9499C44.2499 26.7 42.8999 28.05 42.8999 30.75V33.45C42.8999 36.15 44.2499 37.5 46.9499 37.5Z" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M46.9499 53.6999H49.6499C52.3499 53.6999 53.6999 52.3499 53.6999 49.6499V46.9499C53.6999 44.2499 52.3499 42.8999 49.6499 42.8999H46.9499C44.2499 42.8999 42.8999 44.2499 42.8999 46.9499V49.6499C42.8999 52.3499 44.2499 53.6999 46.9499 53.6999Z" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M30.75 53.6999H33.45C36.15 53.6999 37.5 52.3499 37.5 49.6499V46.9499C37.5 44.2499 36.15 42.8999 33.45 42.8999H30.75C28.05 42.8999 26.7 44.2499 26.7 46.9499V49.6499C26.7 52.3499 28.05 53.6999 30.75 53.6999Z" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
+
           </div>
         </div>
       </div>
       {display ? (
         <div className="project__grid">
-          <CardProject
-            title="Website Coteccons"
-            toDo={`Interaction & Development`}
-            category="Thời trang"
-          />
-          <CardProject
-            title="Website Coteccons"
-            toDo={`Interaction & Development`}
-            category="Thời trang"
-          />
-          <CardProject
-            title="Website Coteccons"
-            toDo={`Interaction & Development`}
-            category="Thời trang"
-          />
-          <CardProject
-            title="Website Coteccons"
-            toDo={`Interaction & Development`}
-            category="Thời trang"
-          />
-          <CardProject
-            title="Website Coteccons"
-            toDo={`Interaction & Development`}
-            category="Thời trang"
-          />
-          <CardProject
-            title="Website Coteccons"
-            toDo={`Interaction & Development`}
-            category="Thời trang"
-          />
+
+        {
+          data.map((value, index) => {
+            return (
+            <CardProject
+              title="Website Coteccons"
+              toDo={`Interaction & Development`}
+              category="Thời trang"
+              image={value.featureImage}
+              key={index}
+            />
+
+            )
+          })
+        }
+        
+          
         </div>
       ) : (
-        <div className="project__list">
+        <div className="project__list" onMouseOver={handleMouseOverList} onMouseOut={handleMouseOutList}>
+
+          <div className="cursor-project-item" ref={cursor}>
+          {
+            data.map((value, index)=>{
+              return (
+                <div key={index} className="cursor-item">
+                <img src={value.featureImage} alt="" />
+                {
+                  value.imagesList.map((item,i)=>{
+                    return (
+                      <img key={i} src={item} alt=''  />
+                    )
+                  })
+                }
+                  <img src={value.featureImage} alt="" />
+                </div>
+
+              )
+            })
+          }
+          </div>
+        
           <div className="project__list--header">
             <div className="project__list--header-NO">
               <p>NO.</p>
@@ -308,36 +399,24 @@ export default function Projects() {
               <p>LĨNH VỰC/NGÀNH HÀNG</p>
             </div>
           </div>
-          <ListProject
-            id="01"
-            name="Thời trang GUMAC"
-            toDoData={["UI/UX Design", "Dev"]}
-            category="Thời trang"
-          />
-          <ListProject
-            id="02"
-            name="Thời trang trẻ em BaaBaby"
-            toDoData={["UI/UX Design", "Dev"]}
-            category="Thời trang"
-          />
-          <ListProject
-            id="03"
-            name="Website Coteccons"
-            toDoData={["Frontend dev", "Backend dev"]}
-            category="Thời trang"
-          />
-          <ListProject
-            id="04"
-            name="Kính mắt ANNA"
-            toDoData={["UI/UX Design", "Dev"]}
-            category="Thời trang"
-          />
-          <ListProject
-            id="05"
-            name="Website Men.Ology"
-            toDoData={["UI Design", "UX research"]}
-            category="Thời trang"
-          />
+          {
+            data.map((value, index)=>{
+
+              
+              return (
+              <ListProject
+                id={(index <9 )? ('0'+(index +1)) : index}
+                name="Thời trang GUMAC"
+                toDoData={["UI/UX Design", "Dev"]}
+                category="Thời trang"
+                key={index}
+                hoverFunction={()=> {handleHover(index)}}
+              />
+
+              )
+            })
+          }
+         
         </div>
       )}
       <div className="project__number--page">

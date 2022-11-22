@@ -23,9 +23,40 @@
   color: #000000;
 }
 
-.project__header--text p span {
-  color: rgba(0, 0, 0, 0.03);
+.project__header--text p span.animation-text {
+  font-family: Be Vietnam Pro;
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 98px;
+  letter-spacing: 0em;
+  text-align: left;
+  position: relative;
+
 }
+.project__header--text p span.clone-text {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 0%;
+  overflow: hidden;
+  white-space: nowrap;
+  color: black;
+  transition:all 0.1s;
+ 
+
+}
+.project__header--text p span.main-text {
+
+  /* display: inline-block; */
+  overflow: hidden;
+  color: #F0F0F0;
+  position: relative;
+ 
+
+}
+
+
+
 
 /* ----------------------------------------------- */
 .project__categories {
@@ -173,3 +204,62 @@
 }
 
 /* ----------------button transfer display------------ */
+
+
+.project__order--display .project__order--display-grid.active circle{
+  fill: black;
+  stroke: white;
+}
+.project__order--display .project__order--display-grid.active path{
+  fill: black;
+  stroke: white;
+}
+.project__order--display .project__order--display-list circle{
+  fill: white;
+  stroke: black;
+}
+.project__order--display .project__order--display-list path{
+  fill: white;
+  stroke: black;
+}
+.project__order--display .project__order--display-list.active circle{
+  fill: black;
+  stroke: white;
+}
+.project__order--display .project__order--display-list.active path{
+  fill: black;
+  stroke: white;
+}
+
+/*------------Cursor Display-----------*/
+
+
+.cursor-project-item{
+  width: 519px;
+  height: 287px;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  pointer-events: none;
+  transition: 0.2s;
+
+}
+
+.cursor-project-item .cursor-item{
+  position: relative;
+  height:100%;
+}
+
+.cursor-project-item .cursor-item img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+}
+.cursor-project-item .cursor-item img:not(:first-child){
+  position: absolute;
+  top: 0;
+  left: 0;
+}

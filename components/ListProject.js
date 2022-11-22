@@ -1,10 +1,15 @@
 import React from 'react'
 import Link from 'next/link'
 
-export const ListProject = ({id, name, toDoData, category}) => {
+export const ListProject = ({id, name, toDoData, category, hoverFunction}) => {
+    console.log(hoverFunction)
+    
   return (
-    <Link href="#" className='list--container'>
-        <div className='list__NO'>
+    <div onMouseEnter={hoverFunction} >
+
+    
+    <Link href="#" className='list--container' >
+        <div className='list__NO' >
             <p>{id}</p>
         </div>
         <div className='list__name'>
@@ -21,5 +26,6 @@ export const ListProject = ({id, name, toDoData, category}) => {
             <p>{category}</p>
         </div>
     </Link>
+    </div>
   )
 }
