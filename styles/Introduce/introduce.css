@@ -150,7 +150,7 @@
 }
 
 .introduce__overview--body .introduce__overview--body-text .body-text--title p {
-  font-family: "Inter";
+  font-family: "Be Vietnam Pro";
   font-style: normal;
   font-weight: 700;
   font-size: 52px;
@@ -345,7 +345,39 @@
   color: #000000;
 }
 
-.introduce__teams {
+.introduce__teams .swiper-wrapper{
   display: flex;
   gap: 32px;
+  position: relative;
+  margin-bottom: 121px;
+}
+
+.introduce__teams:after {
+  content: "";
+  background-image: linear-gradient(
+    270deg,
+    rgba(255, 255, 255, 0) 8.24%,
+    rgba(255, 255, 255, 1.76) 100%
+  );
+  position: absolute;
+  width: 175px;
+  height: 100%;
+  z-index: 2;
+  left: 0;
+  top: 0;
+}
+.introduce__teams::before {
+  content: "";
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 8.24%,
+    rgba(255, 255, 255, 1.76) 100%
+  );
+  position: absolute;
+  width: 175px;
+  height: 100%;
+  z-index: 2;
+
+  right: 0;
+  top: 0;
 }

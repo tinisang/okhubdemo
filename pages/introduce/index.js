@@ -1,13 +1,14 @@
 import { Button } from "../../components/Button/Button";
 import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper";
 import introduceHeaderImage from "../../public/imgs/introduceHeaderImage.png";
 import playVideoIntroducesBtn from "../../public/imgs/playVideoIntroducesBtn.svg";
 // import introduceHeaderVideo from "../../public/imgs/introduceHeaderVideo.mp4"
 import introduceOverviewImg from "../../public/imgs/introduceOverviewImg.png";
 import introduceImgIcon from "../../public/imgs/introduceImgIcon.svg";
 import { CardTeams } from "../../components/CardTeams";
-import imageIntroduceTeam from "../../public/imgs/imageIntroduceTeam.png"
-
+import imageIntroduceTeam from "../../public/imgs/imageIntroduceTeam.png";
 
 export default function Introduce() {
   return (
@@ -114,11 +115,16 @@ export default function Introduce() {
         </div>
       </div>
 
-      <div className="introduce__teams">
-          <CardTeams image = {imageIntroduceTeam} team = "Team Design" />      
-          <CardTeams image = {imageIntroduceTeam} team = "Team Design" />      
-          <CardTeams image = {imageIntroduceTeam} team = "Team Design" />      
-      </div>
+      <Swiper className="introduce__teams"
+      slidesPerView={3}
+      spaceBetween={32}
+      // slidesPerGroup={1}
+      loop={true}
+      >
+        <SwiperSlide><CardTeams image={imageIntroduceTeam} team="Team Design" /></SwiperSlide>
+        <SwiperSlide><CardTeams image={imageIntroduceTeam} team="Team Dev" /></SwiperSlide>
+        <SwiperSlide><CardTeams image={imageIntroduceTeam} team="Team Acc" /></SwiperSlide>
+      </Swiper>
     </div>
   );
 }
