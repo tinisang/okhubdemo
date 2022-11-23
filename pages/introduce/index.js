@@ -4,7 +4,11 @@ import introduceHeaderImage from "../../public/imgs/introduceHeaderImage.png";
 import playVideoIntroducesBtn from "../../public/imgs/playVideoIntroducesBtn.svg";
 // import introduceHeaderVideo from "../../public/imgs/introduceHeaderVideo.mp4"
 import introduceOverviewImg from "../../public/imgs/introduceOverviewImg.png";
-import introduceImgIcon from "../../public/imgs/introduceImgIcon.svg"
+import introduceImgIcon from "../../public/imgs/introduceImgIcon.svg";
+import { CardTeams } from "../../components/CardTeams";
+import imageIntroduceTeam from "../../public/imgs/imageIntroduceTeam.png"
+
+
 export default function Introduce() {
   return (
     <div className="introduce__container">
@@ -65,26 +69,55 @@ export default function Introduce() {
             <Button text="Credential" />
           </div>
           <div className="introduce__overview--bg-VN">
-          <p>VIET NAM</p>
-        </div>
+            <p>VIET NAM</p>
+          </div>
         </div>
 
         <div className="introduce__overview--bg-okhub">
           <p>OKHUB</p>
         </div>
-       
       </div>
       <div className="introduce__overview--img">
         <Image src={introduceOverviewImg} />
         <div className="introduce__img--text">
-          <p>Với niềm tin: Về cơ bản <strong>con người Là tốt</strong></p>
+          <p>
+            Với niềm tin: Về cơ bản <strong>con người Là tốt</strong>
+          </p>
         </div>
         <div className="introduce__img--icon">
-          <Image src = {introduceImgIcon} />
+          <Image src={introduceImgIcon} />
         </div>
       </div>
       <div className="introduce__people">
+        <div className="introduce__people-title">
+          <div className="people__title--filde">
+            <div className="people__title--filde-point"></div>
+            <p>VỀ CON NGƯỜI</p>
+          </div>
+          <div className="people__title--text">
+            <p>Tất cả chúng tôi làm việc vì mục tiêu chung</p>
+          </div>
+          <div className="people__title--bg">
+            <p>PEOPLE</p>
+          </div>
+          <div className="people__title--panigation">
+            <div className="people__title--panigation-item"></div>
+            <div className="people__title--panigation-item active"></div>
+            <div className="people__title--panigation-item"></div>
+          </div>
+        </div>
+        <div className="introduce__people-des">
+          <p>
+            Ở OkHub Việt Nam, mỗi cá nhân đều tự đặt ra các mục tiêu gắn theo
+            mục tiêu chung của tổ chức và nỗ lực hoàn thành.
+          </p>
+        </div>
+      </div>
 
+      <div className="introduce__teams">
+          <CardTeams image = {imageIntroduceTeam} team = "Team Design" />      
+          <CardTeams image = {imageIntroduceTeam} team = "Team Design" />      
+          <CardTeams image = {imageIntroduceTeam} team = "Team Design" />      
       </div>
     </div>
   );

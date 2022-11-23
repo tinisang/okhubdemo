@@ -24,6 +24,7 @@ import '../styles/Button/ButtonCategory.css'
 import '../styles/Project/cardProject.css'
 import "../styles/Project/listProject.css"
 import "../styles/Introduce/introduce.css"
+import "../styles/Introduce/CardTeams.css"
 
 function MyApp({ Component, pageProps }) {
   // console.log(headerData);

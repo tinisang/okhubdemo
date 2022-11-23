@@ -220,13 +220,13 @@
   top: 100%;
   margin-left: -32px;
 }
- .introduce__overview--bg-VN {
+.introduce__overview--bg-VN {
   position: absolute;
   top: -50%;
   right: -10%;
   margin-bottom: -500px;
 }
-.introduce__overview .introduce__overview--bg-okhub p{
+.introduce__overview .introduce__overview--bg-okhub p {
   font-family: "Be Vietnam Pro";
   font-style: normal;
   font-weight: 900;
@@ -234,7 +234,6 @@
   line-height: 228px;
   color: rgba(0, 0, 0, 0.03);
 }
-
 
 .introduce__overview--bg-VN p {
   font-family: "Be Vietnam Pro";
@@ -243,4 +242,110 @@
   font-size: 180px;
   line-height: 228px;
   color: rgba(0, 0, 0, 0.03);
+}
+
+/*-------------- introduce people----------------- */
+.introduce__people {
+  height: auto;
+  display: flex;
+  margin: 0 100px;
+  padding-bottom: 54px;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.introduce__people-title {
+  position: relative;
+  width: 45%;
+  height: auto;
+}
+.people__title--filde {
+  width: 100%;
+}
+.introduce__people-title .people__title--filde {
+  display: flex;
+  align-items: center;
+}
+
+.introduce__people-title .people__title--filde .people__title--filde-point {
+  width: 18px;
+  height: 18px;
+  background: #343434;
+  border-radius: 50%;
+  margin-right: 16px;
+}
+
+.introduce__people-title .people__title--filde p {
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.introduce__people .introduce__people-title .people__title--text p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 52px;
+  line-height: 68px;
+  color: #000000;
+}
+
+/*  */
+.introduce__people-title .people__title--bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.introduce__people-title .people__title--bg p {
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 180px;
+  line-height: 228px;
+  color: rgba(0, 0, 0, 0.03);
+}
+
+.people__title--panigation {
+  display: flex;
+  align-items: center;
+  margin-top: 143px;
+}
+.people__title--panigation .people__title--panigation-item {
+  width: 8px;
+  height: 8px;
+  background-color: #d9d9d9;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.people__title--panigation .people__title--panigation-item.active {
+  width: 14px;
+  height: 14px;
+  background: #111215;
+}
+
+/*  */
+
+.introduce__people .introduce__people-des {
+  width: 45%;
+  height: auto;
+}
+
+.introduce__people .introduce__people-des p {
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 42px;
+  text-align: justify;
+  color: #000000;
+}
+
+.introduce__teams {
+  display: flex;
+  gap: 32px;
 }
