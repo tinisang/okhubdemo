@@ -25,7 +25,7 @@ import '../styles/Project/cardProject.css'
 import "../styles/Project/listProject.css"
 import "../styles/Introduce/introduce.css"
 import "../styles/Introduce/CardTeams.css"
-import 'swiper/css/pagination';
+import "../styles/Project/SingleProject.css"
 
 function MyApp({ Component, pageProps }) {
   // console.log(headerData);

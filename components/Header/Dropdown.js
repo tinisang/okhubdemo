@@ -156,7 +156,7 @@ export const DropDown = ({status})=>{
                     ease:'out'
                 },"<+=0.1")
                 .from('.image-tilt-item',{
-                    x:100,
+                    x:150,
                     
                     duration:0.7,
                     stagger:0.1,
