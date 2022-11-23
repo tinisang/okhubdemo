@@ -15,7 +15,7 @@ import imagefloat1 from '../../public/imgs/imagefloat1.png'
 
 
 
-export const DropDown = ({status})=>{
+export const DropDown = ({status, functionClick})=>{
 
     const currentIndex = useRef(0)
 
@@ -190,71 +190,71 @@ export const DropDown = ({status})=>{
                     <div className="dropdown-wrapper">
                         <div className="menu-area">
                             <div className="menu-item" onMouseEnter={()=>HandleMenuHover(0)}>
-                                <div className="parent"><Link href='/'>Về chúng tôi</Link></div>
+                                <div className="parent" onClick={functionClick}><Link href='/introduce'>Về chúng tôi</Link></div>
                                 <ul className="sub-menu">
-                                    <li className="child-link">
+                                    <li className="child-link" onClick={functionClick}>
                                         <Link href='/'>Câu chuyện Okhub</Link>
                                     </li>
-                                    <li className="child-link">
+                                    <li className="child-link" onClick={functionClick}>
                                         <Link href='/'>Đối tác</Link>
                                     </li>
-                                    <li className="child-link">
+                                    <li className="child-link" onClick={functionClick}>
                                         <Link href='/'>FAQ</Link>
                                     </li>
                                 </ul>
                             </div>
                             <div className="menu-item" onMouseEnter={()=>HandleMenuHover(1)}>
-                                <div className="parent"><Link href='/'>Dịch vụ</Link></div>
+                                <div className="parent" onClick={functionClick}><Link href='/'>Dịch vụ</Link></div>
                                 <ul className="sub-menu">
-                                    <li className="child-link">
+                                    <li className="child-link" onClick={functionClick}>
                                         <Link href='/'>Website</Link>
                                     </li>
-                                    <li className="child-link">
+                                    <li className="child-link" onClick={functionClick}>
                                         <Link href='/'>SEO</Link>
                                     </li>
-                                    <li className="child-link">
+                                    <li className="child-link" onClick={functionClick}>
                                         <Link href='/'>Fanpage Management</Link>
                                     </li>
                                 </ul>
                             </div>
                             <div className="menu-item" onMouseEnter={()=>HandleMenuHover(2)} >
-                                <div className="parent"><Link href='/'>Dự án</Link></div>
+                                <div className="parent" onClick={functionClick}><Link href='/project'>Dự án</Link></div>
                                 <ul className="sub-menu">
-                                    <li className="child-link">
+                                    <li className="child-link" onClick={functionClick}>
                                         <Link href='/'>Wordpress</Link>
                                     </li>
-                                    <li className="child-link">
+                                    <li className="child-link" onClick={functionClick}>
                                         <Link href='/'>Shopify</Link>
                                     </li>
-                                    <li className="child-link">
+                                    <li className="child-link" onClick={functionClick}>
                                         <Link href='/'>Reactjs</Link>
                                     </li>
                                 </ul>
                             </div>
                             <div className="menu-item" onMouseEnter={()=>HandleMenuHover(3)}>
-                                <div className="parent"><Link href='/'>Blog</Link></div>
+                                <div className="parent" onClick={functionClick}><Link href='/news'>Blog</Link></div>
                                 <ul className="sub-menu">
-                                    <li className="child-link">
+                                    <li className="child-link" onClick={functionClick}>
                                         <Link href='/'>Câu chuyện Okhub</Link>
                                     </li>
-                                    <li className="child-link">
+                                    <li className="child-link" onClick={functionClick}>
                                         <Link href='/'>Đối tác</Link>
                                     </li>
-                                    <li className="child-link">
+                                    <li className="child-link" onClick={functionClick}>
                                         <Link href='/'>FAQ</Link>
                                     </li>
                                 </ul>
                             </div>
                             <div className="menu-item" onMouseEnter={()=>HandleMenuHover(4)}>
-                                <div className="parent"><Link href='/'>Liên hệ</Link></div>
+                                <div className="parent" onClick={functionClick}><Link href='/'>Liên hệ</Link></div>
                                 <ul className="sub-menu">
-                                    <li className="child-link">
+                                    <li className="child-link" onClick={functionClick}>
                                         <Link href='/'>Câu chuyện Okhub</Link>
                                     </li>
-                                    <li className="child-link">
+                                    <li className="child-link" onClick={functionClick}>
                                         <Link href='/'>Đối tác</Link>
                                     </li>
-                                    <li className="child-link">
+                                    <li className="child-link" onClick={functionClick}>
                                         <Link href='/'>FAQ</Link>
                                     </li>
                                 </ul>

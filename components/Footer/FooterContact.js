@@ -8,8 +8,12 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useEffect, useRef } from "react";
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
+import { useRouter } from 'next/router';
 
 export const FooterContact = () => {
+
+  const router = useRouter()
+  
   gsap.registerPlugin(ScrollTrigger)
   gsap.registerPlugin(ScrollToPlugin);
 
@@ -28,17 +32,20 @@ export const FooterContact = () => {
 
     tl.to('.images-footer-wrapper',{
       y:-900,
-      
       duration:1
     })
     
 
     return ()=>{
-      tl.scrollTrigger.kill()
-      
+      tl.scrollTrigger.kill()      
+      ScrollTrigger.refresh()
     }
     
   })
+
+  useEffect(()=>{
+    ScrollTrigger.refresh()
+  },[router.asPath])
   
   
   return (

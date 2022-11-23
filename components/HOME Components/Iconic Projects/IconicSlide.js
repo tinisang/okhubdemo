@@ -63,26 +63,28 @@ export const IconicSlide = ()=>{
         tl.to(slider.current,{
            x: -(sliderWidth - screenWidth +100)
         })
-        window.addEventListener('mousemove',function(e){
+        window.addEventListener('mousemove',cursorAnimation)
+        tl.scrollTrigger.refresh()
+     
+
+       
+        
+        return ()=>{
+            
+            window.removeEventListener('mousemove',cursorAnimation)
+            tl.scrollTrigger.kill()
+          
+        }
+    })
+
+    const cursorAnimation =(e) =>{
             gsap.to(cursor.current,{
                 left: e.clientX,
                 top:e.clientY,
                 duration:1
             })
-        })
-        tl.scrollTrigger.refresh()
-        // ScrollTrigger.refresh()
-        return ()=>{
-            window.removeEventListener('mousemove',function(){})
-            tl.scrollTrigger.kill()
-            // tl.kill();
-            
-            // ScrollTrigger.getAll().forEach(ST => ST.kill());
-            // gsap.globalTimeline.clear();
         }
-    })
-
-
+        
 
     const handleMouseOver=(index)=>{
             var imageItem = document.querySelector(`.preview-image img:nth-child(${index})`);
@@ -112,7 +114,7 @@ export const IconicSlide = ()=>{
     
     
     return (
-        <>
+        <div>
             <div className="cursor-iconic" ref={cursor}>
                 <div className="row1-property">
                 <div className="image-container arrow"><Image src={arrow} fill alt='' className='image-item'/></div>
@@ -142,7 +144,7 @@ export const IconicSlide = ()=>{
                 <div className="projects-slide" ref={slider}>
                     <div className="project-item" onMouseOver={()=>handleMouseOver(1)} onMouseLeave={()=>handleMouseOut()}>
                         <div className="image-container image-project">
-                                <Link href="/">
+                                <Link href="/project/abc">
                                 <Image src={image3} alt='' fill className='image-item' />
                                 </Link>
                         </div>
@@ -150,7 +152,7 @@ export const IconicSlide = ()=>{
                     </div>
                     <div className="project-item" onMouseOver={()=>handleMouseOver(2)} onMouseLeave={()=>handleMouseOut()}>
                         <div className="image-container image-project">
-                                <Link href="/">
+                                <Link href="/project/abc">
                                 <Image src={image4} alt='' fill className='image-item' />
                                 </Link>
                         </div>
@@ -158,7 +160,7 @@ export const IconicSlide = ()=>{
                     </div>
                     <div className="project-item" onMouseOver={()=>handleMouseOver(3)} onMouseLeave={()=>handleMouseOut()}>
                         <div className="image-container image-project">
-                                <Link href="/">
+                                <Link href="/project/abc">
                                 <Image src={image5} alt='' fill className='image-item' />
                                 </Link>
                         </div>
@@ -166,7 +168,7 @@ export const IconicSlide = ()=>{
                     </div>
                     <div className="project-item" onMouseOver={()=>handleMouseOver(4)} onMouseLeave={()=>handleMouseOut()}>
                         <div className="image-container image-project">
-                                <Link href="/">
+                                <Link href="/project/abc">
                                 <Image src={image6} alt='' fill className='image-item' />
                                 </Link>
                         </div>
@@ -174,7 +176,7 @@ export const IconicSlide = ()=>{
                     </div>
                     <div className="project-item" onMouseOver={()=>handleMouseOver(5)} onMouseLeave={()=>handleMouseOut()}>
                         <div className="image-container image-project">
-                                <Link href="/">
+                                <Link href="/project/abc">
                                 <Image src={image7} alt='' fill className='image-item' />
                                 </Link>
                         </div>
@@ -182,7 +184,7 @@ export const IconicSlide = ()=>{
                     </div>
                     <div className="project-item" onMouseOver={()=>handleMouseOver(6)} onMouseLeave={()=>handleMouseOut()}>
                         <div className="image-container image-project">
-                                <Link href="/">
+                                <Link href="/project/abc">
                                 <Image src={image3} alt='' fill className='image-item' />
                                 </Link>
                         </div>
@@ -197,6 +199,6 @@ export const IconicSlide = ()=>{
                         </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
