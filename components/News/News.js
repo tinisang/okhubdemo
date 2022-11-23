@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Button } from "../Button/Button";
 import {CardNews} from "../CardNews";
 import {CardReport} from "../CardReport"
@@ -12,21 +12,112 @@ import { SelectChangeEvent } from "@mui/material";
 import { MenuItem } from "@mui/material";
 import { Select } from "@mui/material";
 
+import gsap from "gsap";
+import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+
 
 export const News = () => {
+  gsap.registerPlugin(ScrollToPlugin);
+  gsap.registerPlugin(ScrollTrigger);
   const [activeBtn, setActive] = useState(false);
+  const lastCurrent = useRef(0)
   const options = [
     { value: "chocolate", label: "Chocolate" },
     { value: "strawberry", label: "Strawberry" },
   ];
   const [score, setScore] = useState("");
   const scoreData = ["Tat ca", "nhieu luot xem nhat"];
-  const handelChange = (even) => {
-    console.log(even.value);
+  const handelChange = (event) => {
+   
   };
+
+
+
+
+  useEffect(()=>{
+    const slider = document.querySelector('.news__categories--items');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    slider.addEventListener('mousedown', (e) => {
+      isDown = true;
+      slider.classList.add('active');
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+    });
+    slider.addEventListener('mouseleave', () => {
+      isDown = false;
+      slider.classList.remove('active');
+    });
+    slider.addEventListener('mouseup', () => {
+      isDown = false;
+      slider.classList.remove('active');
+    });
+    slider.addEventListener('mousemove', (e) => {
+      if(!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX) *1; //scroll-fast
+      slider.scrollLeft = scrollLeft - walk;
+  
+});
+  })
+  useEffect(()=>{
+    handleCatSelect(0)
+  },[])
+
+  useEffect(()=>{
+    var tl = gsap.timeline({
+      scrollTrigger:{
+          trigger:'.news__title',
+          // markers:true,
+          start:'top 0%',
+          end:'bottom 0%',
+          scrub:4,
+          pin:'.news__title'
+      },
+      ease:'easeInOut'
+    });
+
+    tl.to('.clone-text',{
+      width:"100%",
+      stagger:0.4
+    })
+
+   
+
+
+
+    return ()=>{
+      tl.scrollTrigger.kill()
+      
+      // tl.kill()
+    }
+    
+  },[])
+  
+  const handleCatSelect = (index)=>{
+      var selectedCat = document.querySelector(`.news__categories--items p.news__categories--item:nth-child(${index+1})`)
+     
+     
+        var lastActive =document.querySelector(`.news__categories--items p.news__categories--item:nth-child(${lastCurrent.current+1})`)
+        lastActive.classList.remove('news__categories--item-active')
+      
+      lastCurrent.current=index
+      selectedCat.classList.add('news__categories--item-active')
+      gsap.to('.news__categories--items',{
+        scrollTo:{
+          x: selectedCat
+        }
+      })
+  }
+  
+  
   return (
     <div className="news__container">
-      <div className="news__title">
+      <div className="container-padding news__title">
         <div className="news__title-btn">
           <Button text="Credential" />
         </div>
@@ -34,9 +125,26 @@ export const News = () => {
           <p>
             <span>Tin tức sự kiện </span>
             <br></br>
-            <span className="text-orther">các </span> <span> hoạ</span>t động
-            nổi bật <br></br>
-            <span className="text-orther">và</span> tài liệu - báo cáo
+            các {" "}
+            <span className="animation-text">
+              <span className="main-text">
+                  hoạt động nổi bật
+              </span>
+              <span className="clone-text">
+              hoạt động nổi bật
+              </span>
+            </span> 
+            <br></br> về{" "}
+            
+
+            <span className="animation-text">
+              <span className="main-text">
+              tài liệu - báo cáo
+              </span>
+              <span className="clone-text">
+              tài liệu - báo cáo
+              </span>
+            </span> 
           </p>
         </div>
       </div>
@@ -45,10 +153,22 @@ export const News = () => {
           <p>Khám phá ngay</p>
         </div>
         <div className="news__categories--items">
-          <p className="news__categories--item-active ">Tất cả bài viết</p>
-          <p>Tin nổi bật</p>
-          <p>Sự kiện</p>
-          <p>Hoạt động xã hội</p>
+          <p className="news__categories--item " onClick={()=>handleCatSelect(0)}>Tất cả bài viết</p>
+          <p className="news__categories--item " onClick={()=>handleCatSelect(1)}>Báo cáo</p>
+          <p className="news__categories--item " onClick={()=>handleCatSelect(2)}>Tài liệu</p>
+          <p className="news__categories--item " onClick={()=>handleCatSelect(3)}>Thông báo</p>
+          <p className="news__categories--item " onClick={()=>handleCatSelect(4)}>Media</p>
+          <p className="news__categories--item " onClick={()=>handleCatSelect(5)}>Content</p>
+          <p className="news__categories--item " onClick={()=>handleCatSelect(6)}>Xu hướng</p>
+          <p className="news__categories--item " onClick={()=>handleCatSelect(7)}>Đặc biệt</p>
+          <p className="news__categories--item " onClick={()=>handleCatSelect(8)}>Trending</p>
+          <p className="news__categories--item " onClick={()=>handleCatSelect(9)}>Viết lách</p>
+          <p className="news__categories--item " onClick={()=>handleCatSelect(10)}>Điện ảnh</p>
+          <p className="news__categories--item " onClick={()=>handleCatSelect(11)}>Xây dựng</p>
+          <p className="news__categories--item " onClick={()=>handleCatSelect(12)}>Tất cả bài viết</p>
+
+          
+        
         </div>
       </div>
 
