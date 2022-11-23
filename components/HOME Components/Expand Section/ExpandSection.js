@@ -134,10 +134,7 @@ const ExpandSection = ()=>{
     }
 
     useEffect(()=>{
-        // const scroll = new LocomotiveScroll({
-        //     el: document.querySelector('.trigger-pin'),
-        //     smooth: true
-        // });
+   
         var dot =document.querySelector('.row1 svg')
   
         var tl = gsap.timeline({
@@ -162,43 +159,44 @@ const ExpandSection = ()=>{
             // duration:5,
             ease:'power2.out'
         })
-        window.addEventListener('mousemove',function(e){
-            var servicesFromTop=background.current.offsetTop;
-            var servicesHeight= background.current.clientHeight;
-           
-            gsap.to(cursor.current,{
-                left: e.clientX - cursor.current.clientWidth/2, 
-                top: e.clientY - cursor.current.clientHeight/2, 
-                ease:"power2.out",
-                duration:1,
-                delay:0.04
-            })
-            var viewButton= document.querySelector('.view-button');
-            
-            gsap.to(viewButton,{
-                left: e.clientX - viewButton.clientWidth/2, 
-                top: e.clientY - viewButton.clientHeight/2, 
-                ease:"power2.out",
-                opacity:1,
-                duration:1
-            })
-                
-           
-            
-        })
+        window.addEventListener('mousemove',cursorAni)
         tl.scrollTrigger.refresh()
 
-       
-        
         
         return ()=>{
-            tl.scrollTrigger.kill()
-            window.removeEventListener('mousemove',function(){})
-            // ScrollTrigger.getAll().forEach(ST => ST.kill());
-            // gsap.globalTimeline.clear();
+            tl.scrollTrigger.kill();
+            tl.kill()
+
+            window.removeEventListener('mousemove',cursorAni)
           }
     
     })
+
+
+    const cursorAni = (e)=>{
+ 
+           
+ gsap.to(cursor.current,{
+     left: e.clientX - cursor.current.clientWidth/2, 
+     top: e.clientY - cursor.current.clientHeight/2, 
+     ease:"power2.out",
+     duration:1,
+     delay:0.04
+ })
+ var viewButton= document.querySelector('.view-button');
+ 
+ gsap.to(viewButton,{
+     left: e.clientX - viewButton.clientWidth/2, 
+     top: e.clientY - viewButton.clientHeight/2, 
+     ease:"power2.out",
+     opacity:1,
+     duration:1
+ })
+     
+
+ 
+}
+    
     return (
         <>
         <div className="view-button"></div>

@@ -21,6 +21,10 @@ export const Header = () => {
     setOpen(!isOpen)
   }
 
+  const handleMenuItemCliked = ()=>{
+    setOpen(!isOpen)
+  }
+
 
   useEffect(()=>{
     var fakeScrollY = 0;
@@ -200,7 +204,7 @@ export const Header = () => {
           
       </div>
 
-    {<DropDown status={isOpen} />}
+    {<DropDown status={isOpen} functionClick ={handleMenuItemCliked} />}
       </div>
     </>
   );

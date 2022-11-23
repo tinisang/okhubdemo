@@ -28,9 +28,9 @@ import "../styles/Introduce/CardTeams.css"
 import "../styles/Project/SingleProject.css"
 
 function MyApp({ Component, pageProps }) {
-  // console.log(headerData);
+  
   const Layout = Component.Layout ? Component.Layout : Base;
-  // const router = useRouter();
+
 
   return (
     <>

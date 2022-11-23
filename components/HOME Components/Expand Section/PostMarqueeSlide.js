@@ -42,64 +42,47 @@ export const PostMarqueSlide = ()=>{
 
                         <div className="post-slide-container" >
                             <div className="post-item news">
-                                <div className="image-container icon">
-                                    <Image alt="" src={newsicon} className="image-item"  />
-                                </div> 
-                                <div className="title">Báo cáo chỉ số thị trường quý IV năm 2021</div>
+                                <Link href={'/news/abc'}>
+
+                                    <div className="image-container icon">
+                                        <Image alt="" src={newsicon} className="image-item"  />
+                                    </div> 
+                                    <div className="title">Báo cáo chỉ số thị trường quý IV năm 2021</div>
+                                </Link>
                             </div>
                             <div className="post-item noti">
+                                <Link href={'/news/abc'}>
 
-                            <div className="image-container icon">
-                                    <Image alt="" src={newsicon} className="image-item"  />
-                                </div> 
-                                <div className="title">Thông báo hợp tác chiến lược giữa OKHUB và Reika ngày 22/11/2022</div>
-                                
-                            </div>
-                            <div className="post-item news">
                                 <div className="image-container icon">
-                                    <Image alt="" src={newsicon} className="image-item"  />
-                                </div> 
-                                <div className="title">Báo cáo chỉ số thị trường quý IV năm 2021</div>
+                                        <Image alt="" src={newsicon} className="image-item"  />
+                                    </div> 
+                                    <div className="title">Thông báo hợp tác chiến lược giữa OKHUB và Reika ngày 22/11/2022</div>
+                                </Link>
                             </div>
-                            <div className="post-item noti">
-
-                            <div className="image-container icon">
-                                    <Image alt="" src={newsicon} className="image-item"  />
-                                </div> 
-                                <div className="title">Báo cáo chỉ số thị trường quý IV năm 2021</div>
-                                
-                            </div>
+                           
                         </div>
-                        <div className="post-slide-container">
+                        <div className="post-slide-container" >
                             <div className="post-item news">
-                                <div className="image-container icon">
-                                    <Image alt="" src={newsicon} className="image-item"  />
-                                </div> 
-                                <div className="title">Báo cáo chỉ số thị trường quý IV năm 2021</div>
+                                <Link href={'/news/abc'}>
+
+                                    <div className="image-container icon">
+                                        <Image alt="" src={newsicon} className="image-item"  />
+                                    </div> 
+                                    <div className="title">Báo cáo chỉ số thị trường quý IV năm 2021</div>
+                                </Link>
                             </div>
                             <div className="post-item noti">
+                                <Link href={'/news/abc'}>
 
-                            <div className="image-container icon">
-                                    <Image alt="" src={newsicon} className="image-item"  />
-                                </div> 
-                                <div className="title">Thông báo hợp tác chiến lược giữa OKHUB và Reika ngày 22/11/2022</div>
-                                
-                            </div>
-                            <div className="post-item news">
                                 <div className="image-container icon">
-                                    <Image alt="" src={newsicon} className="image-item"  />
-                                </div> 
-                                <div className="title">Báo cáo chỉ số thị trường quý IV năm 2021</div>
+                                        <Image alt="" src={newsicon} className="image-item"  />
+                                    </div> 
+                                    <div className="title">Thông báo hợp tác chiến lược giữa OKHUB và Reika ngày 22/11/2022</div>
+                                </Link>
                             </div>
-                            <div className="post-item noti">
-
-                            <div className="image-container icon">
-                                    <Image alt="" src={newsicon} className="image-item"  />
-                                </div> 
-                                <div className="title">Báo cáo chỉ số thị trường quý IV năm 2021</div>
-                                
-                            </div>
+                           
                         </div>
+                      
             
                 </div>
 

@@ -144,7 +144,7 @@
 }
 
 
-.marquee-post-slide .post-item{
+.marquee-post-slide .post-item>a{
     display: flex;
     flex-direction: row;
     align-items: center;
