@@ -73,7 +73,8 @@ export default function Projects() {
   ]
 
   
- 
+  gsap.registerPlugin(ScrollToPlugin);
+  gsap.registerPlugin(ScrollTrigger);
 
   const currentCategory = useRef(0);
   const handleDisplayGrid = () => {
@@ -133,7 +134,7 @@ export default function Projects() {
       }
       })
 
-    
+    ScrollTrigger.refresh()
 
     return ()=>{
       
@@ -231,8 +232,7 @@ export default function Projects() {
  
   }
   
-  gsap.registerPlugin(ScrollToPlugin);
-  gsap.registerPlugin(ScrollTrigger);
+ 
 
   return (
     <div className="project__container">
