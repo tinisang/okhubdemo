@@ -41,7 +41,7 @@ export const WhyOKHUB = ({data})=>{
             var tl1 = gsap.timeline({
                 scrollTrigger:{
                     trigger:element,
-                    markers:true,
+                    // markers:true,
                     start:'top 80%',
                     end:'bottom 80%',
                     scrub:1
@@ -132,10 +132,15 @@ và nhận được nhiều lời khen từ phía GUMAC.
                 </div>
 
                 <div className="column-2">
-                <span>
+                <span className="reason_text">
 
-                Lý do <span className="client-name">GUMAC</span> tin tưởng <br></br>và lựa chọn OKHUB
+                    Lý do <span className="client-name">GUMAC</span> tin tưởng <br></br>và lựa chọn OKHUB
+                <div className="the-trust">
+                    The Trust
+                </div>
                 </span>
+
+                
                 </div>
 
                 </div>
