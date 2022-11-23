@@ -8,6 +8,8 @@ import playVideoIntroducesBtn from "../../public/imgs/playVideoIntroducesBtn.svg
 import introduceOverviewImg from "../../public/imgs/introduceOverviewImg.png";
 import introduceImgIcon from "../../public/imgs/introduceImgIcon.svg";
 import { CardTeams } from "../../components/CardTeams";
+import { ReviewSection } from "../../components/HOME Components/ReviewSection";
+import {ClientsSection} from "../../components/HOME Components/ClientsSection"
 import imageIntroduceTeam from "../../public/imgs/imageIntroduceTeam.png";
 
 export default function Introduce() {
@@ -102,9 +104,7 @@ export default function Introduce() {
             <p>PEOPLE</p>
           </div>
           <div className="people__title--panigation">
-            <div className="people__title--panigation-item"></div>
-            <div className="people__title--panigation-item active"></div>
-            <div className="people__title--panigation-item"></div>
+           
           </div>
         </div>
         <div className="introduce__people-des">
@@ -115,16 +115,141 @@ export default function Introduce() {
         </div>
       </div>
 
-      <Swiper className="introduce__teams"
-      slidesPerView={3}
-      spaceBetween={32}
-      // slidesPerGroup={1}
-      loop={true}
-      >
-        <SwiperSlide><CardTeams image={imageIntroduceTeam} team="Team Design" /></SwiperSlide>
-        <SwiperSlide><CardTeams image={imageIntroduceTeam} team="Team Dev" /></SwiperSlide>
-        <SwiperSlide><CardTeams image={imageIntroduceTeam} team="Team Acc" /></SwiperSlide>
-      </Swiper>
+      <div className="introduce__teams--container">
+        <Swiper
+          className="introduce__teams"
+          slidesPerView={3}
+          // spaceBetween={32}
+          slidesPerGroup={1}
+          initialSlide={1}
+          loop={true}
+          centeredSlides={true}
+          navigation={{
+            prevEl: ".introduce__teams--prev",
+            nextEl: ".introduce__teams--next",
+          }}
+          pagination={{
+           
+            el: ".people__title--panigation",
+            clickable: true,
+            renderBullet: function (index, className) {
+              return '<span class= "  people__title--panigation-item ' + className + '"></span>';
+            },
+           
+          
+          }}
+          modules={[Pagination, Navigation, ]}
+        >
+          <SwiperSlide>
+            <CardTeams image={imageIntroduceTeam} team="Team Design" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <CardTeams image={imageIntroduceTeam} team="Team Dev" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <CardTeams image={imageIntroduceTeam} team="Team Account" />
+          </SwiperSlide>
+        </Swiper>
+        <div className="introduce__teams--prev">
+          <svg
+            width="66"
+            height="66"
+            viewBox="0 0 66 66"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g filter="url(#filter0_b_1570_3178)">
+              <circle cx="33" cy="33" r="33" fill="white" fill-opacity="0.65" />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M28.0557 32.0294L39.2632 43.2369L37.0899 45.4102L23.7091 32.0294L37.0899 18.6486L39.2632 20.8219L28.0557 32.0294Z"
+                fill="#515151"
+              />
+            </g>
+            <defs>
+              <filter
+                id="filter0_b_1570_3178"
+                x="-4"
+                y="-4"
+                width="74"
+                height="74"
+                filterUnits="userSpaceOnUse"
+                color-interpolation-filters="sRGB"
+              >
+                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feGaussianBlur in="BackgroundImageFix" stdDeviation="2" />
+                <feComposite
+                  in2="SourceAlpha"
+                  operator="in"
+                  result="effect1_backgroundBlur_1570_3178"
+                />
+                <feBlend
+                  mode="normal"
+                  in="SourceGraphic"
+                  in2="effect1_backgroundBlur_1570_3178"
+                  result="shape"
+                />
+              </filter>
+            </defs>
+          </svg>
+        </div>
+        <div className="introduce__teams--next">
+          <svg
+            width="66"
+            height="66"
+            viewBox="0 0 66 66"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g filter="url(#filter0_b_1570_3188)">
+              <circle
+                cx="33"
+                cy="33"
+                r="33"
+                transform="rotate(-180 33 33)"
+                fill="white"
+                fill-opacity="0.65"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M37.9444 33.9706L26.7369 22.7631L28.9102 20.5898L42.291 33.9706L28.9102 47.3514L26.7369 45.1781L37.9444 33.9706Z"
+                fill="#515151"
+              />
+            </g>
+            <defs>
+              <filter
+                id="filter0_b_1570_3188"
+                x="-4"
+                y="-4"
+                width="74"
+                height="74"
+                filterUnits="userSpaceOnUse"
+                color-interpolation-filters="sRGB"
+              >
+                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feGaussianBlur in="BackgroundImageFix" stdDeviation="2" />
+                <feComposite
+                  in2="SourceAlpha"
+                  operator="in"
+                  result="effect1_backgroundBlur_1570_3188"
+                />
+                <feBlend
+                  mode="normal"
+                  in="SourceGraphic"
+                  in2="effect1_backgroundBlur_1570_3188"
+                  result="shape"
+                />
+              </filter>
+            </defs>
+          </svg>
+        </div>
+      </div>
+
+
+      <ClientsSection/>
+      <ReviewSection/>
     </div>
   );
 }
