@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 
 export const ListProject = ({id, name, toDoData, category, hoverFunction}) => {
-    console.log(hoverFunction)
+
     
   return (
     <div onMouseEnter={hoverFunction} >

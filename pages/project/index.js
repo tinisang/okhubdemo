@@ -16,7 +16,10 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 export default function Projects() {
   const [display, setDisplay] = useState(false);
   const cursor = useRef()
+  const interval = useRef(setInterval(function(){},0));
 
+  const currentActive = useRef()
+  
   const data =[
     {
       featureImage:'https://codecanyon.img.customer.envatousercontent.com/files/395609916/Preview_image.jpeg?auto=compress%2Cformat&q=80&fit=crop&crop=top&max-h=8000&max-w=590&s=cdf5c10dd72df30b6aaaaa70b9c61b4a',
@@ -135,6 +138,7 @@ export default function Projects() {
     return ()=>{
       
       window.removeEventListener('mousemove', function(){})
+      clearInterval(interval.current)
       // tl.kill()
     }
   })
@@ -166,22 +170,64 @@ export default function Projects() {
     currentCategory.current = index;
   };
 
+  const playImages = (index)=>{
+    var start=0
+    clearInterval(interval.current)
+    var elementToplay = document.querySelector(`.cursor-project-item .cursor-item:nth-child(${index+1}) img:first-child`)
+
+
+    interval.current = setInterval(function(){
+    
+      if (start < data[index].imagesList.length ){
+        elementToplay.src = data[index].imagesList[start];
+
+        start=start +1
+      } else {
+        start =0
+        elementToplay.src = data[index].imagesList[start];
+      }
+        
+    },1200)
+
+  }
+
+  const resetImage=(index)=> {
+      if (index !=null){
+        var elementToReset = document.querySelector(`.cursor-project-item .cursor-item:nth-child(${index+1}) img`)
+
+        elementToReset.src = data[index].featureImage
+        
+      }
+  }
 
   const handleHover =(index)=>{
+    clearInterval(interval.current)
     var elementToScroll = document.querySelector(`.cursor-project-item .cursor-item:nth-child(${index+1})`)
-    gsap.to('.cursor-project-item',{
+    gsap.to('.cursor-project-wrapper',{
       scrollTo:{
         y:elementToScroll,
         
       },
       duration:0.5
     })
+
+    
+    playImages(index)
+    resetImage(currentActive.current)
+    currentActive.current=index
+
+    
+    
   }
 
   const handleMouseOutList = ()=>{
+      cursor.current.style.opacity=0;
+      
  
-  }
-  const handleMouseOverList = ()=>{
+
+    }
+    const handleMouseOverList = ()=>{
+    cursor.current.style.opacity=1
  
   }
   
@@ -365,24 +411,28 @@ export default function Projects() {
         <div className="project__list" onMouseOver={handleMouseOverList} onMouseOut={handleMouseOutList}>
 
           <div className="cursor-project-item" ref={cursor}>
-          {
-            data.map((value, index)=>{
-              return (
-                <div key={index} className="cursor-item">
-                <img src={value.featureImage} alt="" />
-                {
-                  value.imagesList.map((item,i)=>{
-                    return (
-                      <img key={i} src={item} alt=''  />
-                    )
-                  })
-                }
-                  <img src={value.featureImage} alt="" />
-                </div>
+        
+            <div className="view-button-fake">
+                View
+            </div>
+           
+            <div className="cursor-project-wrapper">
 
-              )
-            })
-          }
+          
+            {
+              data.map((value, index)=>{
+                return (
+                  <div key={index} className="cursor-item">
+                  <img src={value.featureImage} alt="" />
+                 
+                  </div>
+
+                )
+              })
+            }
+            
+            </div>
+          
           </div>
         
           <div className="project__list--header">
