@@ -35,6 +35,7 @@ export const FooterContact = () => {
 
     return ()=>{
       tl.scrollTrigger.kill()
+      
     }
     
   })

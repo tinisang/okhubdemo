@@ -1,10 +1,9 @@
-import { NewsDetail} from "../../components/NewsDetail/NewsDetail";
+import { WhyOKHUB } from "../../components/SingleProject/WhyOKHUB"
 
-export default function SingleNew(){
+export default function SingleProject(){
     return (
-        <div  data-scroll-section>
-
-        <NewsDetail/>
-        </div>
+        <>
+            <WhyOKHUB/>
+        </>
     )
 }
