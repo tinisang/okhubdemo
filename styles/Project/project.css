@@ -243,6 +243,9 @@
   transition: 0.2s;
   width: 519px;
   height: 287px;
+  box-shadow: 0px 0px 30px rgba(0,0,0,.2);
+  border-radius: 8px;
+  overflow: hidden;
   
 }
 
@@ -288,4 +291,22 @@
   position: absolute;
   top: 0;
   left: 0;
+}
+.cursor-project-item .card__project--img-sub{
+  height: 25px;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  gap:4px;
+  padding-left: 10px;
+  
+ 
+}
+
+.cursor-project-item .card__project--img-sub .img-eclipse{
+  height: 10px;
+  width: 10px;
+  background-color: rgba(0,0,0,0.1);
+  border-radius: 50%;
 }

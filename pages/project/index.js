@@ -415,6 +415,13 @@ export default function Projects() {
             <div className="view-button-fake">
                 View
             </div>
+
+            <div className='card__project--img-sub'>
+              <div className='img-eclipse'></div>
+              <div className='img-eclipse'></div>
+              <div className='img-eclipse'></div>
+             
+          </div>
            
             <div className="cursor-project-wrapper">
 
