@@ -15,7 +15,9 @@ export const Header = () => {
   const header = useRef()
 
   const handleOpenMenu= ()=>{
-    
+     
+    header.current.style.transform = "translateY(0%)"
+          header.current.style.background = "transparent"
     setOpen(!isOpen)
   }
 
@@ -28,29 +30,39 @@ export const Header = () => {
       
        
         } else {
-          header.current.style.backdropFilter = "blur(0px)";
+   
         
         }
 
+        /*---SCROLL UP----*/
         if (fakeScrollY > thisScrollY) {
 
           header.current.style.transform = "translateY(0%)"
-
+          header.current.style.background = "white"
+          
         }
-
+        /*---SCROLL DOWN----*/
         if (fakeScrollY < thisScrollY && thisScrollY > 300) {
-
+          
+          header.current.style.background = "white"
           header.current.style.transform = "translateY(-100%)"
+          
+        }
+        
+        if (fakeScrollY == thisScrollY){
 
         }
-
-        if (fakeScrollY == thisScrollY)
-
-          if (thisScrollY == 0) {
-            header.current.style.transform = "translateY(0%)"
+        
+        if (thisScrollY == 0) {
+          header.current.style.transform = "translateY(0%)"
+          header.current.style.background = "transparent"
+        }
+        
+        if (isOpen){
+          
+          header.current.style.transform = "translateY(0%)"
+          header.current.style.background = "transparent"
           }
-
-     
       fakeScrollY = thisScrollY
     });
 
