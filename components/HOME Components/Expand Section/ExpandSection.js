@@ -136,29 +136,64 @@ const ExpandSection = ()=>{
     useEffect(()=>{
    
         var dot =document.querySelector('.row1 svg')
-  
+        var tl1 = gsap.timeline({
+            scrollTrigger:{
+                trigger: pin.current,
+            //   markers:true,
+                start: '100px 0%',
+                end:'200% 0%',
+                toggleActions:'play none none reverse',
+            
+                
+              
+            }
+        })
         var tl = gsap.timeline({
             scrollTrigger:{
                 trigger: pin.current,
-               
                 pin:pin.current,
                 pinSpacing:true,
-                // markers:true,
+             
                 start: '0% 0%',
-                end:'100% 0%',
-                
-                scrub:1,
+                end:'200% 0%',
+             
+                scrub:10
               
-            }
-
-        })
-
-
-        tl.to('.services',{
-            clipPath:'circle(80% at 50% 35%)',
-            // duration:5,
+              
+            },
             ease:'power2.out'
+
         })
+
+        tl
+            .to('.hero-section-expand .row1 .word-split:nth-child(1)',{
+                x:-80
+            })
+            .to('.hero-section-expand .row1 .word-split:last-child',{
+                x:80
+            },'<+=0')
+            .to(['.hero-section-expand .content-area .row1','.hero-section-expand .content-area .title'],{
+                y:-70
+            },"<+=0")
+            .to(['.hero-section-expand .content-area .description'],{
+                y:-60
+            },"<+=0")
+            .to(['.hero-section-expand .content-area a.credential'],{
+                y:-40
+            },"<+=0")
+
+
+        tl1
+            .to('.services',{
+                clipPath:'circle(80% at 50% 35%)',
+                duration:1,
+                ease:'power2.out'
+            })
+            .to('.services',{
+                y:"+=0",
+                duration:0.2
+            })
+          
         window.addEventListener('mousemove',cursorAni)
         tl.scrollTrigger.refresh()
 
@@ -166,6 +201,8 @@ const ExpandSection = ()=>{
         return ()=>{
             tl.scrollTrigger.kill();
             tl.kill()
+            tl1.scrollTrigger.kill()
+            tl1.kill()
 
             window.removeEventListener('mousemove',cursorAni)
           }
@@ -291,8 +328,8 @@ const ExpandSection = ()=>{
            
             <div className="services" style={{
                 clipPath:"circle(0% at 50% 35%)",
-                transition:'1s',
-                transformStyle:"ease-out"
+                transition:'all 0.2s'
+              
             }} ref={services}>
 
 <div className="our-services" ref={background}>
