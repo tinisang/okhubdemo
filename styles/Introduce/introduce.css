@@ -252,6 +252,8 @@
   padding-bottom: 54px;
   justify-content: space-between;
   align-items: flex-end;
+  position: relative;
+  overflow-y: clip;
 }
 
 .introduce__people-title {
@@ -309,11 +311,6 @@
   color: rgba(0, 0, 0, 0.03);
 }
 
-
-
-
-
-
 /*  */
 
 .introduce__people .introduce__people-des {
@@ -335,10 +332,10 @@
 .introduce__teams--container {
   position: relative;
 }
-.introduce__teams{
+.introduce__teams {
   /* background-color: #343434; */
 }
-.introduce__teams .swiper-wrapper{
+.introduce__teams .swiper-wrapper {
   display: flex;
   gap: 32px;
   position: relative;
@@ -358,7 +355,6 @@
   z-index: 2;
   left: 0%;
   /* top: 0%; */
- 
 }
 .introduce__teams::before {
   content: "";
@@ -376,15 +372,14 @@
   /* top: 0; */
 }
 
-.introduce__teams--prev{
+.introduce__teams--prev {
   position: absolute;
-    top: 30%;
-    left: 4.5%;
-    z-index: 3;
-    cursor: pointer;
+  top: 30%;
+  left: 4.5%;
+  z-index: 3;
+  cursor: pointer;
 }
-.introduce__teams--next{
-
+.introduce__teams--next {
   position: absolute;
   top: 30%;
   right: 4.5%;
@@ -392,39 +387,114 @@
   z-index: 3;
 }
 .introduce__teams--prev:hover svg circle,
-.introduce__teams--next:hover svg circle{
+.introduce__teams--next:hover svg circle {
   fill: black;
-  
 }
 
 .introduce__teams--prev:hover svg > g > path,
-
-.introduce__teams--next:hover svg > g > path{
+.introduce__teams--next:hover svg > g > path {
   fill: #f0f0f0 !important;
 }
 
-
-
-.people__title--panigation{
-  position: relative !important;
+.people__title--panigation {
   display: flex;
   align-items: center;
   gap: 5px;
   height: 14px;
+  padding-top: 120px;
 }
-.people__title--panigation .people__title--panigation-item{
+.people__title--panigation .people__title--panigation-item {
   height: 8px;
   width: 8px;
   border-radius: 50%;
   background-color: rgba(217, 217, 217, 1);
   opacity: 1 !important;
-  transition: .2s;
+  transition: 0.2s;
   margin: 0px !important;
-  
 }
 
-.people__title--panigation .people__title--panigation-item.swiper-pagination-bullet-active{
-      background-color:rgba(17, 18, 21, 1) ;
-      width: 16px;
-      height: 16px;
+.people__title--panigation
+  .people__title--panigation-item.swiper-pagination-bullet-active {
+  background-color: rgba(17, 18, 21, 1);
+  width: 16px;
+  height: 16px;
+}
+
+/*  */
+
+.introduce__people--eclipse {
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  margin-top: -100px;
+  margin-right: -120px;
+}
+
+.introduce__people--eclipse img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* working with customer */
+.introduce__working--container {
+  height: 
+  2782px;
+}
+.introduce__working--container
+ .introduce__working--title {
+  margin: 0 100px;
+  width: 100%;
+  height: 30%;
+
+  position: relative;
+}
+.introduce__working--container
+  .introduce__working--title
+  .working__title-primary {
+  width: 50%;
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 52px;
+  line-height: 68px;
+  color: #000000;
+  margin: 0;
+}
+
+.introduce__working--container 
+.introduce__working--title 
+.working__title-bg {
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 180px;
+  line-height: 228px;
+  color: rgba(0, 0, 0, 0.03);
+  position: absolute;
+  top: 0;
+  transform: translateY(-60%);
+}
+
+
+.introduce__working--container 
+.introduce__working--title  
+.working__title-des{
+  width: 40%;
+
+font-family: 'Be Vietnam Pro';
+font-style: normal;
+font-weight: 400;
+font-size: 28px;
+line-height: 42px;
+/* or 150% */
+
+text-align: justify;
+
+color: #000000;
+position: absolute;
+right: 200px;
 }

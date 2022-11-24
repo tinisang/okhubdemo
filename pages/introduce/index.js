@@ -9,8 +9,9 @@ import introduceOverviewImg from "../../public/imgs/introduceOverviewImg.png";
 import introduceImgIcon from "../../public/imgs/introduceImgIcon.svg";
 import { CardTeams } from "../../components/CardTeams";
 import { ReviewSection } from "../../components/HOME Components/ReviewSection";
-import {ClientsSection} from "../../components/HOME Components/ClientsSection"
+import { ClientsSection } from "../../components/HOME Components/ClientsSection";
 import imageIntroduceTeam from "../../public/imgs/imageIntroduceTeam.png";
+import introducePeopleEclipse from "../../public/imgs/introducePeopleEclipse.png";
 
 export default function Introduce() {
   return (
@@ -103,15 +104,16 @@ export default function Introduce() {
           <div className="people__title--bg">
             <p>PEOPLE</p>
           </div>
-          <div className="people__title--panigation">
-           
-          </div>
+          <div className="people__title--panigation"></div>
         </div>
         <div className="introduce__people-des">
           <p>
             Ở OkHub Việt Nam, mỗi cá nhân đều tự đặt ra các mục tiêu gắn theo
             mục tiêu chung của tổ chức và nỗ lực hoàn thành.
           </p>
+        </div>
+        <div className="introduce__people--eclipse">
+          <Image src={introducePeopleEclipse} alt="" />
         </div>
       </div>
 
@@ -129,16 +131,17 @@ export default function Introduce() {
             nextEl: ".introduce__teams--next",
           }}
           pagination={{
-           
             el: ".people__title--panigation",
             clickable: true,
             renderBullet: function (index, className) {
-              return '<span class= "  people__title--panigation-item ' + className + '"></span>';
+              return (
+                '<span class= "  people__title--panigation-item ' +
+                className +
+                '"></span>'
+              );
             },
-           
-          
           }}
-          modules={[Pagination, Navigation, ]}
+          modules={[Pagination, Navigation]}
         >
           <SwiperSlide>
             <CardTeams image={imageIntroduceTeam} team="Team Design" />
@@ -247,9 +250,25 @@ export default function Introduce() {
         </div>
       </div>
 
+      {/* working with customer */}
+      <div className="introduce__working--container">
+        <div className="introduce__working--title">
+          <p className="working__title-primary">
+            Cách mà chúng tôi Làm việc với khách hàng
+          </p>
+          <p className="working__title-bg">Commitments</p>
+          <p className="working__title-des">
+            Cam kết là điều mà chúng tôi muốn truyền tải đến các doanh nghiệp
+            đối tác.
+          </p>
+        </div>
+        <div className="introduce__working--content">
+          
+        </div>
+      </div>
 
-      <ClientsSection/>
-      <ReviewSection/>
+      <ClientsSection />
+      <ReviewSection />
     </div>
   );
 }
