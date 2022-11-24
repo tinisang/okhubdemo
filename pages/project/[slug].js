@@ -12,7 +12,7 @@ export default function SingleProject(){
 })
     return (
         <>
-            <div>
+            <div className="">
 
                 <WhyOKHUB/>
                 <ExpandingLogo/>
