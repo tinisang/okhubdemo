@@ -92,7 +92,7 @@ export default function Projects() {
     var tl = gsap.timeline({
       scrollTrigger:{
           trigger:'.project__header',
-          // markers:true,
+   
           start:'top 0%',
           end:'bottom 0%',
           scrub:4,
@@ -113,7 +113,6 @@ export default function Projects() {
     return ()=>{
       tl.scrollTrigger.kill()
       
-      // tl.kill()
     }
     
   },[])
@@ -127,7 +126,7 @@ export default function Projects() {
           left: e.clientX - cursor.current.clientWidth/2, 
           top: e.clientY - cursor.current.clientHeight/2, 
           ease:"power2.out",
-          duration:1,
+          duration:0.5,
           delay:0.04,
           // opacity:1
       })

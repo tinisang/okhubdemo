@@ -6,8 +6,10 @@ import { Pagination, Autoplay, Navigation, EffectFade, EffectCoverflow } from "s
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import slideImage from '../../public/imgs/slide-image.png'
+import gumacImage from '../../public/imgs/gumac1.png'
 
 import { useSwiper } from 'swiper/react';
+
 
 import "swiper/css";
 import "swiper/css/effect-fade";
@@ -18,6 +20,9 @@ import "swiper/css/effect-cards";
 
 
 export const Showcase = ()=>{
+
+
+
     return (
         <>
             <div className="container-padding showcase-section">
@@ -33,33 +38,20 @@ export const Showcase = ()=>{
                         <img className="mockup-image" src="https://img.freepik.com/free-vector/realistic-ui-ux-background_52683-69487.jpg?w=2000" alt="" />
                         <Image className="holder-frame" src={frameholder} alt='' />
 
+                        <div className="version-pc">Version PC</div>
+
                     </div>
                     </div>
 
                     <div className="column-2">
                     <Swiper
-                         modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
-            
-    
+                        modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
                         loop={true}
                         speed={1500}
-           
-                
-                        effect={"coverflow"}
-                        coverflowEffect={{
-                            rotate:0,
-                            deep:100,
-                            scale:0.8,
-                            slideShadows: false,
-                             
-                            }}
                         grabCursor={true}
                         slidesPerView={2}
                         reverseDirection={true}
-                        autoplay={false}
-                        centeredSlides={true}
-                       
-                        
+                        autoplay={false}   
                         >
                             <SwiperSlide>
                                 <div className="image-item-slide">
@@ -100,6 +92,37 @@ export const Showcase = ()=>{
 
                     
                 </div>
+
+                <div className="mobile-version">
+                    <div className="images-wrapper-mobile">
+                        <div className="image-item-showcase">
+
+                            <Image src={gumacImage} alt='' />
+                        </div>
+                        <div className="image-item-showcase">
+
+                            <Image src={gumacImage} alt='' />
+                        </div>
+                        <div className="image-item-showcase">
+
+                            <Image src={gumacImage} alt='' />
+                        </div>
+                        
+                    </div>
+                    <div className="version-mobile-text">
+                        Version Mobile
+                    </div>
+
+                    
+                </div>
+                    <div className="achievement">
+                    <div className="info">
+
+                        <div className="title">Kết quả đạt được<br></br> Sau khi hoàn thành dự án</div>
+                        <div className="transparent-text">Achievement</div>
+                    </div>
+                    </div>
+                
             </div>
         </>
     )
