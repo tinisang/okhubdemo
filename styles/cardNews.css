@@ -70,7 +70,7 @@
   line-height: 36px;
   color: #777777;
 }
-
+/* responsive font size card news */
 @media only screen and (max-width : 1415px){
   .card__info-user p {
 
@@ -93,7 +93,14 @@
   margin-top: 15px;
 }
 .card__btn {
+  width: 35px;
+  height: 35px;
   margin-right: 12px;
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
 }
 
 .card__next-text {

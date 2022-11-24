@@ -3,7 +3,7 @@ import Image from "next/image";
 import { NoteBtn } from "./NoteBtn";
 import calendarCard from "../public/imgs/calendar-edit-NewsDetail.png";
 import userCard from "../public/imgs/user-edit-NewsDetail.png";
-import nextIcon from "../public/imgs/arowNextCard.png";
+import nextIcon from "../public/imgs/nextIcon.svg";
 import imgCard from "../public/imgs/imgCard.png"
 
 export const CardNews = () => {
