@@ -131,6 +131,7 @@
     min-height: 100vh;
     background-color: #F2F2F2;
     padding-top: 52px;
+    margin-bottom: 160px;
   }
 .showcase-section .laptop{
   height: 371.07110595703125px;
@@ -327,16 +328,76 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 47px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
   
 
 }
+.achievement .achievement-area{
+  position: relative;
+}
 .achievement .achievement-wrapper .achievement-item{
  background-color: white;
+ padding: 104px 42px 95px 42px;
+ border-radius: 32px;
+ box-shadow: 0px 4px 50px 0px rgba(0, 0, 0, 0.05);
+ transition: 0.3s;
+ cursor: pointer;
+position: relative;
+overflow: hidden;
+}
+.achievement .achievement-wrapper .achievement-item:hover{
+  transform: translateY(-20px);
 
+}
+
+.achievement .achievement-wrapper .achievement-item .clip-path-background{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(217, 217, 217, 1);
+  top: 0;
+  left: 0;
+  z-index: 0;
+  clip-path: circle(0.3% at 100% 0);
+  transition: 0.5s;
+
+}
+
+.achievement .achievement-wrapper .achievement-item:hover .clip-path-background{
+  clip-path: circle(141.2% at 100% 0);
+
+}
+.achievement .achievement-wrapper .achievement-item .title-achievement{
+  font-family: Be Vietnam Pro;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 0.0025em;
+  text-align: left;
+  margin-bottom: 18px;
+  position: relative;
+  z-index: 1;
+  
+
+}
+.achievement .achievement-wrapper .achievement-item .measurement{
+  font-family: Be Vietnam Pro;
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 40px;
+  letter-spacing: 0.0025em;
+  text-align: left;
+  z-index: 1;
+  position: relative;
+  
 }
 .achievement .info{
     position: relative;
-    margin-bottom: 242px;
+    padding-bottom: 242px;
   }
 
   .achievement .transparent-text{
@@ -348,6 +409,6 @@
   text-align: left;
   color: rgba(0, 0, 0, 0.03);
   position: absolute;
-  bottom: -37px;
+  top: 107px;
 
   }

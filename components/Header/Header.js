@@ -79,13 +79,13 @@ export const Header = () => {
     
         tl
           .from('.logo-icon .center',{
-            opacity: 0,
+            opacity: 0.3,
           })
           .from('.logo-icon .radius1',{
-            opacity: 0,
+            opacity: 0.3,
           })
           .from('.logo-icon .radius2',{
-            opacity: 0,
+            opacity: 0.3,
           })
 
     return ()=>{

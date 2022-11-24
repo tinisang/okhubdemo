@@ -121,34 +121,40 @@ export const Showcase = ()=>{
                             <div className="title">Kết quả đạt được<br></br> Sau khi hoàn thành dự án</div>
                             <div className="transparent-text">Achievement</div>
                         </div>
+                        <div className="achievement-area">
 
-                        <div className="achievement-wrapper">
-                            <div className="achievement-item">
-                                <div className="title-achievement">
-                                    Đánh giá từ khách hàng
-                                </div>
-                                <div className="measurement">
-                                    4.8/5.0
-                                </div>
+                        
+                            <div className="achievement-wrapper">
+                                <div className="achievement-item">
+                                    <div className="title-achievement">
+                                        Đánh giá từ khách hàng
+                                    </div>
+                                    <div className="measurement">
+                                        4.8/5.0
+                                    </div>
+                                    <div className="clip-path-background"> </div>
 
-                            </div>
-                            <div className="achievement-item">
-                                <div className="title-achievement">
-                                    Đánh giá từ khách hàng
                                 </div>
-                                <div className="measurement">
-                                    4.8/5.0
-                                </div>
+                                <div className="achievement-item">
+                                    <div className="title-achievement">
+                                    Tỷ lệ chuyển đổi CTR tăng
+                                    </div>
+                                    <div className="measurement">
+                                    45%
+                                    </div>
+                                    <div className="clip-path-background"> </div>
 
-                            </div>
-                            <div className="achievement-item">
-                                <div className="title-achievement">
-                                    Đánh giá từ khách hàng
                                 </div>
-                                <div className="measurement">
-                                    4.8/5.0
-                                </div>
+                                <div className="achievement-item">
+                                    <div className="title-achievement">
+                                    Sự hài lòng từ đối tác
+                                    </div>
+                                    <div className="measurement">
+                                    4.9/5.0
+                                    </div>
+                                    <div className="clip-path-background"> </div>
 
+                                </div>
                             </div>
                         </div>
                         
