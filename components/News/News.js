@@ -92,8 +92,7 @@ export const News = () => {
 
     return ()=>{
       tl.scrollTrigger.kill()
-      
-      // tl.kill()
+     
     }
     
   },[])
@@ -192,7 +191,7 @@ export const News = () => {
           <p>Theo lĩnh vực: </p>
           <Select
             className="basic-single"
-            classNamePrefix="select"
+            
             defaultValue="default"
             name="color"
             options={options}
