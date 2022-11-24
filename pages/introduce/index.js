@@ -143,6 +143,7 @@ export default function Introduce() {
               );
             },
           }}
+          spedd = {100}
           modules={[Pagination, Navigation]}
         >
           <SwiperSlide>
