@@ -116,11 +116,42 @@ export const Showcase = ()=>{
                     
                 </div>
                     <div className="achievement">
-                    <div className="info">
+                        <div className="info">
 
-                        <div className="title">Kết quả đạt được<br></br> Sau khi hoàn thành dự án</div>
-                        <div className="transparent-text">Achievement</div>
-                    </div>
+                            <div className="title">Kết quả đạt được<br></br> Sau khi hoàn thành dự án</div>
+                            <div className="transparent-text">Achievement</div>
+                        </div>
+
+                        <div className="achievement-wrapper">
+                            <div className="achievement-item">
+                                <div className="title-achievement">
+                                    Đánh giá từ khách hàng
+                                </div>
+                                <div className="measurement">
+                                    4.8/5.0
+                                </div>
+
+                            </div>
+                            <div className="achievement-item">
+                                <div className="title-achievement">
+                                    Đánh giá từ khách hàng
+                                </div>
+                                <div className="measurement">
+                                    4.8/5.0
+                                </div>
+
+                            </div>
+                            <div className="achievement-item">
+                                <div className="title-achievement">
+                                    Đánh giá từ khách hàng
+                                </div>
+                                <div className="measurement">
+                                    4.8/5.0
+                                </div>
+
+                            </div>
+                        </div>
+                        
                     </div>
                 
             </div>

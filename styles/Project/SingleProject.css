@@ -322,10 +322,21 @@
   color: black;
 
 
-  }
-  .achievement .info{
+}
+.achievement .achievement-wrapper{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 47px;
+  
+
+}
+.achievement .achievement-wrapper .achievement-item{
+ background-color: white;
+
+}
+.achievement .info{
     position: relative;
-    padding-bottom: 242px;
+    margin-bottom: 242px;
   }
 
   .achievement .transparent-text{
