@@ -8,10 +8,12 @@ import playVideoIntroducesBtn from "../../public/imgs/playVideoIntroducesBtn.svg
 import introduceOverviewImg from "../../public/imgs/introduceOverviewImg.png";
 import introduceImgIcon from "../../public/imgs/introduceImgIcon.svg";
 import { CardTeams } from "../../components/CardTeams";
+import { ItemWorkingCustomer } from "../../components/ItemWorkingCustomer";
 import { ReviewSection } from "../../components/HOME Components/ReviewSection";
 import { ClientsSection } from "../../components/HOME Components/ClientsSection";
 import imageIntroduceTeam from "../../public/imgs/imageIntroduceTeam.png";
 import introducePeopleEclipse from "../../public/imgs/introducePeopleEclipse.png";
+
 
 export default function Introduce() {
   return (
@@ -263,7 +265,24 @@ export default function Introduce() {
           </p>
         </div>
         <div className="introduce__working--content">
-          
+          <ItemWorkingCustomer
+            no="01"
+            title="Sự thoải mái"
+            des="Mỗi khách hàng sẽ có tài khoản để gửi ticket xử lý các vấn đề của dự án ngay cả khi đã bàn giao sản phẩm. Ngoài ra, chúng tôi cũng có Hotline hỗ trợ bất kỳ trường hợp phát sinh lỗi nào ngay trong giờ hành chính. "
+            img = {imageIntroduceTeam}
+          />
+             <ItemWorkingCustomer
+            no="02"
+            title="Sự tận tình"
+            des="Mỗi khách hàng sẽ có tài khoản để gửi ticket xử lý các vấn đề của dự án ngay cả khi đã bàn giao sản phẩm. Ngoài ra, chúng tôi cũng có Hotline hỗ trợ bất kỳ trường hợp phát sinh lỗi nào ngay trong giờ hành chính. "
+            img = {imageIntroduceTeam}
+          />
+             <ItemWorkingCustomer
+            no="03"
+            title="Sự đồng hành"
+            des="Mỗi khách hàng sẽ có tài khoản để gửi ticket xử lý các vấn đề của dự án ngay cả khi đã bàn giao sản phẩm. Ngoài ra, chúng tôi cũng có Hotline hỗ trợ bất kỳ trường hợp phát sinh lỗi nào ngay trong giờ hành chính. "
+            img = {imageIntroduceTeam}
+          />
         </div>
       </div>
 

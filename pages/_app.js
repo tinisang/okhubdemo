@@ -26,6 +26,7 @@ import "../styles/Project/listProject.css"
 import "../styles/Introduce/introduce.css"
 import "../styles/Introduce/CardTeams.css"
 import "../styles/Project/SingleProject.css"
+import "../styles/Introduce/ItemWorkingCustomer.css"
 
 function MyApp({ Component, pageProps }) {
   
