@@ -5,11 +5,20 @@ import whitelogo from '../../public/imgs/whitelogo.svg'
 
 import Image from "next/image";
 import Link from 'next/link'
+import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
 import { DropDown } from "./Dropdown";
 import gsap from "gsap";
 
 export const Header = () => {
+
+
+  // const router = useRouter()
+
+  // useEffect(()=>{
+  //   console.log('route change')
+  // },router.asPath)
+  
 
   const [isOpen,setOpen] = useState(false)
   const header = useRef()
@@ -22,6 +31,8 @@ export const Header = () => {
   }
 
   const handleMenuItemCliked = ()=>{
+    var routChangeDiv = document.querySelector('.route-change');
+    routChangeDiv.classList.add('loading')
     setOpen(!isOpen)
   }
 
