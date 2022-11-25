@@ -1,4 +1,5 @@
 import { Base } from '../components/Base';
+import '../styles/Base.css'
 import '../styles/globals.css'
 import '../styles/HOME/OurServices.css'
 import '../styles/Header/Header.css'

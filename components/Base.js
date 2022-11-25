@@ -1,9 +1,19 @@
 import { Header } from "./Header/Header";
 import { Footer } from "./Footer/Footer";
 import Head from "next/head";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 export const Base = (props) => {
   // console.log(props)
+  const router = useRouter()
+
+  useEffect(()=>{
+    console.log('route change');
+    var routChangeDiv = document.querySelector('.route-change');
+    routChangeDiv.classList.remove('loading')
+  },[router.asPath])
+  
   return (
     <>
 
@@ -16,7 +26,9 @@ export const Base = (props) => {
     
       
       <Header/>
-      
+      <div className="route-change">
+        OKHUB
+      </div>
 
       {props.children}
    
