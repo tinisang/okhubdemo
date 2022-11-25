@@ -30,10 +30,15 @@ export const Header = () => {
     setOpen(!isOpen)
   }
 
+
+  
   const handleMenuItemCliked = ()=>{
     var routChangeDiv = document.querySelector('.route-change');
     routChangeDiv.classList.add('loading')
-    setOpen(!isOpen)
+    if (isOpen){
+      setOpen(!isOpen)
+
+    }
   }
 
 
@@ -115,8 +120,8 @@ export const Header = () => {
       <div className={" container-padding header-section "+ (isOpen ? 'opening' : '')} ref={header} >
           <div className="logo-area">
               <Link href='/'>
-              <div className="logo-icon">
-                {/* <Image src={isOpen ? whitelogo : logoNewsDetail} alt=''   /> */}
+              <div className="logo-icon" onClick={handleMenuItemCliked}>
+               
               {
                 isOpen ?
                 <svg width="175" height="74" viewBox="0 0 175 74" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -9,7 +9,7 @@ export const Base = (props) => {
   const router = useRouter()
 
   useEffect(()=>{
-    console.log('route change');
+
     var routChangeDiv = document.querySelector('.route-change');
     routChangeDiv.classList.remove('loading')
   },[router.asPath])

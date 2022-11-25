@@ -14,7 +14,7 @@ export const WhyOKHUB = ({data})=>{
 
         reasonItems.current= reasonItems.current.filter((value) => value != null)
         
-        console.log(reasonItems)
+ 
 
         var screenHeight = window.innerHeight;
         

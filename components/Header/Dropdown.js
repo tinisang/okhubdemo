@@ -136,32 +136,41 @@ export const DropDown = ({status, functionClick})=>{
 
             
             timeline
+            .to('.dropdown-section',{
+                x:'-=100vw',
+               
+                duration:0.5
+            })
             .from('.menu-item',{
                 x:300,
                 opacity:0.6,
                 duration:0.8,
                 stagger:0.1,
                     ease:'out'
-                })
-                .from('.contact-area .heading',{
-                    y:30,
-                    opacity:0,
-                    duration:0.4,
-                    ease:'out'
-                },"<+=0.5")
-                .from('.social-wrapper',{
-                    y:30,
-                    opacity:0,
-                    duration:0.4,
-                    ease:'out'
-                },"<+=0.1")
-                .from('.image-tilt-item',{
-                    x:150,
-                    
-                    duration:0.7,
-                    stagger:0.1,
-                    ease:'out'
-                },"+0.2")
+                },"<+=0")
+            .from('.contact-area .heading',{
+                y:30,
+                opacity:0,
+                duration:0.4,
+                ease:'out'
+            },"<+=0.5")
+            .from('.social-wrapper',{
+                y:30,
+                opacity:0,
+                duration:0.4,
+                ease:'out'
+            },"<+=0.1")
+            .from('.image-tilt-item',{
+                x:150,
+                
+                duration:0.7,
+                stagger:0.1,
+                ease:'out'
+            },"+0.2")
+            .to('.dropdown-section',{
+                borderRadius:'0px 0px 0px 0px',
+                duration:0.5
+            },0)
                 
                 
 
@@ -170,6 +179,11 @@ export const DropDown = ({status, functionClick})=>{
                 
         } else {
             timeline
+            .to('.dropdown-section',{
+                x:'100vw',
+                // borderRadius:'800px 0px 0px 800px',
+                duration:0.5
+            },0)
                 .to('.menu-item',{x:0, duration:0.1})
                 
                 document.removeEventListener('mousemove',function(){})
@@ -187,6 +201,8 @@ export const DropDown = ({status, functionClick})=>{
         <>
     
             <div className={"container-padding dropdown-section "+ (status ? 'opening' : '')}>
+
+               
                     <div className="dropdown-wrapper">
                         <div className="menu-area">
                             <div className="menu-item" onMouseEnter={()=>HandleMenuHover(0)}>
