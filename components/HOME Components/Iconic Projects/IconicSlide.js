@@ -14,30 +14,50 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
 import { useEffect, useRef, useState } from 'react';
 export const IconicSlide = ()=>{
-    const triggerContainer = useRef()
+    const triggerContainer = useRef(setInterval(function(){},99999))
     const slider = useRef()
     const cursor = useRef()
     const preview = useRef(null)
+    const myInterval = useRef()
+    const lastActive = useRef()
     const [previewImg,setPreview] =useState(previewImage)
 
     const data=[
         {
-            image: image2
+            image: image2,
+            imageList:[
+                image2, image3, image4, image5, image6
+            ]
         },
         {
-            image: image3
+            image: image3,
+            imageList:[
+                image2, image3, image4, image5, image6
+            ]
         },
         {
-            image: image4
+            image: image4,
+            imageList:[
+                image2, image3, image4, image5, image6
+            ]
         },
         {
-            image: image5
+            image: image5,
+            imageList:[
+                image2, image3, image4, image5, image6
+            ]
         },
         {
-            image: image6
+            image: image6,
+            imageList:[
+                image2, image3, image4, image5, image6
+            ]
         },
         {
-            image: image7
+            image: image7,
+            imageList:[
+                image2, image3, image4, image5, image6
+            ]
         },
     ]
     
@@ -73,6 +93,7 @@ export const IconicSlide = ()=>{
             
             window.removeEventListener('mousemove',cursorAnimation)
             tl.scrollTrigger.kill()
+            clearInterval(myInterval.current)
           
         }
     })
@@ -84,8 +105,37 @@ export const IconicSlide = ()=>{
                 duration:1
             })
         }
-        
 
+    const resetImage=(index)=> {
+        if (index !=null){
+            var elementToReset = document.querySelector(`.preview-image img:nth-child(${index})`)
+           
+            elementToReset.src = data[index-1].image.src
+            elementToReset.srcset = data[index-1].image.src
+            
+        }
+    }             
+
+    const playImage=(index)=>{
+        var start=0;
+        clearInterval(myInterval.current)
+        var elementToplay = document.querySelector(`.preview-image img:nth-child(${index})`)
+
+        myInterval.current = setInterval(function(){
+
+          if (start < data[index-1].imageList.length ){
+            elementToplay.src = data[index-1].imageList[start].src;
+            elementToplay.srcset = data[index-1].imageList[start].src;
+            start=start +1
+          } else {
+            start =0
+            elementToplay.src = data[index-1].imageList[start].src;
+            elementToplay.srcset = data[index-1].imageList[start].src;
+          }
+
+            
+        },800)
+    }
     const handleMouseOver=(index)=>{
             var imageItem = document.querySelector(`.preview-image img:nth-child(${index})`);
             var notHoverProjectItems = document.querySelectorAll(`.project-item:not(:nth-child(${index}))`);
@@ -97,7 +147,12 @@ export const IconicSlide = ()=>{
             // setPreview( data[index-1].image)
             if(cursor.current){cursor.current.classList.add('active')}
              if (active) {active.classList.remove('active')}
-            imageItem.classList.add('active')
+            imageItem.classList.add('active');
+
+            playImage(index)
+            resetImage(lastActive.current)
+            lastActive.current = index
+
            
     }
 
@@ -110,6 +165,8 @@ export const IconicSlide = ()=>{
             element.classList.remove('not-hover')
             
         });
+        clearInterval(myInterval.current)
+        resetImage(lastActive.current)
     }
     
     

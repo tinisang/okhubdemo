@@ -8,7 +8,7 @@ export const ListProject = ({id, name, toDoData, category, hoverFunction}) => {
     <div onMouseEnter={hoverFunction} >
 
     
-    <Link href="#" className='list--container' >
+    <Link href="/project/abc" className='list--container' >
         <div className='list__NO' >
             <p>{id}</p>
         </div>

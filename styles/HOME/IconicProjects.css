@@ -56,6 +56,20 @@
     flex-shrink: 0;
     transition: 0.3s;
 }
+.iconic-projects-slide .projects-slide .project-item .image-project{
+   height: 100%;
+   width: 100%;
+}
+.iconic-projects-slide .projects-slide .project-item .image-project>a{
+   height: 100%;
+   display: block;
+   width: 100%;
+}
+.iconic-projects-slide .projects-slide .project-item .image-project>a>img{
+   height: 100% !important;
+   display: block;
+   width: 100% !important;
+}
 .iconic-projects-slide .projects-slide .project-item.not-hover{
     opacity: 0.3;
 }

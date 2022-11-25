@@ -108,6 +108,7 @@
   flex-wrap: nowrap;
   margin-bottom: 24px;
   overflow: hidden;
+  cursor: grab;
   /* justify-content: flex-end; */
 }
 

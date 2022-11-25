@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export const CardProject = (props) => {
   return (
-    <Link href = "#" className='card__project--container'>
+    <Link href = "/project/abc" className='card__project--container'>
         <div className='card__project--img'>
           <div className='card__project--img-sub'>
             <div className='card__project--img-eclipse'></div>

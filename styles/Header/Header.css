@@ -89,12 +89,13 @@
 /*---------DROPDOWN---------*/
 .dropdown-section.opening{
 
-    width: 100vw;
+    /* width: 100vw; */
     padding-left: 100px;
     padding-right: 100px;
-   
+    
 }
 .dropdown-section{
+    /* border-radius: 800px 0px 0px 800px; */
     height: 100vh;
     background-color: black;
     display: flex;
@@ -102,12 +103,15 @@
     top: 0;
     right: 0;
     z-index: 100;
-    transition: .8s;
+    /* transition: .8s; */
     color: white;
     align-items: center;
-    width: 0;
+    width: 100vw;
     overflow: hidden;
     padding: 0px;
+    transform: translateX(100vw);
+
+    
     
 }
 .dropdown-section .menu-area{
