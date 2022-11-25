@@ -102,7 +102,7 @@ export const IconicSlide = ()=>{
             gsap.to(cursor.current,{
                 left: e.clientX,
                 top:e.clientY,
-                duration:1
+                // duration:1
             })
         }
 
@@ -134,7 +134,7 @@ export const IconicSlide = ()=>{
           }
 
             
-        },800)
+        },1000)
     }
     const handleMouseOver=(index)=>{
             var imageItem = document.querySelector(`.preview-image img:nth-child(${index})`);
@@ -180,6 +180,12 @@ export const IconicSlide = ()=>{
                     <span className="value">50%</span>
                 </span>
 
+                </div>
+                <div className='card__project--img-sub'>
+                    <div className='img-eclipse'></div>
+                    <div className='img-eclipse'></div>
+                    <div className='img-eclipse'></div>
+                    
                 </div>
                 <div className="image-container preview-image" ref={preview}>
                     <Image src={image2} />
@@ -248,7 +254,7 @@ export const IconicSlide = ()=>{
                         <span className="project-info">Website <span className='project-name'>Kính mắt Anna</span></span>
                     </div>
                         <div className="view-more-projects">
-                        <Link href="/news">
+                        <Link href="/project">
                            <span>
                            View More
                            </span> 
