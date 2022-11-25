@@ -64,6 +64,38 @@ export const CategorySlide = ()=>{
             name: 'Khác',
             link:'/'
         },
+        {
+            name: 'Du lịch',
+            link:'/'
+        },
+        {
+            name: 'Mặt hàng tiêu dùng',
+            link:'/'
+        },
+        {
+            name: 'Thực phẩm',
+            link:'/'
+        },
+        {
+            name: 'Sức khỏe',
+            link:'/'
+        },
+        {
+            name: 'Giáo dục - Đào tạo',
+            link:'/'
+        },
+        {
+            name: 'Studio - Photograph',
+            link:'/'
+        },
+        {
+            name: 'Công trình',
+            link:'/'
+        },
+        {
+            name: 'Khác',
+            link:'/'
+        },
     ]
 
     const half = Math.ceil(data.length / 2); 
@@ -109,15 +141,39 @@ export const CategorySlide = ()=>{
                 repeat:-1,
                 ease:'none'
             })
+       
+        
+        slide1.addEventListener('mouseover', function(){slowStopAnimation(tl1)})
+        slide1.addEventListener('mouseout', function(){speedContinue(tl1)})
+        
+        slide2.addEventListener('mouseover', function(){slowStopAnimation(tl2)})
+        slide2.addEventListener('mouseout', function(){speedContinue(tl2)})
+
+
+        function slowStopAnimation(timelineElement){
+            gsap.to(timelineElement,{timeScale:0,duration:2})
+        }
+        function speedContinue(timelineElement){
+            gsap.to(timelineElement,{timeScale:1,duration:2})
+        }
+
 
           
             return ()=>{
                 tl1.scrollTrigger.kill()
                 tl2.scrollTrigger.kill()
+                // slide1.removeEventListener('mouseover', function(){slowStopAnimation(tl1)})
+                // slide1.removeEventListener('mouseout', function(){speedContinue(tl1)})
+                
+                // slide2.removeEventListener('mouseover', function(){slowStopAnimation(tl2)})
+                // slide2.removeEventListener('mouseout', function(){speedContinue(tl2)})
                 tl1.kill()
                 tl2.kill()
             }
     })
+
+   
+    
     return (
         <>
             <div className="iconic-category-slide">
