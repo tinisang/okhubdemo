@@ -31,6 +31,7 @@ import "../styles/Introduce/ItemWorkingCustomer.css"
 import '../styles/Loading.css'
 import { motion, AnimatePresence } from "framer-motion"
 import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
 function MyApp({ Component, pageProps }) {
@@ -46,6 +47,11 @@ function MyApp({ Component, pageProps }) {
   const handleComplete = ()=>{
     ScrollTrigger.refresh()
   }
+
+  useEffect(()=>{
+    ScrollTrigger.refresh()
+
+  })
 
 
   return (
