@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 import { motion, AnimatePresence } from "framer-motion"
+import gsap from "gsap";
 
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import loadingImage from '../public/imgs/loading.svg'
@@ -18,16 +19,26 @@ export const Base = (props) => {
 
   useEffect(()=>{
 
-    ScrollTrigger.refresh()
     router.events.on('routeChangeStart', (url, { shallow }) => {
-      isLoading(true)
+      console.log(url == router.asPath)
+      if (router.asPath != url){
+        isLoading(true)
+
+      }
     });
     router.events.on('routeChangeComplete', (url, { shallow }) => {
       isLoading(false)
+      ScrollTrigger.refresh()
+          
     });
     
   },[])
   
+  
+  const handleComplete = ()=>{
+    
+    ScrollTrigger.refresh()
+  }
   return (
     <>
 
@@ -40,14 +51,25 @@ export const Base = (props) => {
     
       
       <Header/>
+    
+
       {
         loading && (
-        <div className="loading-section">
+        <motion.div 
+        key={'loading-section'}
+        className="loading-section"
+        initial={{opacity:0}}
+        animate={{opacity:1}}
+        exit={{opacity:0}}
+        onAnimationComplete={handleComplete}
+
+        >
           <Image src={loadingImage} alt='' />
-        </div>
+        </motion.div>
 
         )
       }
+
  
         {props.children}
        

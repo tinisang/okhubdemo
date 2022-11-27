@@ -165,23 +165,7 @@ const ExpandSection = ()=>{
 
         })
 
-        // tl
-        //     .to('.hero-section-expand .row1 .word-split:nth-child(1)',{
-        //         x:-80
-        //     })
-        //     .to('.hero-section-expand .row1 .word-split:last-child',{
-        //         x:80
-        //     },'<+=0')
-        //     .to(['.hero-section-expand .content-area .row1','.hero-section-expand .content-area .title'],{
-        //         y:-70
-        //     },"<+=0")
-        //     .to(['.hero-section-expand .content-area .description'],{
-        //         y:-60
-        //     },"<+=0")
-        //     .to(['.hero-section-expand .content-area a.credential'],{
-        //         y:-40
-        //     },"<+=0")
-
+       
 
         tl1
             .to('.services',{
@@ -346,7 +330,7 @@ const ExpandSection = ()=>{
                         
                         <div className="row">
 
-                        <Link href="#">
+                        <Link href="/">
                             <span className="service-item" onMouseOver={()=>handleHover(1)} onMouseOut={handleMouseOut}>
                                 <span className="name">UI/UX Design</span>
                                 <span className="index">01</span>
@@ -354,7 +338,7 @@ const ExpandSection = ()=>{
                         </Link>
                         <span className="separator">/</span>
 
-                        <Link href="#">
+                        <Link href="/">
                             <span className="service-item"  onMouseOver={()=>handleHover(2)} onMouseOut={handleMouseOut}>
                                 <span className="name">Branding</span>
                                 <span className="index">02</span>
@@ -366,7 +350,7 @@ const ExpandSection = ()=>{
                         </div>
                         
                         <div className="row">
-                            <Link href="#">
+                            <Link href="/">
                                 <span className="service-item"  onMouseOver={()=>handleHover(3)} onMouseOut={handleMouseOut}>
                                     <span className="name">Web + App Development</span>
                                     <span className="index">03</span>
@@ -376,7 +360,7 @@ const ExpandSection = ()=>{
                         
                         
                         <div className="row">
-                            <Link href="#">
+                            <Link href="/">
                                 <span className="service-item"  onMouseOver={()=>handleHover(4)} onMouseOut={handleMouseOut}>
                                     <span className="name">Quảng cáo</span>
                                     <span className="index">04</span>
@@ -386,7 +370,7 @@ const ExpandSection = ()=>{
 
                             <span className="separator">/</span>
 
-                            <Link href="#">
+                            <Link href="/">
                                 <span className="service-item" onMouseOver={()=>handleHover(5)} onMouseOut={handleMouseOut}>
                                     <span className="name">S.E.O</span>
                                     <span className="index">05</span>
@@ -396,7 +380,7 @@ const ExpandSection = ()=>{
                         </div>
 
                         <div className="row">
-                            <Link href="#">
+                            <Link href="/">
                                 <span className="service-item" onMouseOver={()=>handleHover(6)} onMouseOut={handleMouseOut}>
                                     <span className="name">Quản trị Website</span>
                                     <span className="index">06</span>
@@ -406,7 +390,7 @@ const ExpandSection = ()=>{
 
                             <span className="separator">/</span>
 
-                            <Link href="#">
+                            <Link href="/">
                                 <span className="service-item"  onMouseOver={()=>handleHover(7)} onMouseOut={handleMouseOut}>
                                     <span className="name">Quản trị Fanpage</span>
                                     <span className="index">07</span>
