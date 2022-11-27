@@ -132,7 +132,13 @@ const ExpandSection = ()=>{
         })
         
     }
-
+    function radians_to_degrees(radians)
+    {
+      var pi = Math.PI;
+      return radians * (180/pi);
+    }
+              
+  
     useEffect(()=>{
    
         var dot =document.querySelector('.row1 svg')
@@ -196,24 +202,36 @@ const ExpandSection = ()=>{
 
 
     const cursorAni = (e)=>{
- 
-           
- gsap.to(cursor.current,{
-     left: e.clientX - cursor.current.clientWidth/2, 
-     top: e.clientY - cursor.current.clientHeight/2, 
-     ease:"power2.out",
-     duration:1,
-     delay:0.04
- })
- var viewButton= document.querySelector('.view-button');
- 
- gsap.to(viewButton,{
-     left: e.clientX - viewButton.clientWidth/2, 
-     top: e.clientY - viewButton.clientHeight/2, 
-     ease:"power2.out",
-     opacity:1,
-     duration:1
- })
+
+        console.log('----------------')
+        
+        var y = e.clientY  - cursor.current.clientHeight/2 -cursor.current.getBoundingClientRect().y
+        var x = e.clientX  - cursor.current.clientWidth/2 - cursor.current.getBoundingClientRect().x
+        var degree = radians_to_degrees(Math.atan2(x,y))*0.2
+
+        if (Math.abs(degree) < 10){
+            degree=0
+        }
+
+        console.log(degree)
+        console.log('----------------')
+        gsap.to(cursor.current,{
+            left: e.clientX - cursor.current.clientWidth/2, 
+            top: e.clientY - cursor.current.clientHeight/2, 
+            ease:"power2.out",
+            rotate:-degree,
+            duration:1.2,
+            delay:0.04
+        })
+        var viewButton= document.querySelector('.view-button');
+        
+        gsap.to(viewButton,{
+            left: e.clientX - viewButton.clientWidth/2, 
+            top: e.clientY - viewButton.clientHeight/2, 
+            ease:"power2.out",
+            opacity:1,
+            duration:1
+        })
      
 
  
