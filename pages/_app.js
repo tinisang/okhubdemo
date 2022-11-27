@@ -38,9 +38,9 @@ function MyApp({ Component, pageProps }) {
   const router = useRouter()
   const Layout = Component.Layout ? Component.Layout : Base;
   const variants = {
-    hidden: { opacity: 0, y: -200, x: 0 },
+    hidden: { opacity: 0, y: 0, x: 0 },
     enter: { opacity: 1, x: 0, y: 0 },
-    exit: { opacity: 0, x: 0, y: -200 },
+    exit: { opacity: 0, x: 0, y: 0 },
 }
 
   const handleComplete = ()=>{

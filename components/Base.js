@@ -40,14 +40,24 @@ export const Base = (props) => {
     
       
       <Header/>
+      <AnimatePresence exitBeforeEnter initial={false}>
+
       {
         loading && (
-        <div className="loading-section">
+        <motion.div 
+        key={'loading-section'}
+        className="loading-section"
+        initial={{opacity:0}}
+        animate={{opacity:1}}
+        exit={{opacity:0}}
+
+        >
           <Image src={loadingImage} alt='' />
-        </div>
+        </motion.div>
 
         )
       }
+      </AnimatePresence>
  
         {props.children}
        
