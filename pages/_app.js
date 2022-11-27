@@ -28,18 +28,25 @@ import "../styles/Introduce/introduce.css"
 import "../styles/Introduce/CardTeams.css"
 import "../styles/Project/SingleProject.css"
 import "../styles/Introduce/ItemWorkingCustomer.css"
+import '../styles/Loading.css'
 import { motion, AnimatePresence } from "framer-motion"
 import { useRouter } from 'next/router';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
 function MyApp({ Component, pageProps }) {
   
   const router = useRouter()
   const Layout = Component.Layout ? Component.Layout : Base;
   const variants = {
-    hidden: { opacity: 0, y: 0, x: 0 },
+    hidden: { opacity: 0, y: -200, x: 0 },
     enter: { opacity: 1, x: 0, y: 0 },
-    exit: { opacity: 0, x: 0, y: 0 },
+    exit: { opacity: 0, x: 0, y: -200 },
 }
+
+  const handleComplete = ()=>{
+    ScrollTrigger.refresh()
+  }
+
 
   return (
     <>
@@ -51,10 +58,12 @@ function MyApp({ Component, pageProps }) {
         initial="hidden" // Set the initial state to variants.hidden
         animate="enter" // Animated state to variants.enter
         exit="exit" 
+        onAnimationComplete={handleComplete}
         >
 
 
         <Component {...pageProps} />
+
         </motion.div>
         </AnimatePresence>
       </Layout>

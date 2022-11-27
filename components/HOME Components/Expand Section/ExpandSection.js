@@ -139,8 +139,8 @@ const ExpandSection = ()=>{
         var tl1 = gsap.timeline({
             scrollTrigger:{
                 trigger: pin.current,
-              markers:true,
-                start: '100px 0%',
+            //   markers:true,
+                start: '300px 0%',
                 end:'200% 0%',
                 toggleActions:'play none none reverse',
             
@@ -153,7 +153,7 @@ const ExpandSection = ()=>{
                 trigger: pin.current,
                 pin:pin.current,
                 pinSpacing:true,
-                markers:true,
+                // markers:true,
                 start: '0% 0%',
                 end:'200% 0%',
              
@@ -165,22 +165,22 @@ const ExpandSection = ()=>{
 
         })
 
-        tl
-            .to('.hero-section-expand .row1 .word-split:nth-child(1)',{
-                x:-80
-            })
-            .to('.hero-section-expand .row1 .word-split:last-child',{
-                x:80
-            },'<+=0')
-            .to(['.hero-section-expand .content-area .row1','.hero-section-expand .content-area .title'],{
-                y:-70
-            },"<+=0")
-            .to(['.hero-section-expand .content-area .description'],{
-                y:-60
-            },"<+=0")
-            .to(['.hero-section-expand .content-area a.credential'],{
-                y:-40
-            },"<+=0")
+        // tl
+        //     .to('.hero-section-expand .row1 .word-split:nth-child(1)',{
+        //         x:-80
+        //     })
+        //     .to('.hero-section-expand .row1 .word-split:last-child',{
+        //         x:80
+        //     },'<+=0')
+        //     .to(['.hero-section-expand .content-area .row1','.hero-section-expand .content-area .title'],{
+        //         y:-70
+        //     },"<+=0")
+        //     .to(['.hero-section-expand .content-area .description'],{
+        //         y:-60
+        //     },"<+=0")
+        //     .to(['.hero-section-expand .content-area a.credential'],{
+        //         y:-40
+        //     },"<+=0")
 
 
         tl1
