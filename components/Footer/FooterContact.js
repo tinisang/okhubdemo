@@ -19,27 +19,27 @@ export const FooterContact = () => {
 
 
   useEffect(()=>{
-    var tl = gsap.timeline({
-      scrollTrigger:{
-        trigger:'.footer',
-        // markers:true,
-        scrub:true,
-        start:'top 0%',
-        end:'bottom 0%',
-        pin:'.footer'
-      }
-    })
+    // var tl = gsap.timeline({
+    //   scrollTrigger:{
+    //     trigger:'.footer',
+    //     // markers:true,
+    //     scrub:true,
+    //     start:'top 0%',
+    //     end:'bottom 0%',
+    //     pin:'.footer'
+    //   }
+    // })
 
-    tl.to('.images-footer-wrapper',{
-      y:-900,
-      duration:1
-    })
+    // tl.to('.images-footer-wrapper',{
+    //   y:-900,
+    //   duration:1
+    // })
     
-
-    return ()=>{
-      tl.scrollTrigger.kill()      
-      ScrollTrigger.refresh()
-    }
+    // ScrollTrigger.refresh()
+    // return ()=>{
+    //   if(tl.scrollTrigger){tl.scrollTrigger.kill()}
+    //   ScrollTrigger.refresh()
+    // }
     
   })
 

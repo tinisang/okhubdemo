@@ -56,7 +56,7 @@ export const WhyOKHUB = ({data})=>{
         
 
         return ()=>{
-            tl.scrollTrigger.kill()
+            if(tl.scrollTrigger){tl.scrollTrigger.kill()}
             tl.kill()
             reasonItems.current.forEach((element,index)=>{
                 gsap.killTweensOf(element)

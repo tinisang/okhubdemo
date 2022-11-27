@@ -111,7 +111,8 @@ export default function Projects() {
 
 
     return ()=>{
-      tl.scrollTrigger.kill()
+      console.log(tl)
+      if(tl.scrollTrigger){tl.scrollTrigger.kill()}
       
     }
     

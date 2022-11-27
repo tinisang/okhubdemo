@@ -91,7 +91,7 @@ export const News = () => {
 
 
     return ()=>{
-      tl.scrollTrigger.kill()
+      if(tl.scrollTrigger){tl.scrollTrigger.kill()}
      
     }
     

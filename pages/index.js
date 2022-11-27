@@ -18,9 +18,9 @@ import ExpandSection from '../components/HOME Components/Expand Section/ExpandSe
 export default function Home() {
 
   useEffect(()=>{
+    ScrollTrigger.refresh()
     return ()=>{
       window.removeEventListener('mousemove',function(){})
-      ScrollTrigger.refresh()
 
     }
   })

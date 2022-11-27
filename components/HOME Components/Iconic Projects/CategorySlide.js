@@ -160,9 +160,8 @@ export const CategorySlide = ()=>{
 
           
             return ()=>{
-                tl1.scrollTrigger.kill()
-                tl2.scrollTrigger.kill()
-                // slide1.removeEventListener('mouseover', function(){slowStopAnimation(tl1)})
+                if(tl1.scrollTrigger){tl1.scrollTrigger.kill()}
+                if(tl2.scrollTrigger){tl2.scrollTrigger.kill()}                // slide1.removeEventListener('mouseover', function(){slowStopAnimation(tl1)})
                 // slide1.removeEventListener('mouseout', function(){speedContinue(tl1)})
                 
                 // slide2.removeEventListener('mouseover', function(){slowStopAnimation(tl2)})

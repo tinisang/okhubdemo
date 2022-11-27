@@ -4,6 +4,8 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 
+import { motion, AnimatePresence } from "framer-motion"
+
 export const Base = (props) => {
   // console.log(props)
   const router = useRouter()
@@ -13,6 +15,13 @@ export const Base = (props) => {
     var routChangeDiv = document.querySelector('.route-change');
     routChangeDiv.classList.remove('loading')
   },[router.asPath])
+
+
+  const variants = {
+    hidden: { opacity: 0, x: -200, y: 0 },
+    enter: { opacity: 1, x: 0, y: 0 },
+    exit: { opacity: 0, x: 0, y: 0 },
+}
   
   return (
     <>
@@ -29,9 +38,9 @@ export const Base = (props) => {
       <div className="route-change">
         OKHUB
       </div>
-
-      {props.children}
-   
+ 
+        {props.children}
+       
       <Footer/>
  
     </>
