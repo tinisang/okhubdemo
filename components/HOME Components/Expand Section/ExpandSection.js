@@ -139,7 +139,7 @@ const ExpandSection = ()=>{
         var tl1 = gsap.timeline({
             scrollTrigger:{
                 trigger: pin.current,
-            //   markers:true,
+              markers:true,
                 start: '100px 0%',
                 end:'200% 0%',
                 toggleActions:'play none none reverse',
@@ -153,7 +153,7 @@ const ExpandSection = ()=>{
                 trigger: pin.current,
                 pin:pin.current,
                 pinSpacing:true,
-             
+                markers:true,
                 start: '0% 0%',
                 end:'200% 0%',
              
@@ -196,12 +196,13 @@ const ExpandSection = ()=>{
           
         window.addEventListener('mousemove',cursorAni)
         tl.scrollTrigger.refresh()
+        tl1.scrollTrigger.refresh()
 
         
         return ()=>{
-            tl.scrollTrigger.kill();
+            if(tl.scrollTrigger){tl.scrollTrigger.kill()}
             tl.kill()
-            tl1.scrollTrigger.kill()
+            if(tl1.scrollTrigger){tl1.scrollTrigger.kill()}
             tl1.kill()
 
             window.removeEventListener('mousemove',cursorAni)

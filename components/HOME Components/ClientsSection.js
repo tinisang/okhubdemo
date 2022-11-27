@@ -142,7 +142,8 @@ export const ClientsSection=()=>{
         
 
         return ()=>{
-            tl.scrollTrigger.kill()
+            if(tl1.scrollTrigger){tl1.scrollTrigger.kill()}
+            if(tl2.scrollTrigger){tl2.scrollTrigger.kill()}
         }
     })
     

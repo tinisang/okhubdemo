@@ -33,8 +33,8 @@ export const Header = () => {
 
   
   const handleMenuItemCliked = ()=>{
-    var routChangeDiv = document.querySelector('.route-change');
-    routChangeDiv.classList.add('loading')
+    // var routChangeDiv = document.querySelector('.route-change');
+    // routChangeDiv.classList.add('loading')
     if (isOpen){
       setOpen(!isOpen)
 

@@ -92,7 +92,7 @@ export const IconicSlide = ()=>{
         return ()=>{
             
             window.removeEventListener('mousemove',cursorAnimation)
-            tl.scrollTrigger.kill()
+            if(tl.scrollTrigger){tl.scrollTrigger.kill()}
             clearInterval(myInterval.current)
           
         }
