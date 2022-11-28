@@ -16,11 +16,8 @@ import imagePrimaryNewsDetail from "../../public/imgs/imageNewsDetailPrimary.png
 import NewsDetailFbIcon from "../../public/imgs/newsDetailFbIcon.png";
 import NewsDetailInsIcon from "../../public/imgs/NewDetailInsIcon.png";
 import NewDetailBeIcon from "../../public/imgs/NewsDetailBeIcon.png";
-import newsDetailStatusBtnPrev from "../../public/imgs/newsDetailStatusBtnPrev.png";
-import newsDetailStatusBtnNext from "../../public/imgs/newsDetailStatusBtnNext.png";
 import arrowLeftNewsDetailDocuments from "../../public/imgs/arrowLeftNewsDetailDocuments.png";
 import arrowNextNewsDetailDocuments from "../../public/imgs/arrowNextNewsDetailDocuments.png";
-
 
 export const NewsDetail = () => {
   const dataInfoCategory = [
@@ -49,29 +46,30 @@ export const NewsDetail = () => {
   return (
     <div className="container">
       <div className="NewsDetail__back">
-        <Image src={aroowLeft} alt = ""/>
+        <Image src={aroowLeft} alt="" />
         <p>Quay lại trang danh sách</p>
       </div>
       {/*  */}
       <div className="NewsDetail__primary">
         <div className="NewsDetail__primary-info">
           <div className="NewsDetail__primary-time">
-            <Image src={calendarNewsDetail} alt = ""/>
+            <Image src={calendarNewsDetail} alt="" />
             <p>Posted on 05/11/2022</p>
           </div>
           <div className="NewsDetail__primary-user">
-            <Image src={userNewsDetail} alt = ""/>
+            <Image src={userNewsDetail} alt="" />
             <p>Tien Dung Tran</p>
           </div>
         </div>
         <p className="NewsDetail__primary-title">
-          Bức tranh thị trường thời trang trong 
-          thời kỳ suy thoái kinh tế toàn cầu
+          Bức tranh thị trường thời trang trong thời kỳ suy thoái kinh tế toàn
+          cầu
         </p>
         <Image
           src={imagePrimaryNewsDetail}
           className="NewsDetail__primary-img"
-          alt = "" />
+          alt=""
+        />
       </div>
       <div className="NewsDetail__info">
         <div className="NewsDetail__info--categories">
@@ -94,16 +92,16 @@ export const NewsDetail = () => {
           <p>Chia sẻ</p>
           <div className="NewsDetail__share--icons-item">
             <Link href="facebook.com">
-              <Image src={NewsDetailFbIcon} alt = ""/>
+              <Image src={NewsDetailFbIcon} alt="" />
             </Link>
             <Link href="facebook.com">
-              <Image src={NewsDetailInsIcon} alt = ""/>
+              <Image src={NewsDetailInsIcon} alt="" />
             </Link>
             <Link href="facebook.com">
-              <Image src={NewDetailBeIcon} alt = ""/>
+              <Image src={NewDetailBeIcon} alt="" />
             </Link>
             <Link href="facebook.com">
-              <Image src={NewsDetailFbIcon} alt = ""/>
+              <Image src={NewsDetailFbIcon} alt="" />
             </Link>
           </div>
         </div>
@@ -163,10 +161,105 @@ export const NewsDetail = () => {
             </SwiperSlide>
           </Swiper>
           <div className="newsDetail__status--prev">
-            <Image src={newsDetailStatusBtnPrev} alt = ""/>
+            <svg
+              width="66"
+              height="66"
+              viewBox="0 0 66 66"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g filter="url(#filter0_b_1570_3178)">
+                <circle
+                  cx="33"
+                  cy="33"
+                  r="33"
+                  fill="white"
+                  fill-opacity="0.65"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M28.0557 32.0294L39.2632 43.2369L37.0899 45.4102L23.7091 32.0294L37.0899 18.6486L39.2632 20.8219L28.0557 32.0294Z"
+                  fill="#515151"
+                />
+              </g>
+              <defs>
+                <filter
+                  id="filter0_b_1570_3178"
+                  x="-4"
+                  y="-4"
+                  width="74"
+                  height="74"
+                  filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB"
+                >
+                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feGaussianBlur in="BackgroundImageFix" stdDeviation="2" />
+                  <feComposite
+                    in2="SourceAlpha"
+                    operator="in"
+                    result="effect1_backgroundBlur_1570_3178"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in="SourceGraphic"
+                    in2="effect1_backgroundBlur_1570_3178"
+                    result="shape"
+                  />
+                </filter>
+              </defs>
+            </svg>
           </div>
           <div className="newsDetail__status--next">
-            <Image src={newsDetailStatusBtnNext} alt = ""/>
+            <svg
+              width="66"
+              height="66"
+              viewBox="0 0 66 66"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g filter="url(#filter0_b_1570_3188)">
+                <circle
+                  cx="33"
+                  cy="33"
+                  r="33"
+                  transform="rotate(-180 33 33)"
+                  fill="white"
+                  fill-opacity="0.65"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M37.9444 33.9706L26.7369 22.7631L28.9102 20.5898L42.291 33.9706L28.9102 47.3514L26.7369 45.1781L37.9444 33.9706Z"
+                  fill="#515151"
+                />
+              </g>
+              <defs>
+                <filter
+                  id="filter0_b_1570_3188"
+                  x="-4"
+                  y="-4"
+                  width="74"
+                  height="74"
+                  filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB"
+                >
+                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feGaussianBlur in="BackgroundImageFix" stdDeviation="2" />
+                  <feComposite
+                    in2="SourceAlpha"
+                    operator="in"
+                    result="effect1_backgroundBlur_1570_3188"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in="SourceGraphic"
+                    in2="effect1_backgroundBlur_1570_3188"
+                    result="shape"
+                  />
+                </filter>
+              </defs>
+            </svg>
           </div>
         </div>
       </div>
@@ -210,10 +303,14 @@ export const NewsDetail = () => {
         </Swiper>
         <div className="image-container">
           <div className="NewsDetail__document--prev">
-            <Image src={arrowLeftNewsDetailDocuments} className="image-item" alt = ""/>
+            <Image
+              src={arrowLeftNewsDetailDocuments}
+              className="image-item"
+              alt=""
+            />
           </div>
           <div className="NewsDetail__document--next">
-            <Image src={arrowNextNewsDetailDocuments} alt = ""/>
+            <Image src={arrowNextNewsDetailDocuments} alt="" />
           </div>
         </div>
       </div>
