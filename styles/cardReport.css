@@ -41,9 +41,9 @@
   margin: 0;
 }
 
-.card-report__dow img {
+/* .card-report__dow img {
   margin-right: 13px;
-}
+} */
 
 .card-report__dow p {
   font-family: "Be Vietnam Pro";
@@ -53,4 +53,14 @@
   line-height: 36px;
   color: #000000;
 
+}
+.card-report__dow .card-report__dow-img{
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  margin-right: 13px;
 }

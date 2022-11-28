@@ -179,6 +179,16 @@
   z-index: 2;
   left: 0;
   top: 0;
+  display: none;
+}
+
+.NewsDetail__status-container:hover .NewsDetail__status-items:after{
+  display: block;
+}
+
+
+.NewsDetail__status-container:hover .NewsDetail__status-items::before{
+  display: block;
 }
 .NewsDetail__status-items::before {
   content: "";
@@ -187,7 +197,7 @@
   width: 100px;
   height: 100%;
   z-index: 2;
-
+  display: none;
   right: 0;
   top: 0;
 }
@@ -198,25 +208,39 @@
   cursor: pointer;
   position: absolute;
 }
+
+.newsDetail__status--next svg ,
+.newsDetail__status--prev svg {
+  filter: drop-shadow(0px 0px 15px rgb(0, 0, 0, 0.2));
+}
+.newsDetail__status--next:hover svg g circle,
+.newsDetail__status--prev:hover svg g circle{
+  fill:rgba(0, 0, 0, 0.65);;
+  
+}
+
+.newsDetail__status--next:hover svg g path,
+.newsDetail__status--prev:hover svg g path{
+  fill: white;
+}
 .newsDetail__status--prev {
   left: 0;
-  top: 52%;
-  /* transform: translateY(40%); */
-  margin-left: -50px;
+  top: 53.5%;
+
+  margin-left: -35px;
 
 }
 .newsDetail__status--next {
   right: 0;
-  top: 52%;
-  /* transform: translateY(100%); */
-  margin-right: -50px;
+  top: 53.5%;
+
+  margin-right: -35px;
 }
 
 .NewsDetail__status-container {
 
 }
 
-/* news detail document and reports */
 
 .NewsDetail__document{
   padding-bottom: 150px;
@@ -280,7 +304,6 @@
   top: 0;
   margin-right: -55px;
 }
-
 .NewsDetail__document .image-container{
   position: absolute;
   top: 47%;
@@ -291,7 +314,9 @@
   z-index: 3;
   cursor: pointer;
   position: absolute;
-  /* top: 0%; */
+  /* top: 50%; */
+  transform: translateY(10%);
+
 }
 .NewsDetail__document--prev {
   left: 0;
@@ -302,4 +327,20 @@
 .NewsDetail__document--next {
   right: 0;
   margin-right: -50px;
+}
+
+
+.NewsDetail__document--next svg ,
+.NewsDetail__document--prev svg {
+  filter: drop-shadow(0px 0px 15px rgb(0, 0, 0, 0.2));
+}
+.NewsDetail__document--next:hover svg g circle,
+.NewsDetail__document--prev:hover svg g circle{
+  fill:rgba(0, 0, 0, 0.65);;
+  
+}
+
+.NewsDetail__document--next:hover svg g path,
+.NewsDetail__document--prev:hover svg g path{
+  fill: white;
 }
