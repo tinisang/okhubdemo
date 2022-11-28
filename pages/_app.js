@@ -29,6 +29,7 @@ import "../styles/Introduce/CardTeams.css"
 import "../styles/Project/SingleProject.css"
 import "../styles/Introduce/ItemWorkingCustomer.css"
 import '../styles/Loading.css'
+import '../styles/News/dropDownCss.css'
 import { motion, AnimatePresence } from "framer-motion"
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';

@@ -17,7 +17,7 @@
 .card-report__time-dow {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom: 40px;
 }
 
 .card-report__time,
