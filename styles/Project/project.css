@@ -125,6 +125,9 @@
 }
 .project__order--select {
   margin-left: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .project__order--select p {
   font-family: "Be Vietnam Pro";
@@ -133,6 +136,7 @@
   font-size: 20px;
   line-height: 24px;
   color: #000000;
+  margin-right: 25px;
 }
 
 .project__order--display {

@@ -8,6 +8,7 @@
   display: flex;
   padding-left: 40px;
   align-items: center;
+  
 }
 
 .Dropdown-root .Dropdown-control .Dropdown-placeholder {
@@ -16,8 +17,6 @@
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
-  /* identical to box height, or 120% */
-
   color: #000000;
 }
 
@@ -26,6 +25,7 @@
   top: 45%;
   border-width: 16px 10px 0;
   border-color: #000000 transparent transparent;
+  
 }
 
 /* drop open */
@@ -35,7 +35,8 @@
     max-height: fit-content;
     padding-top: 15px;
     border: none;
-    background-color: none !important;
+    background: none !important;
+    /* width: 100%; */
 }
 .Dropdown-root.is-open .Dropdown-menu::after {
   content: "";
@@ -47,10 +48,7 @@
   border-style: solid;
   border-width:0px 19px 15px  19px ;
   border-color: transparent transparent rgba(0, 0, 0, 0.55) transparent;
-
   left: 20%;
-  /* margin-top: -15px; */
-  /* z-index: 3; */
 }
 .Dropdown-root.is-open .Dropdown-menu .Dropdown-option {
     font-family: "Be Vietnam Pro";
@@ -63,16 +61,17 @@
     background: rgba(0, 0, 0, 0.5);
     padding: 0px 30px 0px 35px;
     backdrop-filter: blur(10px);
+    
 }
 .Dropdown-root.is-open .Dropdown-menu .Dropdown-option.is-selected {
-  background: none;
+
   font-weight: 700;
 }
 
 .Dropdown-root.is-open .Dropdown-menu .Dropdown-option:hover {
   /* background: none; */
   color: #ffffff;
-  font-weight: 700;
+  
 }
 .Dropdown-root.is-open .Dropdown-menu .Dropdown-option:first-child{
     border-top-left-radius: 18px;
