@@ -32,7 +32,7 @@ input {
   padding-bottom: 50px;
 }
 
-.footer__form--name,
+
 .footer__form--note {
   display: flex;
   flex-direction: column;
@@ -58,32 +58,34 @@ input {
 }
 
 .footer__form--email-and-phone,
-.footer__form-company-and-service {
+.footer__form-company-and-service,
+.footer__form--name-and-footer__form--company-name {
   display: flex;
   font-style: normal;
   font-weight: 300;
   font-size: 20px;
   line-height: 24px;
-  /* flex-wrap: wrap; */
   padding-bottom: 40px;
   border-bottom: var(--boder-bottom-footer);
 }
 
 .footer__form--email,
-.footer__form--company-name {
+.footer__form--name {
   margin-right: 226px;
 }
 .footer__form--email > p,
 .footer__form--phone > p,
 .footer__form--company-name > p,
-.footer__form--service > p {
+.footer__form--service > p,
+.footer__form--name > p {
   margin-bottom: 9px;
 }
 
 .footer__form--email > input,
 .footer__form--phone > input,
 .footer__form--company-name > input,
-.footer__form--service > input {
+.footer__form--service > input,
+.footer__form--name > input {
   background: transparent;
   border: none;
   outline: none;
@@ -103,32 +105,18 @@ input {
   padding-bottom: 110px;
 }
 
-/* .footer__btn {
-  width: 180px;
-  height: 180px;
-  border: none;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 24px;
-  color: #ffffff;
-  background-color: #000000;
-  border-radius: 50%;
-  position: absolute;
-  right: 8%;
-  top: 50%;
-  cursor: pointer;
-} */
 
 .footer__form--name,
 .footer__form--email,
 .footer__form--company-name,
 .footer__form--note,
 .footer__form--phone,
-.footer__form--service {
+.footer__form--service
+{
   position: relative;
   padding-left: 40px;
 }
+
 
 .footer__form--name::after {
   content: "01";
@@ -143,7 +131,7 @@ input {
   color: #787878;
 }
 .footer__form--email::after {
-  content: "02";
+  content: "03";
   position: absolute;
   left: 0%;
   top: 25%;
@@ -169,7 +157,7 @@ input {
 }
 
 .footer__form--company-name::after {
-  content: "04";
+  content: "02";
   position: absolute;
   left: 0%;
   top: 25%;
@@ -274,6 +262,6 @@ input {
   .footer__form .button{
     position: absolute;
     right: 8%;
-    top: 38%;
+    bottom: 0%;
     cursor: pointer;
   }

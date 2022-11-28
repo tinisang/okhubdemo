@@ -9,11 +9,18 @@ export const FooterForm = () => {
       <div className="footer__form--title">
         Hãy kết nối <br></br> với chúng tôi ngay
       </div>
-      <div className="footer__form--name">
+      <div className="footer__form--name-and-footer__form--company-name">
         {" "}
-        <p> Tên của bạn</p>
-        <input type="text" placeholder="Lê Văn A *"></input>
+        <div className="footer__form--name">
+          <p>Tên của bạn</p>
+          <input placeholder="Lê Văn A *" />
+        </div>
+        <div className="footer__form--company-name">
+          <p>Tên tổ chức của bạn</p>
+          <input type="text" placeholder="Công ty Cổ phần ABC *"></input>
+        </div>
       </div>
+      
       <div className="footer__form--email-and-phone">
         <div className="footer__form--email">
           <p>Email của bạn</p>
@@ -26,10 +33,7 @@ export const FooterForm = () => {
       </div>
 
       <div className="footer__form-company-and-service">
-        <div className="footer__form--company-name">
-          <p>Tên tổ chức của bạn</p>
-          <input type="text" placeholder="Công ty Cổ phần ABC *"></input>
-        </div>
+       
         <div className="footer__form--service">
           <p>Dịch vụ mà bạn quan tâm</p>
           <Multiselect
