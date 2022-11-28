@@ -28,9 +28,6 @@
   color: #000000;
 }
 
-
-
-
 .news__title-text p {
   font-family: "Be Vietnam Pro";
   font-style: normal;
@@ -48,7 +45,6 @@
   letter-spacing: 0em;
   text-align: left;
   position: relative;
-
 }
 .news__title-text p span.clone-text {
   position: absolute;
@@ -58,22 +54,14 @@
   overflow: hidden;
   white-space: nowrap;
   color: black;
-  transition:all 0.1s;
- 
-
+  transition: all 0.1s;
 }
 .news__title-text p span.main-text {
-
   /* display: inline-block; */
   overflow: hidden;
-  color: #F0F0F0;
+  color: #f0f0f0;
   position: relative;
- 
-
 }
-
-
-
 
 /* ------------------------------------------------------------------------------------------ */
 .news__categories {
@@ -140,17 +128,13 @@
 }
 
 .news__categories--items p.news__categories--item-active::after {
-  
   color: #000000;
-
 }
-
-
 
 /* ------------------------------------------------------ */
 .news__selector {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
 }
 
@@ -158,6 +142,18 @@
 .news__selector--fileds {
   display: flex;
   align-items: center;
+}
+
+.news__selector--order p,
+.news__selector--fileds p {
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  /* identical to box height, or 120% */
+
+  color: #000000; 
 }
 
 .news__selector--order {
@@ -220,7 +216,7 @@
 .news__status__item-other {
   width: 100%;
 }
-.news__status__item-other .cacrd__container .card__img{
+.news__status__item-other .cacrd__container .card__img {
   width: 50%;
 }
 .news__status__item-other .cacrd__container .card__img img {
@@ -236,7 +232,7 @@
   margin-left: 32px;
 }
 
-.news__status__item-other .card__container .card__note { 
+.news__status__item-other .card__container .card__note {
   margin-top: 60px;
 }
 .news__status__item-other .card__container .card__btn-next {

@@ -144,7 +144,7 @@ input {
 }
 
 .footer__form--phone::after {
-  content: "03";
+  content: "04";
   position: absolute;
   left: 0%;
   top: 25%;
@@ -170,7 +170,7 @@ input {
 }
 
 .footer__form--service::after {
-  content: "04";
+  content: "05";
   position: absolute;
   left: 0%;
   top: 25%;

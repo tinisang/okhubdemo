@@ -8,6 +8,7 @@ import { NumberPage } from "../../components/NumberPage";
 import { use, useState } from "react";
 import { ListProject } from "../../components/ListProject";
 
+import Dropdown from "react-dropdown";
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
@@ -164,7 +165,7 @@ export default function Projects() {
       slider.scrollLeft = scrollLeft - walk;
   
 });
-    
+const optionsSort = ["Mới nhất", "Nhiều lượt xem nhất"];
 
     return ()=>{
       
@@ -262,7 +263,7 @@ export default function Projects() {
  
   }
   
- 
+  const optionsSort = ["Mới nhất", "Nhiều lượt xem nhất"];
 
   return (
     <div className="project__container">
@@ -392,6 +393,11 @@ export default function Projects() {
       <div className="project__order">
         <div className="project__order--select">
           <p>Sắp xếp theo: </p>
+          <Dropdown
+            placeholder="Mới nhất"
+            options={optionsSort}
+            // value={" mcsjjs"}
+          />
         </div>
         <div className="project__order--display">
           <div className={"project__order--display-list " + (display ?'':'active' )}  onClick={()=> handleDisplayList()}>
