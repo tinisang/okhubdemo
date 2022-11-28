@@ -2,7 +2,7 @@
 import React from 'react'
 import calendarCard from "../public/imgs/calendar-edit-NewsDetail.png";
 import Image from "next/image";
-import arrowDownCardReport from "../public/imgs/arrowDownCardReport.png"
+import arrowDownCardReport from "../public/imgs/arrowDownCardReport.svg"
 import Link from 'next/link';
 
 export const CardReport = () => {
@@ -18,7 +18,9 @@ export const CardReport = () => {
            <p>Posted on 05/11/2022</p>
          </div>
          <div className="card-report__dow">
+          <div className='card-report__dow-img'>
           <Image src = {arrowDownCardReport} alt = ""/>
+          </div>
           <p>TẢI XUỐNG</p>
          </div>
        </div>
