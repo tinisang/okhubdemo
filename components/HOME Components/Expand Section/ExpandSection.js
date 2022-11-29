@@ -203,7 +203,7 @@ const ExpandSection = ()=>{
 
     const cursorAni = (e)=>{
 
-        console.log('----------------')
+      
         
         var y = e.clientY  - cursor.current.clientHeight/2 -cursor.current.getBoundingClientRect().y
         var x = e.clientX  - cursor.current.clientWidth/2 - cursor.current.getBoundingClientRect().x
@@ -213,8 +213,6 @@ const ExpandSection = ()=>{
             degree=0
         }
 
-        console.log(degree)
-        console.log('----------------')
         gsap.to(cursor.current,{
             left: e.clientX - cursor.current.clientWidth/2, 
             top: e.clientY - cursor.current.clientHeight/2, 
