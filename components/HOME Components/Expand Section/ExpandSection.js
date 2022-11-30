@@ -24,12 +24,21 @@ const ExpandSection = ()=>{
     gsap.registerPlugin(ScrollTrigger)
     const pin=useRef()
     const services =useRef()
-
+    const brightness = useRef(1)
     gsap.registerPlugin(ScrollToPlugin);
 
     const cursor= useRef()
+
+    const mousePos = useRef({
+        x: 0,
+        y:0
+    })
+
+    const position=useRef('close')
+    
     const slidecursor = useRef()
     const background = useRef()
+
     const data =[
         {
             title: 'UI/UX Design',
@@ -138,9 +147,14 @@ const ExpandSection = ()=>{
       return radians * (180/pi);
     }
               
-  
+    
     useEffect(()=>{
-   
+        
+        
+        
+       
+      
+        
         var dot =document.querySelector('.row1 svg')
         var tl1 = gsap.timeline({
             scrollTrigger:{
@@ -171,6 +185,64 @@ const ExpandSection = ()=>{
 
         })
 
+        // var tl2 = gsap.timeline({
+        //     duration:0.8,
+        //     onUpdate:function(){
+        //         var x1 = mousePos.current.x  - (cursor.current.clientWidth/2 + cursor.current.getBoundingClientRect().x)
+        //         if (Math.abs(x1) < 50){
+        //             brightness.current=1
+        //         }
+        //         console.log(brightness.current)
+        //     }
+        // });
+        const cursorAni = (e)=>{
+            var y = e.clientY  - cursor.current.clientHeight/2 -cursor.current.getBoundingClientRect().y
+            var x = e.clientX  - cursor.current.clientWidth/2 - cursor.current.getBoundingClientRect().x
+            var degree = Math.floor(radians_to_degrees(Math.atan2(x,y))*0.12)
+            
+            if (Math.floor(Math.abs(x))< 50){
+                degree=0
+                brightness.current=1
+            } else{
+                brightness.current = 1+ 0.5 *(Math.floor(Math.abs(x))/200 );
+                
+            }
+    
+            gsap.to(cursor.current,{
+                left: e.clientX - cursor.current.clientWidth/2, 
+                top: e.clientY - cursor.current.clientHeight/2, 
+                ease:"power2.out",
+                rotate:`${degree}deg`,
+                filter:`brightness(${brightness.current})`,
+                duration:1
+             
+               
+                
+            },'<+=0')
+            var viewButton= document.querySelector('.view-button');
+            
+            gsap.to(viewButton,{
+                left: e.clientX - viewButton.clientWidth/2, 
+                top: e.clientY - viewButton.clientHeight/2, 
+                ease:"power2.out",
+                opacity:1,
+              
+            },'<+=0')
+    
+    
+            mousePos.current={
+                x:e.clientX,
+                y:e.clientY
+            }
+
+          
+    
+            // console.log(mousePos.current)
+         
+    
+     
+    }
+
        
 
         tl1
@@ -194,52 +266,28 @@ const ExpandSection = ()=>{
             tl.kill()
             if(tl1.scrollTrigger){tl1.scrollTrigger.kill()}
             tl1.kill()
+        
+            // tl2.kill()
 
             window.removeEventListener('mousemove',cursorAni)
           }
     
     })
 
-
-    const cursorAni = (e)=>{
-
-      
-        
-        var y = e.clientY  - cursor.current.clientHeight/2 -cursor.current.getBoundingClientRect().y
-        var x = e.clientX  - cursor.current.clientWidth/2 - cursor.current.getBoundingClientRect().x
-        var degree = radians_to_degrees(Math.atan2(x,y))*0.2
-
-        if (Math.abs(degree) < 10){
-            degree=0
-        }
-
-        gsap.to(cursor.current,{
-            left: e.clientX - cursor.current.clientWidth/2, 
-            top: e.clientY - cursor.current.clientHeight/2, 
-            ease:"power2.out",
-            rotate:-degree,
-            duration:1.2,
-            delay:0.04
-        })
-        var viewButton= document.querySelector('.view-button');
-        
-        gsap.to(viewButton,{
-            left: e.clientX - viewButton.clientWidth/2, 
-            top: e.clientY - viewButton.clientHeight/2, 
-            ease:"power2.out",
-            opacity:1,
-            duration:1
-        })
-     
-
- 
-}
     
+
+
+  
     return (
         <>
         <div className="view-button"></div>
         <div className="cursor-box" ref={cursor}>
-        
+            <div className='card__project--img-sub'>
+                <div className='img-eclipse'></div>
+                <div className='img-eclipse'></div>
+                <div className='img-eclipse'></div>
+                
+            </div>
             <div className="cursor-wrapper" ref={slidecursor}>
 
                 <div className="image-container service-item-image">
