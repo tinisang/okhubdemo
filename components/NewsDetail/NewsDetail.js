@@ -45,10 +45,10 @@ export const NewsDetail = () => {
   ];
   return (
     <div className="container">
-      <div className="NewsDetail__back">
+      <Link href={'/news'} className="NewsDetail__back">
         <Image src={aroowLeft} alt="" />
         <p>Quay lại trang danh sách</p>
-      </div>
+      </Link>
       {/*  */}
       <div className="NewsDetail__primary">
         <div className="NewsDetail__primary-info">
