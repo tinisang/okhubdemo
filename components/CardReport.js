@@ -1,6 +1,6 @@
 
 import React from 'react'
-import calendarCard from "../public/imgs/calendar-edit-NewsDetail.png";
+import calendarCard from "../public/imgs/calendar-edit-NewsDetail.svg";
 import Image from "next/image";
 import arrowDownCardReport from "../public/imgs/arrowDownCardReport.svg"
 import Link from 'next/link';

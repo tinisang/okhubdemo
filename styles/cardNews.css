@@ -48,8 +48,11 @@
 
 .card__infor-time img,
 .card__info-user img {
-  width: fit-content;
-  height: auto;
+  /* width: fit-content;
+  height: auto; */
+  /* Thay đổi lại width , height để ảnh hiển thị to hơn */
+  width: 20px;
+  height: 20px;
   margin-right: 4px;
 }
 .card__info-user p {

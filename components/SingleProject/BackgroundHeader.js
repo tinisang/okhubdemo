@@ -1,5 +1,5 @@
 import Image from "next/image";
-import gumacBackground from '../../public/imgs/Gumac BG.png';
+import gumacBackground from '../../public/imgs/Gumac BG.svg';
 import gumacLogo from '../../public/imgs/GUMAC logo.png';
 export const BackgroundHeader = () => {
     return (

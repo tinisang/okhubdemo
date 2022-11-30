@@ -62,7 +62,12 @@
   color: #f0f0f0;
   position: relative;
 }
-
+.NewsDetail__primary-time img{
+  margin-right: 18px;
+}
+.NewsDetail__primary-user img{
+  margin-right: 18px;
+}
 /* ------------------------------------------------------------------------------------------ */
 .news__categories {
   margin-left: 100px;
