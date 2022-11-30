@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import { NoteBtn } from "./NoteBtn";
-import calendarCard from "../public/imgs/calendar-edit-NewsDetail.png";
-import userCard from "../public/imgs/user-edit-NewsDetail.png";
+import calendarCard from "../public/imgs/calendar-edit-NewsDetail.svg";
+import userCard from "../public/imgs/user-edit-NewsDetail.svg";
 import nextIcon from "../public/imgs/nextIcon.svg";
 import imgCard from "../public/imgs/imgCard.png"
 

@@ -61,12 +61,18 @@ export const FooterForm = () => {
                 cat: "Group 2",
                 key: "Design Packaging",
               },
-          
+              {
+                cat: "Group 2",
+                key: "Deding",
+              },
+              {
+                cat: "Group 2",
+                key: "Design Bing",
+              }
           
             ]}
             showCheckbox
             placeholder="Chọn dịch vụ quan tâm"
-            
           />
         </div>
       </div>

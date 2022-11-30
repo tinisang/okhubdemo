@@ -1,6 +1,7 @@
 :root {
   --boder-bottom-footer: 0.5px solid #ffffff;
 }
+
 input {
   padding: 0;
 }
@@ -18,6 +19,7 @@ input {
   margin: 0 72px 0 118px;
   position: relative;
 }
+
 .footer__contact {
   width: 50%;
   margin-left: 72px;
@@ -44,8 +46,9 @@ input {
   padding-bottom: 43px;
   border-bottom: var(--boder-bottom-footer);
 }
-.footer__form--name > input,
-.footer__form--note > input {
+
+.footer__form--name>input,
+.footer__form--note>input {
   outline: none;
   background-color: transparent;
   border: none;
@@ -73,19 +76,20 @@ input {
 .footer__form--name {
   margin-right: 226px;
 }
-.footer__form--email > p,
-.footer__form--phone > p,
-.footer__form--company-name > p,
-.footer__form--service > p,
-.footer__form--name > p {
+
+.footer__form--email>p,
+.footer__form--phone>p,
+.footer__form--company-name>p,
+.footer__form--service>p,
+.footer__form--name>p {
   margin-bottom: 9px;
 }
 
-.footer__form--email > input,
-.footer__form--phone > input,
-.footer__form--company-name > input,
-.footer__form--service > input,
-.footer__form--name > input {
+.footer__form--email>input,
+.footer__form--phone>input,
+.footer__form--company-name>input,
+.footer__form--service>input,
+.footer__form--name>input {
   background: transparent;
   border: none;
   outline: none;
@@ -96,7 +100,7 @@ input {
   color: #787878;
 }
 
-.footer__form--note > p {
+.footer__form--note>p {
   margin-bottom: 9px;
   font-style: normal;
 }
@@ -111,8 +115,7 @@ input {
 .footer__form--company-name,
 .footer__form--note,
 .footer__form--phone,
-.footer__form--service
-{
+.footer__form--service {
   position: relative;
   padding-left: 40px;
 }
@@ -130,6 +133,7 @@ input {
   line-height: 24px;
   color: #787878;
 }
+
 .footer__form--email::after {
   content: "03";
   position: absolute;
@@ -194,6 +198,7 @@ input {
   line-height: 24px;
   color: #787878;
 }
+
 /* .footer__form--service {
   padding-right: 50px;
 } */
@@ -219,49 +224,88 @@ input {
   color: #787878;
   margin: 0 !important;
   padding-right: 50px;
- 
+
 }
-.checkbox{
-    border-radius: 50% !important;
+
+.checkbox {
+  border-radius: 50% !important;
 }
+
+.optionListContainer .checkbox {
+  margin-right: 9px !important;
+}
+
 .multiSelectContainer::before {
-    content: "";
-    position: absolute;
-    right: 0;
-    bottom: 10%;
-    cursor: pointer;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 8px 12px 8px;
-    border-color: transparent transparent #787878 transparent;
-    transform: rotate(180deg);
-  }
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 10%;
+  cursor: pointer;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 8px 12px 8px;
+  border-color: transparent transparent #787878 transparent;
+  transform: rotate(180deg);
+}
 
-  .optionListContainer{
-      background-color: rgba(255, 255, 255, 0.45) !important;
-      
-  }
-  .multiSelectContainer ul{
-    border: none !important;
-  }
+.optionListContainer {
+  background-color: rgba(255, 255, 255, 0.45) !important;
+  backdrop-filter: blur(10px);
+  border-radius: 12px !important;
+  width: fit-content !important;
+  overflow: hidden;
+}
 
-  .option{
-      padding-left: 27px!important;
-  }
+.searchBox {
+  height: 50px !important;
+}
+.multiSelectContainer ul {
+  border: none !important;
+}
+.optionContainer{
+  padding-right: 10px !important;
+}
+.optionContainer::-webkit-scrollbar{
+    width: 6px;
+    background-color: transparent;
+}
+.optionContainer::-webkit-scrollbar-track{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: transparent;
+}
+.optionContainer::-webkit-scrollbar-thumb{
+  background-color: #FFF;
+}
+.option {
+  padding-right: 60px !important;
+  padding-left: 27px !important;
+  font-size: 15px;
+  border: 0.5px solid #A5A6A7;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
 
-  .highlightOption{
-      background-color: none!important;
-  }
-  .multiSelectContainer li:hover{
-      background: none !important;
-  }
-  .highlight{
-      background: none!important;
-  }
-  .footer__form .button{
-    position: absolute;
-    right: 8%;
-    bottom: 0%;
-    cursor: pointer;
-  }
+.option:last-child {
+  border: none;
+}
+
+.highlightOption {
+  background-color: none !important;
+}
+
+.multiSelectContainer li:hover {
+  background: none !important;
+}
+
+.highlight {
+  background: none !important;
+}
+
+.footer__form .button {
+  position: absolute;
+  right: 8%;
+  bottom: 0%;
+  cursor: pointer;
+}
