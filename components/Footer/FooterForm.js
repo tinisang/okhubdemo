@@ -20,7 +20,7 @@ export const FooterForm = () => {
           <input type="text" placeholder="Công ty Cổ phần ABC *"></input>
         </div>
       </div>
-      
+
       <div className="footer__form--email-and-phone">
         <div className="footer__form--email">
           <p>Email của bạn</p>
@@ -33,16 +33,23 @@ export const FooterForm = () => {
       </div>
 
       <div className="footer__form-company-and-service">
-       
+
         <div className="footer__form--service">
-          <p>Dịch vụ mà bạn quan tâm</p>
+          <div className="footer__form--wrap">
+            <p>Dịch vụ mà bạn quan tâm</p>
+            <div className="footer__form--arrow"></div>
+          </div>
           <Multiselect
             displayValue="key"
-            selectedValues = {true}
-     
+            selectedValues={true}
+            arrowRenderer={() =>
+              <div className="custom-arrow" >
+                <CustomArrowComponent />
+              </div>
+            }
             options={[
               {
-               
+
                 key: "Web Design",
               },
               {
@@ -69,10 +76,10 @@ export const FooterForm = () => {
                 cat: "Group 2",
                 key: "Design Bing",
               }
-          
+
             ]}
             showCheckbox
-            placeholder="Chọn dịch vụ quan tâm"
+            placeholder=""
           />
         </div>
       </div>
@@ -84,7 +91,7 @@ export const FooterForm = () => {
           placeholder="Xin chào, tôi cần OkHub tư vấn về... *"
         ></input>
       </div>
-     <Button text = "Submit" className = "submit-btn"/>
+      <Button text="Submit" className="submit-btn" />
     </div>
   );
 };

@@ -177,7 +177,7 @@ input {
   content: "05";
   position: absolute;
   left: 0%;
-  top: 25%;
+  top: 18%;
   font-family: "Be Vietnam Pro";
   font-style: normal;
   font-weight: 300;
@@ -234,8 +234,22 @@ input {
 .optionListContainer .checkbox {
   margin-right: 9px !important;
 }
-
+.footer__form--wrap{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer__form--arrow{
+  cursor: pointer;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 8px 12px 8px;
+  border-color: transparent transparent #787878 transparent;
+  transform: rotate(180deg);
+}
 .multiSelectContainer::before {
+  display: none;
   content: "";
   position: absolute;
   right: 0;
@@ -256,7 +270,9 @@ input {
   width: fit-content !important;
   overflow: hidden;
 }
-
+.custom-arrow{
+  display: none;
+}
 .searchBox {
   height: 50px !important;
 }
