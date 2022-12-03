@@ -16,7 +16,9 @@ export const Footer = ({active}) => {
     })
   return (
     <>
-   <div className="footer__container">
+   <div className="footer__container"
+   
+    >
    <div className="footer">
         <FooterForm/>
         {/*Contact */}

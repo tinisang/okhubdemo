@@ -2,7 +2,7 @@ import { Header } from "./Header/Header";
 import { Footer } from "./Footer/Footer";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 import { motion, AnimatePresence } from "framer-motion"
 import gsap from "gsap";
@@ -10,10 +10,13 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import loadingImage from '../public/imgs/loading.svg'
 import Image from "next/image";
+import { LocomotiveScrollProvider } from "react-locomotive-scroll";
+
 
 
 export const Base = (props) => {
   // console.log(props)
+  const containerRef = useRef(null)
   const [loading, isLoading] = useState(false)
   const router = useRouter()
 
@@ -49,31 +52,51 @@ export const Base = (props) => {
       <link rel="icon" href="/imgs/logo.svg" />
     </Head>
     
-      
-      <Header/>
-    
+    {
+            loading && (
+            <motion.div 
+            key={'loading-section'}
+            className="loading-section"
+            initial={{opacity:0}}
+            animate={{opacity:1}}
+            exit={{opacity:0}}
+            onAnimationComplete={handleComplete}
 
-      {
-        loading && (
-        <motion.div 
-        key={'loading-section'}
-        className="loading-section"
-        initial={{opacity:0}}
-        animate={{opacity:1}}
-        exit={{opacity:0}}
-        onAnimationComplete={handleComplete}
+            >
+              <Image src={loadingImage} alt='' />
+            </motion.div>
 
-        >
-          <Image src={loadingImage} alt='' />
-        </motion.div>
-
-        )
+            )
+          }
+          <Header/>
+        
+    <LocomotiveScrollProvider
+      options={
+        {
+          smooth: true,
+          // ... all available Locomotive Scroll instance options 
+        }
       }
+      watch={
+        [
+          //..all the dependencies you want to watch to update the scroll.
+          //  Basicaly, you would want to watch page/location changes
+          //  For exemple, on Next.js you would want to watch properties like `router.asPath` (you may want to add more criterias if the instance should be update on locations with query parameters)
+        ]
+      }
+      containerRef={containerRef}
+    >
+      <main data-scroll-container ref={containerRef}>
 
- 
-        {props.children}
-       
-      <Footer/>
+         
+
+    
+            {props.children}
+          
+          <Footer/>
+      </main>
+    </LocomotiveScrollProvider>
+      
  
     </>
   );

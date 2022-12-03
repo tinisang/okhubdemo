@@ -9,6 +9,7 @@ import "react-dropdown/style.css";
 import gsap from "gsap";
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import { useLocomotiveScroll } from "react-locomotive-scroll";
 
 export const News = () => {
   gsap.registerPlugin(ScrollToPlugin);
@@ -59,12 +60,38 @@ export const News = () => {
   useEffect(() => {
     handleCatSelect(0);
   }, []);
+  const { scroll: locoScroll } = useLocomotiveScroll()
+    if (locoScroll){
 
+        locoScroll.on("scroll", function(){
+              ScrollTrigger.update()
+           
+        
+            });
+    
+          // tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
+            ScrollTrigger.scrollerProxy('[data-scroll-container]', {
+              scrollTop(value) {
+                return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+              }, // we don't have to define a scrollLeft because we're only scrolling vertically.
+              getBoundingClientRect() {
+                return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
+              },
+              // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
+              pinType: document.querySelector('[data-scroll-container]').style.transform ? "transform" : "fixed"
+            });
+            ScrollTrigger.defaults({scroller: '[data-scroll-container]'})
+        }
+        if (locoScroll){
+
+        ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+        ScrollTrigger.refresh();
+        }
   useEffect(() => {
     var tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".news__title",
-        // markers:true,
+        
         start: "top 0%",
         end: "bottom 0%",
         scrub: 4,
@@ -77,7 +104,11 @@ export const News = () => {
       width: "100%",
       stagger: 0.4,
     });
+    if (locoScroll){
 
+ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+ScrollTrigger.refresh();
+}
     return () => {
       if (tl.scrollTrigger) {
         tl.scrollTrigger.kill();

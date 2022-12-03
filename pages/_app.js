@@ -30,13 +30,16 @@ import "../styles/Project/SingleProject.css"
 import "../styles/Introduce/ItemWorkingCustomer.css"
 import '../styles/Loading.css'
 import '../styles/News/dropDownCss.css'
+import "../styles/Smooth Scroll/Style.css"
 import { motion, AnimatePresence } from "framer-motion"
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import { useLocomotiveScroll } from 'react-locomotive-scroll';
+
 
 function MyApp({ Component, pageProps }) {
-  
+
   const router = useRouter()
   const Layout = Component.Layout ? Component.Layout : Base;
   const variants = {
@@ -48,9 +51,12 @@ function MyApp({ Component, pageProps }) {
   const handleComplete = ()=>{
     ScrollTrigger.refresh()
   }
+ 
+
 
   useEffect(()=>{
     ScrollTrigger.refresh()
+
 
   })
 
@@ -66,6 +72,7 @@ function MyApp({ Component, pageProps }) {
         animate="enter" // Animated state to variants.enter
         exit="exit" 
         onAnimationComplete={handleComplete}
+        // data-scroll-section
         >
 
 
