@@ -288,6 +288,7 @@ input {
   width: fit-content !important;
   overflow: hidden;
   transition: height 0.6s;
+  margin-top: 7px;
 }
 .multiselect-container .displayNone{
   height: 0;

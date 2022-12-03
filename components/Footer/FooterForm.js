@@ -44,7 +44,6 @@ export const FooterForm = () => {
       </div>
 
       <div className="footer__form-company-and-service">
-
         <div className="footer__form--service">
           <div className="footer__form--wrap">
             <p>Dịch vụ mà bạn quan tâm</p>
@@ -55,7 +54,7 @@ export const FooterForm = () => {
             selectedValues={true}
             arrowRenderer={() =>
               <div className="custom-arrow" >
-                <CustomArrowComponent />
+                {/* <CustomArrowComponent /> */}
               </div>
             }
             options={[
