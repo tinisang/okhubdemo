@@ -8,18 +8,12 @@ import Link from 'next/link'
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
 import { DropDown } from "./Dropdown";
+import { useLocomotiveScroll } from "react-locomotive-scroll";
 import gsap from "gsap";
 
 export const Header = () => {
 
-
-  // const router = useRouter()
-
-  // useEffect(()=>{
-  //   console.log('route change')
-  // },router.asPath)
-  
-
+  const {scroll : locoScroll} = useLocomotiveScroll()
   const [isOpen,setOpen] = useState(false)
   const header = useRef()
 
@@ -44,9 +38,11 @@ export const Header = () => {
 
   useEffect(()=>{
     var fakeScrollY = 0;
-    window.addEventListener("scroll", function () {
-      var thisScrollY = this.scrollY;
-        if (this.scrollY > 0) {
+
+    if (locoScroll){
+      locoScroll.on('scroll',function(){
+        var thisScrollY = locoScroll.scroll.instance.scroll.y;
+        if (thisScrollY > 0) {
       
        
         } else {
@@ -84,7 +80,10 @@ export const Header = () => {
           header.current.style.background = "transparent"
           }
       fakeScrollY = thisScrollY
-    });
+
+      })
+    }
+
 
 
     
@@ -106,7 +105,7 @@ export const Header = () => {
 
     return ()=>{
       tl.kill()
-      window.removeEventListener('scroll',function(){})
+  
     }
     
   })
