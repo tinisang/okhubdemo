@@ -2,8 +2,19 @@ import React from "react";
 import Select from "react-select";
 import Multiselect from "multiselect-react-dropdown";
 import { Button } from "../Button/Button";
-
+import { useState } from "react";
 export const FooterForm = () => {
+  const [ state , setState ] = useState(false);
+  const handleClick = () => {
+    const inputSelection = document.querySelector('.optionListContainer');
+    if(!state){
+      inputSelection.classList.replace('displayNone','displayBlock');
+    }
+    else{
+      inputSelection.classList.replace('displayBlock','displayNone');
+    }
+    setState(!state);
+  }
   return (
     <div className="footer__form">
       <div className="footer__form--title">
@@ -37,7 +48,7 @@ export const FooterForm = () => {
         <div className="footer__form--service">
           <div className="footer__form--wrap">
             <p>Dịch vụ mà bạn quan tâm</p>
-            <div className="footer__form--arrow"></div>
+            <div className="footer__form--arrow" onClick={handleClick}></div>
           </div>
           <Multiselect
             displayValue="key"

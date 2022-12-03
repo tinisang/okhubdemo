@@ -213,6 +213,23 @@ input {
 .searchWrapper {
   border: none !important;
   padding: 0 !important;
+  display: flex;
+  max-width: 700px !important;
+  max-height: 47px !important;
+  overflow-x: scroll !important;
+  overflow-y: hidden !important;
+}
+.searchWrapper::-webkit-scrollbar{
+  background-color: transparent;
+  height: 6px;
+}
+.searchWrapper::-webkit-scrollbar-track{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: transparent;
+}
+.searchWrapper::-webkit-scrollbar-thumb{
+  background-color: #FFF;
+  border-radius: 20px;
 }
 
 .multiSelectContainer input {
@@ -235,6 +252,7 @@ input {
   margin-right: 9px !important;
 }
 .footer__form--wrap{
+  max-width: 284px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -263,12 +281,20 @@ input {
   transform: rotate(180deg);
 }
 
-.optionListContainer {
+.multiselect-container .optionListContainer {
   background-color: rgba(255, 255, 255, 0.45) !important;
   backdrop-filter: blur(10px);
   border-radius: 12px !important;
   width: fit-content !important;
   overflow: hidden;
+  transition: height 0.6s;
+}
+.multiselect-container .displayNone{
+  height: 0;
+  display: block !important;
+}
+.multiselect-container .displayBlock{
+  height: 250px;
 }
 .custom-arrow{
   display: none;
