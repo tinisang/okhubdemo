@@ -31,7 +31,7 @@ export const Base = (props) => {
     });
     router.events.on('routeChangeComplete', (url, { shallow }) => {
       isLoading(false)
-      ScrollTrigger.refresh()
+      
           
     });
     
@@ -39,8 +39,7 @@ export const Base = (props) => {
   
   
   const handleComplete = ()=>{
-    
-    ScrollTrigger.refresh()
+
   }
   return (
     <>
