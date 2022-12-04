@@ -78,6 +78,7 @@
   line-height: 52px;
   margin: 0;
   color: #000000;
+  text-align: justify;
 }
 /* NewsDetail share */
 
@@ -121,6 +122,7 @@
   line-height: 42px;
   color: #000000;
   margin-top: 0;
+  text-align: justify;
 }
 /* NewsDetail__status */
 .NewsDetail__status {

@@ -75,18 +75,45 @@ export const FooterForm = () => {
                 key: "Design Branding",
               },
               {
-                cat: "Group 2",
+                cat: "Group 3",
                 key: "Design Packaging",
               },
-              {
-                cat: "Group 2",
-                key: "Deding",
-              },
-              {
-                cat: "Group 2",
-                key: "Design Bing",
-              }
-
+              // {
+              //   cat: "Group 2",
+              //   key: "Design p1",
+              // },
+              // {
+              //   cat: "Group 2",
+              //   key: "Design p2",
+              // },
+              // {
+              //   cat: "Group 2",
+              //   key: "Design p3",
+              // },
+              // {
+              //   cat: "Group 2",
+              //   key: "Design p4",
+              // },
+              // {
+              //   cat: "Group 2",
+              //   key: "Design p5",
+              // },
+              // {
+              //   cat: "Group 2",
+              //   key: "Design p6",
+              // },
+              // {
+              //   cat: "Group 2",
+              //   key: "Design p7",
+              // },
+              // {
+              //   cat: "Group 2",
+              //   key: "Design p8",
+              // },
+              // {
+              //   cat: "Group 2",
+              //   key: "Design p9",
+              // }
             ]}
             showCheckbox
             placeholder=""
