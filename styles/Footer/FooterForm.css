@@ -118,6 +118,7 @@ input {
 .footer__form--service {
   position: relative;
   padding-left: 40px;
+  width: 100%;
 }
 
 
@@ -177,7 +178,7 @@ input {
   content: "05";
   position: absolute;
   left: 0%;
-  top: 25%;
+  top: 18%;
   font-family: "Be Vietnam Pro";
   font-style: normal;
   font-weight: 300;
@@ -213,6 +214,24 @@ input {
 .searchWrapper {
   border: none !important;
   padding: 0 !important;
+  display: flex;
+  max-width: 700px !important;
+  max-height: 47px !important;
+  overflow-x: scroll !important;
+  overflow-y: hidden !important;
+}
+.searchWrapper::-webkit-scrollbar{
+  background-color: transparent;
+  height: 7px;
+  cursor: pointer !important;
+}
+.searchWrapper::-webkit-scrollbar-track{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: transparent;
+}
+.searchWrapper::-webkit-scrollbar-thumb{
+  background-color: #FFF;
+  border-radius: 20px;
 }
 
 .multiSelectContainer input {
@@ -234,8 +253,23 @@ input {
 .optionListContainer .checkbox {
   margin-right: 9px !important;
 }
-
+.footer__form--wrap{
+  max-width: 284px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer__form--arrow{
+  cursor: pointer;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 8px 12px 8px;
+  border-color: transparent transparent #787878 transparent;
+  transform: rotate(180deg);
+}
 .multiSelectContainer::before {
+  display: none;
   content: "";
   position: absolute;
   right: 0;
@@ -249,14 +283,27 @@ input {
   transform: rotate(180deg);
 }
 
-.optionListContainer {
+.multiselect-container .optionListContainer {
   background-color: rgba(255, 255, 255, 0.45) !important;
   backdrop-filter: blur(10px);
   border-radius: 12px !important;
   width: fit-content !important;
   overflow: hidden;
+  transition: height 0.6s;
+  margin-top: 7px;
+  /* max-height: 250px !important; */
 }
-
+.multiselect-container .displayNone{
+  height: 0;
+  display: block !important;
+}
+.multiselect-container .displayBlock{
+  height: 226px !important;
+  /* max-height: 226px !important; */
+}
+.custom-arrow{
+  display: none;
+}
 .searchBox {
   height: 50px !important;
 }

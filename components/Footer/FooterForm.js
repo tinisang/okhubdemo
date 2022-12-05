@@ -2,8 +2,19 @@ import React from "react";
 import Select from "react-select";
 import Multiselect from "multiselect-react-dropdown";
 import { Button } from "../Button/Button";
-
+import { useState } from "react";
 export const FooterForm = () => {
+  const [ state , setState ] = useState(false);
+  const handleClick = () => {
+    const inputSelection = document.querySelector('.optionListContainer');
+    if(!state){
+      inputSelection.classList.replace('displayNone','displayBlock');
+    }
+    else{
+      inputSelection.classList.replace('displayBlock','displayNone');
+    }
+    setState(!state);
+  }
   return (
     <div className="footer__form">
       <div className="footer__form--title">
@@ -20,7 +31,7 @@ export const FooterForm = () => {
           <input type="text" placeholder="Công ty Cổ phần ABC *"></input>
         </div>
       </div>
-      
+
       <div className="footer__form--email-and-phone">
         <div className="footer__form--email">
           <p>Email của bạn</p>
@@ -33,16 +44,22 @@ export const FooterForm = () => {
       </div>
 
       <div className="footer__form-company-and-service">
-       
         <div className="footer__form--service">
-          <p>Dịch vụ mà bạn quan tâm</p>
+          <div className="footer__form--wrap">
+            <p>Dịch vụ mà bạn quan tâm</p>
+            <div className="footer__form--arrow" onClick={handleClick}></div>
+          </div>
           <Multiselect
             displayValue="key"
-            selectedValues = {true}
-     
+            selectedValues={true}
+            arrowRenderer={() =>
+              <div className="custom-arrow" >
+                {/* <CustomArrowComponent /> */}
+              </div>
+            }
             options={[
               {
-               
+
                 key: "Web Design",
               },
               {
@@ -58,21 +75,48 @@ export const FooterForm = () => {
                 key: "Design Branding",
               },
               {
-                cat: "Group 2",
+                cat: "Group 3",
                 key: "Design Packaging",
               },
-              {
-                cat: "Group 2",
-                key: "Deding",
-              },
-              {
-                cat: "Group 2",
-                key: "Design Bing",
-              }
-          
+              // {
+              //   cat: "Group 2",
+              //   key: "Design p1",
+              // },
+              // {
+              //   cat: "Group 2",
+              //   key: "Design p2",
+              // },
+              // {
+              //   cat: "Group 2",
+              //   key: "Design p3",
+              // },
+              // {
+              //   cat: "Group 2",
+              //   key: "Design p4",
+              // },
+              // {
+              //   cat: "Group 2",
+              //   key: "Design p5",
+              // },
+              // {
+              //   cat: "Group 2",
+              //   key: "Design p6",
+              // },
+              // {
+              //   cat: "Group 2",
+              //   key: "Design p7",
+              // },
+              // {
+              //   cat: "Group 2",
+              //   key: "Design p8",
+              // },
+              // {
+              //   cat: "Group 2",
+              //   key: "Design p9",
+              // }
             ]}
             showCheckbox
-            placeholder="Chọn dịch vụ quan tâm"
+            placeholder=""
           />
         </div>
       </div>
@@ -84,7 +128,7 @@ export const FooterForm = () => {
           placeholder="Xin chào, tôi cần OkHub tư vấn về... *"
         ></input>
       </div>
-     <Button text = "Submit" className = "submit-btn"/>
+      <Button text="Submit" className="submit-btn" />
     </div>
   );
 };
