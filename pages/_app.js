@@ -35,7 +35,9 @@ import { motion, AnimatePresence } from "framer-motion"
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import { ScrollTriggerProxy } from '../components/ScrollTriggerProxy';
 import { useLocomotiveScroll } from 'react-locomotive-scroll';
+import { Refresh } from '../components/RefreshScrollTriger';
 
 
 function MyApp({ Component, pageProps }) {
@@ -48,14 +50,10 @@ function MyApp({ Component, pageProps }) {
     exit: { opacity: 0, x: 0, y: 0 },
 }
 
-  const handleComplete = ()=>{
-    ScrollTrigger.refresh()
-  }
- 
 
 
   useEffect(()=>{
-    ScrollTrigger.refresh()
+    // ScrollTrigger.refresh()
 
 
   })
@@ -64,19 +62,21 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Layout >
-      <AnimatePresence exitBeforeEnter initial={false}>
+
+      <AnimatePresence mode='wait' initial={false}>
         <motion.div 
         key={router.route}
         variants={variants} // Pass the variant object into Framer Motion 
         initial="hidden" // Set the initial state to variants.hidden
         animate="enter" // Animated state to variants.enter
         exit="exit" 
-        onAnimationComplete={handleComplete}
+        // onAnimationComplete={handleComplete}
         // data-scroll-section
         >
-
+     
 
         <Component {...pageProps} />
+       
 
         </motion.div>
         </AnimatePresence>

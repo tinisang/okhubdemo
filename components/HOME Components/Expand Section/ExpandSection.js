@@ -19,10 +19,10 @@ import { useLocomotiveScroll } from 'react-locomotive-scroll';
 
 
 
-import { OurServices } from "./OurServices"
+// import { OurServices } from "./OurServices"
 
 const ExpandSection = ()=>{
-    gsap.registerPlugin(ScrollTrigger)
+    // gsap.registerPlugin(ScrollTrigger)
     const pin=useRef()
     const services =useRef()
     const brightness = useRef(1)
@@ -150,18 +150,11 @@ const ExpandSection = ()=>{
               
     
     useEffect(()=>{
-        
-        
-        
-       
-      
-        
-        var dot =document.querySelector('.row1 svg')
         var tl1 = gsap.timeline({
             scrollTrigger:{
                 trigger: pin.current,
             //   markers:true,
-                start: '300px 0%',
+                start: '200px 0%',
                 end:'200% 0%',
                 toggleActions:'play none none reverse',
             
@@ -185,17 +178,6 @@ const ExpandSection = ()=>{
             ease:'power2.out'
 
         })
-
-        // var tl2 = gsap.timeline({
-        //     duration:0.8,
-        //     onUpdate:function(){
-        //         var x1 = mousePos.current.x  - (cursor.current.clientWidth/2 + cursor.current.getBoundingClientRect().x)
-        //         if (Math.abs(x1) < 50){
-        //             brightness.current=1
-        //         }
-        //         console.log(brightness.current)
-        //     }
-        // });
         const cursorAni = (e)=>{
             var y = e.clientY  - cursor.current.clientHeight/2 -cursor.current.getBoundingClientRect().y
             var x = e.clientX  - cursor.current.clientWidth/2 - cursor.current.getBoundingClientRect().x
@@ -235,11 +217,6 @@ const ExpandSection = ()=>{
                 x:e.clientX,
                 y:e.clientY
             }
-
-          
-    
-            // console.log(mousePos.current)
-         
     
      
     }    
@@ -254,28 +231,18 @@ const ExpandSection = ()=>{
                 y:"+=0",
                 duration:0.2
             })
-          
-        window.addEventListener('mousemove',cursorAni)
-     
-        
 
-        
-        
+        window.addEventListener('mousemove',cursorAni)
         return ()=>{
             if(tl.scrollTrigger){tl.scrollTrigger.kill()}
-            tl.kill()
             if(tl1.scrollTrigger){tl1.scrollTrigger.kill()}
+            tl.kill()
             tl1.kill()
-
             window.removeEventListener('mousemove',cursorAni)
           }
     
     })
 
-    
-
-
-  
     return (
         <>
         
