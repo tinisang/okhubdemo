@@ -90,30 +90,7 @@ export default function Projects() {
     setDisplay(false);
     
   }
-  const { scroll: locoScroll } = useLocomotiveScroll()
-    if (locoScroll){
-        console.log(locoScroll)
-        locoScroll.on("scroll", function(){
-              ScrollTrigger.update()
-           
-        
-            });
-    
-         
-            ScrollTrigger.scrollerProxy('[data-scroll-container]', {
-              scrollTop(value) {
-                return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-              },
-              getBoundingClientRect() {
-                return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
-              },
-          
-              pinType: document.querySelector('[data-scroll-container]').style.transform ? "transform" : "fixed"
-            });
-
-            ScrollTrigger.defaults({scroller: '[data-scroll-container]'})
-            
-    }
+ 
   useEffect(()=>{
     var tl = gsap.timeline({
       scrollTrigger:{
@@ -142,26 +119,23 @@ export default function Projects() {
       tl.kill()
     }
     
-  })
+  },[])
 
   useEffect(()=>{
     
      window.addEventListener('mousemove',function(e){
       if (cursor.current){
-        console.log(cursor.current.style.top)
-
         gsap.to(cursor.current,{
           left: e.clientX - cursor.current.clientWidth/2, 
-          top: e.clientY - cursor.current.clientHeight/2 + (locoScroll ? locoScroll.scroll.instance.scroll.y :0), 
+          top: e.clientY - cursor.current.clientHeight/2 , 
           ease:"power2.out",
-          duration:0.6,
-          // delay:0.04,
+          duration:0.5,
+          delay:0.04,
           // opacity:1
       })
       }
       })
 
-    ScrollTrigger.refresh()
 
 
     const slider = document.querySelector('.project__categories--item');
@@ -187,16 +161,12 @@ export default function Projects() {
       if(!isDown) return;
       e.preventDefault();
       const x = e.pageX - slider.offsetLeft;
-      const walk = (x - startX) *2; //scroll-fast
+      const walk = (x - startX) *2;
       slider.scrollLeft = scrollLeft - walk;
   
     });
     const optionsSort = ["Mới nhất", "Nhiều lượt xem nhất"];
-    if (locoScroll){
 
-    ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-    ScrollTrigger.refresh();
-    }
     return ()=>{
       
       window.removeEventListener('mousemove', function(){})
@@ -262,8 +232,8 @@ export default function Projects() {
       }
   }
   const handleComplete = ()=>{
-    ScrollTrigger.refresh();
-    if (locoScroll){locoScroll.update()}
+    // ScrollTrigger.refresh();
+    
   }
   const handleHover =(index)=>{
     clearInterval(interval.current)

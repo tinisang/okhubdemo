@@ -14,11 +14,14 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/pagination";
 import "swiper/css/free-mode";
-
+import { useEffect } from "react";
+import { useLocomotiveScroll } from "react-locomotive-scroll";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 
 export const ReviewSection = ()=>{
     const swiper = useSwiper();
+    const {scroll : locoScroll} = useLocomotiveScroll()
    
     const pagination = {
         el: ".dot-pagination",
@@ -32,6 +35,15 @@ export const ReviewSection = ()=>{
         nextEl:  ".review-footer .next-arrow",
         
       };
+
+      useEffect(()=>{
+                
+        if (locoScroll){
+
+            ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+            ScrollTrigger.refresh();
+            }
+      })
     
     return (
         <>

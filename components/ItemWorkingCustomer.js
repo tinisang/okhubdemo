@@ -6,10 +6,11 @@ export const ItemWorkingCustomer = ({no, title, des, img}) => {
     <div className='item--working__customer--container'>
         <div className="item--working--content-NO"> <p>{no}</p></div>
           <div className="item--working--content-title"><p>{title}</p></div>
-          <di className = "item--working--content-des"><p>{des}</p></di>
-          <di className = "item--working--content-img">
+          <div className = "item--working--content-des"><p>{des}</p></div>
+          <div className = "item--working--content-img">
               <Image src = {img} alt = ""/>
-          </di>
+              <div className="fake-border"></div>
+          </div>
     </div>
   )
 }

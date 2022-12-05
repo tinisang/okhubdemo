@@ -86,28 +86,7 @@ const ExpandSection = ()=>{
         },
 
     ]
-    const { scroll: locoScroll } = useLocomotiveScroll()
-    if (locoScroll){
-
-        locoScroll.on("scroll", function(){
-              ScrollTrigger.update()
-           
-        
-            });
-    
-          // tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
-            ScrollTrigger.scrollerProxy('[data-scroll-container]', {
-              scrollTop(value) {
-                return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-              }, // we don't have to define a scrollLeft because we're only scrolling vertically.
-              getBoundingClientRect() {
-                return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
-              },
-              // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
-              pinType: document.querySelector('[data-scroll-container]').style.transform ? "transform" : "fixed"
-            });
-            ScrollTrigger.defaults({scroller: '[data-scroll-container]'})
-        }
+   
     const handleHover=(index)=>{
         var viewButton= document.querySelector('.view-button');
         viewButton.innerText= 'View'
@@ -232,7 +211,7 @@ const ExpandSection = ()=>{
     
             gsap.to(cursor.current,{
                 left: e.clientX - cursor.current.clientWidth/2, 
-                top: e.clientY - cursor.current.clientHeight/2 + (locoScroll ? locoScroll.scroll.instance.scroll.y :0), 
+                top: e.clientY - cursor.current.clientHeight/2 , 
                 ease:"power2.out",
                 rotate:`${degree}deg`,
                 filter:`brightness(${brightness.current})`,
@@ -245,7 +224,7 @@ const ExpandSection = ()=>{
             
             gsap.to(viewButton,{
                 left: e.clientX - viewButton.clientWidth/2, 
-                top: e.clientY - viewButton.clientHeight/2 + (locoScroll ? locoScroll.scroll.instance.scroll.y :0), 
+                top: e.clientY - viewButton.clientHeight/2 , 
                 ease:"power2.out",
                 opacity:1,
               
@@ -263,9 +242,7 @@ const ExpandSection = ()=>{
          
     
      
-    }
-
-       
+    }    
 
         tl1
             .to('.services',{
@@ -279,22 +256,16 @@ const ExpandSection = ()=>{
             })
           
         window.addEventListener('mousemove',cursorAni)
-        tl.scrollTrigger.refresh()
-        tl1.scrollTrigger.refresh()
+     
+        
 
-        if (locoScroll){
-
-ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-ScrollTrigger.refresh();
-}
+        
         
         return ()=>{
             if(tl.scrollTrigger){tl.scrollTrigger.kill()}
             tl.kill()
             if(tl1.scrollTrigger){tl1.scrollTrigger.kill()}
             tl1.kill()
-        
-            // tl2.kill()
 
             window.removeEventListener('mousemove',cursorAni)
           }
@@ -307,6 +278,7 @@ ScrollTrigger.refresh();
   
     return (
         <>
+        
         <div className="view-button"></div>
         <div className="cursor-box" ref={cursor}>
             <div className='card__project--img-sub'>
