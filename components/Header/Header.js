@@ -39,9 +39,8 @@ export const Header = () => {
   useEffect(()=>{
     var fakeScrollY = 0;
 
-    if (locoScroll){
-      locoScroll.on('scroll',function(){
-        var thisScrollY = locoScroll.scroll.instance.scroll.y;
+    window.addEventListener('scroll',function(){
+        var thisScrollY = this.scrollY;
         if (thisScrollY > 0) {
       
        
@@ -82,7 +81,7 @@ export const Header = () => {
       fakeScrollY = thisScrollY
 
       })
-    }
+    
 
 
 

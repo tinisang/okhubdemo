@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import gsap from "gsap";
 
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import loadingImage from '../public/imgs/loading.svg'
+import loadingImage from '../public/imgs/Infinity-1s-200px.svg'
 import Image from "next/image";
 import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 
@@ -68,34 +68,11 @@ export const Base = (props) => {
             )
           }
           <Header/>
-        
-    <LocomotiveScrollProvider
-      options={
-        {
-          smooth: true,
-          // ... all available Locomotive Scroll instance options 
-        }
-      }
-      watch={
-        [
-          //..all the dependencies you want to watch to update the scroll.
-          //  Basicaly, you would want to watch page/location changes
-          //  For exemple, on Next.js you would want to watch properties like `router.asPath` (you may want to add more criterias if the instance should be update on locations with query parameters)
-        ]
-      }
-      containerRef={containerRef}
-    >
-      <main data-scroll-container ref={containerRef}>
-
-         
-
     
             {props.children}
           
           <Footer/>
-      </main>
-    </LocomotiveScrollProvider>
-      
+   
  
     </>
   );
