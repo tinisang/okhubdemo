@@ -9,7 +9,41 @@
   justify-content: space-between;
   align-items: center;
 }
-
+.footer__nav--fb:hover svg{
+  fill: white;
+  cursor: pointer;
+}
+.footer__nav--fb:hover g path{
+  fill: black;
+}
+.footer__nav--ins:hover svg{
+  fill: white;
+  cursor: pointer;
+}
+.footer__nav--ins:hover g path{
+  fill: black;
+}
+.footer__nav--be:hover svg{
+  fill: white;
+  cursor: pointer;
+}
+.footer__nav--be:hover path{
+  fill: black;
+}
+.footer__nav--other:hover svg{
+  fill: white;
+  cursor: pointer;
+}
+.footer__nav--other:hover g path{
+  fill: black;
+}
+.footer__nav--tiktok:hover svg{
+  fill: white;
+  cursor: pointer;
+}
+.footer__nav--tiktok:hover g path{
+  fill: black;
+}
 .footer__nav--icon {
   width: 50%;
   display: flex;
@@ -39,7 +73,13 @@
 
 .footer__nav--logo > p {
 }
-
+.footer__nav--fb,
+.footer__nav--ins,
+.footer__nav--be,
+.footer__nav--other,
+.footer__nav--tiktok{
+  transition: all 0.1s;
+}
 .footer__nav--icon > div {
   margin-left: 50px;
 }
