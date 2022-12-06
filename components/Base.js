@@ -10,20 +10,23 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import loadingImage from '../public/imgs/Infinity-1s-200px.svg'
 import Image from "next/image";
-import { LocomotiveScrollProvider } from "react-locomotive-scroll";
+import { LocomotiveScrollProvider, useLocomotiveScroll } from "react-locomotive-scroll";
+import { ScrollTriggerProxy } from "./ScrollTriggerProxy";
+import { Refresh } from "./RefreshScrollTriger";
 
 
 
 export const Base = (props) => {
   // console.log(props)
+  
   const containerRef = useRef(null)
   const [loading, isLoading] = useState(false)
   const router = useRouter()
+  const {scroll: locoScroll} = useLocomotiveScroll()
 
   useEffect(()=>{
-
     router.events.on('routeChangeStart', (url, { shallow }) => {
-      console.log(url == router.asPath)
+  
       if (router.asPath != url){
         isLoading(true)
 
@@ -31,16 +34,24 @@ export const Base = (props) => {
     });
     router.events.on('routeChangeComplete', (url, { shallow }) => {
       isLoading(false)
+      locoScroll?.destroy()
+      locoScroll?.init()
+      locoScroll?.start()
       
           
     });
     
   },[])
+  useEffect(()=>{
+    // console.log('change')
+    return()=>{
+    }
+  })
   
   
-  const handleComplete = ()=>{
+  // const handleComplete = ()=>{
 
-  }
+  // }
   return (
     <>
 
@@ -59,7 +70,7 @@ export const Base = (props) => {
             initial={{opacity:0}}
             animate={{opacity:1}}
             exit={{opacity:0}}
-            onAnimationComplete={handleComplete}
+            // onAnimationComplete={handleComplete}
 
             >
               <Image src={loadingImage} alt='' />
@@ -67,11 +78,37 @@ export const Base = (props) => {
 
             )
           }
-          <Header/>
-    
-            {props.children}
-          
-          <Footer/>
+ 
+          <LocomotiveScrollProvider
+            options={
+              {
+                smooth: true,
+                lerp:0.1,
+                getSpeed: true
+                // ... all available Locomotive Scroll instance options 
+              }
+            }
+            watch={
+              [
+                //..all the dependencies you want to watch to update the scroll.
+                //  Basicaly, you would want to watch page/location changes
+                //  For exemple, on Next.js you would want to watch properties like `router.asPath` (you may want to add more criterias if the instance should be update on locations with query parameters)
+              ]
+            }
+            location={router.asPath}
+            containerRef={containerRef}
+            onLocationChange={scroll => scroll.scrollTo(0, { duration: 0, disableLerp: true })}
+           
+          >
+            <main data-scroll-container ref={containerRef}>
+
+            <Header/>
+              {props.children}
+              <Footer/>
+
+              {/* <Refresh/> */}
+            </main>
+          </LocomotiveScrollProvider>
    
  
     </>
