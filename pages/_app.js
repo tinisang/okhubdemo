@@ -38,6 +38,7 @@ import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { ScrollTriggerProxy } from '../components/ScrollTriggerProxy';
 import { useLocomotiveScroll } from 'react-locomotive-scroll';
 import { Refresh } from '../components/RefreshScrollTriger';
+import { Ref } from 'semantic-ui-react';
 
 
 function MyApp({ Component, pageProps }) {
@@ -74,10 +75,11 @@ function MyApp({ Component, pageProps }) {
         // data-scroll-section
         >
      
-
+        <ScrollTriggerProxy/>
+      
         <Component {...pageProps} />
        
-
+        <Refresh/>
         </motion.div>
         </AnimatePresence>
       </Layout>

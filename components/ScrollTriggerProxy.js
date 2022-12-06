@@ -5,14 +5,13 @@ import { useLocomotiveScroll } from "react-locomotive-scroll"
 
 export const ScrollTriggerProxy = ()=>{
 
-    console.log('proxy config -----------------')
     
     const {scroll: locoScroll} = useLocomotiveScroll();
 
     gsap.registerPlugin(ScrollTrigger)
 
-    useEffect(()=>{
         if (locoScroll){
+          
             const element = locoScroll?.el;
            
 
@@ -33,16 +32,16 @@ export const ScrollTriggerProxy = ()=>{
 
             // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll.
             
-            ScrollTrigger.defaults({ scroller: '[data-scroll-container]', markers:true });
+            ScrollTrigger.defaults({ scroller: '[data-scroll-container]'});
             
-        }
-        
-     
-        return ()=>{
             ScrollTrigger.addEventListener("refresh", () => locoScroll?.update());
-          
         }
-    })
+
+        useEffect(()=>{
+            // locoScroll?.destroy()
+        })
+        
+    
 
     return (
         <></>

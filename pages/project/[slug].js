@@ -9,11 +9,11 @@ import { JudgeOkhub } from "../../components/SingleProject/JudgeOkhub";
 import { useLocomotiveScroll } from "react-locomotive-scroll";
 export default function SingleProject(){
   // ScrollTrigger.refresh()
-//         useEffect(()=>{
-//         return ()=>{
-//             ScrollTrigger.refresh()
-//         }
-// })
+  const { scroll : locoScroll} = useLocomotiveScroll()
+  useEffect(()=>{
+    // ScrollTrigger.addEventListener("refresh", () => locoScroll?.update());
+    ScrollTrigger.refresh();
+  })
     return (
         <>
             <div className="">

@@ -3,7 +3,7 @@ import { useEffect } from "react"
 
 
 export const Refresh = ()=>{
-    console.log('refreshing -------------------')
+
    
 
     ScrollTrigger.refresh()

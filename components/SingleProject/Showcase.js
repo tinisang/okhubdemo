@@ -242,15 +242,15 @@ export const Showcase = ()=>{
 
                 <div className="mobile-version">
                     <div className="images-wrapper-mobile">
-                        <div className="image-item-showcase">
+                        <div className="image-item-showcase" data-scroll data-scroll-direction='vertical' data-scroll-speed='1.1'>
 
                             <Image src={gumacImage} alt='' />
                         </div>
-                        <div className="image-item-showcase">
+                        <div className="image-item-showcase" data-scroll data-scroll-direction='vertical' data-scroll-speed='-1.1'>
 
                             <Image src={gumacImage} alt='' />
                         </div>
-                        <div className="image-item-showcase">
+                        <div className="image-item-showcase" data-scroll data-scroll-direction='vertical' data-scroll-speed='1.1'>
 
                             <Image src={gumacImage} alt='' />
                         </div>
@@ -272,7 +272,7 @@ export const Showcase = ()=>{
 
                         
                             <div className="achievement-wrapper">
-                                <div className="achievement-item">
+                                <div className="achievement-item" data-scroll data-scroll-direction='vertical' data-scroll-speed='3' data-scroll-delay='1'>
                                     <div className="title-achievement">
                                         Đánh giá từ khách hàng
                                     </div>
@@ -282,7 +282,7 @@ export const Showcase = ()=>{
                                     <div className="clip-path-background"> </div>
 
                                 </div>
-                                <div className="achievement-item">
+                                <div className="achievement-item" data-scroll data-scroll-direction='vertical' data-scroll-speed='3' data-scroll-delay='0.5'>
                                     <div className="title-achievement">
                                     Tỷ lệ chuyển đổi CTR tăng
                                     </div>
@@ -292,7 +292,7 @@ export const Showcase = ()=>{
                                     <div className="clip-path-background"> </div>
 
                                 </div>
-                                <div className="achievement-item">
+                                <div className="achievement-item" data-scroll data-scroll-direction='vertical' data-scroll-speed='3' data-scroll-delay='0.25'>
                                     <div className="title-achievement">
                                     Sự hài lòng từ đối tác
                                     </div>

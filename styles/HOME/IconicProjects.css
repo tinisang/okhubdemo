@@ -54,7 +54,8 @@
     overflow: hidden;
     position: relative;
     flex-shrink: 0;
-    transition: 0.3s;
+    /* transition: 0.3s; */
+    transform-origin: center bottom;
 }
 .iconic-projects-slide .projects-slide .project-item .image-project{
    height: 100%;
