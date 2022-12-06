@@ -73,17 +73,20 @@
 
 .footer__nav--logo > p {
 }
-.footer__nav--fb,
-.footer__nav--ins,
-.footer__nav--be,
-.footer__nav--other,
-.footer__nav--tiktok{
+.footer__nav--fb svg,
+.footer__nav--ins svg,
+.footer__nav--be svg,
+.footer__nav--other svg,
+.footer__nav--tiktok svg{
   transition: all 0.1s;
 }
 .footer__nav--icon > div {
   margin-left: 50px;
 }
-
+.footer__nav--icon a{
+  display: inline-block;
+  margin-left: 50px;
+}
 .footer__nav--primary {
   display: flex;
   margin: 0 100px;
