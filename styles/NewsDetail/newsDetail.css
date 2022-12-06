@@ -23,14 +23,28 @@
 .NewsDetail__primary-info {
   margin-bottom: 40px;
 }
-
+.NewsDetail__share--fb{
+  /* width: 45px;
+  height: 44px; */
+}
+.NewsDetail__share--icons-item{
+  display: flex;
+}
 .NewsDetail__primary-info,
 .NewsDetail__primary-time,
 .NewsDetail__primary-user {
   display: flex;
   align-items: center;
 }
-
+.NewDetail__share:hover svg{
+  fill: white;
+}
+.NewDetail__share:hover circle{
+  stroke: black;
+}
+.NewDetail__share:hover path{
+  fill: black;
+}
 .NewsDetail__primary-time {
   margin-right: 70px;
 }

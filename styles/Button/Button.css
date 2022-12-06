@@ -10,6 +10,7 @@
     background-color: #000000;
     border-radius: 50%;
     cursor: pointer;
+    transition: all 0.3s;
   }
   .button:hover{
     background-color: #ffffff;
