@@ -6,13 +6,6 @@ import gsap from "gsap";
 
 export default function SingleNew(){
 
-    
-    useEffect(()=>{
-        return ()=>{
-            ScrollTrigger.refresh()
-
-        }
-})
     return (
         <div>
 

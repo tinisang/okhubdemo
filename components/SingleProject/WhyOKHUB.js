@@ -54,6 +54,7 @@ export const WhyOKHUB = ({data})=>{
         })
 
         
+        ScrollTrigger.refresh()
 
         return ()=>{
             if(tl.scrollTrigger){tl.scrollTrigger.kill()}
@@ -66,7 +67,7 @@ export const WhyOKHUB = ({data})=>{
 
 
     gsap.registerPlugin(ScrollToPlugin);
-    gsap.registerPlugin(ScrollTrigger);
+    // gsap.registerPlugin(ScrollTrigger);
     
     
     return (
