@@ -19,9 +19,10 @@ import { VideoOkhub } from "../../components/HOME Components/VideoOkhub";
 export default function Introduce() {
   return (
     <div className="introduce__container">
-      <div className="introduce__header">
+      <VideoOkhub />
+      {/* <div className="introduce__header">
         <div className="introduce__header--img">
-          {/* <Image src={introduceHeaderImage} alt="" /> */}
+          <Image src={introduceHeaderImage} alt="" />
           <div className="introduce__header--play-btn">
             <Image src={playVideoIntroducesBtn} alt="" />
           </div>
@@ -34,11 +35,11 @@ export default function Introduce() {
         </div>
         <div className="introduce__header--video">
           <VideoOkhub />
-          {/* <video width="320" height="240">
+          <video width="320" height="240">
             <source src = {introduceHeaderVideo} type = 'video/mp4'></source>
-          </video> */}
+          </video>
         </div>
-      </div>
+      </div> */}
       <div className="introduce__overview">
         <div className="introduce__overview--header">
           <div className="introduce__overview--header-title">
