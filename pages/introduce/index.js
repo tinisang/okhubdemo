@@ -13,6 +13,7 @@ import { ReviewSection } from "../../components/HOME Components/ReviewSection";
 import { ClientsSection } from "../../components/HOME Components/ClientsSection";
 import imageIntroduceTeam from "../../public/imgs/imageIntroduceTeam.png";
 import introducePeopleEclipse from "../../public/imgs/introducePeopleEclipse.png";
+import { VideoOkhub } from "../../components/HOME Components/VideoOkhub";
 
 
 export default function Introduce() {
@@ -20,7 +21,7 @@ export default function Introduce() {
     <div className="introduce__container">
       <div className="introduce__header">
         <div className="introduce__header--img">
-          <Image src={introduceHeaderImage} alt="" />
+          {/* <Image src={introduceHeaderImage} alt="" /> */}
           <div className="introduce__header--play-btn">
             <Image src={playVideoIntroducesBtn} alt="" />
           </div>
@@ -32,6 +33,7 @@ export default function Introduce() {
           </div>
         </div>
         <div className="introduce__header--video">
+          <VideoOkhub />
           {/* <video width="320" height="240">
             <source src = {introduceHeaderVideo} type = 'video/mp4'></source>
           </video> */}

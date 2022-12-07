@@ -4,6 +4,8 @@
 }
 .introduce__header {
   position: relative;
+  height: 646px;
+  overflow: hidden;
 }
 
 .introduce__header--img {
@@ -16,7 +18,20 @@
   height: 100vh;
   object-fit: cover;
 }
-
+.introduce__header .introduce__header--img{
+  width: 100% !important;
+  height: 100%;
+  position: absolute !important;
+}
+.introduce__header--video{
+  height: 100%;
+}
+.video-react {
+    width: 100%!important;
+    overflow: hidden;
+    padding: 0!important;
+    height: 100%;
+}
 .introduce__header--img::after {
   content: "";
   width: 100%;
