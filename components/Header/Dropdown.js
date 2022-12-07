@@ -105,9 +105,7 @@ export const DropDown = ({status, functionClick})=>{
         currentIndex.current = index
     }
     }
-    useLayoutEffect(()=>{
-        
-    })
+
     useEffect(()=>{
         
         var timeline = gsap.timeline()

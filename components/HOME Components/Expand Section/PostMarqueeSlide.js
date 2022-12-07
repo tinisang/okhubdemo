@@ -15,23 +15,34 @@ export const PostMarqueSlide = ()=>{
         var slider = document.querySelector('.marquee-post-slide')
 
         var sliderValue= parseInt(getComputedStyle(sliderWidth1).width.replace('px',''));
-       
-       
+        
+        
         var tl =gsap.timeline()
         tl.to('.marquee-container',{
             duration: 12,
             ease: "none",
             x: `-${sliderValue}px`,
-            // modifiers: {
-            //     x: gsap.utils.unitize(x => {
-            //         return parseFloat(x)
-            //     }) //force x value to be between 0 and 500 using modulus
-            // },
+            
             repeat: -1
         })
 
+        var mainSlide = document.querySelector('.marquee-container');
+        const slowDown=()=>{
+            gsap.to(tl,{timeScale: 0, duration:1})
+        }
+        
+        const speedUp=()=>{
+            gsap.to(tl,{timeScale: 1, duration:1})
+        }
+        mainSlide.addEventListener('mouseover',slowDown)
+        mainSlide.addEventListener('mouseout',speedUp)
+        
+        
         return ()=>{
-            tl.kill()
+            tl.kill();
+            mainSlide.removeEventListener('mouseover',slowDown)
+            mainSlide.removeEventListener('mouseout',speedUp)
+            
         }
     })
     

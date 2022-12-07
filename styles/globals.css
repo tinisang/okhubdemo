@@ -110,3 +110,7 @@ a {
   75%   {opacity: 0.4;}
   100%  {opacity: 0.2;}
 }
+
+[data-scroll-container]{
+  overflow-x: hidden;
+}

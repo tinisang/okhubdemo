@@ -38,49 +38,53 @@ export const Header = () => {
 
   useEffect(()=>{
     var fakeScrollY = 0;
-
-    window.addEventListener('scroll',function(){
-        var thisScrollY = this.scrollY;
-        if (thisScrollY > 0) {
+    console.log(locoScroll)
+    locoScroll?.on('scroll',function(){
+      var thisScrollY = locoScroll.scroll.instance.scroll.y;
+      var dropdown = document.querySelector('.dropdown-section')
+      header.current.style.top= thisScrollY+'px'
+      dropdown.style.top= thisScrollY+'px'
+      console.log(thisScrollY)
+      if (thisScrollY > 0) {
+    
+     
+      } else {
+ 
       
-       
-        } else {
-   
-        
-        }
+      }
 
-        /*---SCROLL UP----*/
-        if (fakeScrollY > thisScrollY) {
+      /*---SCROLL UP----*/
+      if (fakeScrollY > thisScrollY) {
 
-          header.current.style.transform = "translateY(0%)"
-          header.current.style.background = "white"
-          
-        }
-        /*---SCROLL DOWN----*/
-        if (fakeScrollY < thisScrollY && thisScrollY > 300) {
-          
-          header.current.style.background = "white"
-          header.current.style.transform = "translateY(-100%)"
-          
-        }
+        header.current.style.transform = "translateY(0%)"
+        header.current.style.background = "white"
         
-        if (fakeScrollY == thisScrollY){
+      }
+      /*---SCROLL DOWN----*/
+      if (fakeScrollY < thisScrollY && thisScrollY > 300) {
+        
+        header.current.style.background = "white"
+        header.current.style.transform = "translateY(-100%)"
+        
+      }
+      
+      if (fakeScrollY == thisScrollY){
 
-        }
+      }
+      
+      if (thisScrollY == 0) {
+        header.current.style.transform = "translateY(0%)"
+        header.current.style.background = "transparent"
+      }
+      
+      if (isOpen){
         
-        if (thisScrollY == 0) {
-          header.current.style.transform = "translateY(0%)"
-          header.current.style.background = "transparent"
+        header.current.style.transform = "translateY(0%)"
+        header.current.style.background = "transparent"
         }
-        
-        if (isOpen){
-          
-          header.current.style.transform = "translateY(0%)"
-          header.current.style.background = "transparent"
-          }
-      fakeScrollY = thisScrollY
-
-      })
+    fakeScrollY = thisScrollY
+    })
+  
     
 
 

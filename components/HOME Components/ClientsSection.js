@@ -89,7 +89,6 @@ export const ClientsSection=()=>{
                 trigger:'.client-section',
                 start:'300px 90%',
                 end:'70% 90%',
-                //  ,
                 toggleActions:'restart ',
                 scrub:1,
                 
@@ -100,52 +99,11 @@ export const ClientsSection=()=>{
             
             duration:9
         })
-    
-
-
-        const slide1 = document.querySelector('.clients-list .row1-line')
-        const slide2 = document.querySelector('.clients-list .row2-line')
-       
-        const slide1Width = document.querySelector('.clients-list .row1-line .main-slide').scrollWidth;
-        const slide2Width = document.querySelector('.clients-list .row2-line .main-slide').scrollWidth;
-        slide2.style.transform=`translateX(${-1*slide2Width}px)`
-
-        const tl1=gsap.timeline({
-            scrollTrigger:{
-                trigger: '.clients-list',
-                start:'top 100%',
-                end:'bottom 0%',
-                toggleActions:'play pause resume play',
-              
-            }
-        })
-        const tl2 = gsap.timeline({
-            scrollTrigger:{
-                trigger: '.clients-list',
-                start:'top 100%',
-                end:'bottom 0%',
-                toggleActions:'play pause resume play',
-                //  ,
-              
-            }
-        })
-            tl1.to(slide1,{
-                duration:17,
-                x:`-=${slide1Width+40}px`,
-                repeat:-1,
-                ease:'none'
-            })
-            tl2.to(slide2,{
-                duration:19,
-                x:`+=${slide2Width+40}px`,
-                repeat:-1,
-                ease:'none'
-            })
-        
 
         return ()=>{
-            if(tl1.scrollTrigger){tl1.scrollTrigger.kill()}
-            if(tl2.scrollTrigger){tl2.scrollTrigger.kill()}
+            if(tl.scrollTrigger){tl.scrollTrigger.kill()}
+            tl.kill()
+       
         }
     })
     
@@ -156,11 +114,11 @@ export const ClientsSection=()=>{
             <div className="client-section">
                 <div className="clients-introduction ">
                     <div className="column-1">
-                        <span className="value">
+                        <span className="value" data-scroll data-scroll-direction='vertical' data-scroll-speed = '1.6' data-scroll-id='abc'>
                             <span className="number">100</span>
                             <span className="symbol">+</span>
                         </span>
-                        <div className="description">
+                        <div className="description" data-scroll data-scroll-direction='vertical' data-scroll-speed = '1.1' data-scroll-id='abfsfac'>
                             <b>Doanh nghiệp</b> đã thành công <br/>với giải pháp từ OkHub Agency
                         </div>
                     </div>
@@ -174,7 +132,7 @@ export const ClientsSection=()=>{
                     </svg>
 
                     </div>
-                        <div className="contact-button" ref={contactButton}>
+                        <div className="contact-button" ref={contactButton} data-scroll data-scroll-direction='vertical' data-scroll-speed = '2'>
                             <Link href='/'>
                                     Liên hệ
                             </Link>
@@ -184,7 +142,7 @@ export const ClientsSection=()=>{
                 </div>
 
                 <div className="clients-list">
-                    <div className="row1-line line">
+                    <div className="row1-line line" data-scroll data-scroll-direction='horizontal' data-scroll-speed = '1.1'>
                         <div className="slide-client main-slide">
                         {
                             firstHalf.map((value, index)=>{
@@ -228,7 +186,7 @@ export const ClientsSection=()=>{
                         }
                         </div>
                     </div>
-                    <div className="row2-line line">
+                    <div className="row2-line line" data-scroll data-scroll-direction='horizontal' data-scroll-speed = '-1.1'>
                         <div className="slide-client main-slide">
                         {
                             secondHalf.map((value, index)=>{

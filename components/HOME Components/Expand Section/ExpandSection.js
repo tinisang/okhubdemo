@@ -16,17 +16,18 @@ import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
 
 import { PostMarqueSlide } from './PostMarqueeSlide';
 import { useLocomotiveScroll } from 'react-locomotive-scroll';
+import { ScrollTriggerProxy } from '../../ScrollTriggerProxy';
+import { Refresh } from '../../RefreshScrollTriger';
 
 
 
-import { OurServices } from "./OurServices"
-
-const ExpandSection = ()=>{
-    gsap.registerPlugin(ScrollTrigger)
+export const ExpandSection = ()=>{
+    const {scroll : locoScroll} = useLocomotiveScroll()
     const pin=useRef()
     const services =useRef()
     const brightness = useRef(1)
     gsap.registerPlugin(ScrollToPlugin);
+    gsap.registerPlugin(ScrollTrigger)
 
     const cursor= useRef()
 
@@ -35,8 +36,6 @@ const ExpandSection = ()=>{
         y:0
     })
 
-    const position=useRef('close')
-    
     const slidecursor = useRef()
     const background = useRef()
 
@@ -151,34 +150,28 @@ const ExpandSection = ()=>{
     
     useEffect(()=>{
         
-        
-        
-       
-      
-        
-        var dot =document.querySelector('.row1 svg')
-        var tl1 = gsap.timeline({
+        const tl1 = gsap.timeline({
             scrollTrigger:{
-                trigger: pin.current,
-            //   markers:true,
-                start: '300px 0%',
+                trigger:'.trigger-pin',
+        
+                start: '200px 0%',
                 end:'200% 0%',
                 toggleActions:'play none none reverse',
-            
-                
+                scroller:'[data-scroll-container]',
+           
               
             }
         })
-        var tl = gsap.timeline({
+        const tl = gsap.timeline({
             scrollTrigger:{
-                trigger: pin.current,
-                pin:pin.current,
+                trigger: '.trigger-pin',
+                pin:'.trigger-pin',
                 pinSpacing:true,
-                // markers:true,
                 start: '0% 0%',
                 end:'200% 0%',
-             
-                scrub:10
+                scroller:'[data-scroll-container]',
+         
+                scrub:1
               
               
             },
@@ -186,16 +179,38 @@ const ExpandSection = ()=>{
 
         })
 
-        // var tl2 = gsap.timeline({
-        //     duration:0.8,
-        //     onUpdate:function(){
-        //         var x1 = mousePos.current.x  - (cursor.current.clientWidth/2 + cursor.current.getBoundingClientRect().x)
-        //         if (Math.abs(x1) < 50){
-        //             brightness.current=1
-        //         }
-        //         console.log(brightness.current)
-        //     }
-        // });
+
+        var viewButton= document.querySelector('.view-button');
+        //animate cursor on locoScroll scrolling
+
+        function upDateCursor(){
+            if (locoScroll){
+
+            }
+        }
+
+        
+     
+            locoScroll?.on('scroll',function(args){
+                if (cursor.current){
+
+                    gsap.to(cursor.current,{
+                        top:  mousePos.current.y- cursor.current.clientHeight/2 + args.scroll.y,
+                        duration:0
+                    },"<+=0")
+                }
+
+                if (viewButton){
+
+                    
+                    gsap.to(viewButton,{
+                        top: mousePos.current.y- viewButton.clientHeight/2  + args.scroll.y,
+                        duration:0
+                    },"<+=0")
+                }
+            })
+        
+        
         const cursorAni = (e)=>{
             var y = e.clientY  - cursor.current.clientHeight/2 -cursor.current.getBoundingClientRect().y
             var x = e.clientX  - cursor.current.clientWidth/2 - cursor.current.getBoundingClientRect().x
@@ -211,7 +226,7 @@ const ExpandSection = ()=>{
     
             gsap.to(cursor.current,{
                 left: e.clientX - cursor.current.clientWidth/2, 
-                top: e.clientY - cursor.current.clientHeight/2 , 
+                top: e.clientY - cursor.current.clientHeight/2 + (locoScroll ? locoScroll.scroll.instance.scroll.y :0) , 
                 ease:"power2.out",
                 rotate:`${degree}deg`,
                 filter:`brightness(${brightness.current})`,
@@ -221,10 +236,11 @@ const ExpandSection = ()=>{
                 
             },'<+=0')
             var viewButton= document.querySelector('.view-button');
+
             
             gsap.to(viewButton,{
                 left: e.clientX - viewButton.clientWidth/2, 
-                top: e.clientY - viewButton.clientHeight/2 , 
+                top: e.clientY - viewButton.clientHeight/2 + (locoScroll ? locoScroll.scroll.instance.scroll.y :0) , 
                 ease:"power2.out",
                 opacity:1,
               
@@ -235,11 +251,6 @@ const ExpandSection = ()=>{
                 x:e.clientX,
                 y:e.clientY
             }
-
-          
-    
-            // console.log(mousePos.current)
-         
     
      
     }    
@@ -250,35 +261,29 @@ const ExpandSection = ()=>{
                 duration:1,
                 ease:'power2.out'
             })
-            .to('.services',{
-                y:"+=0",
-                duration:0.2
-            })
-          
-        window.addEventListener('mousemove',cursorAni)
-     
-        
 
-        
-        
+
+        window.addEventListener('mousemove',cursorAni)
+        tl.scrollTrigger.refresh()
+        tl1.scrollTrigger.refresh()
+
         return ()=>{
             if(tl.scrollTrigger){tl.scrollTrigger.kill()}
-            tl.kill()
             if(tl1.scrollTrigger){tl1.scrollTrigger.kill()}
+            tl.kill()
             tl1.kill()
-
+        
+         
             window.removeEventListener('mousemove',cursorAni)
           }
     
     })
-
-    
-
-
   
+
     return (
         <>
         
+       
         <div className="view-button"></div>
         <div className="cursor-box" ref={cursor}>
             <div className='card__project--img-sub'>
@@ -316,14 +321,14 @@ const ExpandSection = ()=>{
     
             
            
-        <div className="trigger-pin" ref={pin}>
+        <div className="trigger-pin" ref={pin} >
 
     
             <div className="hero-section-expand">
                <PostMarqueSlide/>
                 <div className="content-area">
-                    <div className="row1">
-                        <span className="word-split big-text">Okhub</span>
+                    <div className="row1" data-scroll data-scroll-direction='vertical' data-scroll-speed = '1.01'>
+                        <span className="word-split big-text" data-scroll data-scroll-direction='horizontal' data-scroll-speed = '1.1'>Okhub</span>
 
                         <svg width="78" height="120" viewBox="0 0 78 120" fill="none" xmlns="http://www.w3.org/2000/svg">
                           
@@ -362,9 +367,9 @@ const ExpandSection = ()=>{
                             </svg>
 
                         
-                        <span className="word-split big-text">Digital</span>
+                        <span className="word-split big-text" data-scroll data-scroll-direction='horizontal' data-scroll-speed = '-1.1'>Digital</span>
                     </div>
-                    <div className="title big-text">Lấy người dùng làm trung tâm</div>
+                    <div className="title big-text" data-scroll data-scroll-direction='vertical' data-scroll-speed = '1.006'>Lấy người dùng làm trung tâm</div>
                     <div className="description">
                     Tạo ra các điểm chạm vào trái tim và trải nghiệm người dùng 
                     <br/>
@@ -376,7 +381,7 @@ const ExpandSection = ()=>{
            
             <div className="services" style={{
                 clipPath:"circle(0% at 50% 35%)",
-                transition:'all 0.2s'
+                transition:'all 0s'
               
             }} ref={services}>
 
@@ -472,10 +477,7 @@ const ExpandSection = ()=>{
             </div>
            
         </div>
-
     
         </>
     )
 }
-
-export default ExpandSection

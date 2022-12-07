@@ -10,7 +10,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    transition: 1s;
+    transition: transform 1s;
 }
 .header-section.opening{
     background-color: transparent;

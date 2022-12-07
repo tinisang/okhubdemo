@@ -112,14 +112,14 @@ export default function Projects() {
    
 
 
-
+  
     return ()=>{
      
       if(tl.scrollTrigger){tl.scrollTrigger.kill()}
       tl.kill()
     }
     
-  },[])
+  })
 
   useEffect(()=>{
     
@@ -267,7 +267,9 @@ export default function Projects() {
   }
   
   const optionsSort = ["Mới nhất", "Nhiều lượt xem nhất"];
-
+  const { scroll : locoScroll} = useLocomotiveScroll()
+  ScrollTrigger.addEventListener("refresh", () => locoScroll?.update());
+  ScrollTrigger.refresh();
   return (
     <div className="project__container">
       <div className="project__header">
@@ -427,7 +429,7 @@ export default function Projects() {
         </div>
       </div>
 
-        <AnimatePresence exitBeforeEnter>
+        <AnimatePresence mode="wait">
 
     
       

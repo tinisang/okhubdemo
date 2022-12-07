@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 // import {Link} from "react-router-dom";
 import Image from "next/image";
@@ -19,6 +19,8 @@ import NewsDetailInsIcon from "../../public/imgs/NewDetailInsIcon.png";
 import NewDetailBeIcon from "../../public/imgs/NewsDetailBeIcon.png";
 import arrowLeftNewsDetailDocuments from "../../public/imgs/arrowLeftNewsDetailDocuments.png";
 import arrowNextNewsDetailDocuments from "../../public/imgs/arrowNextNewsDetailDocuments.png";
+import { useLocomotiveScroll } from "react-locomotive-scroll";
+import gsap from "gsap";
 
 export const NewsDetail = () => {
   const dataInfoCategory = [
@@ -44,6 +46,25 @@ export const NewsDetail = () => {
       title: "Tin nổi bật",
     },
   ];
+
+
+  const {scroll : locoScroll} = useLocomotiveScroll()
+
+
+  
+  useEffect(()=>{
+ if (locoScroll){
+            locoScroll.on('scroll', function (args){
+         
+                   gsap.to('.NewsDetail__primary-img',{
+                    filter:`brightness(${Math.abs(args.speed)/70+1})`
+                   })
+         
+                
+            })
+        }
+  })
+  
   return (
     <div className="container">
       <Link href={'/news'} className="NewsDetail__back">

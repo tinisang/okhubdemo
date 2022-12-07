@@ -24,6 +24,9 @@ export const IconicSlide = ()=>{
     const preview = useRef(null)
     const myInterval = useRef()
     const lastActive = useRef()
+
+    const inScroll = useRef()
+    
     const [previewImg,setPreview] =useState(previewImage)
 
     const data=[
@@ -69,10 +72,38 @@ export const IconicSlide = ()=>{
     gsap.registerPlugin(ScrollToPlugin);
 
 
-    const { scroll: locoScroll } = useLocomotiveScroll()
+    const { scroll } = useLocomotiveScroll();
+    const locoScroll = useRef(scroll)
+
+    locoScroll.current = scroll
    
     
     useEffect(()=>{
+     
+            locoScroll.current?.on('scroll',function(args){
+            var test = document.querySelector('.project-item')
+
+            if (test){
+
+           
+                if (inScroll.current){
+
+                    gsap.to('.project-item',{
+                        filter:`brightness(${Math.abs(args.speed)/80 + 1})`,
+                        skewX:args.speed/3,
+                      
+                        
+                    })
+                } else {
+                    gsap.to('.project-item',{
+                        filter:`brightness(1)`,
+                        skewX:0,
+                    }) 
+                }
+            }
+            })
+        
+        
         var lastslide = document.querySelector('.projects-slide .project-item:last-child')
         var screenWidth = window.innerWidth
         var sliderWidth = slider.current.scrollWidth
@@ -84,7 +115,20 @@ export const IconicSlide = ()=>{
                 end:'300% 0%',
                 scrub:true,
                 ease:'power2.out',
-                pin:triggerContainer.current
+                pin:triggerContainer.current,
+                onEnter:function(){
+                    inScroll.current = true
+                },
+                onLeave:function(){
+                    inScroll.current = false
+                    
+                },
+                onEnterBack:function(){
+                    inScroll.current = true
+                },
+                onLeaveBack:function(){
+                    inScroll.current = false
+                }
             }
         })
 
@@ -100,6 +144,7 @@ export const IconicSlide = ()=>{
             
             window.removeEventListener('mousemove',cursorAnimation)
             if(tl.scrollTrigger){tl.scrollTrigger.kill()}
+           
             clearInterval(myInterval.current)
           
         }
@@ -109,7 +154,7 @@ export const IconicSlide = ()=>{
             gsap.to(cursor.current,{
                 left: e.clientX,
                 top:e.clientY,
-                // duration:1
+               
             })
         }
 
@@ -203,7 +248,7 @@ export const IconicSlide = ()=>{
                     <Image src={image7} />
                 </div>
             </div>
-            <div className="iconic-projects-slide" ref={triggerContainer}>
+            <div className="iconic-projects-slide" ref={triggerContainer} data-scroll data-scroll-id='services'>
                 <div className="introduction  container-margin">
 
                     <div className="heading">
