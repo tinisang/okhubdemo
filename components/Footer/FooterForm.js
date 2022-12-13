@@ -5,6 +5,11 @@ import { Button } from "../Button/Button";
 import { useState } from "react";
 export const FooterForm = () => {
   const [ state , setState ] = useState(false);
+  const eventProcessing = () => {
+    const inputTask = document.querySelector('.searchWrapper');
+    console.log(inputTask);
+    inputTask.classList.add('displayFlex');
+  }
   const handleClick = () => {
     const inputSelection = document.querySelector('.optionListContainer');
     if(!state){
@@ -50,10 +55,11 @@ export const FooterForm = () => {
             <div className="footer__form--arrow" onClick={handleClick}></div>
           </div>
           <Multiselect
+            onClick={eventProcessing}
             displayValue="key"
             selectedValues={true}
             arrowRenderer={() =>
-              <div className="custom-arrow" >
+              <div className="custom-arrow" > 
                 {/* <CustomArrowComponent /> */}
               </div>
             }

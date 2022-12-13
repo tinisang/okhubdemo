@@ -215,11 +215,13 @@ input {
   border: none !important;
   padding: 0 !important;
   display: flex;
+  /* display: none;   */
   max-width: 700px !important;
   max-height: 47px !important;
   overflow-x: scroll !important;
   overflow-y: hidden !important;
 }
+
 .searchWrapper::-webkit-scrollbar{
   background-color: transparent;
   height: 7px;
@@ -230,7 +232,7 @@ input {
   background-color: transparent;
 }
 .searchWrapper::-webkit-scrollbar-thumb{
-  background-color: #FFF;
+  background-color: #b8b8b8;
   border-radius: 20px;
 }
 
@@ -240,9 +242,10 @@ input {
   font-weight: 300;
   font-size: 20px;
   line-height: 24px;
+  width: 14px;
   color: #787878;
   margin: 0 !important;
-  padding-right: 50px;
+  /* padding-right: 50px; */
 
 }
 
@@ -254,6 +257,7 @@ input {
   margin-right: 9px !important;
 }
 .footer__form--wrap{
+  /* height: 42px; */
   max-width: 284px;
   display: flex;
   align-items: center;
@@ -300,6 +304,9 @@ input {
 .multiselect-container .displayBlock{
   height: 226px !important;
   /* max-height: 226px !important; */
+}
+.displayFlex{
+  display: flex !important;
 }
 .custom-arrow{
   display: none;

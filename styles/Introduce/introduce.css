@@ -221,6 +221,7 @@
   left: 0;
   top: 100%;
   margin-left: -32px;
+  display: none;
 }
 .introduce__overview--bg-VN {
   position: absolute;

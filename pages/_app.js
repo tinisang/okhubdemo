@@ -32,6 +32,7 @@ import '../styles/Loading.css'
 import '../styles/News/dropDownCss.css'
 import "../styles/Smooth Scroll/Style.css"
 import "../styles/Introduce/Video.css"
+import "../styles/Responsive/HomeRes.css"
 import { motion, AnimatePresence } from "framer-motion"
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
