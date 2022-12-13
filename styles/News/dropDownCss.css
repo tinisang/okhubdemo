@@ -10,7 +10,16 @@
   align-items: center;
   
 }
-
+/* .news__selector--order .Dropdown-control:hover,
+.drop-down__wrapp .Dropdown-control:hover{
+  cursor: pointer;
+} */
+.Dropdown-control:hover{
+  cursor: pointer;
+}
+.Dropdown-option:hover{
+  cursor: pointer;
+}
 .Dropdown-root .Dropdown-control .Dropdown-placeholder {
   font-family: "Be Vietnam Pro";
   font-style: normal;
