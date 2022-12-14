@@ -387,7 +387,8 @@ export const ExpandSection = ()=>{
 
 <div className="our-services" ref={background}>
                 <div className="introduction container-padding">
-                    <div className="title">Our Services</div>
+                    <div className="title">Our <br />
+                    Services</div>
                     <div className="description">
                         Đa dạng hóa sản phẩm và dịch vụ là một quá trình nghiên cứu thị trường và nhu cầu của doanh nghiệp trong thời điểm hiện tại.
                     </div>
