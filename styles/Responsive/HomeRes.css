@@ -128,22 +128,90 @@
         width: 80% !important;
     }
     .footer__contact{
+        width: 100%;
         display: grid;
-        grid-template-areas: 
-        'title title title'
-        'des des des';
-        margin-top: 110px;
+        grid-template-columns: 1fr 1fr;
+        margin: 110px;
     }
-    .footer__contact--title{
+    /* .footer__contact--title{
         grid-area: title;
     }
     .footer__contact--des{
         grid-area: des;
-    }
+    } */
     .footer__contact--logo{
         display: none;
     }
     .images-animation-container{
         display: none;
+    }
+    .footer__nav--sub{
+        flex-direction: column;
+    }
+    .footer__nav--company{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        margin-bottom: 50px;
+        margin-left: 0;
+        height: 130px;
+        justify-content: space-between;
+    }
+    .footer__nav--name{
+        margin: 0;
+    }
+    .footer__nav--icon{
+        margin: 0;
+        /* width: ; */
+    }
+
+    /* News */
+    .news__title-btn button{
+        width: 150px;
+        height: 150px;
+    }
+    .news__title-text p{
+        font-size: 65px;
+    }
+    .news__title-text p span.animation-text{
+        font-size: 65px;
+    }
+    .news__title-text p span.animation-text{
+        font-size: 65px;
+    }
+    .news__title-text{
+        padding-left: 20px;
+    }
+    .news__categories{
+        margin-left: 55px;
+    }
+    .news__categories--items p{
+        font-size: 30px;
+    }
+    .Dropdown-root .Dropdown-control{
+        width: 238px;
+        height: 86px;
+    }
+    .Dropdown-root .Dropdown-control .Dropdown-arrow-wrapper .Dropdown-arrow{
+        top: 40%;
+    }
+    .news__selector--order{
+        margin-left: 50px;
+    }
+    .news__selector--fileds{
+        margin-right: 50px;
+    }
+    .news__selector--order p, .news__selector--fileds p{
+        font-size: 18px;
+    }
+    .Dropdown-root .Dropdown-control .Dropdown-placeholder{
+        font-size: 17px;
+    }
+    .news__status {
+        margin-left: 50px;
+    }
+    .news__documents{
+        margin-right: 50px;
     }
 }
