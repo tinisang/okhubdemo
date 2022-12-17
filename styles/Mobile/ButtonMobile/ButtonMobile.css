@@ -1,0 +1,14 @@
+.btn__mobile {
+    border: none;
+    background-color: #5255FA;
+    font-family: 'Be Vietnam Pro';
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 18px;
+text-transform: uppercase;
+border-radius: 8px;
+padding: 17px 124px;
+color: #FFFFFF;
+cursor: pointer;
+}

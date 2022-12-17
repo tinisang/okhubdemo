@@ -1,0 +1,7 @@
+.container__project-special > h2 {
+    margin-left: 16px;
+ }
+
+ .container__project-special .container__proejct-post:first-child{
+     margin-top: 30px !important;
+ }

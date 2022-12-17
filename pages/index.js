@@ -15,6 +15,8 @@ import { PostMarqueSlide } from '../components/HOME Components/Expand Section/Po
 import { useLocomotiveScroll } from 'react-locomotive-scroll'
 import { IconSlideMobile } from '../components/HOME Components/HomeMobile/IconSlideMobile'
 import { ProjectSpecial, ProjectSpecialMobile } from '../components/HOME Components/HomeMobile/ProjectSpecialMobile'
+import { ClienSectionMobile } from '../components/HOME Components/HomeMobile/ClienSectionMobile'
+
 
 
 
@@ -55,7 +57,12 @@ export default function Home() {
       {
         isMobile == false ? <CategorySlide/> : <ProjectSpecialMobile/>
       }
-      <ClientsSection/>
+
+      {
+        isMobile == false ?  <ClientsSection/> : <ClienSectionMobile/>
+      }
+    
+     
       <ReviewSection/>
        </div>
    

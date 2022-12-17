@@ -33,6 +33,10 @@ import '../styles/News/dropDownCss.css'
 import "../styles/Smooth Scroll/Style.css"
 import "../styles/Introduce/Video.css"
 import "../styles/Responsive/HomeRes.css"
+import "../styles/Mobile/HomeMobile/ProjectSpecialMobile.css"
+import  "../styles/Mobile/HomeMobile/ProjectPost.css"
+import "../styles/Mobile/HomeMobile/ClienSectionMobile.css"
+import "../styles/Mobile/ButtonMobile/ButtonMobile.css"
 import { motion, AnimatePresence } from "framer-motion"
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
@@ -41,6 +45,7 @@ import { ScrollTriggerProxy } from '../components/ScrollTriggerProxy';
 import { useLocomotiveScroll } from 'react-locomotive-scroll';
 import { Refresh } from '../components/RefreshScrollTriger';
 import { Ref } from 'semantic-ui-react';
+
 
 
 function MyApp({ Component, pageProps }) {
