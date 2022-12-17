@@ -16,6 +16,7 @@ import { useLocomotiveScroll } from 'react-locomotive-scroll'
 import { IconSlideMobile } from '../components/HOME Components/HomeMobile/IconSlideMobile'
 import { ProjectSpecial, ProjectSpecialMobile } from '../components/HOME Components/HomeMobile/ProjectSpecialMobile'
 import { ClienSectionMobile } from '../components/HOME Components/HomeMobile/ClienSectionMobile'
+import { ContactMobile } from '../components/HOME Components/HomeMobile/ContactMobile'
 
 
 
@@ -61,9 +62,13 @@ export default function Home() {
       {
         isMobile == false ?  <ClientsSection/> : <ClienSectionMobile/>
       }
+
+      {
+        isMobile == false ? <ReviewSection/> : <ContactMobile/>
+      }
     
      
-      <ReviewSection/>
+      
        </div>
    
 

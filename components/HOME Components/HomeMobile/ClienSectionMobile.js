@@ -29,17 +29,20 @@ export const ClienSectionMobile = () => {
             </clipPath>
           </defs>
         </svg>
+        <div className="clien-section__quantity">100+</div>
+      <p className="clien-section__content">
+          <span>Doanh nghiệp </span>
+          đã thành công với giải pháp từ 
+          <span> OkHub Agency</span>
+      </p>
       </div>
 
-      <div className="clien-section__quantity">100+</div>
-      <p className="clien-section__content">
-          <span>Doanh nghiệp</span>
-          đã thành công với giải pháp từ 
-          <span>OkHub Agency</span>
-      </p>
+    
 
 
-      <div className="clien-section__logo"></div>
+      <div className="clien-section__logo">
+
+      </div>
     </div>
   );
 };
