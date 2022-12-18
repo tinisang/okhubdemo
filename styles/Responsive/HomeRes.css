@@ -130,15 +130,18 @@
     .footer__contact{
         width: 100%;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 400px 450px;
         margin: 110px;
     }
-    /* .footer__contact--title{
-        grid-area: title;
+     .footer__contact--title{
+        width: 400px;
     }
     .footer__contact--des{
-        grid-area: des;
-    } */
+        width: 450px;
+    } 
+    .footer__form--arrow{
+        margin-left: 20px;
+    }
     .footer__contact--logo{
         display: none;
     }
@@ -163,25 +166,32 @@
     }
     .footer__nav--icon{
         margin: 0;
-        /* width: ; */
+        justify-content: center;
     }
-
-    /* News */
+    .footer__form--name, .footer__form--email, .footer__form--company-name , .footer__form--phone, .footer__form--service{
+        width: fit-content !important;
+        margin: 0;
+    }
+    .footer__form--email-and-phone, .footer__form-company-and-service, .footer__form--name-and-footer__form--company-name{
+        justify-content: space-between;
+    }
+    /* ------------ News  ------------ */
     .news__title-btn button{
         width: 150px;
         height: 150px;
     }
     .news__title-text p{
-        font-size: 65px;
+        font-size: 55px;
     }
     .news__title-text p span.animation-text{
-        font-size: 65px;
+        font-size: 55px;
     }
     .news__title-text p span.animation-text{
-        font-size: 65px;
+        font-size: 55px;
     }
     .news__title-text{
         padding-left: 20px;
+        width: 700px;
     }
     .news__categories{
         margin-left: 55px;
@@ -191,10 +201,14 @@
     }
     .Dropdown-root .Dropdown-control{
         width: 238px;
-        height: 86px;
+        height: 58px;
     }
     .Dropdown-root .Dropdown-control .Dropdown-arrow-wrapper .Dropdown-arrow{
         top: 40%;
+        border-width: 12px 8px 0;
+    }
+    .Dropdown-root.is-open .Dropdown-menu .Dropdown-option{
+        font-size: 16px;
     }
     .news__selector--order{
         margin-left: 50px;
@@ -210,8 +224,104 @@
     }
     .news__status {
         margin-left: 50px;
+        width: 90%;
     }
     .news__documents{
         margin-right: 50px;
+    }
+    .news__primary{
+        flex-direction: column;
+    }
+
+    /* card News */
+    .card__infor-time img, .card__info-user img{
+        width: 15%;
+    }
+    .news__documents {
+        width: 90%;
+    }
+
+
+    /* ---------- News details -------------- */
+    .NewsDetail__primary-title{
+        width: 100%;
+    }
+    .NewsDetail__primary-img{
+        height: 500px;
+    }
+    .NewsDetail__info-des p{
+        font-size: 22px;
+        white-space: inherit;
+    }
+    .NewsDetail__share{
+        flex-direction: column;
+        align-items: center;
+    }
+    .NewsDetail__share-content{
+        width: 100%;
+        padding-left: 0;
+    }
+    .NewsDetail__share--icons{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .NewsDetail__share--icons-item{
+        margin: 20px 0 80px;
+        width: 350px;
+        justify-content: space-between;
+    }
+    .NewsDetail__title--bg{
+        font-size: 100px;
+    }
+    .NewsDetail__title--primary{
+        font-size: 50px;
+    }
+    /* ----------- Chi tiết sản phẩm ------------ */
+    .bgHead__img{
+        height: 600px;
+    }
+    .bgHead__logo--img{
+        width: 200px;
+        height: 200px;
+    }
+    .bgHead__txt p{
+        font-size: 45px;
+    }
+    .bgHead__wrap{
+        width: 100%;
+        margin: 0;
+        justify-content: space-around;
+    }
+    .bgHead__txt{
+        width: fit-content;
+    }
+    .problem__wrap{
+        margin: 0 30px;
+    }
+    .problem__data--title{
+        font-size: 13px;
+    }
+    .problem__data--txt{
+        font-size: 15px;
+    }
+    .problem__content--heading{
+        font-size: 44px;
+    }
+    .problem__content--hide{
+        font-size: 100px;
+    }
+    .problem__content--txt{
+        font-size: 22px;
+    }
+    /* ------- Introduce -------- */
+    .introduce__overview--header-des p{
+        font-size: 22px;
+    }
+    .introduce__overview--bg-VN p{
+        font-size: 120px;
+    }
+    .introduce__overview--body .introduce__overview--body-text .body-text--title{
+        width: 80%;
     }
 }
