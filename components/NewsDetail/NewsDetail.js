@@ -53,16 +53,7 @@ export const NewsDetail = () => {
 
   
   useEffect(()=>{
- if (locoScroll){
-            locoScroll.on('scroll', function (args){
-         
-                   gsap.to('.NewsDetail__primary-img',{
-                    filter:`brightness(${Math.abs(args.speed)/70+1})`
-                   })
-         
-                
-            })
-        }
+
   })
   
   return (

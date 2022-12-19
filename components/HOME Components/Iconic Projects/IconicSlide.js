@@ -24,7 +24,10 @@ export const IconicSlide = ()=>{
     const preview = useRef(null)
     const myInterval = useRef()
     const lastActive = useRef()
-
+    const mousePos = useRef({
+        x: 0,
+        y:0
+    })
     const inScroll = useRef()
     
     const [previewImg,setPreview] =useState(previewImage)
@@ -80,28 +83,20 @@ export const IconicSlide = ()=>{
     
     useEffect(()=>{
      
-            locoScroll.current?.on('scroll',function(args){
-            var test = document.querySelector('.project-item')
+        locoScroll.current?.on('scroll',function(args){
+            if (cursor.current){
 
-            if (test){
-
-           
-                if (inScroll.current){
-
-                    gsap.to('.project-item',{
-                        filter:`brightness(${Math.abs(args.speed)/80 + 1})`,
-                        skewX:args.speed/3,
-                      
-                        
-                    })
-                } else {
-                    gsap.to('.project-item',{
-                        filter:`brightness(1)`,
-                        skewX:0,
-                    }) 
+                if (cursor.current){
+                    
+                    gsap.to(cursor.current,{
+                        top:  mousePos.current.y- cursor.current.clientHeight/2 + args.scroll.y,
+                        duration:0
+                    },"<+=0")
                 }
+                
             }
-            })
+           
+        })
         
         
         var lastslide = document.querySelector('.projects-slide .project-item:last-child')
@@ -153,9 +148,13 @@ export const IconicSlide = ()=>{
     const cursorAnimation =(e) =>{
             gsap.to(cursor.current,{
                 left: e.clientX,
-                top:e.clientY,
+                top:e.clientY + ( locoScroll ? locoScroll.current.scroll.instance.scroll.y : 0),
                
-            })
+            })  
+            mousePos.current={
+                x:e.clientX,
+                y:e.clientY
+            }
         }
 
     const resetImage=(index)=> {
@@ -192,11 +191,11 @@ export const IconicSlide = ()=>{
             var imageItem = document.querySelector(`.preview-image img:nth-child(${index})`);
             var notHoverProjectItems = document.querySelectorAll(`.project-item:not(:nth-child(${index}))`);
             var active = document.querySelector(`.preview-image img.active`)
-            notHoverProjectItems.forEach(element => {
-                element.classList.add('not-hover')
+            // notHoverProjectItems.forEach(element => {
+            //     element.classList.add('not-hover')
                 
-            });
-            // setPreview( data[index-1].image)
+            // });
+        
             if(cursor.current){cursor.current.classList.add('active')}
              if (active) {active.classList.remove('active')}
             imageItem.classList.add('active');
