@@ -16,7 +16,7 @@ export const CardNews = () => {
     },
   ];
   return (
-    <Link href="http://localhost:3000/news/abc" target="_blank">
+    <Link href="/news/abc" >
       <div className="card__container">
         <div className="card__img">
           <Image src={imgCard} alt="" />

@@ -158,10 +158,12 @@ export const CategorySlide = ()=>{
 
 
         function slowStopAnimation(timelineElement){
-            gsap.to(timelineElement,{timeScale:0,duration:2})
+            gsap.to(tl1,{timeScale:0,duration:2})
+            gsap.to(tl2,{timeScale:0,duration:2})
         }
         function speedContinue(timelineElement){
-            gsap.to(timelineElement,{timeScale:1,duration:2})
+            gsap.to(tl1,{timeScale:1,duration:2})
+            gsap.to(tl2,{timeScale:1,duration:2})
         }
 
           
