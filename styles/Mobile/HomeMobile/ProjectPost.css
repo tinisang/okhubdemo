@@ -133,7 +133,7 @@
   color: #000000;
 }
 
-.container__proejct-post .project-post__desc a {
+.container__proejct-post .project-post__desc > a {
   font-family: "Be Vietnam Pro";
   font-style: normal;
   font-weight: 400;
