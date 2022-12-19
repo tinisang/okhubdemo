@@ -1,0 +1,34 @@
+.clien-section__container {
+  background-color: #5052fd;
+  background-repeat: no-repeat;
+}
+.clien-section__container .clien-section__shake-hand {
+    position: relative;
+}
+.clien-section__container .clien-section__quantity {
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 86px;
+  line-height: 109px;
+  color: #ffffff;
+  margin-left: 16px;
+  position: absolute;
+  bottom: 12%;
+}
+
+.clien-section__container .clien-section__content {
+    font-family: 'Be Vietnam Pro';
+font-style: normal;
+font-weight: 300;
+font-size: 18px;
+line-height: 28px;
+color: #FFFFFF;
+position: absolute;
+bottom: 5%;
+margin: 0 86px 0 16px;
+}
+
+.clien-section__container .clien-section__content span{
+    font-weight: 700;
+}

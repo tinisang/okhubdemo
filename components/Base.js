@@ -13,6 +13,7 @@ import Image from "next/image";
 import { LocomotiveScrollProvider, useLocomotiveScroll } from "react-locomotive-scroll";
 import { ScrollTriggerProxy } from "./ScrollTriggerProxy";
 import { Refresh } from "./RefreshScrollTriger";
+import { HeaderMobile } from "./Header/HeaderMobile";
 
 
 
@@ -52,6 +53,21 @@ export const Base = (props) => {
   // const handleComplete = ()=>{
 
   // }
+
+
+const [isMobile, setIsMobile] = useState();
+
+  useEffect(() => {
+    let mediaQuery = window.matchMedia('(max-width: 768px)')
+    if (mediaQuery.matchs){
+        setIsMobile(true)
+    }else setIsMobile(false)
+    window.addEventListener('resize', () => {
+      if (mediaQuery.matchs){
+          setIsMobile(true)
+      }else setIsMobile(false)
+    })
+}, [])
   return (
     <>
 
@@ -79,7 +95,10 @@ export const Base = (props) => {
             )
           }
  
-          <LocomotiveScrollProvider
+         {
+
+          isMobile == false ? (
+            <LocomotiveScrollProvider
             options={
               {
                 smooth: true,
@@ -109,6 +128,14 @@ export const Base = (props) => {
               {/* <Refresh/> */}
             </main>
           </LocomotiveScrollProvider>
+          ) : (
+            <HeaderMobile/>
+          )
+
+         }
+
+
+
    
  
     </>

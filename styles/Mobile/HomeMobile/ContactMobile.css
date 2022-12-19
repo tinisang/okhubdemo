@@ -1,0 +1,98 @@
+.contact-mobile__container {
+  background-color: #111215;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 65px;
+}
+
+.contact-mobile__container .contact__title {
+  text-align: center;
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+
+  color: #ffffff;
+}
+
+.contact-mobile__container .contact__title p:first-child {
+  font-weight: 600;
+}
+
+.contact-mobile__container .contact-mobile__conect {
+  border: none;
+  background-color: #000000;
+  padding: 51px 35px;
+  border-radius: 50%;
+
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+  margin-top: 31px;
+}
+
+
+.contact-mobile__container .contact-mobile__info {
+    display: flex;
+    margin-top: 69px;
+    
+}
+
+.contact-mobile__container .contact-mobile__info  p{
+    font-family: 'Be Vietnam Pro';
+font-style: normal;
+font-weight: 300;
+font-size: 18px;
+line-height: 23px;
+color: #FFFFFF; 
+border-bottom: solid 1px rgba(255, 255, 255, 0.06);
+padding-bottom: 7px;
+}
+
+.contact-mobile__container .contact-mobile__info p:first-child{
+    margin-right: 24px;
+}
+
+.contact-mobile__container .contact-mobile__info p:last-child{
+    margin-left: 24px;
+}
+
+
+.contact-mobile__container .contact-mobile__addr {
+    margin: 0 51px;
+    text-align: center;
+    margin-top: 45px;
+
+    font-family: 'Be Vietnam Pro';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 20px;
+color: #A4A4A4;
+}
+
+.contact-mobile__container .contact-mobile__website {
+    font-family: 'Be Vietnam Pro';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 20px;
+color: #A4A4A4;
+margin-top: 27px;
+}
+.contact-mobile__container .contact-mobile__social {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap:23.6px ;
+  row-gap: 13.68px;
+  margin-top: 54px;
+}
+
+

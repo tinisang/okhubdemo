@@ -38,13 +38,13 @@ export const Header = () => {
 
   useEffect(()=>{
     var fakeScrollY = 0;
-    console.log(locoScroll)
+
     locoScroll?.on('scroll',function(){
       var thisScrollY = locoScroll.scroll.instance.scroll.y;
       var dropdown = document.querySelector('.dropdown-section')
       header.current.style.top= thisScrollY+'px'
       dropdown.style.top= thisScrollY+'px'
-      console.log(thisScrollY)
+
       if (thisScrollY > 0) {
     
      
