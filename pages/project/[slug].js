@@ -23,10 +23,10 @@ const dataPrevProblemMobile = [
   "Website cũ khó tùy biến giao diện",
 ];
 export default function SingleProject() {
-  // ScrollTrigger.refresh()
+
   const { scroll: locoScroll } = useLocomotiveScroll();
   useEffect(() => {
-    // ScrollTrigger.addEventListener("refresh", () => locoScroll?.update());
+   
     ScrollTrigger.refresh();
   });
   const [isMobile, setIsMobile] = useState();
@@ -109,7 +109,7 @@ export default function SingleProject() {
         <div className="">
           <TheProblem />
           <WhyOKHUB />
-          <ExpandingLogo />
+          {/* <ExpandingLogo /> */}
           <Showcase />
           <JudgeOkhub />
         </div>
