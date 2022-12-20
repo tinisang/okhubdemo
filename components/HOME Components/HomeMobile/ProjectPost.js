@@ -14,13 +14,13 @@ export const ProjectPost = ({
   const [active, setActive] = useState(false);
 
   return (
-    <div className="container__proejct-post">
+    <div href = "#" className="container__proejct-post">
       <div className="project-post__header">
         <div className="project-post__logo">
           <Image src={logo} alt="" />
         </div>
         <div className="project-post__text">
-          <h3 className="project-post__title">{projectName}</h3>
+          <Link href = "#" className="project-post__title">{projectName}</Link>
           <div className="project-post__hastag">
             {hastags.map((item, index) => {
               return (
@@ -90,7 +90,7 @@ export const ProjectPost = ({
       </div>
 
       <div className="project-post__desc">
-        <p>{desc}</p>
+        <p><Link href = "#">{desc}</Link></p>
         <Link href="">Đọc tiếp</Link>
       </div>
     </div>
