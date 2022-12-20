@@ -20,7 +20,7 @@ export default function Projects() {
   const [display, setDisplay] = useState(false);
   const cursor = useRef()
   const interval = useRef(setInterval(function(){},0));
-
+  const { scroll : locoScroll} = useLocomotiveScroll()
   const currentActive = useRef()
   
   const data =[
@@ -127,9 +127,9 @@ export default function Projects() {
       if (cursor.current){
         gsap.to(cursor.current,{
           left: e.clientX - cursor.current.clientWidth/2, 
-          top: e.clientY - cursor.current.clientHeight/2 , 
+          top: e.clientY - cursor.current.clientHeight/2 + (locoScroll ? locoScroll?.scroll.instance.scroll.y : 0) , 
           ease:"power2.out",
-          duration:0.5,
+          duration:0,
           delay:0.04,
           // opacity:1
       })
@@ -267,7 +267,7 @@ export default function Projects() {
   }
   
   const optionsSort = ["Mới nhất", "Nhiều lượt xem nhất"];
-  const { scroll : locoScroll} = useLocomotiveScroll()
+  
   ScrollTrigger.addEventListener("refresh", () => locoScroll?.update());
   ScrollTrigger.refresh();
   return (

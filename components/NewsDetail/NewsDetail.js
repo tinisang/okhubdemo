@@ -19,7 +19,20 @@ import NewsDetailInsIcon from "../../public/imgs/NewDetailInsIcon.png";
 import NewDetailBeIcon from "../../public/imgs/NewsDetailBeIcon.png";
 import arrowLeftNewsDetailDocuments from "../../public/imgs/arrowLeftNewsDetailDocuments.png";
 import arrowNextNewsDetailDocuments from "../../public/imgs/arrowNextNewsDetailDocuments.png";
+
+
+import {
+   FacebookShareButton,
+   
+  } from "react-share";
+
+
+
+
+
 import { useLocomotiveScroll } from "react-locomotive-scroll";
+
+
 import gsap from "gsap";
 
 export const NewsDetail = () => {

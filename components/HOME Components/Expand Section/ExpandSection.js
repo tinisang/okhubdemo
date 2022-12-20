@@ -183,12 +183,7 @@ export const ExpandSection = ()=>{
         var viewButton= document.querySelector('.view-button');
         //animate cursor on locoScroll scrolling
 
-        function upDateCursor(){
-            if (locoScroll){
-
-            }
-        }
-
+  
         
      
             locoScroll?.on('scroll',function(args){
