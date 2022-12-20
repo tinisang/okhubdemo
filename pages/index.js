@@ -51,7 +51,8 @@ export default function Home() {
     <>
        <div  >
 
- <ExpandSection/>
+      {!isMobile && <ExpandSection/> }
+
       {
         isMobile == false ? <IconicSlide/> : <IconSlideMobile/>
       }
