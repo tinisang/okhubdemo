@@ -17,9 +17,10 @@ import { IconSlideMobile } from '../components/HOME Components/HomeMobile/IconSl
 import { ProjectSpecial, ProjectSpecialMobile } from '../components/HOME Components/HomeMobile/ProjectSpecialMobile'
 import { ClienSectionMobile } from '../components/HOME Components/HomeMobile/ClienSectionMobile'
 import { ContactMobile } from '../components/HOME Components/HomeMobile/ContactMobile'
-import { ExphanSectionMobile } from '../components/HOME Components/HomeMobile/ExphanSectionMobile'
+
 
 import { getAllPostSlug } from '../api store/news'
+import { ExpandSectionMobile } from '../components/HOME Components/HomeMobile/ExphanSectionMobile'
 
 
 
@@ -48,10 +49,8 @@ export default function Home(props) {
     <>
        <div  >
     {
-      isMobile == false ?  <ExpandSection/> : <ExphanSectionMobile/>
+      isMobile == false ?  <ExpandSection/> : <ExpandSectionMobile/>
     }
-
-      {!isMobile && <ExpandSection/> }
 
       {
         isMobile == false ? <IconicSlide/> : <IconSlideMobile/>

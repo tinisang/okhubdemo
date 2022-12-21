@@ -1,7 +1,7 @@
 import React from 'react'
 
-export const ExphanSectionMobile = () => {
+export const ExpandSectionMobile = () => {
   return (
-    <div>ExphanSectionMobile</div>
+    <div>ExpandSectionMobile</div>
   )
 }
