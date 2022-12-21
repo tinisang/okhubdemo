@@ -38,6 +38,7 @@ import  "../styles/Mobile/HomeMobile/ProjectPost.css"
 import "../styles/Mobile/HomeMobile/ClienSectionMobile.css"
 import "../styles/Mobile/ButtonMobile/ButtonMobile.css"
 import "../styles/Mobile/HomeMobile/ContactMobile.css"
+import '../styles/Mobile/HomeMobile/ExpandSectionMobile.css'
 import { motion, AnimatePresence } from "framer-motion"
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';

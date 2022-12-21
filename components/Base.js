@@ -14,6 +14,7 @@ import { LocomotiveScrollProvider, useLocomotiveScroll } from "react-locomotive-
 import { ScrollTriggerProxy } from "./ScrollTriggerProxy";
 import { Refresh } from "./RefreshScrollTriger";
 import { HeaderMobile } from "./Header/HeaderMobile";
+import { FooterMobile } from "./Footer/FooterMobile";
 
 
 
@@ -95,9 +96,8 @@ const [isMobile, setIsMobile] = useState();
             )
           }
  
-         {
 
-          isMobile == false ? (
+
             <LocomotiveScrollProvider
             options={
               {
@@ -121,18 +121,20 @@ const [isMobile, setIsMobile] = useState();
           >
             <main data-scroll-container ref={containerRef}>
 
-            <Header/>
+           {
+             isMobile == true ?  <Header/> : <HeaderMobile/>
+           }
               {props.children}
-              <Footer/>
+              {
+                isMobile == true ? <Footer/> : <FooterMobile/>
+              }
 
-              {/* <Refresh/> */}
+              <Refresh/>
             </main>
           </LocomotiveScrollProvider>
-          ) : (
-            <HeaderMobile/>
-          )
+       
 
-         }
+         
 
 
 

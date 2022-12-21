@@ -21,6 +21,7 @@ import { ContactMobile } from '../components/HOME Components/HomeMobile/ContactM
 
 import { getAllPostSlug } from '../api store/news'
 import { ExpandSectionMobile } from '../components/HOME Components/HomeMobile/ExphanSectionMobile'
+import { SelectScrollMobile } from '../components/HOME Components/HomeMobile/SelectScrollMobile'
 
 
 
@@ -50,6 +51,10 @@ export default function Home(props) {
        <div  >
     {
       isMobile == false ?  <ExpandSection/> : <ExpandSectionMobile/>
+    }
+
+    {
+      isMobile == false  && <SelectScrollMobile/>
     }
 
       {
