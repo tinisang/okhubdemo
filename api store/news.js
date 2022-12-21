@@ -48,7 +48,7 @@ export const getPostContentBySlug = (slug) => {
         date
         author {
           node {
-            username
+            name
           }
         }
         featuredImage {
@@ -57,17 +57,20 @@ export const getPostContentBySlug = (slug) => {
           }
         }
         excerpt
+        title
         content
         categories {
           nodes {
             link
             name
+            slug
           }
         }
         tags {
           nodes {
             link
             name
+            slug
           }
         }
       }
@@ -80,3 +83,76 @@ export const getPostContentBySlug = (slug) => {
 
 
 
+  export const getRelatedNews = (size = 3, categories) => {
+    if (size == null) {
+      size = 3;
+    }
+  
+    const results = "[" + categories.map((value) => '"' + value + '"') + "]";
+
+  
+    const query = `
+    query AllPosts {
+      posts(first: ${size},where: {taxQuery: {taxArray: {taxonomy: CATEGORY, field: SLUG, operator: IN, terms: ${results}}}, orderby: {field: DATE, order: DESC}, status: PUBLISH}) {
+        nodes {
+          date
+          author {
+            node {
+              name
+            }
+          }
+          featuredImage {
+            node {
+              mediaItemUrl
+            }
+          }
+          excerpt
+          slug
+          title
+          content
+          categories {
+            nodes {
+              link
+              name
+              slug
+            }
+          }
+          tags {
+            nodes {
+              link
+              name
+              slug
+            }
+          }
+        }
+        
+      }
+    }
+    `;
+  
+    return Grapql(query);
+  };
+  
+
+  
+  export const getMarqueePosts = (size = 5) => {
+    if (size == null) {
+      size = 5;
+    }
+  
+    const query = `
+    query AllPosts {
+  posts(where: {orderby: {field: DATE, order: DESC}}, first: ${size}) {
+    nodes {
+      slug
+      title
+    }
+  }
+}
+    `;
+  
+    return Grapql(query);
+  };
+  
+
+  

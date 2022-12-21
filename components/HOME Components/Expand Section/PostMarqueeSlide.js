@@ -6,8 +6,8 @@ import { useEffect } from "react"
 import gsap from "gsap"
 
 
-export const PostMarqueSlide = ()=>{
-
+export const PostMarqueSlide = ({postData})=>{
+    console.log(postData)
     useEffect(()=>{
 
         var sliderWidth = document.querySelector('.post-slide-container:first-child').getBoundingClientRect()
@@ -52,16 +52,25 @@ export const PostMarqueSlide = ()=>{
                 <div className="marquee-container">
 
                         <div className="post-slide-container" >
-                            <div className="post-item news">
-                                <Link href={'/news/abc'}>
+                       
 
-                                    <div className="image-container icon">
-                                        <Image alt="" src={newsicon} className="image-item"  />
-                                    </div> 
-                                    <div className="title">Báo cáo chỉ số thị trường quý IV năm 2021</div>
-                                </Link>
-                            </div>
-                            <div className="post-item noti">
+                            {
+                                postData.map((item, index)=>{
+                                   return (
+                                    <div className="post-item news" key={index}>
+                                        <Link href={'/news/'+item.slug}>
+
+                                            <div className="image-container icon">
+                                                <Image alt="" src={newsicon} className="image-item"  />
+                                            </div> 
+                                            <div className="title">{item.title}</div>
+                                        </Link>
+                                    </div>
+                                   ) 
+                                })
+                            }
+                            
+                            {/* <div className="post-item noti">
                                 <Link href={'/news/abc'}>
 
                                 <div className="image-container icon">
@@ -69,31 +78,31 @@ export const PostMarqueSlide = ()=>{
                                     </div> 
                                     <div className="title">Thông báo hợp tác chiến lược giữa OKHUB và Reika ngày 22/11/2022</div>
                                 </Link>
-                            </div>
+                            </div> */}
                            
                         </div>
                         <div className="post-slide-container" >
-                            <div className="post-item news">
-                                <Link href={'/news/abc'}>
+                         
 
-                                    <div className="image-container icon">
-                                        <Image alt="" src={newsicon} className="image-item"  />
-                                    </div> 
-                                    <div className="title">Báo cáo chỉ số thị trường quý IV năm 2021</div>
-                                </Link>
-                            </div>
-                            <div className="post-item noti">
-                                <Link href={'/news/abc'}>
+                            {
+                                postData.map((item, index)=>{
+                                   return (
+                                    <div className="post-item news" key={index}>
+                                        <Link href={'/news/'+item.slug}>
 
-                                <div className="image-container icon">
-                                        <Image alt="" src={newsicon} className="image-item"  />
-                                    </div> 
-                                    <div className="title">Thông báo hợp tác chiến lược giữa OKHUB và Reika ngày 22/11/2022</div>
-                                </Link>
-                            </div>
-                           
+                                            <div className="image-container icon">
+                                                <Image alt="" src={newsicon} className="image-item"  />
+                                            </div> 
+                                            <div className="title">{item.title}</div>
+                                        </Link>
+                                    </div>
+                                   ) 
+                                })
+                            }
+                            
+                         
                         </div>
-                      
+                       
             
                 </div>
 

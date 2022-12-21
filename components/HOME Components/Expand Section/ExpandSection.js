@@ -21,7 +21,10 @@ import { Refresh } from '../../RefreshScrollTriger';
 
 
 
-export const ExpandSection = ()=>{
+export const ExpandSection = ({postData})=>{
+
+   
+    
     const {scroll : locoScroll} = useLocomotiveScroll()
     const pin=useRef()
     const services =useRef()
@@ -323,7 +326,7 @@ export const ExpandSection = ()=>{
 
     
             <div className="hero-section-expand">
-               <PostMarqueSlide/>
+               <PostMarqueSlide postData={postData}/>
                 <div className="content-area">
                     <div className="row1" data-scroll data-scroll-direction='vertical' data-scroll-speed = '1.01'>
                         <span className="word-split big-text" data-scroll data-scroll-direction='horizontal' data-scroll-speed = '1.1'>Okhub</span>

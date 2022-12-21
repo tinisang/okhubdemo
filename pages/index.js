@@ -17,16 +17,14 @@ import { IconSlideMobile } from '../components/HOME Components/HomeMobile/IconSl
 import { ProjectSpecial, ProjectSpecialMobile } from '../components/HOME Components/HomeMobile/ProjectSpecialMobile'
 import { ClienSectionMobile } from '../components/HOME Components/HomeMobile/ClienSectionMobile'
 import { ContactMobile } from '../components/HOME Components/HomeMobile/ContactMobile'
+import { getMarqueePosts } from '../api store/news'
 
-
-import { getAllPostSlug } from '../api store/news'
 import { ExpandSectionMobile } from '../components/HOME Components/HomeMobile/ExphanSectionMobile'
 
 
 
 export default function Home(props) {
-  console.log(props.AllSlugs)
-  
+
   const { scroll : locoScroll} = useLocomotiveScroll()
 
   const [isMobile, setIsMobile] = useState ();
@@ -49,7 +47,7 @@ export default function Home(props) {
     <>
        <div  >
     {
-      isMobile == false ?  <ExpandSection/> : <ExpandSectionMobile/>
+      isMobile == false ?  <ExpandSection postData={props.marqueePosts} /> : <ExpandSectionMobile/>
     }
 
       {
@@ -76,15 +74,15 @@ export default function Home(props) {
 }
 
 
-
+  
 export async function getStaticProps({ params }) {
 
-  const [allNew, res1] = await  Promise.all([getAllPostSlug()]);
+ 
 
-
+ const marqueePosts = await getMarqueePosts(2)
   return {
     props: {
-      AllSlugs: allNew?.data?.data?.posts?.nodes || null,
+      marqueePosts: marqueePosts?.data?.data?.posts?.nodes || null
      
 
     },
