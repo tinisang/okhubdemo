@@ -149,6 +149,7 @@ export const ExpandSection = ()=>{
               
     
     useEffect(()=>{
+        ScrollTrigger.refresh()
         
         const tl1 = gsap.timeline({
             scrollTrigger:{
