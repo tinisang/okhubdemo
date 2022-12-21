@@ -20,6 +20,10 @@ input {
   position: relative;
 }
 
+.footer__form > div {
+  padding-top: 26px;
+}
+
 .footer__contact {
   width: 50%;
   margin-left: 72px;
@@ -126,7 +130,7 @@ input {
   content: "01";
   position: absolute;
   left: 0%;
-  top: 23%;
+  top: 0%;
   font-family: "Be Vietnam Pro";
   font-style: normal;
   font-weight: 300;
@@ -139,7 +143,7 @@ input {
   content: "03";
   position: absolute;
   left: 0%;
-  top: 25%;
+  top: 0%;
   font-family: "Be Vietnam Pro";
   font-style: normal;
   font-weight: 300;
@@ -152,7 +156,7 @@ input {
   content: "04";
   position: absolute;
   left: 0%;
-  top: 25%;
+  top: 0%;
   font-family: "Be Vietnam Pro";
   font-style: normal;
   font-weight: 300;
@@ -165,7 +169,7 @@ input {
   content: "02";
   position: absolute;
   left: 0%;
-  top: 25%;
+  top: 0%;
   font-family: "Be Vietnam Pro";
   font-style: normal;
   font-weight: 300;
@@ -178,7 +182,7 @@ input {
   content: "05";
   position: absolute;
   left: 0%;
-  top: 18%;
+  top: 0;
   font-family: "Be Vietnam Pro";
   font-style: normal;
   font-weight: 300;
@@ -191,7 +195,7 @@ input {
   content: "06";
   position: absolute;
   left: 0%;
-  top: 10%;
+  top: 13%;
   font-family: "Be Vietnam Pro";
   font-style: normal;
   font-weight: 300;
@@ -360,6 +364,6 @@ input {
 .footer__form .button {
   position: absolute;
   right: 8%;
-  bottom: 0%;
+  bottom: -10%;
   cursor: pointer;
 }

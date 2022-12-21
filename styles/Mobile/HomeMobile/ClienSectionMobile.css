@@ -32,3 +32,17 @@ margin: 0 86px 0 16px;
 .clien-section__container .clien-section__content span{
     font-weight: 700;
 }
+
+.clien-section__container .clien-section__logo {
+  /* display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  padding-left: 16px; */
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  column-gap: 20px;
+  padding-top: 27px;
+  padding-bottom: 110px;
+}

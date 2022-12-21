@@ -30,7 +30,7 @@ export default function SingleProject() {
     ScrollTrigger.refresh();
   });
   const [isMobile, setIsMobile] = useState();
-  const size = window.innerWidth;
+ 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 768px)");
     if (mediaQuery.matches) {
@@ -42,7 +42,7 @@ export default function SingleProject() {
         setIsMobile(true);
       } else setIsMobile(false);
     });
-  }, [size]);
+  }, []);
 
   // Mobile
   const dataProjectSpecial = [
@@ -104,7 +104,9 @@ export default function SingleProject() {
   };
   return (
     <>
-      <BackgroundHeader />
+      {
+        isMobile == false && <BackgroundHeader />
+      }
       {isMobile == false ? (
         <div className="">
           <TheProblem />

@@ -32,7 +32,7 @@ export default function Home(props) {
 
   const [isMobile, setIsMobile] = useState ();
 
-  const size = window.innerWidth;
+
   useEffect(() => {
     var mediaQueryMobile =  window.matchMedia('(max-width: 768px)')
     if (mediaQueryMobile.matches){
@@ -44,7 +44,7 @@ export default function Home(props) {
         setIsMobile(true);
       }else setIsMobile(false)
     })
-  }, [size])
+  }, [])
   
   return (
     <>
@@ -54,7 +54,7 @@ export default function Home(props) {
     }
 
     {
-      isMobile == false  && <SelectScrollMobile/>
+      isMobile == true  && <SelectScrollMobile/>
     }
 
       {

@@ -33,6 +33,7 @@ import '../styles/News/dropDownCss.css'
 import "../styles/Smooth Scroll/Style.css"
 import "../styles/Introduce/Video.css"
 import "../styles/Responsive/HomeRes.css"
+import "../styles/Mobile/FooterMobile/FooterMobile.css"
 import "../styles/Mobile/HomeMobile/ProjectSpecialMobile.css"
 import  "../styles/Mobile/HomeMobile/ProjectPost.css"
 import "../styles/Mobile/HomeMobile/ClienSectionMobile.css"
