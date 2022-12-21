@@ -5,16 +5,18 @@
   border: 1px solid #d3d2d2;
   border-radius: 39px;
 }
-
-
-.card__img img {
-  width: 100%;  
+.card__img {
   height: 320.69px;
-  object-fit: cover;
   overflow: hidden;
   border-top-left-radius: 24px;
   border-top-right-radius: 24px;
   margin-bottom: 25px;
+  
+}
+
+.card__img img {
+  width: 100%;  
+  object-fit: cover;
 }
 
 .card__note,
@@ -24,6 +26,16 @@
 .card__btn-next {
   display: flex;
   align-items: center;
+}
+.card__note{
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow: hidden;
+
+}
+
+.card__note .link{
+  flex-shrink: 0;
 }
 .card__content {
   margin-left: 33px;

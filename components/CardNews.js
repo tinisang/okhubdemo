@@ -6,49 +6,60 @@ import userCard from "../public/imgs/user-edit-NewsDetail.svg";
 import nextIcon from "../public/imgs/nextIcon.svg";
 import imgCard from "../public/imgs/imgCard.png"
 import Link from "next/link";
-export const CardNews = () => {
-  const data = [
-    {
-      title: "Tin nổi bật",
-    },
-    {
-      title: "Mỹ phẩm",
-    },
-  ];
+export const CardNews = ({postData}) => {
+  
+  var postDate = new Date(postData.date);
+  var month = postDate.getMonth()
+  var year = postDate.getFullYear()
+  var day = postDate.getDate()
+
+
+  const data =postData.categories.nodes.map((item, index)=>{
+    return {
+      title: item.name,
+      link:'/'
+    }
+  })
   return (
-    <Link href="/news/abc" >
+  
       <div className="card__container">
-        <div className="card__img">
-          <Image src={imgCard} alt="" />
+        <Link href={'/news/'+postData.slug} >
+
+        <div className="image-container card__img">
+          <Image src={postData.featuredImage.node.mediaItemUrl} alt="" className="image-item" fill />
         </div>
+        </Link>
         <div className="card__content">
           <div className="card__note">
             {data.map((item, index) => (
-              <NoteBtn key={index} title={item.title} />
+              <NoteBtn key={index} title={item.title} catLink={item.link} />
             ))}
           </div>
-          <div className="card__title">
-            “Ngành mỹ phẩm đang bị thoái
-            trào” - Điều này liệu có đúng?
-          </div>
+          <Link href={'/news/'+postData.slug} >
+
+          <div className="card__title">{postData.title}</div>
+          </Link>
           <div className="card__info">
             <div className="card__infor-time">
               <Image src={calendarCard} alt="" />
-              <p>Posted on 05/11/2022</p>
+              <p>{`Posted on ${[(day <= 9 ? ('0'+day) : day ),month,year].join('/')} `}</p>
             </div>
             <div className="card__info-user">
               <Image src={userCard} alt="" />
-              <p>Tien Dung Tran</p>
+              <p>{postData.author.node.name}</p>
             </div>
           </div>
+          <Link href={'/news/'+postData.slug} >
+
           <div className="card__btn-next">
             <div className="card__btn">
               <Image src={nextIcon} alt="" />
             </div>
             <div className="card__next-text">ĐỌC TIẾP</div>
           </div>
+          </Link>
         </div>
       </div>
-    </Link>
+   
   );
 };

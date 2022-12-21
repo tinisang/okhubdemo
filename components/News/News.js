@@ -17,6 +17,7 @@ export const News = () => {
   const [activeBtn, setActive] = useState(false);
   const lastCurrent = useRef(0);
   const optionsSort = ["Mới nhất", "Nhiều lượt xem nhất"];
+  const {scroll : locoScroll} = useLocomotiveScroll()
   const optionsFildes = [
     "Tất cả lĩnh vực",
     "Thời trang",
@@ -79,7 +80,9 @@ export const News = () => {
       width: "100%",
       stagger: 0.4,
     });
-    
+
+    ScrollTrigger.addEventListener("refresh", () => locoScroll?.update());
+    ScrollTrigger.refresh();
     return () => {
       if (tl.scrollTrigger) {
         tl.scrollTrigger.kill();
