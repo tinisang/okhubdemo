@@ -147,3 +147,8 @@
     margin: 0 16px;
     margin-bottom: 34.2px;
 }
+
+
+  .swiper-pagination .swiper-pagination-bullet-active{
+    background-color: white;
+  }

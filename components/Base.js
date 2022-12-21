@@ -14,6 +14,7 @@ import { LocomotiveScrollProvider, useLocomotiveScroll } from "react-locomotive-
 import { ScrollTriggerProxy } from "./ScrollTriggerProxy";
 import { Refresh } from "./RefreshScrollTriger";
 import { HeaderMobile } from "./Header/HeaderMobile";
+import { FooterMobile } from "./Footer/FooterMobile";
 
 
 
@@ -57,17 +58,18 @@ export const Base = (props) => {
 
 const [isMobile, setIsMobile] = useState();
 
-  useEffect(() => {
-    let mediaQuery = window.matchMedia('(max-width: 768px)')
-    if (mediaQuery.matchs){
-        setIsMobile(true)
-    }else setIsMobile(false)
-    window.addEventListener('resize', () => {
-      if (mediaQuery.matchs){
-          setIsMobile(true)
-      }else setIsMobile(false)
-    })
-}, [])
+useEffect(() => {
+  const mediaQuery = window.matchMedia("(max-width: 768px)");
+  if (mediaQuery.matches) {
+    setIsMobile(true);
+  } else setIsMobile(false);
+
+  window.addEventListener("resize", () => {
+    if (mediaQuery.matches) {
+      setIsMobile(true);
+    } else setIsMobile(false);
+  });
+}, []);
   return (
     <>
 
@@ -95,9 +97,8 @@ const [isMobile, setIsMobile] = useState();
             )
           }
  
-         {
 
-          isMobile == false ? (
+
             <LocomotiveScrollProvider
             options={
               {
@@ -121,18 +122,20 @@ const [isMobile, setIsMobile] = useState();
           >
             <main data-scroll-container ref={containerRef}>
 
-            <Header/>
+           {
+             isMobile == false ?  <Header/> : <HeaderMobile/>
+           }
               {props.children}
-              <Footer/>
+              {
+                isMobile == false ? <Footer/> : <FooterMobile/>
+              }
 
-              {/* <Refresh/> */}
+              <Refresh/>
             </main>
           </LocomotiveScrollProvider>
-          ) : (
-            <HeaderMobile/>
-          )
+       
 
-         }
+         
 
 
 

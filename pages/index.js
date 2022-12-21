@@ -20,6 +20,7 @@ import { ContactMobile } from '../components/HOME Components/HomeMobile/ContactM
 import { getMarqueePosts } from '../api store/news'
 
 import { ExpandSectionMobile } from '../components/HOME Components/HomeMobile/ExphanSectionMobile'
+import { SelectScrollMobile } from '../components/HOME Components/HomeMobile/SelectScrollMobile'
 
 
 
@@ -29,7 +30,7 @@ export default function Home(props) {
 
   const [isMobile, setIsMobile] = useState ();
 
-  const size = window.innerWidth;
+
   useEffect(() => {
     var mediaQueryMobile =  window.matchMedia('(max-width: 768px)')
     if (mediaQueryMobile.matches){
@@ -41,13 +42,17 @@ export default function Home(props) {
         setIsMobile(true);
       }else setIsMobile(false)
     })
-  }, [size])
+  }, [])
   
   return (
     <>
        <div  >
     {
       isMobile == false ?  <ExpandSection postData={props.marqueePosts} /> : <ExpandSectionMobile/>
+    }
+
+    {
+      isMobile == true  && <SelectScrollMobile/>
     }
 
       {

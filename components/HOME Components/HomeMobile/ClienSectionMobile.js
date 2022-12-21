@@ -1,4 +1,95 @@
 import React from "react";
+import Image from "next/image";
+import clienMobileGumac from "../../../public/imgs/clienMobileGumac.svg"
+import clienMobileAna from "../../../public/imgs/clienMobileAna.svg"
+import clienMobileDangTau from "../../../public/imgs/clienMobileDangTau.svg"
+import clienMobileaKime from "../../../public/imgs/clienMobileaKime.svg"
+import clienMobileMen from "../../../public/imgs/clienMobileMen.svg"
+import clienMobileBaa from "../../../public/imgs/clienMobileBaa.svg"
+import clienMobileSobanhang from "../../../public/imgs/clienMobileSobanhang.svg"
+import clienMobileOsala from "../../../public/imgs/clienMobileOsala.svg"
+import clienMobileBoar from "../../../public/imgs/clienMobileBoar.svg"
+import clienMobileThekey from "../../../public/imgs/clienMobileThekey.svg"
+
+const arrImgage = [
+{
+  id: 0,
+  img : clienMobileGumac
+},
+{
+  id: 1,
+  img : clienMobileAna
+},
+{
+  id: 2,
+  img : clienMobileDangTau
+},
+{
+  id: 3,
+  img : clienMobileaKime
+},
+{
+  id: 4,
+  img : clienMobileBaa
+},
+{
+  id: 5,
+  img : clienMobileMen
+},
+{
+  id: 6,
+  img : clienMobileSobanhang
+},
+{
+  id:7,
+  img : clienMobileOsala
+},
+{
+  id: 8,
+  img : clienMobileBoar 
+},
+{
+  id: 9,
+  img : clienMobileThekey
+},
+{
+  id: 10,
+  img : clienMobileGumac
+},
+{
+  id: 11,
+  img : clienMobileThekey
+},
+{
+  id: 12,
+  img : clienMobileGumac
+},
+{
+  id: 13,
+  img : clienMobileGumac
+},
+{
+  id: 14,
+  img : clienMobileGumac
+},
+
+{
+  id: 15,
+  img : clienMobileGumac
+},
+{
+  id: 16,
+  img :  clienMobileMen
+},
+{
+  id: 17,
+  img : clienMobileGumac
+},
+
+
+
+
+]
 
 export const ClienSectionMobile = () => {
   return (
@@ -41,7 +132,16 @@ export const ClienSectionMobile = () => {
 
 
       <div className="clien-section__logo">
-
+             {
+               arrImgage.map((item, index) => (
+                <>
+                <div className="clien-section__logo--img">
+                <Image key = {index} src = {item.img} alt = "" />
+              </div>
+                
+                </>
+               ))
+             }
       </div>
     </div>
   );

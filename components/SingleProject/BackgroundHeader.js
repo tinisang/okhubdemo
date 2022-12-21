@@ -3,6 +3,7 @@ import gumacBackground from '../../public/imgs/Gumac BG.svg';
 import gumacLogo from '../../public/imgs/GUMAC logo.png';
 export const BackgroundHeader = () => {
     return (
+       <>
         <div className="bgHead">
             <Image src={gumacBackground} className="bgHead__img" />
             <div className="bgHead__wrap">
@@ -23,5 +24,7 @@ export const BackgroundHeader = () => {
                 </div>
             </div>
         </div>
+       
+       </>
     )
 }

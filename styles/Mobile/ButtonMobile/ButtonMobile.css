@@ -8,7 +8,8 @@ font-size: 12px;
 line-height: 18px;
 text-transform: uppercase;
 border-radius: 8px;
-padding: 17px 124px;
+width: 100%;
+padding: 17px 0;
 color: #FFFFFF;
 cursor: pointer;
 }

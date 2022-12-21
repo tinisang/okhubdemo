@@ -3,6 +3,27 @@ import Link from "next/link";
 import Image from "next/image";
 import logo from "../../../public/imgs/logoPostMobile.svg";
 import imgProject from "../../../public/imgs/imgProjectPostMobile.png";
+import imgProject1 from "../../../public/imgs/imgProjectPostMobile.png";
+import imgProject2 from "../../../public/imgs/imgProjectPostMobile.png";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper";
+
+const arrImgage = [
+  {
+    id: 0,
+    img: imgProject,
+  },
+  {
+    id: 1,
+    img: imgProject1,
+  },
+  {
+    id: 2,
+    img: imgProject2,
+  },
+];
 
 export const ProjectPost = ({
   projectName,
@@ -14,13 +35,15 @@ export const ProjectPost = ({
   const [active, setActive] = useState(false);
 
   return (
-    <div href = "#" className="container__proejct-post">
+    <div href="#" className="container__proejct-post">
       <div className="project-post__header">
         <div className="project-post__logo">
           <Image src={logo} alt="" />
         </div>
         <div className="project-post__text">
-          <Link href = "#" className="project-post__title">{projectName}</Link>
+          <Link href="#" className="project-post__title">
+            {projectName}
+          </Link>
           <div className="project-post__hastag">
             {hastags.map((item, index) => {
               return (
@@ -32,9 +55,24 @@ export const ProjectPost = ({
           </div>
         </div>
       </div>
-      <div className="project-post__img">
-        <Image src={imgProject} alt="" />
-      </div>
+
+      <Swiper
+        pagination={true}
+        modules={[Pagination]}
+        loop={true}
+        className="mySwiper"
+      >
+        {arrImgage.map((item, index) => (
+          <>
+            <SwiperSlide>
+              <div key={index} className="project-post__img">
+                <Image src={item.img} alt="" />
+              </div>
+            </SwiperSlide>
+          </>
+        ))}
+      </Swiper>
+
       {/*  */}
       <div className="project-post__interactive">
         <div
@@ -64,10 +102,10 @@ export const ProjectPost = ({
               <path d="M15.7553 2.97083C14.0207 2.97083 12.4682 3.81416 11.5003 5.10791C10.5324 3.81416 8.97991 2.97083 7.24533 2.97083C4.30324 2.97083 1.91699 5.36666 1.91699 8.32791C1.91699 9.46832 2.09908 10.5225 2.41533 11.5C3.92949 16.2917 8.59658 19.1571 10.9062 19.9429C11.232 20.0579 11.7687 20.0579 12.0945 19.9429C14.4041 19.1571 19.0712 16.2917 20.5853 11.5C20.9016 10.5225 21.0837 9.46832 21.0837 8.32791C21.0837 5.36666 18.6974 2.97083 15.7553 2.97083Z" />
             </svg>
           )}
-         <p>
-         <span>{amountLike}</span>
-          lượt thích
-         </p>
+          <p>
+            <span>{amountLike}</span>
+            lượt thích
+          </p>
         </div>
         <div className="project-post__amout-share">
           <svg
@@ -82,15 +120,17 @@ export const ProjectPost = ({
               stroke="black"
             />
           </svg>
-        <p>
-        <span>{amountShare}</span>
-          lượt chia sẻ
-        </p>
+          <p>
+            <span>{amountShare}</span>
+            lượt chia sẻ
+          </p>
         </div>
       </div>
 
       <div className="project-post__desc">
-        <p><Link href = "#">{desc}</Link></p>
+        <p>
+          <Link href="#">{desc}</Link>
+        </p>
         <Link href="">Đọc tiếp</Link>
       </div>
     </div>
