@@ -25,10 +25,11 @@ export const WhyOKHUB = ({data})=>{
         var tl = gsap.timeline({
             scrollTrigger:{
                 trigger:'.why-okhub',
-                // markers:true,
+                markers:true,
                 start:'top 0%',
-                end:'150% 0%',
+                end:'150% 100%',
                 pin:'.why-okhub',
+                pinSpacing:true,
                 scrub:true
             }
         })
@@ -59,9 +60,9 @@ export const WhyOKHUB = ({data})=>{
         return ()=>{
             if(tl.scrollTrigger){tl.scrollTrigger.kill()}
             tl.kill()
-            reasonItems.current.forEach((element,index)=>{
-                gsap.killTweensOf(element)
-            })
+            // reasonItems.current.forEach((element,index)=>{
+            //     gsap.killTweensOf(element)
+            // })
         }
     })
 

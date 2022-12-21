@@ -278,6 +278,8 @@ export const ExpandSection = ()=>{
     return (
         <>
         
+       <div>
+
        
         <div className="view-button"></div>
         <div className="cursor-box" ref={cursor}>
@@ -472,6 +474,7 @@ export const ExpandSection = ()=>{
             </div>
             </div>
            
+        </div>
         </div>
     
         </>

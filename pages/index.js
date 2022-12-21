@@ -19,15 +19,14 @@ import { ClienSectionMobile } from '../components/HOME Components/HomeMobile/Cli
 import { ContactMobile } from '../components/HOME Components/HomeMobile/ContactMobile'
 import { ExphanSectionMobile } from '../components/HOME Components/HomeMobile/ExphanSectionMobile'
 
+import { getAllPostSlug } from '../api store/news'
 
 
 
-export default function Home() {
+export default function Home(props) {
+  console.log(props.AllSlugs)
+  
   const { scroll : locoScroll} = useLocomotiveScroll()
-  useEffect(()=>{
-   
-    ScrollTrigger.refresh();
-  })
 
   const [isMobile, setIsMobile] = useState ();
 
@@ -43,9 +42,6 @@ export default function Home() {
         setIsMobile(true);
       }else setIsMobile(false)
     })
-
-
-    console.log(isMobile)
   }, [size])
   
   return (
@@ -54,6 +50,8 @@ export default function Home() {
     {
       isMobile == false ?  <ExpandSection/> : <ExphanSectionMobile/>
     }
+
+      {!isMobile && <ExpandSection/> }
 
       {
         isMobile == false ? <IconicSlide/> : <IconSlideMobile/>
@@ -69,13 +67,28 @@ export default function Home() {
       {
         isMobile == false ? <ReviewSection/> : <ContactMobile/>
       }
-    
-     
-      
+
        </div>
    
 
 
     </>
   )
+}
+
+
+
+export async function getStaticProps({ params }) {
+
+  const [allNew, res1] = await  Promise.all([getAllPostSlug()]);
+
+
+  return {
+    props: {
+      AllSlugs: allNew?.data?.data?.posts?.nodes || null,
+     
+
+    },
+    revalidate: 1,
+  };
 }
