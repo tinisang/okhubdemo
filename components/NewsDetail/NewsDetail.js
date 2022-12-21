@@ -35,7 +35,7 @@ import { useLocomotiveScroll } from "react-locomotive-scroll";
 
 import gsap from "gsap";
 
-export const NewsDetail = () => {
+export const NewsDetail = ({data}) => {
   const dataInfoCategory = [
     {
       title: "Tin nổi bật",
