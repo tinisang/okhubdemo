@@ -57,6 +57,7 @@ export const getPostContentBySlug = (slug) => {
           }
         }
         excerpt
+        title
         content
         categories {
           nodes {

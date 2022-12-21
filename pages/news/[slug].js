@@ -8,16 +8,13 @@ import Script from 'next/script'
 export default function SingleNew(props){
 
 
-  console.log(props)
-
-
 
     return (
       <>
 
         <div>
 
-        <NewsDetail/>
+        <NewsDetail data={props.postContent}  />
    
           <Script src="https://www.videoask.com/embed/embed.js"></Script>
         </div>

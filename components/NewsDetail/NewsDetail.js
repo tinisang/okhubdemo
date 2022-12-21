@@ -36,6 +36,9 @@ import { useLocomotiveScroll } from "react-locomotive-scroll";
 import gsap from "gsap";
 
 export const NewsDetail = ({data}) => {
+
+  console.log(data)
+  
   const dataInfoCategory = [
     {
       title: "Tin nổi bật",
@@ -87,15 +90,16 @@ export const NewsDetail = ({data}) => {
             <p>Tien Dung Tran</p>
           </div>
         </div>
-        <p className="NewsDetail__primary-title">
-          Bức tranh thị trường thời trang trong thời kỳ suy thoái kinh tế toàn
-          cầu
-        </p>
+        <p className="NewsDetail__primary-title">{data.title}</p>
+        <div className="image-container">
+
         <Image
-          src={imagePrimaryNewsDetail}
-          className="NewsDetail__primary-img"
+          src={data.featuredImage.node.mediaItemUrl}
+          className="image-item NewsDetail__primary-img"
+          fill
           alt=""
         />
+        </div>
       </div>
       <div className="NewsDetail__info">
         <div className="NewsDetail__info--categories">
@@ -253,7 +257,7 @@ export const NewsDetail = ({data}) => {
                 />
                 <path
                   fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  clipRule="evenodd"
                   d="M28.0557 32.0294L39.2632 43.2369L37.0899 45.4102L23.7091 32.0294L37.0899 18.6486L39.2632 20.8219L28.0557 32.0294Z"
                   fill="#515151"
                 />
@@ -266,9 +270,9 @@ export const NewsDetail = ({data}) => {
                   width="74"
                   height="74"
                   filterUnits="userSpaceOnUse"
-                  color-interpolation-filters="sRGB"
+                  colorInterpolationFilters="sRGB"
                 >
-                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feFlood floodOpacity="0" result="BackgroundImageFix" />
                   <feGaussianBlur in="BackgroundImageFix" stdDeviation="2" />
                   <feComposite
                     in2="SourceAlpha"
@@ -304,7 +308,7 @@ export const NewsDetail = ({data}) => {
                 />
                 <path
                   fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  clipRule="evenodd"
                   d="M37.9444 33.9706L26.7369 22.7631L28.9102 20.5898L42.291 33.9706L28.9102 47.3514L26.7369 45.1781L37.9444 33.9706Z"
                   fill="#515151"
                 />
@@ -317,9 +321,9 @@ export const NewsDetail = ({data}) => {
                   width="74"
                   height="74"
                   filterUnits="userSpaceOnUse"
-                  color-interpolation-filters="sRGB"
+                  colorInterpolationFilters="sRGB"
                 >
-                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feFlood floodOpacity="0" result="BackgroundImageFix" />
                   <feGaussianBlur in="BackgroundImageFix" stdDeviation="2" />
                   <feComposite
                     in2="SourceAlpha"
@@ -395,7 +399,7 @@ export const NewsDetail = ({data}) => {
                 />
                 <path
                   fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  clipRule="evenodd"
                   d="M28.0557 32.0294L39.2632 43.2369L37.0899 45.4102L23.7091 32.0294L37.0899 18.6486L39.2632 20.8219L28.0557 32.0294Z"
                   fill="#515151"
                 />
@@ -408,9 +412,9 @@ export const NewsDetail = ({data}) => {
                   width="74"
                   height="74"
                   filterUnits="userSpaceOnUse"
-                  color-interpolation-filters="sRGB"
+                  colorInterpolationFilters="sRGB"
                 >
-                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feFlood floodOpacity="0" result="BackgroundImageFix" />
                   <feGaussianBlur in="BackgroundImageFix" stdDeviation="2" />
                   <feComposite
                     in2="SourceAlpha"
@@ -446,7 +450,7 @@ export const NewsDetail = ({data}) => {
                 />
                 <path
                   fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  clipRule="evenodd"
                   d="M37.9444 33.9706L26.7369 22.7631L28.9102 20.5898L42.291 33.9706L28.9102 47.3514L26.7369 45.1781L37.9444 33.9706Z"
                   fill="#515151"
                 />
@@ -459,9 +463,9 @@ export const NewsDetail = ({data}) => {
                   width="74"
                   height="74"
                   filterUnits="userSpaceOnUse"
-                  color-interpolation-filters="sRGB"
+                  colorInterpolationFilters="sRGB"
                 >
-                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feFlood floodOpacity="0" result="BackgroundImageFix" />
                   <feGaussianBlur in="BackgroundImageFix" stdDeviation="2" />
                   <feComposite
                     in2="SourceAlpha"
