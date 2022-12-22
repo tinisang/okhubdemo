@@ -279,7 +279,7 @@ export const Showcase = ()=>{
                                     <div className="measurement">
                                         4.8/5.0
                                     </div>
-                                    <div className="clip-path-background"> </div>
+                                    <div className="clipPath-background"> </div>
 
                                 </div>
                                 <div className="achievement-item" data-scroll data-scroll-direction='vertical' data-scroll-speed='3' data-scroll-delay='0.5'>
@@ -289,7 +289,7 @@ export const Showcase = ()=>{
                                     <div className="measurement">
                                     45%
                                     </div>
-                                    <div className="clip-path-background"> </div>
+                                    <div className="clipPath-background"> </div>
 
                                 </div>
                                 <div className="achievement-item" data-scroll data-scroll-direction='vertical' data-scroll-speed='3' data-scroll-delay='0.25'>
@@ -299,7 +299,7 @@ export const Showcase = ()=>{
                                     <div className="measurement">
                                     4.9/5.0
                                     </div>
-                                    <div className="clip-path-background"> </div>
+                                    <div className="clipPath-background"> </div>
 
                                 </div>
                             </div>

@@ -411,7 +411,7 @@
 
 }
 
-.achievement .achievement-wrapper .achievement-item .clip-path-background {
+.achievement .achievement-wrapper .achievement-item .clipPath-background {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -419,13 +419,13 @@
   top: 0;
   left: 0;
   z-index: 0;
-  clip-path: circle(0.3% at 100% 0);
+  clipPath: circle(0.3% at 100% 0);
   transition: 0.5s;
 
 }
 
-.achievement .achievement-wrapper .achievement-item:hover .clip-path-background {
-  clip-path: circle(141.2% at 100% 0);
+.achievement .achievement-wrapper .achievement-item:hover .clipPath-background {
+  clipPath: circle(141.2% at 100% 0);
 
 }
 

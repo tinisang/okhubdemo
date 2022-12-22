@@ -321,6 +321,7 @@
 
 /* CSS mobile-------------------------------------------------------------------- */
 .project-detail__mobile {
+  padding-bottom: 90px;
 }
 
 .project-detail__mobile .mobile__header {
@@ -350,18 +351,18 @@
   height: auto;
   margin-top: -48px;
   padding-top: 1px;
-  position: relative;
+  /* position: relative; */
 }
 
 .project-detail__mobile .logo {
-  position: absolute;
+  position: relative;
   width: 83px;
   height: 83px;
   border-radius: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  top: 128.5%;
-  z-index: 5;
+  transform: translate(-50%,-90%);
+  /* top: 10%; */
+  z-index: 1;
 }
 
 .project-detail__mobile .logo img {

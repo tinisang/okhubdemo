@@ -94,6 +94,7 @@
   border-top: solid 0.5px #363636;
   border-bottom: solid 0.5px #363636;
   margin-top: 27px;
+  padding: 40px 0;
 }
 .footer__nav--primary p {
   font-family: "Be Vietnam Pro";
@@ -108,7 +109,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
-}
+} 
 
 .footer__nav--note p {
   margin: 51px 0 38px 0;

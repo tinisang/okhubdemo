@@ -96,14 +96,14 @@ color: #000000;
     width: 100%;
     height: auto;
     object-fit: cover;
-    clip-path: circle(50% at 100% 100%);
+    clipPath: circle(50% at 100% 100%);
     transition: 0.3s;
 
 }
 .item--working__customer--container:hover 
 .item--working--content-img  img{
     
-    clip-path: circle(96% at 100% 100%);
+    clipPath: circle(96% at 100% 100%);
 
 }
 
@@ -151,10 +151,10 @@ color: #000000;
   position: absolute;
   z-index: 1;
   right: 0;
-  clip-path: circle(0% at 100% 100%);
+  clipPath: circle(0% at 100% 100%);
   transition: 0.3s;
 }
 .item--working__customer--container:hover .fake-border{
  
-  clip-path: circle(100% at 100% 100%);
+  clipPath: circle(100% at 100% 100%);
 }
