@@ -106,7 +106,7 @@ export const PostMarqueSlide = ({postData})=>{
             
                 </div>
 
-                    <Link href="/news/fsdfsd">
+                    <Link href="/news">
 
                     <div className="image-container arrow">
                         <Image src={arrow} alt="" className="image-item" />

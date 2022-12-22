@@ -153,6 +153,75 @@ export const getPostContentBySlug = (slug) => {
   
     return Grapql(query);
   };
+
+
+
+
+
+
+
   
 
+  
+
+  export const getFilterNews = (size = 5, categoryId=null, offset = 0) => {
+    if (size == null) {
+      size = 5;
+    }
+
+    const query = `
+    query AllPosts {
+      posts(first: ${size},where: {
+          categoryId: ${categoryId}, 
+          taxQuery: {taxArray: {taxonomy: CATEGORY, terms: "uncategorized", field: SLUG, operator: NOT_IN}},
+          orderby: {field: DATE, order: DESC}, 
+          status: PUBLISH,
+          offsetPagination: {offset: ${offset}, size: ${size}}
+            }
+        ) 
+        {
+        nodes {
+          
+          date
+          author {
+            node {
+              name
+            }
+          }
+          featuredImage {
+            node {
+              mediaItemUrl
+            }
+          }
+          excerpt
+          slug
+          title
+          content
+          categories {
+            nodes {
+              link
+              name
+              slug
+            }
+          }
+          tags {
+            nodes {
+              link
+              name
+              slug
+            }
+          }
+        }
+        pageInfo {
+          offsetPagination {
+            total
+          }
+        }
+        
+      }
+    }
+    `;
+  
+    return Grapql(query);
+  };
   

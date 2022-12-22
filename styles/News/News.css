@@ -118,8 +118,8 @@
   position: absolute;
   bottom: 0;
 }
-.news__categories--items p::after {
-  content: "45";
+.news__categories--items p .post_count {
+ 
   font-family: "Be Vietnam Pro";
   font-style: normal;
   font-weight: 500;
@@ -220,10 +220,11 @@
 .news__status__item-other {
   width: 100%;
 }
-.news__status__item-other .cacrd__container .card__img {
+.news__status__item-other .card__container .card__img {
   width: 50%;
+  margin:0px
 }
-.news__status__item-other .cacrd__container .card__img img {
+.news__status__item-other .card__container .card__img img {
   width: 50%;
 }
 .news__status__item-other .card__container {

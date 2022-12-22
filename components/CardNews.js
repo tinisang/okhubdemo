@@ -23,12 +23,12 @@ export const CardNews = ({postData}) => {
   return (
   
       <div className="card__container">
-        <Link href={'/news/'+postData.slug} >
 
         <div className="image-container card__img">
+        <Link href={'/news/'+postData.slug} >
           <Image src={postData.featuredImage.node.mediaItemUrl} alt="" className="image-item" fill />
-        </div>
         </Link>
+        </div>
         <div className="card__content">
           <div className="card__note">
             {data.map((item, index) => (

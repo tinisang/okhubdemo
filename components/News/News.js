@@ -10,14 +10,61 @@ import gsap from "gsap";
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useLocomotiveScroll } from "react-locomotive-scroll";
+import { Item } from "semantic-ui-react";
+import { useRouter } from "next/router";
+import { getFilterNews } from "../../api store/news";
 
-export const News = () => {
+export const News = ({allPostCategories, allInitialPosts, totalPost}) => {
   gsap.registerPlugin(ScrollToPlugin);
   gsap.registerPlugin(ScrollTrigger);
-  const [activeBtn, setActive] = useState(false);
+  const {scroll : locoScroll} = useLocomotiveScroll();
+  const router = useRouter()
   const lastCurrent = useRef(0);
   const optionsSort = ["Mới nhất", "Nhiều lượt xem nhất"];
-  const {scroll : locoScroll} = useLocomotiveScroll()
+  const [postLength, setPostLength] = useState(totalPost)
+
+  const [page, setPage] = useState(1)
+
+  const postPerPage = 5
+  const pageCount = Math.ceil(postLength/postPerPage);
+
+
+
+
+  var pagination=[]
+
+
+
+  if (pageCount > 1) {
+    
+    for (let index = 0; index < pageCount; index++) {
+      var active = index ==page-1;
+      if ((index > 3 && index <pageCount-3 && index!=page-1) && (index< page-3  || index> page +2) ){
+        pagination.push('...')
+      } else{
+
+        pagination.push(<NumberPage number={`${index+1}`} active={active} handlePagination={()=>{handlePagination(index)}}  />)
+      }
+      
+    }
+
+    const first =pagination.indexOf('...')
+    const last= pagination.lastIndexOf('...')
+    var maintain= [first,last];
+
+  
+    
+    pagination=pagination.filter((value,index,arr) => ((value=='...' && maintain.includes(index)) || value!='...') )
+
+    
+    
+  }
+
+
+
+
+  const [postArray, setPostArray] = useState(allInitialPosts)
+  
   const optionsFildes = [
     "Tất cả lĩnh vực",
     "Thời trang",
@@ -26,9 +73,20 @@ export const News = () => {
     "Kiến trúc - nội thất",
     "Khác...",
   ];
-  const [score, setScore] = useState("");
-  const scoreData = ["Tat ca", "nhieu luot xem nhat"];
-  const handelChange = (event) => {};
+
+  useEffect(()=>{
+    var catId = (router.query.category == '' ? null : router.query.category)
+    async function getNewsByCategory(){
+      const res = await getFilterNews(postPerPage, catId);
+      setPostArray(res?.data?.data?.posts?.nodes || null)
+      setPostLength(res?.data?.data?.posts?.pageInfo?.offsetPagination?.total)
+      setPage(1)
+      document.querySelector('.news__status--items')?.classList?.remove('isLoading')
+    }
+
+    getNewsByCategory()
+    
+  },[router.query.category])
 
   useEffect(() => {
     const slider = document.querySelector(".news__categories--items");
@@ -59,7 +117,12 @@ export const News = () => {
     });
   });
   useEffect(() => {
-    handleCatSelect(0);
+
+    if (!router.query.category ){
+      handleCatSelect(0);
+      
+    }
+    
   }, []);
 
   useEffect(() => {
@@ -92,29 +155,61 @@ export const News = () => {
 
   });
 
-  const handleCatSelect = (index) => {
+  const handleCatSelect = (index, catId) => {
+    document.querySelector('.news__status--items').classList.add('isLoading')
+    
     var selectedCat = document.querySelector(
       `.news__categories--items p.news__categories--item:nth-child(${
         index + 1
       })`
-    );
-
-    var lastActive = document.querySelector(
-      `.news__categories--items p.news__categories--item:nth-child(${
-        lastCurrent.current + 1
-      })`
-    );
-    lastActive.classList.remove("news__categories--item-active");
-
-    lastCurrent.current = index;
+      );
+      
+      var lastActive = document.querySelector(
+        `.news__categories--items p.news__categories--item:nth-child(${
+          lastCurrent.current + 1
+        })`
+        );
+        lastActive.classList.remove("news__categories--item-active");
+        
+        lastCurrent.current = index;
     selectedCat.classList.add("news__categories--item-active");
     gsap.to(".news__categories--items", {
       scrollTo: {
         x: selectedCat,
       },
     });
+    router.push({
+      pathname:'/news',
+      query:{
+        category: catId
+      },
+      
+    }, {shallow:true})
   };
+  
+  const handlePagination= (index)=>{
 
+    document.querySelector('.news__status--items').classList.add('isLoading')
+    paginate(index)
+  }
+  
+  const paginate=(index)=>{
+    var catId = (router.query.category == '' ? null : router.query.category)
+
+    async function paginatePost(){
+      const res = await getFilterNews(postPerPage, catId, postPerPage*index);
+      document.querySelector('.news__status--items').classList.remove('isLoading')
+
+      setPostArray(res?.data?.data?.posts?.nodes)
+      setPostLength(res?.data?.data?.posts?.pageInfo?.offsetPagination?.total)
+      setPage(index+1)
+      
+      
+    }
+    paginatePost()
+
+  }
+  
   return (
     <div className="news__container">
       <div className="container-padding news__title">
@@ -143,84 +238,32 @@ export const News = () => {
           <p>Khám phá ngay</p>
         </div>
         <div className="news__categories--items">
-          <p
+        <p
             className="news__categories--item "
             onClick={() => handleCatSelect(0)}
           >
             Tất cả bài viết
           </p>
-          <p
-            className="news__categories--item "
-            onClick={() => handleCatSelect(1)}
-          >
-            Báo cáo
-          </p>
-          <p
-            className="news__categories--item "
-            onClick={() => handleCatSelect(2)}
-          >
-            Tài liệu
-          </p>
-          <p
-            className="news__categories--item "
-            onClick={() => handleCatSelect(3)}
-          >
-            Thông báo
-          </p>
-          <p
-            className="news__categories--item "
-            onClick={() => handleCatSelect(4)}
-          >
-            Media
-          </p>
-          <p
-            className="news__categories--item "
-            onClick={() => handleCatSelect(5)}
-          >
-            Content
-          </p>
-          <p
-            className="news__categories--item "
-            onClick={() => handleCatSelect(6)}
-          >
-            Xu hướng
-          </p>
-          <p
-            className="news__categories--item "
-            onClick={() => handleCatSelect(7)}
-          >
-            Đặc biệt
-          </p>
-          <p
-            className="news__categories--item "
-            onClick={() => handleCatSelect(8)}
-          >
-            Trending
-          </p>
-          <p
-            className="news__categories--item "
-            onClick={() => handleCatSelect(9)}
-          >
-            Viết lách
-          </p>
-          <p
-            className="news__categories--item "
-            onClick={() => handleCatSelect(10)}
-          >
-            Điện ảnh
-          </p>
-          <p
-            className="news__categories--item "
-            onClick={() => handleCatSelect(11)}
-          >
-            Xây dựng
-          </p>
-          <p
-            className="news__categories--item "
-            onClick={() => handleCatSelect(12)}
-          >
-            Tất cả bài viết
-          </p>
+
+        {
+          allPostCategories.length > 0 && allPostCategories.map((value, index)=>{
+            return(
+            <p
+              key={index}
+              className="news__categories--item "
+              onClick={() => handleCatSelect(index + 1, value.node.categoryId)}
+            >
+              {
+                value.node.name
+              }
+              <span className="post_count">{value.node.count}</span>
+            </p>
+
+            )
+          })
+        }
+         
+        
         </div>
       </div>
 
@@ -251,23 +294,35 @@ export const News = () => {
               <p>Bài viết</p>
             </div>
             <div className="news__status--items">
+            {
+              postArray.length>0 && 
+                
               <div className="news__status__item-other">
-                <CardNews />
+                <CardNews postData = {allInitialPosts[0]} />
               </div>
+              
+            }
               <div className="news__status__item">
-                <CardNews />
-                <CardNews />
-                <CardNews />
-                <CardNews />
+                {
+                  postArray.length >1 && 
+                    postArray.map((item, index)=>{
+                      if (index==0){
+                        return ''
+                      } else {
+                        return (
+
+                        <CardNews key={index} postData={item} />
+                        )
+                      }
+                    })
+                  
+                }
+                
               </div>
             </div>
 
             <div className="news__status--item-btn">
-              <NumberPage number="1" active={true} />
-              <NumberPage number="2" active={false} />
-              <NumberPage number="3" active={false} />
-              <NumberPage number="4" active={false} />
-              <NumberPage number="5" active={false} />
+              {pagination}
             </div>
           </div>
         </div>
