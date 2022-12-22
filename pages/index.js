@@ -13,7 +13,6 @@ import gsap from 'gsap'
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { PostMarqueSlide } from '../components/HOME Components/Expand Section/PostMarqueeSlide'
 import { useLocomotiveScroll } from 'react-locomotive-scroll'
-import { IconSlideMobile } from '../components/HOME Components/HomeMobile/IconSlideMobile'
 import { ProjectSpecial, ProjectSpecialMobile } from '../components/HOME Components/HomeMobile/ProjectSpecialMobile'
 import { ClienSectionMobile } from '../components/HOME Components/HomeMobile/ClienSectionMobile'
 import { ContactMobile } from '../components/HOME Components/HomeMobile/ContactMobile'
@@ -56,7 +55,7 @@ export default function Home(props) {
     }
 
       {
-        isMobile == false ? <IconicSlide/> : <IconSlideMobile/>
+        isMobile == false && <IconicSlide/> 
       }
       {
         isMobile == false ? <CategorySlide/> : <ProjectSpecialMobile/>

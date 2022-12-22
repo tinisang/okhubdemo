@@ -10,11 +10,11 @@ import { useLocomotiveScroll } from "react-locomotive-scroll";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { ButtonMobile } from "../../components/Button/ButtonMobile";
 import { ProjectPost } from "../../components/HOME Components/HomeMobile/ProjectPost";
 import descConectImg from "../../public/imgs/descConectImg.png";
 import logoMobile from "../../public/imgs/logoMobileProjectDetail.png";
 let tab = 1;
-
 
 const dataPrevProblemMobile = [
   "Trải nghiệm mua hàng gặp nhiều trở ngại",
@@ -23,14 +23,12 @@ const dataPrevProblemMobile = [
   "Website cũ khó tùy biến giao diện",
 ];
 export default function SingleProject() {
-
   const { scroll: locoScroll } = useLocomotiveScroll();
   useEffect(() => {
-   
     ScrollTrigger.refresh();
   });
   const [isMobile, setIsMobile] = useState();
- 
+
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 768px)");
     if (mediaQuery.matches) {
@@ -104,9 +102,7 @@ export default function SingleProject() {
   };
   return (
     <>
-      {
-        isMobile == false && <BackgroundHeader />
-      }
+      {isMobile == false && <BackgroundHeader />}
       {isMobile == false ? (
         <div className="">
           <TheProblem />
@@ -129,10 +125,10 @@ export default function SingleProject() {
                 <path
                   d="M8.62467 17.75L1.83301 10.9583C1.03092 10.1562 1.03092 8.84375 1.83301 8.04167L8.62467 1.25"
                   stroke="black"
-                  stroke-width="2"
-                  stroke-miterlimit="10"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeMiterlimit="10"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </svg>
             </div>
@@ -148,26 +144,27 @@ export default function SingleProject() {
                 <path
                   d="M11.9788 21.8752C17.4442 21.8752 21.8747 17.4446 21.8747 11.9793C21.8747 6.51401 17.4442 2.0835 11.9788 2.0835C6.51352 2.0835 2.08301 6.51401 2.08301 11.9793C2.08301 17.4446 6.51352 21.8752 11.9788 21.8752Z"
                   stroke="black"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M22.9163 22.9168L20.833 20.8335"
                   stroke="black"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </svg>
             </div>
-           
           </div>
-         
-          <div className="mobile__body">
+
           <div className="logo">
-            <Image src={logoMobile} alt="" />
-          </div>
+              <Image src={logoMobile} alt="" />
+            </div>
+
+          <div className="mobile__body">
+            
             <div className="mobile__hastag">
               #<span>thoitrang </span>#<span>duantieubieu</span>
             </div>
@@ -201,23 +198,23 @@ export default function SingleProject() {
                       <path
                         d="M4.875 4.12505L7.95 1.05005"
                         stroke="white"
-                        stroke-width="0.75"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="0.75"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                       <path
                         d="M8.2502 2.55V0.75H6.4502"
                         stroke="white"
-                        stroke-width="0.75"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="0.75"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                       <path
                         d="M4.125 0.75H3.375C1.5 0.75 0.75 1.5 0.75 3.375V5.625C0.75 7.5 1.5 8.25 3.375 8.25H5.625C7.5 8.25 8.25 7.5 8.25 5.625V4.875"
                         stroke="white"
-                        stroke-width="0.75"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="0.75"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                     </svg>
                   </p>
@@ -278,9 +275,9 @@ export default function SingleProject() {
                       <path
                         d="M13.3762 5.73851L8.06033 12.2614L4.62379 8.99992M4.83333 16.5H13.1667C15.0076 16.5 16.5 15.0076 16.5 13.1667V4.83333C16.5 2.99238 15.0076 1.5 13.1667 1.5H4.83333C2.99238 1.5 1.5 2.99238 1.5 4.83333V13.1667C1.5 15.0076 2.99238 16.5 4.83333 16.5Z"
                         stroke="#282828"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                     </svg>
                     <p className="active__mobile--tab">Kết quả đạt được</p>
@@ -297,9 +294,9 @@ export default function SingleProject() {
                       <path
                         d="M13.3762 5.73851L8.06033 12.2614L4.62379 8.99992M4.83333 16.5H13.1667C15.0076 16.5 16.5 15.0076 16.5 13.1667V4.83333C16.5 2.99238 15.0076 1.5 13.1667 1.5H4.83333C2.99238 1.5 1.5 2.99238 1.5 4.83333V13.1667C1.5 15.0076 2.99238 16.5 4.83333 16.5Z"
                         stroke="#939393"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                     </svg>
                     <p>Kết quả đạt được</p>
@@ -320,14 +317,14 @@ export default function SingleProject() {
                         <path
                           d="M10.5274 2.75122H3.75684C3.20455 2.75122 2.75684 3.19894 2.75684 3.75122V10.6509C2.75684 10.9193 2.86479 11.1765 3.0564 11.3646L9.55727 17.7445C10.3272 18.5001 11.5576 18.5089 12.3383 17.7645L17.8674 12.4926C18.6837 11.7142 18.6953 10.4151 17.8929 9.62236L11.2302 3.03985C11.0431 2.85492 10.7905 2.75122 10.5274 2.75122Z"
                           stroke="#282828"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         />
                         <path
                           d="M7.58578 6.86784C7.58578 7.25801 7.26949 7.57431 6.87932 7.57431C6.48915 7.57431 6.17285 7.25801 6.17285 6.86784C6.17285 6.47767 6.48915 6.16138 6.87932 6.16138C7.26949 6.16138 7.58578 6.47767 7.58578 6.86784Z"
                           stroke="#282828"
-                          stroke-width="1.5"
+                          strokeWidth="1.5"
                         />
                       </g>
                     </svg>
@@ -346,14 +343,14 @@ export default function SingleProject() {
                         <path
                           d="M10.5274 2.75122H3.75684C3.20455 2.75122 2.75684 3.19894 2.75684 3.75122V10.6509C2.75684 10.9193 2.86479 11.1765 3.0564 11.3646L9.55727 17.7445C10.3272 18.5001 11.5576 18.5089 12.3383 17.7645L17.8674 12.4926C18.6837 11.7142 18.6953 10.4151 17.8929 9.62236L11.2302 3.03985C11.0431 2.85492 10.7905 2.75122 10.5274 2.75122Z"
                           stroke="#939393"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         />
                         <path
                           d="M7.58578 6.86784C7.58578 7.25801 7.26949 7.57431 6.87932 7.57431C6.48915 7.57431 6.17285 7.25801 6.17285 6.86784C6.17285 6.47767 6.48915 6.16138 6.87932 6.16138C7.26949 6.16138 7.58578 6.47767 7.58578 6.86784Z"
                           stroke="#939393"
-                          stroke-width="1.5"
+                          strokeWidth="1.5"
                         />
                       </g>
                     </svg>
@@ -365,9 +362,8 @@ export default function SingleProject() {
 
             {/*  */}
 
-           
-              {tab == 1 && (
-                 <div className="mobile__desc--project">
+            {tab == 1 && (
+              <div className="mobile__desc--project">
                 <>
                   <div className="mobile__desc--overview">
                     <h4>tổng quan</h4>
@@ -514,64 +510,61 @@ export default function SingleProject() {
                         <Image src={descConectImg} alt="" />
                       </div>
                     </div>
-            
                   </div>
                   <div className="desc__conect--foot">
-                      <div className="conect__foot--content">
-                        Đó là một sự nỗ lực không ngừng nghỉ của các bạn bên
-                        OKHUB Việt Nam. GUMAC xin ghi nhận những nỗ lực đó và
-                        chúc các bạn luôn thành công
-                        <div className="content__tag-1">
-                          <svg
-                            width="18"
-                            height="13"
-                            viewBox="0 0 18 13"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M2.21437 11.9485C1.279 10.8971 0.717773 9.75 0.717773 7.83824C0.717773 4.49265 3.0562 1.52941 6.32999 0L7.17183 1.24265C4.08511 2.96324 3.43035 5.16177 3.24327 6.59559C3.71096 6.30882 4.36572 6.21324 5.02048 6.30882C6.70414 6.5 8.01366 7.83824 8.01366 9.65441C8.01366 10.5147 7.63951 11.375 7.07829 12.0441C6.42353 12.7132 5.67524 13 4.73987 13C3.71096 13 2.77559 12.5221 2.21437 11.9485ZM11.5681 11.9485C10.6327 10.8971 10.0715 9.75 10.0715 7.83824C10.0715 4.49265 12.4099 1.52941 15.6837 0L16.5255 1.24265C13.4388 2.96324 12.784 5.16177 12.597 6.59559C13.0647 6.30882 13.7194 6.21324 14.3742 6.30882C16.0578 6.5 17.3674 7.83824 17.3674 9.65441C17.3674 10.5147 16.9932 11.375 16.432 12.0441C15.8708 12.7132 15.0289 13 14.0936 13C13.0647 13 12.1293 12.5221 11.5681 11.9485Z"
-                              fill="black"
-                            />
-                          </svg>
-                        </div>
-                        <div className="content__tag-2">
-                          <svg
-                            width="18"
-                            height="13"
-                            viewBox="0 0 18 13"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M15.6343 1.05147C16.5696 2.10294 17.1309 3.25 17.1309 5.16176C17.1309 8.50735 14.7924 11.4706 11.5186 13L10.6768 11.7574C13.7635 10.0368 14.4183 7.83823 14.6054 6.40441C14.1377 6.69118 13.4829 6.78676 12.8282 6.69118C11.1445 6.5 9.83497 5.16176 9.83497 3.34559C9.83497 2.48529 10.2091 1.625 10.7703 0.955884C11.4251 0.286766 12.1734 4.36729e-07 13.1088 3.54327e-07C14.1377 2.63685e-07 15.073 0.47794 15.6343 1.05147ZM6.28056 1.05147C7.21593 2.10294 7.77716 3.25 7.77716 5.16177C7.77716 8.50735 5.43873 11.4706 2.16494 13L1.3231 11.7574C4.40983 10.0368 5.06458 7.83824 5.25166 6.40441C4.78397 6.69118 4.12921 6.78677 3.47445 6.69118C1.79079 6.5 0.481271 5.16177 0.481271 3.34559C0.481271 2.48529 0.855418 1.625 1.41664 0.955884C1.97786 0.286766 2.8197 1.26075e-06 3.75507 1.17834e-06C4.78397 1.0877e-06 5.71934 0.477941 6.28056 1.05147Z"
-                              fill="black"
-                            />
-                          </svg>
-                        </div>
+                    <div className="conect__foot--content">
+                      Đó là một sự nỗ lực không ngừng nghỉ của các bạn bên OKHUB
+                      Việt Nam. GUMAC xin ghi nhận những nỗ lực đó và chúc các
+                      bạn luôn thành công
+                      <div className="content__tag-1">
+                        <svg
+                          width="18"
+                          height="13"
+                          viewBox="0 0 18 13"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M2.21437 11.9485C1.279 10.8971 0.717773 9.75 0.717773 7.83824C0.717773 4.49265 3.0562 1.52941 6.32999 0L7.17183 1.24265C4.08511 2.96324 3.43035 5.16177 3.24327 6.59559C3.71096 6.30882 4.36572 6.21324 5.02048 6.30882C6.70414 6.5 8.01366 7.83824 8.01366 9.65441C8.01366 10.5147 7.63951 11.375 7.07829 12.0441C6.42353 12.7132 5.67524 13 4.73987 13C3.71096 13 2.77559 12.5221 2.21437 11.9485ZM11.5681 11.9485C10.6327 10.8971 10.0715 9.75 10.0715 7.83824C10.0715 4.49265 12.4099 1.52941 15.6837 0L16.5255 1.24265C13.4388 2.96324 12.784 5.16177 12.597 6.59559C13.0647 6.30882 13.7194 6.21324 14.3742 6.30882C16.0578 6.5 17.3674 7.83824 17.3674 9.65441C17.3674 10.5147 16.9932 11.375 16.432 12.0441C15.8708 12.7132 15.0289 13 14.0936 13C13.0647 13 12.1293 12.5221 11.5681 11.9485Z"
+                            fill="black"
+                          />
+                        </svg>
                       </div>
-                      <div className="conect__foot--user">
-                        <p className="user__name">Mrs. Nguyễn Yến</p>
-                       <div>
-                       <p className="user__position">
+                      <div className="content__tag-2">
+                        <svg
+                          width="18"
+                          height="13"
+                          viewBox="0 0 18 13"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M15.6343 1.05147C16.5696 2.10294 17.1309 3.25 17.1309 5.16176C17.1309 8.50735 14.7924 11.4706 11.5186 13L10.6768 11.7574C13.7635 10.0368 14.4183 7.83823 14.6054 6.40441C14.1377 6.69118 13.4829 6.78676 12.8282 6.69118C11.1445 6.5 9.83497 5.16176 9.83497 3.34559C9.83497 2.48529 10.2091 1.625 10.7703 0.955884C11.4251 0.286766 12.1734 4.36729e-07 13.1088 3.54327e-07C14.1377 2.63685e-07 15.073 0.47794 15.6343 1.05147ZM6.28056 1.05147C7.21593 2.10294 7.77716 3.25 7.77716 5.16177C7.77716 8.50735 5.43873 11.4706 2.16494 13L1.3231 11.7574C4.40983 10.0368 5.06458 7.83824 5.25166 6.40441C4.78397 6.69118 4.12921 6.78677 3.47445 6.69118C1.79079 6.5 0.481271 5.16177 0.481271 3.34559C0.481271 2.48529 0.855418 1.625 1.41664 0.955884C1.97786 0.286766 2.8197 1.26075e-06 3.75507 1.17834e-06C4.78397 1.0877e-06 5.71934 0.477941 6.28056 1.05147Z"
+                            fill="black"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="conect__foot--user">
+                      <p className="user__name">Mrs. Nguyễn Yến</p>
+                      <div>
+                        <p className="user__position">
                           <span>cmo</span> thời trang
                         </p>
                         <p className="user__cpn">gumac</p>
-                       </div>
                       </div>
                     </div>
+                  </div>
                 </>
-                </div>
-              )}
+              </div>
+            )}
 
-              {
-                tab == 2 && <div className="mobile__result--project"></div>
-              }
+            {tab == 2 && <div className="mobile__result--project"></div>}
 
-              
-                {
-                  tab == 3 && dataProjectSpecial.map((item, index) => (
-                    <ProjectPost
+            {tab == 3 &&
+              dataProjectSpecial.map(
+                (item, index) => (
+                  <ProjectPost
                     key={item.id}
                     // logo = {item.logo}
                     projectName={item.projectName}
@@ -581,12 +574,16 @@ export default function SingleProject() {
                     amountShare={item.amountShare}
                     desc={item.desc}
                   />
-                  ))
-                }
+                ))}
 
-              
-              
-           
+
+                {
+                  tab == 3 && (
+                    <div className="btn_all-project">
+                <ButtonMobile text="Xem tất cả dự án" />
+              </div>
+                  )
+                }
           </div>
         </div>
       )}
