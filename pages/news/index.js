@@ -3,7 +3,6 @@ import { useLocomotiveScroll } from "react-locomotive-scroll";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 import { getFilterNews } from "../../api store/news";
-import { getAllPostCagtegories } from "../../../../TIM PROJECT/final tim/tim/store/action/new";
 import { useRouter } from "next/router";
 
 
