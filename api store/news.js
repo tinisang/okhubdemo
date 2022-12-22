@@ -225,3 +225,23 @@ export const getPostContentBySlug = (slug) => {
     return Grapql(query);
   };
   
+
+  export const getAllPostCagtegories = () => {
+ 
+    const query = `
+    query NewQuery {
+      categories(where: {exclude:1}) {
+        edges {
+          node {
+            categoryId
+            name
+            count
+          }
+        }
+      }
+    }
+    `;
+  
+    return Grapql(query);
+  };
+  

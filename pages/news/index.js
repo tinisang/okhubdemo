@@ -4,6 +4,7 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 import { getFilterNews } from "../../api store/news";
 import { useRouter } from "next/router";
+import { getAllPostCagtegories } from "../../api store/news";
 
 
 export default  function NewsPage(props){
