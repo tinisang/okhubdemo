@@ -101,6 +101,8 @@ a {
 
 .isLoading{
 
+  animation: 1s loading infinite;
+
 }
 
 @keyframes loading {

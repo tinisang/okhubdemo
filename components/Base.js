@@ -28,7 +28,7 @@ export const Base = (props) => {
 
   useEffect(()=>{
     router.events.on('routeChangeStart', (url, { shallow }) => {
-  
+      
       if (router.asPath != url){
         isLoading(true)
 
@@ -36,9 +36,7 @@ export const Base = (props) => {
     });
     router.events.on('routeChangeComplete', (url, { shallow }) => {
       isLoading(false)
-      locoScroll?.destroy()
-      locoScroll?.init()
-      locoScroll?.start()
+
       
           
     });
