@@ -34,20 +34,10 @@ export default function SingleProject(props) {
   useEffect(() => {
     ScrollTrigger.refresh();
   });
-  const [isMobile, setIsMobile] = useState();
 
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 768px)");
-    if (mediaQuery.matches) {
-      setIsMobile(true);
-    } else setIsMobile(false);
-
-    window.addEventListener("resize", () => {
-      if (mediaQuery.matches) {
-        setIsMobile(true);
-      } else setIsMobile(false);
-    });
-  }, []);
+  const isMobile = useMediaQuery({
+    maxDeviceWidth: 768
+  }, );
 
   // Mobile
   const dataProjectSpecial = [
