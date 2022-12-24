@@ -25,17 +25,21 @@ export const Base = (props) => {
   const [loading, isLoading] = useState(false)
   const router = useRouter()
   const {scroll: locoScroll} = useLocomotiveScroll()
+  const path = useRef(router.asPath)
 
   useEffect(()=>{
     router.events.on('routeChangeStart', (url, { shallow }) => {
       
-      if (router.asPath != url){
+      
+      if (router.asPath != url  && !url.includes('?')){
         isLoading(true)
 
       }
     });
     router.events.on('routeChangeComplete', (url, { shallow }) => {
       isLoading(false)
+
+
 
       
           
@@ -78,7 +82,7 @@ useEffect(() => {
       <link rel="icon" href="/imgs/logo.svg" />
     </Head>
     
-    {
+          {
             loading && (
             <motion.div 
             key={'loading-section'}
