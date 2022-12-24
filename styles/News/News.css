@@ -271,11 +271,12 @@
 /* -------------------------------------------- */
 .news__primary {
   display: flex;
+  gap: 120px;
 }
 
 .news__documents {
   margin-right: 100px;
-  margin-left: 32px;
+
 }
 
 .news__documents-text p {

@@ -14,7 +14,10 @@ import { ButtonMobile } from "../../components/Button/ButtonMobile";
 import { ProjectPost } from "../../components/HOME Components/HomeMobile/ProjectPost";
 import descConectImg from "../../public/imgs/descConectImg.png";
 import logoMobile from "../../public/imgs/logoMobileProjectDetail.png";
-import { useMediaQuery } from "react-responsive";
+
+import { getProjectDataBySlug } from "../../api store/project";
+import { getProjectSlugs } from "../../api store/project";
+
 let tab = 1;
 
 const dataPrevProblemMobile = [
@@ -23,8 +26,11 @@ const dataPrevProblemMobile = [
   "Khó khăn trong việc kết nối với khách hàng",
   "Website cũ khó tùy biến giao diện",
 ];
-export default function SingleProject() {
+export default function SingleProject(props) {
   const { scroll: locoScroll } = useLocomotiveScroll();
+
+  console.log(props)
+  
   useEffect(() => {
     ScrollTrigger.refresh();
   });
@@ -93,13 +99,28 @@ export default function SingleProject() {
   };
   return (
     <>
-      {!isMobile && <BackgroundHeader />}
-      {!isMobile ? (
+      {isMobile == false && <BackgroundHeader logo={props?.projectData?.projectSection?.logo?.mediaItemUrl} data={props?.projectData?.projectSection?.bannerImage?.mediaItemUrl}/>}
+      {isMobile == false ? (
         <div className="">
-          <TheProblem />
-          <WhyOKHUB />
+          <TheProblem 
+            dataProblem={props?.projectData?.projectSection?.clientProblems} 
+            dataInfo = {
+              {
+                projectFields: props?.projectData?.projectFields?.nodes,
+                projectCategories: props?.projectData?.projectCategories?.nodes,
+                member:props?.projectData?.projectSection?.member
+              }
+         
+              } 
+            />
+          <WhyOKHUB  />
           {/* <ExpandingLogo /> */}
-          <Showcase />
+          <Showcase data={
+            {
+              desktop: props?.projectData?.projectSection?.pcVersion,
+              mobile: props?.projectData?.projectSection?.mobileversion,
+            }
+          }/>
           <JudgeOkhub />
         </div>
       ) : (
@@ -580,4 +601,43 @@ export default function SingleProject() {
       )}
     </>
   );
+}
+
+
+export async function getStaticPaths() {
+  const allProjects = await getProjectSlugs();
+  const data = await allProjects;
+
+  
+  const paths = data?.data?.data?.projects?.nodes.map((data) => ({
+    params: { slug: data.slug },
+  }));
+  
+  console.log(paths)
+
+  
+  return {
+    paths,
+    fallback: true,
+  };
+}
+
+
+
+
+export async function getStaticProps({ params }) {
+
+
+
+  const postContent = await getProjectDataBySlug(params.slug);
+  
+
+  return {
+    props: {
+     projectData: postContent?.data?.data?.project || null
+     
+
+    },
+    revalidate: 1,
+  };
 }

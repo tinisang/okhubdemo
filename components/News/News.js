@@ -14,7 +14,7 @@ import { Item } from "semantic-ui-react";
 import { useRouter } from "next/router";
 import { getFilterNews } from "../../api store/news";
 
-export const News = ({allPostCategories, allInitialPosts, totalPost}) => {
+export const News = ({allPostCategories, allInitialPosts, totalPost, allDocuments}) => {
   gsap.registerPlugin(ScrollToPlugin);
   gsap.registerPlugin(ScrollTrigger);
   const {scroll : locoScroll} = useLocomotiveScroll();
@@ -332,11 +332,14 @@ export const News = ({allPostCategories, allInitialPosts, totalPost}) => {
             <p>Tài liệu - Báo cáo</p>
           </div>
           <div className="news__document--items">
-            <CardReport />
-            <CardReport />
-            <CardReport />
-            <CardReport />
-            <CardReport />
+          {
+            allDocuments?.map((item,index)=>{
+              return(
+                <CardReport data={item} key={index} />
+              )
+            })
+          }
+
           </div>
         </div>
       </div>

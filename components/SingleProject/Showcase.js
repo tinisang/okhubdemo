@@ -25,7 +25,7 @@ import { useEffect, useRef } from "react";
 import arrowLeft from '../../public/imgs/arrow-left.svg'
 
 
-export const Showcase = ()=>{
+export const Showcase = ({data})=>{
     const currentIndex = useRef()
     gsap.registerPlugin(ScrollToPlugin)
     useEffect(()=>{
@@ -119,37 +119,22 @@ export const Showcase = ()=>{
                         onSlideChange={(swiper)=>{currentIndex.current = swiper.activeIndex}}
                         onTransitionEnd={(swiper)=>{currentIndex.current = swiper.activeIndex}}
                         >
-                            <SwiperSlide>
-                                <div className="mockup-image" onMouseOver={()=>{handlePCHover()}} onMouseOut={handlePCHoverOut} >
 
-                                    <Image fill src={desktopImage} alt="" />
-                                </div>
+                            {
+                                data?.desktop?.map((item, index)=>{
+                                    return(
+                                        <SwiperSlide>
+                                            <div key={index} className="image-container mockup-image" onMouseOver={()=>{handlePCHover()}} onMouseOut={handlePCHoverOut} >
 
-                            </SwiperSlide>
+                                                <Image fill src={item.mediaItemUrl} alt="" className="image-item" unoptimized={true}/>
+                                            </div>
 
-                            <SwiperSlide>
-                                <div className="mockup-image" onMouseOver={()=>{handlePCHover()}} onMouseOut={handlePCHoverOut}>
-
-                                    <Image fill src={desktopImage} alt="" />
-                                </div>
-
-                            </SwiperSlide>
+                                        </SwiperSlide>
+                                    )
+                                })
+                            }
+                        
                             
-                            <SwiperSlide>
-                                <div className="mockup-image" onMouseOver={()=>{handlePCHover()}} onMouseOut={handlePCHoverOut}>
-
-                                    <Image fill src={desktopImage} alt="" />
-                                </div>
-
-                            </SwiperSlide>
-
-                            <SwiperSlide>
-                                <div className="mockup-image" onMouseOver={()=>{handlePCHover()}} onMouseOut={handlePCHoverOut}>
-
-                                    <Image fill src={desktopImage} alt="" />
-                                </div>
-
-                            </SwiperSlide>
                         </Swiper>
                       
                             
@@ -204,7 +189,19 @@ export const Showcase = ()=>{
                         onSlideNextTransitionStart={nextSlide}
                         onSlidePrevTransitionStart={backSlide}
                         >
-                            <SwiperSlide>
+
+                            {
+                                data?.desktop?.map((item, index)=>{
+                                    return (
+                                        <SwiperSlide key={index}>
+                                            <div className="image-container image-item-slide">
+                                                <Image fill src={item.mediaItemUrl} alt='' className="image-item" unoptimized={true}/> 
+                                            </div>
+                                        </SwiperSlide>
+                                    )
+                                })
+                            }
+                            {/* <SwiperSlide>
                                 <div className="image-item-slide">
                                     <Image src={slideImage} alt=''/> 
                                 </div>
@@ -229,7 +226,7 @@ export const Showcase = ()=>{
                                 <div className="image-item-slide">
                                     <Image src={slideImage} alt=''/> 
                                 </div>
-                            </SwiperSlide>
+                            </SwiperSlide> */}
                            
                         
                             

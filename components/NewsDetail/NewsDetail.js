@@ -35,7 +35,8 @@ import { useLocomotiveScroll } from "react-locomotive-scroll";
 
 import gsap from "gsap";
 
-export const NewsDetail = ({data,relatedPosts}) => {
+export const NewsDetail = ({data,relatedPosts, allDocuments}) => {
+  
 
 
   var postDate = new Date(data.date);
@@ -323,24 +324,26 @@ export const NewsDetail = ({data,relatedPosts}) => {
           }}
           modules={[Navigation]}
         >
-          <SwiperSlide>
-            <div>
-              <CardReport />
-              <CardReport />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div>
-              <CardReport />
-              <CardReport />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div>
-              <CardReport />
-              <CardReport />
-            </div>
-          </SwiperSlide>
+
+        {
+          allDocuments?.map((value, index)=>{
+
+            if ((index % 2 == 0) && (index <= (allDocuments.length - 2)) ){
+              return(
+                <SwiperSlide key={index+": "+value.title}>
+                  <div>
+                    <CardReport data={allDocuments[index]} />
+                    <CardReport data={allDocuments[index+1]} />
+                  </div>
+                </SwiperSlide>
+              )
+            } else {
+              return <></>
+            }
+
+          })
+        }
+          
         </Swiper>
         <div className="image-container">
           <div className="NewsDetail__document--prev">
