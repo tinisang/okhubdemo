@@ -3,7 +3,7 @@ import { Footer } from "./Footer/Footer";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState, useRef } from "react";
-
+import { useMediaQuery } from "react-responsive";
 import { motion, AnimatePresence } from "framer-motion"
 import gsap from "gsap";
 
@@ -54,20 +54,9 @@ export const Base = (props) => {
   // }
 
 
-const [isMobile, setIsMobile] = useState();
-
-useEffect(() => {
-  const mediaQuery = window.matchMedia("(max-width: 768px)");
-  if (mediaQuery.matches) {
-    setIsMobile(true);
-  } else setIsMobile(false);
-
-  window.addEventListener("resize", () => {
-    if (mediaQuery.matches) {
-      setIsMobile(true);
-    } else setIsMobile(false);
-  });
-}, []);
+  const isMobile = useMediaQuery({
+    maxDeviceWidth: 768
+  }, );
   return (
     <>
 
