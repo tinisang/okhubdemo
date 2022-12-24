@@ -3,16 +3,28 @@ import img1 from "../../public/imgs/category.svg";
 import img2 from "../../public/imgs/layer.svg";
 import img3 from "../../public/imgs/people.svg";
 import { DataItem } from "./DataItem";
-export const TheProblem = () => {
+export const TheProblem = ({dataInfo, dataProblem}) => {
     return (
         <div className="problem">
             <div className="problem__wrap">
                 {/* Dữ liệu */}
                 <div className="problem__data">
                     <ul className="problem__data--list">
-                        <DataItem title="LĨNH VỰC" image={img1} txt="Thời trang" />
-                        <DataItem title="HẠNG MỤC CÔNG VIỆC" image={img2} txt="UI Design / UX Research" />
-                        <DataItem title="THÀNH VIÊN" image={img3} txt="Trang Nguyễn / Loan Hoàng / Tiến Dũng" />
+                        <DataItem title="LĨNH VỰC" image={img1} txt={
+                            dataInfo?.projectFields.map((item, index) =>{
+                                return item.name
+                            }).join(' / ')
+                        } />
+                        <DataItem title="HẠNG MỤC CÔNG VIỆC" image={img2} txt={
+                            dataInfo?.projectCategories.map((item,index)=>{
+                                return item.name
+                            }).join(' / ')
+                        }/>
+                        <DataItem title="THÀNH VIÊN" image={img3} txt={
+                            dataInfo?.member.map((item, index)=>{
+                                return item.name
+                            }).join(' / ')
+                        } />
                     </ul>
                 </div>
                 {/* Vấn đề */}
@@ -25,24 +37,23 @@ export const TheProblem = () => {
                         The Problems
                     </div>
                     <p className="problem__content--txt">
-                        Nhận thấy website cũ ảnh hưởng đến quá trình quảng bá và thương mại.
-                        Gumac đã quyết định làm lại khi website cũ có những vấn đề như:
+                        {dataProblem.description}
                     </p>
                 </div>
                 {/* Danh sách trở ngại */}
                 <div className="problem__list">
-                    <div className="problem__item">
-                        Trải nghiệm mua hàng gặp nhiều trở ngại
-                    </div>
-                    <div className="problem__item">
-                        Giao diện cũ và không còn phù hợp với nhận diện
-                    </div>
-                    <div className="problem__item">
-                        Khó khăn trong việc kết nối với khách hàng
-                    </div>
-                    <div className="problem__item">
-                        Website cũ khó tùy biến giao diện
-                    </div>
+
+                    {
+                        dataProblem?.problem?.map((item, index)=>{
+                            return(
+                            <div className="problem__item" key={index}>
+                                {item.problemItem}
+                            </div>
+
+                            )
+                        })
+                    }
+                
                 </div>
             </div>
         </div>

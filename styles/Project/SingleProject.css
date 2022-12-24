@@ -8,7 +8,7 @@
 .why-okhub {
   height: 100vh !important;
   width: 100%;
-  background-color: red;
+  background-color: rgb(252,252,252);
   overflow: hidden;
 
 }
@@ -199,7 +199,7 @@
 .showcase-section .slide-section .column-1 .mockup-image {
   height: 100%;
   width: 100%;
-  overflow: scroll;
+  overflow: hidden;
 
 
 
@@ -280,17 +280,20 @@
   transition: 0.6s;
   border-radius: 12px;
   overflow: hidden;
+  max-height: 80vh;
 
 }
 
 .showcase-section .slide-section .column-2 .swiper-slide-active {
   opacity: 1;
   width: 60% !important;
+  max-height: 80vh;
   /* transform: scale(2) !important; */
 }
 
 .showcase-section .slide-section .column-2 .swiper-slide-next {
   width: 40% !important;
+  max-height: 70vh;
   /* transform: scale(2) !important; */
 }
 
@@ -419,13 +422,13 @@
   top: 0;
   left: 0;
   z-index: 0;
-  clipPath: circle(0.3% at 100% 0);
+  clip-path: circle(0.3% at 100% 0);
   transition: 0.5s;
 
 }
 
 .achievement .achievement-wrapper .achievement-item:hover .clipPath-background {
-  clipPath: circle(141.2% at 100% 0);
+  clip-path: circle(141.2% at 100% 0);
 
 }
 
@@ -570,9 +573,21 @@
 .bgHead__txt p {
   margin: 0;
 }
+.bgHead__logo{
+  background-color: white;
+  width: 246px;
+  height: 246px;
+  padding: 20px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 30px 0px #0000000D;
+
+  
+}
 
 .bgHead__logo--img {
   box-shadow: none;
+  object-fit: contain;
+  object-position: center;
 }
 
 

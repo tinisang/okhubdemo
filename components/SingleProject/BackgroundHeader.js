@@ -1,14 +1,14 @@
 import Image from "next/image";
 import gumacBackground from '../../public/imgs/Gumac BG.svg';
 import gumacLogo from '../../public/imgs/GUMAC logo.png';
-export const BackgroundHeader = () => {
+export const BackgroundHeader = ({logo, data}) => {
     return (
        <>
-        <div className="bgHead">
-            <Image src={gumacBackground} className="bgHead__img" />
+        <div className="image-container bgHead">
+            <Image fill  src={data || gumacBackground} className="image-item bgHead__img" />
             <div className="bgHead__wrap">
-                <div className="bgHead__logo">
-                    <Image src={gumacLogo} className="bgHead__logo--img"/>
+                <div className="image-container bgHead__logo">
+                    <Image fill src={logo || gumacLogo} className="image-item bgHead__logo--img"/>
                 </div>
                 <div className="bgHead__txt">
                     <p>
