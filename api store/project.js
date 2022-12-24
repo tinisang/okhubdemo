@@ -109,3 +109,72 @@ export const getProjectDataBySlug = (slug) => {
     return Grapql(query);
   };
 
+
+
+  
+
+export const getProjectFields = () => {
+    const query = `
+    query NewQuery {
+        projectFields(first: 100000) {
+          nodes {
+            count
+            name
+            slug
+          }
+        }
+      }
+    `;
+    return Grapql(query);
+  };
+  
+
+
+  export const getFilterProjects = (size = 3, offset= 3, categories) => {
+    if (size == null) {
+      size = 3;
+    }
+    if (offset == null) {
+      offset = 3;
+    }
+    
+  
+    const results = '[' + categories?.map((value) => `"${value}"`) + ']';
+
+  
+    const query = `
+    query NewQuery {
+        projects(
+          where: {orderby: {field: DATE, order: DESC}, taxQuery: {taxArray: {field: SLUG, taxonomy: PROJECTFIELD, operator: IN, terms: ${results}}}, offsetPagination: {offset: ${offset}, size: ${size}}}
+        ) {
+          nodes {
+            title
+            slug
+            projectCategories {
+              nodes {
+                name
+              }
+            }
+            projectFields {
+              nodes {
+                name
+              }
+            }
+            featuredImage {
+              node {
+                mediaItemUrl
+              }
+            }
+            projectSection {
+              previewImages {
+                mediaItemUrl
+              }
+            }
+          }
+        }
+      }
+    `;
+  
+    return Grapql(query);
+  };
+  

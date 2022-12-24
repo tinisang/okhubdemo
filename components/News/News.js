@@ -43,7 +43,7 @@ export const News = ({allPostCategories, allInitialPosts, totalPost, allDocument
         pagination.push('...')
       } else{
 
-        pagination.push(<NumberPage number={`${index+1}`} active={active} handlePagination={()=>{handlePagination(index)}}  />)
+        pagination.push(<NumberPage key={index} number={`${index+1}`} active={active} handlePagination={()=>{handlePagination(index)}}  />)
       }
       
     }
@@ -73,18 +73,19 @@ export const News = ({allPostCategories, allInitialPosts, totalPost, allDocument
     "Kiến trúc - nội thất",
     "Khác...",
   ];
-
+  
+  async function getNewsByCategory(catId){
+    const res = await getFilterNews(postPerPage, catId);
+    setPostArray(res?.data?.data?.posts?.nodes || null)
+    setPostLength(res?.data?.data?.posts?.pageInfo?.offsetPagination?.total)
+    setPage(1)
+    document.querySelector('.news__status--items')?.classList?.remove('isLoading')
+  }
   useEffect(()=>{
     var catId = (router.query.category == '' ? null : router.query.category)
-    async function getNewsByCategory(){
-      const res = await getFilterNews(postPerPage, catId);
-      setPostArray(res?.data?.data?.posts?.nodes || null)
-      setPostLength(res?.data?.data?.posts?.pageInfo?.offsetPagination?.total)
-      setPage(1)
-      document.querySelector('.news__status--items')?.classList?.remove('isLoading')
-    }
 
-    getNewsByCategory()
+    getNewsByCategory(catId)
+
     
   },[router.query.category])
 
@@ -116,12 +117,14 @@ export const News = ({allPostCategories, allInitialPosts, totalPost, allDocument
       slider.scrollLeft = scrollLeft - walk;
     });
   });
+
+
+  
   useEffect(() => {
 
-    if (!router.query.category ){
-      handleCatSelect(0);
-      
-    }
+    // if (!router.query.category ){
+    //   handleCatSelect(0);
+    // } else {}
     
   }, []);
 
@@ -144,7 +147,7 @@ export const News = ({allPostCategories, allInitialPosts, totalPost, allDocument
       stagger: 0.4,
     });
 
-    ScrollTrigger.addEventListener("refresh", () => locoScroll?.update());
+
     ScrollTrigger.refresh();
     return () => {
       if (tl.scrollTrigger) {
@@ -184,7 +187,7 @@ export const News = ({allPostCategories, allInitialPosts, totalPost, allDocument
         category: catId
       },
       
-    }, {shallow:true})
+    },{shallow: true})
   };
   
   const handlePagination= (index)=>{

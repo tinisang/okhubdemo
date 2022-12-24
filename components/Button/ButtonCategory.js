@@ -1,10 +1,11 @@
 import React from 'react'
 
-export const ButtonCategory = ({category, onClick}) => {
+export const ButtonCategory = ({category, count, handleCatSelect}) => {
     return (
         <>
-          <button onClick={onClick} className={`button__category`}>
-            <p>{category}</p>
+          <button onClick={handleCatSelect} className={`button__category`}>
+            <p>{category} <span>{count || 0}</span></p>
+           
           </button>
         </>
       );

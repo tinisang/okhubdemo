@@ -10,7 +10,7 @@ import { getAllDocuments } from "../../api store/documents";
 
 export default  function NewsPage(props){
 
-    const router = useRouter();
+   console.log('rerender')
     
     
     return (

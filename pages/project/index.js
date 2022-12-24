@@ -16,65 +16,33 @@ import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useLocomotiveScroll } from "react-locomotive-scroll";
 
-export default function Projects() {
+import { getProjectFields } from "../../api store/project";
+import { getFilterProjects } from "../../api store/project";
+import { useRouter } from "next/router";
+
+export default function Projects(props) {
   const [display, setDisplay] = useState(false);
   const cursor = useRef()
   const interval = useRef(setInterval(function(){},0));
   const { scroll : locoScroll} = useLocomotiveScroll()
   const currentActive = useRef()
-  
-  const data =[
-    {
-      featureImage:'https://codecanyon.img.customer.envatousercontent.com/files/395609916/Preview_image.jpeg?auto=compress%2Cformat&q=80&fit=crop&crop=top&max-h=8000&max-w=590&s=cdf5c10dd72df30b6aaaaa70b9c61b4a',
-      imagesList:[
-        'https://images.squarespace-cdn.com/content/v1/5c439fd8266c07ff148f5765/1600913470294-NQVNUBEGXH78LK2ZVK2I/Top+20+Ecommerce+App+Inspiration+Ideas+%231-1.jpg',
-        'https://i.pinimg.com/736x/28/80/14/288014f69b594b2c84b3b7fdee363de3.jpg',
-        'https://uifreebies.net/wp-content/uploads/2021/05/Clothing-E-Commerce-App-Design-Free.jpg'
-      ]
-    },
-    {
-      featureImage:'https://i.pinimg.com/736x/e1/b7/79/e1b779efe1069f49afbf4cef7eb90235.jpg',
-      imagesList:[
-        'https://images.squarespace-cdn.com/content/v1/5c439fd8266c07ff148f5765/1600913470294-NQVNUBEGXH78LK2ZVK2I/Top+20+Ecommerce+App+Inspiration+Ideas+%231-1.jpg',
-        'https://i.pinimg.com/736x/28/80/14/288014f69b594b2c84b3b7fdee363de3.jpg',
-        'https://uifreebies.net/wp-content/uploads/2021/05/Clothing-E-Commerce-App-Design-Free.jpg'
-      ]
-    },
-    {
-      featureImage:'https://themes.getbootstrap.com/wp-content/uploads/2021/05/soft-ui-design-system-thumbnail.jpg',
-      imagesList:[
-        'https://images.squarespace-cdn.com/content/v1/5c439fd8266c07ff148f5765/1600913470294-NQVNUBEGXH78LK2ZVK2I/Top+20+Ecommerce+App+Inspiration+Ideas+%231-1.jpg',
-        'https://i.pinimg.com/736x/28/80/14/288014f69b594b2c84b3b7fdee363de3.jpg',
-        'https://uifreebies.net/wp-content/uploads/2021/05/Clothing-E-Commerce-App-Design-Free.jpg'
-      ]
-    },
-    {
-      featureImage:'https://caphe.sfo2.cdn.digitaloceanspaces.com/assets/images/marvie-ios-ui-kit-for-sketch-and-figma-thumb.jpg',
-      imagesList:[
-        'https://images.squarespace-cdn.com/content/v1/5c439fd8266c07ff148f5765/1600913470294-NQVNUBEGXH78LK2ZVK2I/Top+20+Ecommerce+App+Inspiration+Ideas+%231-1.jpg',
-        'https://i.pinimg.com/736x/28/80/14/288014f69b594b2c84b3b7fdee363de3.jpg',
-        'https://uifreebies.net/wp-content/uploads/2021/05/Clothing-E-Commerce-App-Design-Free.jpg'
-      ]
-    },
-    {
-      featureImage:'https://img.freepik.com/free-vector/realistic-ui-ux-landing-page-template_52683-68898.jpg',
-      imagesList:[
-        'https://images.squarespace-cdn.com/content/v1/5c439fd8266c07ff148f5765/1600913470294-NQVNUBEGXH78LK2ZVK2I/Top+20+Ecommerce+App+Inspiration+Ideas+%231-1.jpg',
-        'https://i.pinimg.com/736x/28/80/14/288014f69b594b2c84b3b7fdee363de3.jpg',
-        'https://uifreebies.net/wp-content/uploads/2021/05/Clothing-E-Commerce-App-Design-Free.jpg'
-      ]
-    },
-    {
-      featureImage:'https://img.freepik.com/free-vector/flat-design-ui-ux-landing-page_52683-72187.jpg',
-      imagesList:[
-        'https://images.squarespace-cdn.com/content/v1/5c439fd8266c07ff148f5765/1600913470294-NQVNUBEGXH78LK2ZVK2I/Top+20+Ecommerce+App+Inspiration+Ideas+%231-1.jpg',
-        'https://i.pinimg.com/736x/28/80/14/288014f69b594b2c84b3b7fdee363de3.jpg',
-        'https://uifreebies.net/wp-content/uploads/2021/05/Clothing-E-Commerce-App-Design-Free.jpg'
-      ]
-    },
-    
-  ]
 
+  const router = useRouter()
+  
+  const data= props?.projectsData?.map((item, index)=>{
+    return {
+        title: item.title,
+        projectFields: item.projectFields.nodes,
+        projectCategories: item.projectCategories.nodes,
+        featureImage:item.featuredImage.node.mediaItemUrl,
+        imagesList:item.projectSection.previewImages.map(value => value.mediaItemUrl)
+      
+
+    }
+  })
+  
+
+  console.log(props)
   
   gsap.registerPlugin(ScrollToPlugin);
   gsap.registerPlugin(ScrollTrigger);
@@ -176,7 +144,7 @@ export default function Projects() {
   })
   
 
-  const handleCatSelect = (index) => {
+  const handleCatSelect = (index, slug) => {
     var PrevselectedContent = document.querySelector(
       `.project__categories--item button:nth-child(${
         currentCategory.current + 1
@@ -199,7 +167,14 @@ export default function Projects() {
       ease: "easeOut",
     });
 
+
+
     currentCategory.current = index;
+
+    console.log(slug)
+
+
+    
   };
 
   const playImages = (index)=>{
@@ -308,90 +283,20 @@ export default function Projects() {
             </div>
           </div>
           <div className="project__categories--item" data-scroll data-scroll-direction='horizontal' data-scroll-speed='1.4'>
+
+          {props?.projectFields?.map((item, index)=>{
+            return (
             <ButtonCategory
-              category="Mỹ phẩm"
-              onClick={() => {
-                handleCatSelect(0);
-              }}
+              key={index}
+              category={item.name}
+              count = {item.count}
+              handleCatSelect={()=>{handleCatSelect(index, item.slug);}}
+              
             />
-            <ButtonCategory
-              category="Tài chính"
-              onClick={() => {
-                handleCatSelect(1);
-              }}
-            />
-            <ButtonCategory
-              category="Tất cả dự án"
-              onClick={() => {
-                handleCatSelect(2);
-              }}
-            />
-            <ButtonCategory
-              category="Nội thất - kiến trúc"
-              onClick={() => {
-                handleCatSelect(3);
-              }}
-            />
-            <ButtonCategory
-              category="Xây dựng"
-              onClick={() => {
-                handleCatSelect(4);
-              }}
-            />
-            <ButtonCategory
-              category="Du lịch"
-              onClick={() => {
-                handleCatSelect(5);
-              }}
-            />
-            <ButtonCategory
-              category="Bất động sản"
-              onClick={() => {
-                handleCatSelect(6);
-              }}
-            />
-            <ButtonCategory
-              category="Bất động sản"
-              onClick={() => {
-                handleCatSelect(7);
-              }}
-            />
-            <ButtonCategory
-              category="Bất động sản"
-              onClick={() => {
-                handleCatSelect(8);
-              }}
-            />
-            <ButtonCategory
-              category="Bất động sản"
-              onClick={() => {
-                handleCatSelect(9);
-              }}
-            />
-            <ButtonCategory
-              category="Bất động sản"
-              onClick={() => {
-                handleCatSelect(10);
-              }}
-            />
-            <ButtonCategory
-              category="Bất động sản"
-              onClick={() => {
-                handleCatSelect(11);
-              }}
-            />
-            <ButtonCategory
-              category="Bất động sản"
-              onClick={() => {
-                handleCatSelect(12);
-              }}
-            />
-            <ButtonCategory
-              category="Bất động sản"
-              onClick={() => {
-                handleCatSelect(13);
-              }}
-            />
+
+            )
+          })}
+          
           </div>
         </div>
       </div>
@@ -434,12 +339,12 @@ export default function Projects() {
     
       
       {display ? (
-        <motion.div 
-          key={"grid"}
-          initial={{opacity:0,x:-80}}
-            animate={{opacity:1,x: 0}}
-            exit={{opacity:0,x:-80}}
-            onAnimationComplete={handleComplete}
+        <div 
+          // key={"grid"}
+          // initial={{opacity:0,x:-80}}
+          //   animate={{opacity:1,x: 0}}
+          //   exit={{opacity:0,x:-80}}
+          //   onAnimationComplete={handleComplete}
         
          className="project__grid">
 
@@ -447,9 +352,9 @@ export default function Projects() {
           data.map((value, index) => {
             return (
             <CardProject
-              title="Website Coteccons"
-              toDo={`Interaction & Development`}
-              category="Thời trang"
+              title={value.title}
+              toDo={value.projectCategories.map(value => value.name).join(' / ')}
+              category={value.projectFields.map(value => value.name).join(' / ')}
               image={value.featureImage}
               key={index}
             />
@@ -459,14 +364,14 @@ export default function Projects() {
         }
         
           
-        </motion.div>
+        </div>
       ) : (
-        <motion.div
-            key={"list"}
-            initial={{opacity:0,x:80}}
-            animate={{opacity:1,x:0}}
-            exit={{opacity:0, x:80}}
-            onAnimationComplete={handleComplete}
+        <div
+            // key={"list"}
+            // initial={{opacity:0,x:80}}
+            // animate={{opacity:1,x:0}}
+            // exit={{opacity:0, x:80}}
+            // onAnimationComplete={handleComplete}
          className="project__list" onMouseOver={handleMouseOverList} onMouseOut={handleMouseOutList}>
 
           <div className="cursor-project-item" ref={cursor}>
@@ -522,9 +427,9 @@ export default function Projects() {
               return (
               <ListProject
                 id={(index <9 )? ('0'+(index +1)) : index}
-                name="Thời trang GUMAC"
-                toDoData={["UI/UX Design", "Dev"]}
-                category="Thời trang"
+                name={value.title}
+                toDoData={value.projectCategories.map(value => value.name)}
+                category={value.projectFields.map(value => value.name).join(' / ')}
                 key={index}
                 hoverFunction={()=> {handleHover(index)}}
               />
@@ -533,7 +438,7 @@ export default function Projects() {
             })
           }
          
-        </motion.div>
+        </div>
       )}
       </AnimatePresence>
 
@@ -547,4 +452,26 @@ export default function Projects() {
       </div>
     </div>
   );
+}
+
+
+
+
+export async function getStaticProps({ params }) {
+
+
+
+  const projectFields = await getProjectFields();
+  const projectsData = await getFilterProjects(3, 0,projectFields?.data?.data?.projectFields?.nodes?.map(item => item.slug))
+  
+
+  return {
+    props: {
+      projectFields: projectFields?.data?.data?.projectFields?.nodes || null,
+      projectsData: projectsData?.data?.data?.projects?.nodes || null
+     
+
+    },
+    revalidate: 1,
+  };
 }

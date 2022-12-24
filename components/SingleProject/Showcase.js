@@ -123,8 +123,8 @@ export const Showcase = ({data})=>{
                             {
                                 data?.desktop?.map((item, index)=>{
                                     return(
-                                        <SwiperSlide>
-                                            <div key={index} className="image-container mockup-image" onMouseOver={()=>{handlePCHover()}} onMouseOut={handlePCHoverOut} >
+                                        <SwiperSlide key={index} >
+                                            <div className="image-container mockup-image" onMouseOver={()=>{handlePCHover()}} onMouseOut={handlePCHoverOut} >
 
                                                 <Image fill src={item.mediaItemUrl} alt="" className="image-item" unoptimized={true}/>
                                             </div>
@@ -177,7 +177,7 @@ export const Showcase = ({data})=>{
                             </div>
                         </div>
                         <Swiper
-                        modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
+                        modules={[Navigation, Pagination]}
                         loop={true}
                         speed={1500}
                         grabCursor={true}
@@ -201,36 +201,7 @@ export const Showcase = ({data})=>{
                                     )
                                 })
                             }
-                            {/* <SwiperSlide>
-                                <div className="image-item-slide">
-                                    <Image src={slideImage} alt=''/> 
-                                </div>
-                            </SwiperSlide>
-                           
-                        
-                            <SwiperSlide>
-                                <div className="image-item-slide">
-                                    <Image src={slideImage} alt=''/> 
-                                </div>
-                            </SwiperSlide>
-                           
-                        
-                            <SwiperSlide>
-                                <div className="image-item-slide">
-                                    <Image src={slideImage} alt=''/> 
-                                </div>
-                            </SwiperSlide>
-                           
-                        
-                            <SwiperSlide>
-                                <div className="image-item-slide">
-                                    <Image src={slideImage} alt=''/> 
-                                </div>
-                            </SwiperSlide> */}
-                           
-                        
-                            
-                            
+                          
                         </Swiper>
                     </div>
 
