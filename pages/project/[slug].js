@@ -14,6 +14,7 @@ import { ButtonMobile } from "../../components/Button/ButtonMobile";
 import { ProjectPost } from "../../components/HOME Components/HomeMobile/ProjectPost";
 import descConectImg from "../../public/imgs/descConectImg.png";
 import logoMobile from "../../public/imgs/logoMobileProjectDetail.png";
+import { useMediaQuery } from "react-responsive";
 let tab = 1;
 
 const dataPrevProblemMobile = [
@@ -27,20 +28,10 @@ export default function SingleProject() {
   useEffect(() => {
     ScrollTrigger.refresh();
   });
-  const [isMobile, setIsMobile] = useState();
 
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 768px)");
-    if (mediaQuery.matches) {
-      setIsMobile(true);
-    } else setIsMobile(false);
-
-    window.addEventListener("resize", () => {
-      if (mediaQuery.matches) {
-        setIsMobile(true);
-      } else setIsMobile(false);
-    });
-  }, []);
+  const isMobile = useMediaQuery({
+    maxDeviceWidth: 768
+  }, );
 
   // Mobile
   const dataProjectSpecial = [
@@ -102,8 +93,8 @@ export default function SingleProject() {
   };
   return (
     <>
-      {isMobile == false && <BackgroundHeader />}
-      {isMobile == false ? (
+      {!isMobile && <BackgroundHeader />}
+      {!isMobile ? (
         <div className="">
           <TheProblem />
           <WhyOKHUB />
