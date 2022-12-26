@@ -11,17 +11,17 @@ export const TheProblem = ({dataInfo, dataProblem}) => {
                 <div className="problem__data">
                     <ul className="problem__data--list">
                         <DataItem title="LĨNH VỰC" image={img1} txt={
-                            dataInfo?.projectFields.map((item, index) =>{
+                            dataInfo?.projectFields?.map((item, index) =>{
                                 return item.name
                             }).join(' / ')
                         } />
                         <DataItem title="HẠNG MỤC CÔNG VIỆC" image={img2} txt={
-                            dataInfo?.projectCategories.map((item,index)=>{
+                            dataInfo?.projectCategories?.map((item,index)=>{
                                 return item.name
                             }).join(' / ')
                         }/>
                         <DataItem title="THÀNH VIÊN" image={img3} txt={
-                            dataInfo?.member.map((item, index)=>{
+                            dataInfo?.member?.map((item, index)=>{
                                 return item.name
                             }).join(' / ')
                         } />
@@ -37,7 +37,7 @@ export const TheProblem = ({dataInfo, dataProblem}) => {
                         The Problems
                     </div>
                     <p className="problem__content--txt">
-                        {dataProblem.description}
+                        {dataProblem?.description}
                     </p>
                 </div>
                 {/* Danh sách trở ngại */}
