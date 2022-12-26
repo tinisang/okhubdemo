@@ -15,6 +15,7 @@ import { useEffect, useRef } from "react";
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useLocomotiveScroll } from "react-locomotive-scroll";
+import { useMediaQuery } from "react-responsive";
 
 import { getProjectFields } from "../../api store/project";
 import { getFilterProjects } from "../../api store/project";
@@ -27,225 +28,233 @@ export default function Projects(props) {
   const { scroll : locoScroll} = useLocomotiveScroll()
   const currentActive = useRef()
 
-  const router = useRouter()
-  
-  const data= props?.projectsData?.map((item, index)=>{
-    return {
-        title: item.title,
-        projectFields: item.projectFields.nodes,
-        projectCategories: item.projectCategories.nodes,
-        featureImage:item.featuredImage.node.mediaItemUrl,
-        imagesList:item.projectSection.previewImages.map(value => value.mediaItemUrl)
-      
+  const isMobile = useMediaQuery({
+    maxDeviceWidth: 768
+  }, );
 
-    }
-  })
-  
+  if (!isMobile){
 
-  console.log(props)
-  
-  gsap.registerPlugin(ScrollToPlugin);
-  gsap.registerPlugin(ScrollTrigger);
-
-  const currentCategory = useRef(0);
-  const handleDisplayGrid = () => {
-    setDisplay(true);
-
-
-  }
-
-  const handleDisplayList = () => {
-    setDisplay(false);
+    const router = useRouter()
     
-  }
- 
-  useEffect(()=>{
-    var tl = gsap.timeline({
-      scrollTrigger:{
-          trigger:'.project__header',
-   
-          start:'top 0%',
-          end:'bottom 0%',
-          scrub:4,
-          pin:'.project__header'
-      },
-      ease:'easeInOut'
-    });
-
-    tl.to('.clone-text',{
-      width:"100%",
-      stagger:0.4
-    })
-
-   
-
-
+    const data= props?.projectsData?.map((item, index)=>{
+      return {
+          title: item.title,
+          projectFields: item.projectFields.nodes,
+          projectCategories: item.projectCategories.nodes,
+          featureImage:item.featuredImage.node.mediaItemUrl,
+          imagesList:item.projectSection.previewImages.map(value => value.mediaItemUrl)
+        
   
-    return ()=>{
+      }
+    })
+    
+  
+    console.log(props)
+    
+    gsap.registerPlugin(ScrollToPlugin);
+    gsap.registerPlugin(ScrollTrigger);
+  
+    const currentCategory = useRef(0);
+    const handleDisplayGrid = () => {
+      setDisplay(true);
+  
+  
+    }
+  
+    const handleDisplayList = () => {
+      setDisplay(false);
+      
+    }
+   
+    useEffect(()=>{
+      var tl = gsap.timeline({
+        scrollTrigger:{
+            trigger:'.project__header',
      
-      if(tl.scrollTrigger){tl.scrollTrigger.kill()}
-      tl.kill()
-    }
-    
-  })
-
-  useEffect(()=>{
-    
-     window.addEventListener('mousemove',function(e){
-      if (cursor.current){
-        gsap.to(cursor.current,{
-          left: e.clientX - cursor.current.clientWidth/2, 
-          top: e.clientY - cursor.current.clientHeight/2 + (locoScroll ? locoScroll?.scroll.instance.scroll.y : 0) , 
-          ease:"power2.out",
-          duration:0,
-          delay:0.04,
-          // opacity:1
-      })
-      }
-      })
-
-
-
-    const slider = document.querySelector('.project__categories--item');
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-
-    slider.addEventListener('mousedown', (e) => {
-      isDown = true;
-      slider.classList.add('active');
-      startX = e.pageX - slider.offsetLeft;
-      scrollLeft = slider.scrollLeft;
-    });
-    slider.addEventListener('mouseleave', () => {
-      isDown = false;
-      slider.classList.remove('active');
-    });
-    slider.addEventListener('mouseup', () => {
-      isDown = false;
-      slider.classList.remove('active');
-    });
-    slider.addEventListener('mousemove', (e) => {
-      if(!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - slider.offsetLeft;
-      const walk = (x - startX) *2;
-      slider.scrollLeft = scrollLeft - walk;
+            start:'top 0%',
+            end:'bottom 0%',
+            scrub:4,
+            pin:'.project__header'
+        },
+        ease:'easeInOut'
+      });
   
-    });
-    const optionsSort = ["Mới nhất", "Nhiều lượt xem nhất"];
-
-    return ()=>{
+      tl.to('.clone-text',{
+        width:"100%",
+        stagger:0.4
+      })
+  
+     
+  
+  
+    
+      return ()=>{
+       
+        if(tl.scrollTrigger){tl.scrollTrigger.kill()}
+        tl.kill()
+      }
       
-      window.removeEventListener('mousemove', function(){})
-      clearInterval(interval.current)
-      // tl.kill()
-    }
-  })
-  
-
-  const handleCatSelect = (index, slug) => {
-    var PrevselectedContent = document.querySelector(
-      `.project__categories--item button:nth-child(${
-        currentCategory.current + 1
-      })`
-    );
-    var selectedContent = document.querySelector(
-      `.project__categories--item button:nth-child(${index + 1})`
-    );
-
-    var offsetX = window.innerWidth / 2 - selectedContent.clientWidth / 2;
-
-    PrevselectedContent.classList.remove("active");
-    selectedContent.classList.add("active");
-    gsap.to(".project__categories--item", {
-      scrollTo: {
-        x: selectedContent,
-        offsetX: offsetX,
-      },
-      duration: 1,
-      ease: "easeOut",
-    });
-
-
-
-    currentCategory.current = index;
-
-    console.log(slug)
-
-
-    
-  };
-
-  const playImages = (index)=>{
-    var start=0
-    clearInterval(interval.current)
-    var elementToplay = document.querySelector(`.cursor-project-item .cursor-item:nth-child(${index+1}) img:first-child`)
-
-
-    interval.current = setInterval(function(){
-    
-      if (start < data[index].imagesList.length ){
-        elementToplay.src = data[index].imagesList[start];
-
-        start=start +1
-      } else {
-        start =0
-        elementToplay.src = data[index].imagesList[start];
-      }
-        
-    },1200)
-
-  }
-
-  const resetImage=(index)=> {
-      if (index !=null){
-        var elementToReset = document.querySelector(`.cursor-project-item .cursor-item:nth-child(${index+1}) img`)
-
-        elementToReset.src = data[index].featureImage
-        
-      }
-  }
-  const handleComplete = ()=>{
-    // ScrollTrigger.refresh();
-    
-  }
-  const handleHover =(index)=>{
-    clearInterval(interval.current)
-    var elementToScroll = document.querySelector(`.cursor-project-item .cursor-item:nth-child(${index+1})`)
-    gsap.to('.cursor-project-wrapper',{
-      scrollTo:{
-        y:elementToScroll,
-        
-      },
-      duration:0.5
     })
-
-    
-    playImages(index)
-    resetImage(currentActive.current)
-    currentActive.current=index
-
-    
-    
-  }
-
-  const handleMouseOutList = ()=>{
-      cursor.current.style.opacity=0;
+  
+    useEffect(()=>{
       
- 
-
+       window.addEventListener('mousemove',function(e){
+        if (cursor.current){
+          gsap.to(cursor.current,{
+            left: e.clientX - cursor.current.clientWidth/2, 
+            top: e.clientY - cursor.current.clientHeight/2 + (locoScroll ? locoScroll?.scroll.instance.scroll.y : 0) , 
+            ease:"power2.out",
+            duration:0,
+            delay:0.04,
+            // opacity:1
+        })
+        }
+        })
+  
+  
+  
+      const slider = document.querySelector('.project__categories--item');
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+  
+      slider.addEventListener('mousedown', (e) => {
+        isDown = true;
+        slider.classList.add('active');
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+      });
+      slider.addEventListener('mouseleave', () => {
+        isDown = false;
+        slider.classList.remove('active');
+      });
+      slider.addEventListener('mouseup', () => {
+        isDown = false;
+        slider.classList.remove('active');
+      });
+      slider.addEventListener('mousemove', (e) => {
+        if(!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) *2;
+        slider.scrollLeft = scrollLeft - walk;
+    
+      });
+      const optionsSort = ["Mới nhất", "Nhiều lượt xem nhất"];
+  
+      return ()=>{
+        
+        window.removeEventListener('mousemove', function(){})
+        clearInterval(interval.current)
+        // tl.kill()
+      }
+    })
+    
+  
+    const handleCatSelect = (index, slug) => {
+      var PrevselectedContent = document.querySelector(
+        `.project__categories--item button:nth-child(${
+          currentCategory.current + 1
+        })`
+      );
+      var selectedContent = document.querySelector(
+        `.project__categories--item button:nth-child(${index + 1})`
+      );
+  
+      var offsetX = window.innerWidth / 2 - selectedContent.clientWidth / 2;
+  
+      PrevselectedContent.classList.remove("active");
+      selectedContent.classList.add("active");
+      gsap.to(".project__categories--item", {
+        scrollTo: {
+          x: selectedContent,
+          offsetX: offsetX,
+        },
+        duration: 1,
+        ease: "easeOut",
+      });
+  
+  
+  
+      currentCategory.current = index;
+  
+      console.log(slug)
+  
+  
+      
+    };
+  
+    const playImages = (index)=>{
+      var start=0
+      clearInterval(interval.current)
+      var elementToplay = document.querySelector(`.cursor-project-item .cursor-item:nth-child(${index+1}) img:first-child`)
+  
+  
+      interval.current = setInterval(function(){
+      
+        if (start < data[index].imagesList.length ){
+          elementToplay.src = data[index].imagesList[start];
+  
+          start=start +1
+        } else {
+          start =0
+          elementToplay.src = data[index].imagesList[start];
+        }
+          
+      },1200)
+  
     }
-    const handleMouseOverList = ()=>{
-    cursor.current.style.opacity=1
- 
-  }
   
-  const optionsSort = ["Mới nhất", "Nhiều lượt xem nhất"];
+    const resetImage=(index)=> {
+        if (index !=null){
+          var elementToReset = document.querySelector(`.cursor-project-item .cursor-item:nth-child(${index+1}) img`)
   
-  ScrollTrigger.addEventListener("refresh", () => locoScroll?.update());
-  ScrollTrigger.refresh();
+          elementToReset.src = data[index].featureImage
+          
+        }
+    }
+    const handleComplete = ()=>{
+      // ScrollTrigger.refresh();
+      
+    }
+    const handleHover =(index)=>{
+      clearInterval(interval.current)
+      var elementToScroll = document.querySelector(`.cursor-project-item .cursor-item:nth-child(${index+1})`)
+      gsap.to('.cursor-project-wrapper',{
+        scrollTo:{
+          y:elementToScroll,
+          
+        },
+        duration:0.5
+      })
+  
+      
+      playImages(index)
+      resetImage(currentActive.current)
+      currentActive.current=index
+  
+      
+      
+    }
+  
+    const handleMouseOutList = ()=>{
+        cursor.current.style.opacity=0;
+        
+   
+  
+      }
+      const handleMouseOverList = ()=>{
+      cursor.current.style.opacity=1
+   
+    }
+    
+    const optionsSort = ["Mới nhất", "Nhiều lượt xem nhất"];
+    
+    ScrollTrigger.addEventListener("refresh", () => locoScroll?.update());
+    ScrollTrigger.refresh();
+  
   return (
+  
     <div className="project__container">
       <div className="project__header">
         <Button text="Credential" />
@@ -262,7 +271,7 @@ export default function Projects(props) {
             </span> 
             <br></br> về{" "}
             
-
+  
             <span className="animation-text">
               <span className="main-text">
               sản phẩm {`&`} dịch vụ
@@ -283,7 +292,7 @@ export default function Projects(props) {
             </div>
           </div>
           <div className="project__categories--item" data-scroll data-scroll-direction='horizontal' data-scroll-speed='1.4'>
-
+  
           {props?.projectFields?.map((item, index)=>{
             return (
             <ButtonCategory
@@ -293,7 +302,7 @@ export default function Projects(props) {
               handleCatSelect={()=>{handleCatSelect(index, item.slug);}}
               
             />
-
+  
             )
           })}
           
@@ -317,8 +326,8 @@ export default function Projects(props) {
               <path d="M28.05 40.2H52.35" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
               <path d="M28.05 46.95H52.35" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
               </svg>
-
-
+  
+  
            
           </div>
           <div className={"project__order--display-grid " + (display? 'active':'')} onClick={()=> handleDisplayGrid()}>
@@ -329,13 +338,13 @@ export default function Projects(props) {
             <path d="M46.9499 53.6999H49.6499C52.3499 53.6999 53.6999 52.3499 53.6999 49.6499V46.9499C53.6999 44.2499 52.3499 42.8999 49.6499 42.8999H46.9499C44.2499 42.8999 42.8999 44.2499 42.8999 46.9499V49.6499C42.8999 52.3499 44.2499 53.6999 46.9499 53.6999Z" stroke="#292D32" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
             <path d="M30.75 53.6999H33.45C36.15 53.6999 37.5 52.3499 37.5 49.6499V46.9499C37.5 44.2499 36.15 42.8999 33.45 42.8999H30.75C28.05 42.8999 26.7 44.2499 26.7 46.9499V49.6499C26.7 52.3499 28.05 53.6999 30.75 53.6999Z" stroke="#292D32" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-
+  
           </div>
         </div>
       </div>
-
+  
         <AnimatePresence mode="wait">
-
+  
     
       
       {display ? (
@@ -347,7 +356,7 @@ export default function Projects(props) {
           //   onAnimationComplete={handleComplete}
         
          className="project__grid">
-
+  
         {
           data.map((value, index) => {
             return (
@@ -358,7 +367,7 @@ export default function Projects(props) {
               image={value.featureImage}
               key={index}
             />
-
+  
             )
           })
         }
@@ -373,13 +382,13 @@ export default function Projects(props) {
             // exit={{opacity:0, x:80}}
             // onAnimationComplete={handleComplete}
          className="project__list" onMouseOver={handleMouseOverList} onMouseOut={handleMouseOutList}>
-
+  
           <div className="cursor-project-item" ref={cursor}>
         
             <div className="view-button-fake">
                 View
             </div>
-
+  
             <div className='card__project--img-sub'>
               <div className='img-eclipse'></div>
               <div className='img-eclipse'></div>
@@ -388,7 +397,7 @@ export default function Projects(props) {
           </div>
            
             <div className="cursor-project-wrapper">
-
+  
           
             {
               data.map((value, index)=>{
@@ -397,7 +406,7 @@ export default function Projects(props) {
                   <img src={value.featureImage} alt="" />
                  
                   </div>
-
+  
                 )
               })
             }
@@ -422,7 +431,7 @@ export default function Projects(props) {
           </div>
           {
             data.map((value, index)=>{
-
+  
               
               return (
               <ListProject
@@ -433,7 +442,7 @@ export default function Projects(props) {
                 key={index}
                 hoverFunction={()=> {handleHover(index)}}
               />
-
+  
               )
             })
           }
@@ -441,8 +450,8 @@ export default function Projects(props) {
         </div>
       )}
       </AnimatePresence>
-
-
+  
+  
       <div className="project__number--page">
         <NumberPage number="1" active={true} />
         <NumberPage number="2" />
@@ -452,6 +461,10 @@ export default function Projects(props) {
       </div>
     </div>
   );
+  } else {
+    return <></>
+  }
+  
 }
 
 
