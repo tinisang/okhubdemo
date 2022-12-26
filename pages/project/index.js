@@ -27,14 +27,14 @@ export default function Projects(props) {
   const interval = useRef(setInterval(function(){},0));
   const { scroll : locoScroll} = useLocomotiveScroll()
   const currentActive = useRef()
+  const router = useRouter()
 
   const isMobile = useMediaQuery({
     maxDeviceWidth: 768
   }, );
 
-  if (!isMobile){
 
-    const router = useRouter()
+
     
     const data= props?.projectsData?.map((item, index)=>{
       return {
@@ -67,86 +67,94 @@ export default function Projects(props) {
     }
    
     useEffect(()=>{
-      var tl = gsap.timeline({
-        scrollTrigger:{
-            trigger:'.project__header',
-     
-            start:'top 0%',
-            end:'bottom 0%',
-            scrub:4,
-            pin:'.project__header'
-        },
-        ease:'easeInOut'
-      });
-  
-      tl.to('.clone-text',{
-        width:"100%",
-        stagger:0.4
-      })
-  
-     
-  
-  
-    
-      return ()=>{
+      if (!isMobile){
+        var tl = gsap.timeline({
+          scrollTrigger:{
+              trigger:'.project__header',
        
-        if(tl.scrollTrigger){tl.scrollTrigger.kill()}
-        tl.kill()
+              start:'top 0%',
+              end:'bottom 0%',
+              scrub:4,
+              pin:'.project__header'
+          },
+          ease:'easeInOut'
+        });
+    
+        tl.to('.clone-text',{
+          width:"100%",
+          stagger:0.4
+        })
+
       }
+
+      return ()=>{
+        if (!isMobile){
+          if(tl.scrollTrigger){tl.scrollTrigger.kill()}
+          tl.kill()
+        }
+
+        }
+       
       
     })
   
     useEffect(()=>{
+
+      if (!isMobile){
+
+        window.addEventListener('mousemove',function(e){
+         if (cursor.current){
+           gsap.to(cursor.current,{
+             left: e.clientX - cursor.current.clientWidth/2, 
+             top: e.clientY - cursor.current.clientHeight/2 + (locoScroll ? locoScroll?.scroll.instance.scroll.y : 0) , 
+             ease:"power2.out",
+             duration:0,
+             delay:0.04,
+             // opacity:1
+         })
+         }
+         })
+  
+       const slider = document.querySelector('.project__categories--item');
+       let isDown = false;
+       let startX;
+       let scrollLeft;
+   
+       slider.addEventListener('mousedown', (e) => {
+         isDown = true;
+         slider.classList.add('active');
+         startX = e.pageX - slider.offsetLeft;
+         scrollLeft = slider.scrollLeft;
+       });
+       slider.addEventListener('mouseleave', () => {
+         isDown = false;
+         slider.classList.remove('active');
+       });
+       slider.addEventListener('mouseup', () => {
+         isDown = false;
+         slider.classList.remove('active');
+       });
+       slider.addEventListener('mousemove', (e) => {
+         if(!isDown) return;
+         e.preventDefault();
+         const x = e.pageX - slider.offsetLeft;
+         const walk = (x - startX) *2;
+         slider.scrollLeft = scrollLeft - walk;
+     
+       });
       
-       window.addEventListener('mousemove',function(e){
-        if (cursor.current){
-          gsap.to(cursor.current,{
-            left: e.clientX - cursor.current.clientWidth/2, 
-            top: e.clientY - cursor.current.clientHeight/2 + (locoScroll ? locoScroll?.scroll.instance.scroll.y : 0) , 
-            ease:"power2.out",
-            duration:0,
-            delay:0.04,
-            // opacity:1
-        })
-        }
-        })
-  
-  
-  
-      const slider = document.querySelector('.project__categories--item');
-      let isDown = false;
-      let startX;
-      let scrollLeft;
-  
-      slider.addEventListener('mousedown', (e) => {
-        isDown = true;
-        slider.classList.add('active');
-        startX = e.pageX - slider.offsetLeft;
-        scrollLeft = slider.scrollLeft;
-      });
-      slider.addEventListener('mouseleave', () => {
-        isDown = false;
-        slider.classList.remove('active');
-      });
-      slider.addEventListener('mouseup', () => {
-        isDown = false;
-        slider.classList.remove('active');
-      });
-      slider.addEventListener('mousemove', (e) => {
-        if(!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - slider.offsetLeft;
-        const walk = (x - startX) *2;
-        slider.scrollLeft = scrollLeft - walk;
-    
-      });
-      const optionsSort = ["Mới nhất", "Nhiều lượt xem nhất"];
+      }
+      
   
       return ()=>{
+
+        if (!isMobile){
+
+          window.removeEventListener('mousemove', function(){})
+          clearInterval(interval.current)
+          // tl.kill()
+        }
         
-        window.removeEventListener('mousemove', function(){})
-        clearInterval(interval.current)
-        // tl.kill()
       }
     })
     
@@ -249,10 +257,13 @@ export default function Projects(props) {
     }
     
     const optionsSort = ["Mới nhất", "Nhiều lượt xem nhất"];
-    
-    ScrollTrigger.addEventListener("refresh", () => locoScroll?.update());
-    ScrollTrigger.refresh();
-  
+    if (!isMobile){
+
+      ScrollTrigger.addEventListener("refresh", () => locoScroll?.update());
+      ScrollTrigger.refresh();
+    }
+
+    if (!isMobile){
   return (
   
     <div className="project__container">

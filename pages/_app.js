@@ -48,13 +48,21 @@ import { ScrollTriggerProxy } from '../components/ScrollTriggerProxy';
 import { useLocomotiveScroll } from 'react-locomotive-scroll';
 import { Refresh } from '../components/RefreshScrollTriger';
 import { Ref } from 'semantic-ui-react';
+import { useMediaQuery } from 'react-responsive';
+import { BaseMobile } from '../components/BaseMobile';
 
 
 
 function MyApp({ Component, pageProps }) {
 
+  const isMobile = useMediaQuery({
+    maxDeviceWidth: 768
+  }, );
+
+  console.log(isMobile)
+
   const router = useRouter()
-  const Layout = Component.Layout ? Component.Layout : Base;
+  const Layout = Component.Layout ? Component.Layout : (isMobile ? BaseMobile : Base);
   const variants = {
     hidden: { opacity: 0, y: 0, x: 0 },
     enter: { opacity: 1, x: 0, y: 0 },

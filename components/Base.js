@@ -14,14 +14,10 @@ import { ScrollTriggerProxy } from "./ScrollTriggerProxy";
 import { Refresh } from "./RefreshScrollTriger";
 import { HeaderMobile } from "./Header/HeaderMobile";
 import { FooterMobile } from "./Footer/FooterMobile";
-import { useMediaQuery } from "react-responsive";
 
 
 
 export const Base = (props) => {
-  const isMobile = useMediaQuery({
-    maxDeviceWidth: 768
-  }, );
   
   const containerRef = useRef(null)
   const [loading, isLoading] = useState(false)
@@ -42,7 +38,7 @@ export const Base = (props) => {
   },[])
  
 
-  console.log(isMobile)
+
   
   return (
     <>
@@ -72,15 +68,6 @@ export const Base = (props) => {
     }
 
     {
-      isMobile ? 
-      
-        <div>
-          <HeaderMobile/>
-          {props.children}
-          <FooterMobile/>
-        </div>
-      
-        : 
         <div>
            
             <LocomotiveScrollProvider
