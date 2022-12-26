@@ -750,11 +750,7 @@ color: #000000;
 
 
 
-.projects-list{
-  display: flex;
-  flex-direction: column;
+.projects-list .swiper-wrapper{
+  width: 100vw;
   height: 100vh;
-  overflow: scroll;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
 }

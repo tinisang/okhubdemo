@@ -21,6 +21,7 @@ import { StoryProject } from "../../components/StoryProject";
 import { getProjectFields } from "../../api store/project";
 import { getFilterProjects } from "../../api store/project";
 import { useRouter } from "next/router";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function Projects(props) {
   const isMobile = useMediaQuery({
@@ -476,15 +477,31 @@ export default function Projects(props) {
       return (
         <>
         <div className="projects-list">
+        <Swiper
+          
+          loop={false}
+          speed={500}
+        
+          spaceBetween={0}
+          
+          slidesPerView={1}
+          direction={"vertical"}
+          // centeredSlides={true}
+        >
 
 
           {
               data?.map((item, index) =>{
                 return (
-                  <StoryProject key={index+": "+ item.title} />
+                  <SwiperSlide key={index+": "+ item.title}>
+
+                  <StoryProject  />
+                  </SwiperSlide>
                 )
               })
           }
+                    
+        </Swiper>
         </div>
           
         </>
