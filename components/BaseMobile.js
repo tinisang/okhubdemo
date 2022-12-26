@@ -1,5 +1,7 @@
 import Head from "next/head"
 import loadingImage from '../public/imgs/Infinity-1s-200px.svg'
+import { motion, AnimatePresence } from "framer-motion"
+import Image from "next/image"
 
 import { HeaderMobile } from "./Header/HeaderMobile"
 import { FooterMobile } from "./Footer/FooterMobile"
@@ -7,7 +9,7 @@ import { useEffect, useState } from "react"
 import { useRouter } from "next/router"
 
 export const BaseMobile = (props)=>{
-    
+
     const router= useRouter()
     const [loading, isLoading] = useState(false)
     useEffect(()=>{

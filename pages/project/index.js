@@ -16,6 +16,7 @@ import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useLocomotiveScroll } from "react-locomotive-scroll";
 import { useMediaQuery } from "react-responsive";
+import { StoryProject } from "../../components/StoryProject";
 
 import { getProjectFields } from "../../api store/project";
 import { getFilterProjects } from "../../api store/project";
@@ -262,225 +263,233 @@ export default function Projects(props) {
     }
 
     if (!isMobile){
-  return (
-  
-    <div className="project__container">
-      <div className="project__header">
-        <Button text="Credential" />
-        <div className="project__header--text">
-          <p>
-            Với mỗi dự án<br></br> là  {" "}
-            <span className="animation-text">
-              <span className="main-text">
-                  sự đảm bảo
-              </span>
-              <span className="clone-text">
-                  sự đảm bảo
-              </span>
-            </span> 
-            <br></br> về{" "}
-            
-  
-            <span className="animation-text">
-              <span className="main-text">
-              sản phẩm {`&`} dịch vụ
-              </span>
-              <span className="clone-text">
-              sản phẩm {`&`} dịch vụ
-              </span>
-            </span> 
-          </p>
-        </div>
-      </div>
-      <div className="project__categories">
-        <div className="project__categories--title">
-          <div className="project__categories--title-text">
-            <p>Đa dạng lĩnh vực</p>
-            <div className="project__categories--title-bg">
-              <p>Our Projects</p>
-            </div>
-          </div>
-          <div className="project__categories--item" data-scroll data-scroll-direction='horizontal' data-scroll-speed='1.4'>
-  
-          {props?.projectFields?.map((item, index)=>{
-            return (
-            <ButtonCategory
-              key={index}
-              category={item.name}
-              count = {item.count}
-              handleCatSelect={()=>{handleCatSelect(index, item.slug);}}
-              
-            />
-  
-            )
-          })}
-          
-          </div>
-        </div>
-      </div>
-      <div className="project__order">
-        <div className="project__order--select">
-          <p>Sắp xếp theo: </p>
-          <Dropdown
-            placeholder="Mới nhất"
-            options={optionsSort}
-            // value={" mcsjjs"}
-          />
-        </div>
-        <div className="project__order--display">
-          <div className={"project__order--display-list " + (display ?'':'active' )}  onClick={()=> handleDisplayList()}>
-              <svg width="81" height="81" viewBox="0 0 81 81" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="40.5" cy="40.5" r="40.5" fill="black"/>
-              <path d="M28.05 33.45H52.35" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
-              <path d="M28.05 40.2H52.35" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
-              <path d="M28.05 46.95H52.35" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
-              </svg>
-  
-  
-           
-          </div>
-          <div className={"project__order--display-grid " + (display? 'active':'')} onClick={()=> handleDisplayGrid()}>
-            <svg width="81" height="81" viewBox="0 0 81 81" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="40.5" cy="40.5" r="40" stroke="#D9D9D9"/>
-            <path d="M30.75 37.5H33.45C36.15 37.5 37.5 36.15 37.5 33.45V30.75C37.5 28.05 36.15 26.7 33.45 26.7H30.75C28.05 26.7 26.7 28.05 26.7 30.75V33.45C26.7 36.15 28.05 37.5 30.75 37.5Z" stroke="#292D32" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M46.9499 37.5H49.6499C52.3499 37.5 53.6999 36.15 53.6999 33.45V30.75C53.6999 28.05 52.3499 26.7 49.6499 26.7H46.9499C44.2499 26.7 42.8999 28.05 42.8999 30.75V33.45C42.8999 36.15 44.2499 37.5 46.9499 37.5Z" stroke="#292D32" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M46.9499 53.6999H49.6499C52.3499 53.6999 53.6999 52.3499 53.6999 49.6499V46.9499C53.6999 44.2499 52.3499 42.8999 49.6499 42.8999H46.9499C44.2499 42.8999 42.8999 44.2499 42.8999 46.9499V49.6499C42.8999 52.3499 44.2499 53.6999 46.9499 53.6999Z" stroke="#292D32" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M30.75 53.6999H33.45C36.15 53.6999 37.5 52.3499 37.5 49.6499V46.9499C37.5 44.2499 36.15 42.8999 33.45 42.8999H30.75C28.05 42.8999 26.7 44.2499 26.7 46.9499V49.6499C26.7 52.3499 28.05 53.6999 30.75 53.6999Z" stroke="#292D32" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-  
-          </div>
-        </div>
-      </div>
-  
-        <AnimatePresence mode="wait">
-  
-    
+      return (
       
-      {display ? (
-        <div 
-          // key={"grid"}
-          // initial={{opacity:0,x:-80}}
-          //   animate={{opacity:1,x: 0}}
-          //   exit={{opacity:0,x:-80}}
-          //   onAnimationComplete={handleComplete}
-        
-         className="project__grid">
-  
-        {
-          data.map((value, index) => {
-            return (
-            <CardProject
-              title={value.title}
-              toDo={value.projectCategories.map(value => value.name).join(' / ')}
-              category={value.projectFields.map(value => value.name).join(' / ')}
-              image={value.featureImage}
-              key={index}
-            />
-  
-            )
-          })
-        }
-        
-          
-        </div>
-      ) : (
-        <div
-            // key={"list"}
-            // initial={{opacity:0,x:80}}
-            // animate={{opacity:1,x:0}}
-            // exit={{opacity:0, x:80}}
-            // onAnimationComplete={handleComplete}
-         className="project__list" onMouseOver={handleMouseOverList} onMouseOut={handleMouseOutList}>
-  
-          <div className="cursor-project-item" ref={cursor}>
-        
-            <div className="view-button-fake">
-                View
+        <div className="project__container">
+          <div className="project__header">
+            <Button text="Credential" />
+            <div className="project__header--text">
+              <p>
+                Với mỗi dự án<br></br> là  {" "}
+                <span className="animation-text">
+                  <span className="main-text">
+                      sự đảm bảo
+                  </span>
+                  <span className="clone-text">
+                      sự đảm bảo
+                  </span>
+                </span> 
+                <br></br> về{" "}
+                
+      
+                <span className="animation-text">
+                  <span className="main-text">
+                  sản phẩm {`&`} dịch vụ
+                  </span>
+                  <span className="clone-text">
+                  sản phẩm {`&`} dịch vụ
+                  </span>
+                </span> 
+              </p>
             </div>
-  
-            <div className='card__project--img-sub'>
-              <div className='img-eclipse'></div>
-              <div className='img-eclipse'></div>
-              <div className='img-eclipse'></div>
-             
           </div>
-           
-            <div className="cursor-project-wrapper">
-  
-          
-            {
-              data.map((value, index)=>{
+          <div className="project__categories">
+            <div className="project__categories--title">
+              <div className="project__categories--title-text">
+                <p>Đa dạng lĩnh vực</p>
+                <div className="project__categories--title-bg">
+                  <p>Our Projects</p>
+                </div>
+              </div>
+              <div className="project__categories--item" data-scroll data-scroll-direction='horizontal' data-scroll-speed='1.4'>
+      
+              {props?.projectFields?.map((item, index)=>{
                 return (
-                  <div key={index} className="cursor-item">
-                  <img src={value.featureImage} alt="" />
-                 
-                  </div>
-  
+                <ButtonCategory
+                  key={index}
+                  category={item.name}
+                  count = {item.count}
+                  handleCatSelect={()=>{handleCatSelect(index, item.slug);}}
+                  
+                />
+      
+                )
+              })}
+              
+              </div>
+            </div>
+          </div>
+          <div className="project__order">
+            <div className="project__order--select">
+              <p>Sắp xếp theo: </p>
+              <Dropdown
+                placeholder="Mới nhất"
+                options={optionsSort}
+                // value={" mcsjjs"}
+              />
+            </div>
+            <div className="project__order--display">
+              <div className={"project__order--display-list " + (display ?'':'active' )}  onClick={()=> handleDisplayList()}>
+                  <svg width="81" height="81" viewBox="0 0 81 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="40.5" cy="40.5" r="40.5" fill="black"/>
+                  <path d="M28.05 33.45H52.35" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                  <path d="M28.05 40.2H52.35" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                  <path d="M28.05 46.95H52.35" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                  </svg>
+      
+      
+              
+              </div>
+              <div className={"project__order--display-grid " + (display? 'active':'')} onClick={()=> handleDisplayGrid()}>
+                <svg width="81" height="81" viewBox="0 0 81 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40.5" cy="40.5" r="40" stroke="#D9D9D9"/>
+                <path d="M30.75 37.5H33.45C36.15 37.5 37.5 36.15 37.5 33.45V30.75C37.5 28.05 36.15 26.7 33.45 26.7H30.75C28.05 26.7 26.7 28.05 26.7 30.75V33.45C26.7 36.15 28.05 37.5 30.75 37.5Z" stroke="#292D32" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M46.9499 37.5H49.6499C52.3499 37.5 53.6999 36.15 53.6999 33.45V30.75C53.6999 28.05 52.3499 26.7 49.6499 26.7H46.9499C44.2499 26.7 42.8999 28.05 42.8999 30.75V33.45C42.8999 36.15 44.2499 37.5 46.9499 37.5Z" stroke="#292D32" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M46.9499 53.6999H49.6499C52.3499 53.6999 53.6999 52.3499 53.6999 49.6499V46.9499C53.6999 44.2499 52.3499 42.8999 49.6499 42.8999H46.9499C44.2499 42.8999 42.8999 44.2499 42.8999 46.9499V49.6499C42.8999 52.3499 44.2499 53.6999 46.9499 53.6999Z" stroke="#292D32" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M30.75 53.6999H33.45C36.15 53.6999 37.5 52.3499 37.5 49.6499V46.9499C37.5 44.2499 36.15 42.8999 33.45 42.8999H30.75C28.05 42.8999 26.7 44.2499 26.7 46.9499V49.6499C26.7 52.3499 28.05 53.6999 30.75 53.6999Z" stroke="#292D32" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+      
+              </div>
+            </div>
+          </div>
+      
+            <AnimatePresence mode="wait">
+      
+        
+          
+          {display ? (
+            <div 
+              // key={"grid"}
+              // initial={{opacity:0,x:-80}}
+              //   animate={{opacity:1,x: 0}}
+              //   exit={{opacity:0,x:-80}}
+              //   onAnimationComplete={handleComplete}
+            
+            className="project__grid">
+      
+            {
+              data.map((value, index) => {
+                return (
+                <CardProject
+                  title={value.title}
+                  toDo={value.projectCategories.map(value => value.name).join(' / ')}
+                  category={value.projectFields.map(value => value.name).join(' / ')}
+                  image={value.featureImage}
+                  key={index}
+                />
+      
                 )
               })
             }
             
-            </div>
-          
-          </div>
-        
-          <div className="project__list--header">
-            <div className="project__list--header-NO">
-              <p>NO.</p>
-            </div>
-            <div className="project__list--header-name-project">
-              <p>TÊN DỰ ÁN</p>
-            </div>
-            <div className="project__list--header-to-do">
-              <p>HẠNG MỤC</p>
-            </div>
-            <div className="project__list--header-categories">
-              <p>LĨNH VỰC/NGÀNH HÀNG</p>
-            </div>
-          </div>
-          {
-            data.map((value, index)=>{
-  
               
-              return (
-              <ListProject
-                id={(index <9 )? ('0'+(index +1)) : index}
-                name={value.title}
-                toDoData={value.projectCategories.map(value => value.name)}
-                category={value.projectFields.map(value => value.name).join(' / ')}
-                key={index}
-                hoverFunction={()=> {handleHover(index)}}
-              />
-  
-              )
-            })
-          }
-         
+            </div>
+          ) : (
+            <div
+                // key={"list"}
+                // initial={{opacity:0,x:80}}
+                // animate={{opacity:1,x:0}}
+                // exit={{opacity:0, x:80}}
+                // onAnimationComplete={handleComplete}
+            className="project__list" onMouseOver={handleMouseOverList} onMouseOut={handleMouseOutList}>
+      
+              <div className="cursor-project-item" ref={cursor}>
+            
+                <div className="view-button-fake">
+                    View
+                </div>
+      
+                <div className='card__project--img-sub'>
+                  <div className='img-eclipse'></div>
+                  <div className='img-eclipse'></div>
+                  <div className='img-eclipse'></div>
+                
+              </div>
+              
+                <div className="cursor-project-wrapper">
+      
+              
+                {
+                  data.map((value, index)=>{
+                    return (
+                      <div key={index} className="cursor-item">
+                      <img src={value.featureImage} alt="" />
+                    
+                      </div>
+      
+                    )
+                  })
+                }
+                
+                </div>
+              
+              </div>
+            
+              <div className="project__list--header">
+                <div className="project__list--header-NO">
+                  <p>NO.</p>
+                </div>
+                <div className="project__list--header-name-project">
+                  <p>TÊN DỰ ÁN</p>
+                </div>
+                <div className="project__list--header-to-do">
+                  <p>HẠNG MỤC</p>
+                </div>
+                <div className="project__list--header-categories">
+                  <p>LĨNH VỰC/NGÀNH HÀNG</p>
+                </div>
+              </div>
+              {
+                data.map((value, index)=>{
+      
+                  
+                  return (
+                  <ListProject
+                    id={(index <9 )? ('0'+(index +1)) : index}
+                    name={value.title}
+                    toDoData={value.projectCategories.map(value => value.name)}
+                    category={value.projectFields.map(value => value.name).join(' / ')}
+                    key={index}
+                    hoverFunction={()=> {handleHover(index)}}
+                  />
+      
+                  )
+                })
+              }
+            
+            </div>
+          )}
+          </AnimatePresence>
+      
+      
+          <div className="project__number--page">
+            <NumberPage number="1" active={true} />
+            <NumberPage number="2" />
+            <NumberPage number="3" />
+            <NumberPage number="4" />
+            <NumberPage number="5" />
+          </div>
+
         </div>
-      )}
-      </AnimatePresence>
-  
-  
-      <div className="project__number--page">
-        <NumberPage number="1" active={true} />
-        <NumberPage number="2" />
-        <NumberPage number="3" />
-        <NumberPage number="4" />
-        <NumberPage number="5" />
-      </div>
-    </div>
-  );
-  } else {
-    return (
-      <>
+      );
+    } else {
+      return (
+        <>
+        <div>
 
-        {
 
-        }
-        
-      </>
-    )
-  }
+          {
+              data?.map((item, index) =>{
+                return (
+                  <StoryProject key={index+": "+ item.title} />
+                )
+              })
+          }
+        </div>
+          
+        </>
+      )
+    }
   
 }
 
