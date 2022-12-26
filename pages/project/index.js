@@ -22,6 +22,9 @@ import { getFilterProjects } from "../../api store/project";
 import { useRouter } from "next/router";
 
 export default function Projects(props) {
+  const isMobile = useMediaQuery({
+    maxDeviceWidth: 768
+  }, );
   const [display, setDisplay] = useState(false);
   const cursor = useRef()
   const interval = useRef(setInterval(function(){},0));
@@ -29,9 +32,6 @@ export default function Projects(props) {
   const currentActive = useRef()
   const router = useRouter()
 
-  const isMobile = useMediaQuery({
-    maxDeviceWidth: 768
-  }, );
 
 
 
@@ -48,8 +48,6 @@ export default function Projects(props) {
       }
     })
     
-  
-    console.log(props)
     
     gsap.registerPlugin(ScrollToPlugin);
     gsap.registerPlugin(ScrollTrigger);
@@ -152,7 +150,7 @@ export default function Projects(props) {
 
           window.removeEventListener('mousemove', function(){})
           clearInterval(interval.current)
-          // tl.kill()
+      
         }
         
       }
@@ -473,7 +471,15 @@ export default function Projects(props) {
     </div>
   );
   } else {
-    return <></>
+    return (
+      <>
+
+        {
+
+        }
+        
+      </>
+    )
   }
   
 }
