@@ -14,7 +14,7 @@ import { ButtonMobile } from "../../components/Button/ButtonMobile";
 import { ProjectPost } from "../../components/HOME Components/HomeMobile/ProjectPost";
 import descConectImg from "../../public/imgs/descConectImg.png";
 import logoMobile from "../../public/imgs/logoMobileProjectDetail.png";
-
+import { useMediaQuery } from "react-responsive";
 import { getProjectDataBySlug } from "../../api store/project";
 import { getProjectSlugs } from "../../api store/project";
 
