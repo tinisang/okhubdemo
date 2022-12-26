@@ -20,11 +20,11 @@ import { FooterMobile } from "./Footer/FooterMobile";
 export const Base = (props) => {
   
   const containerRef = useRef(null)
-  const [loading, isLoading] = useState(false)
   const router = useRouter()
   const {scroll: locoScroll} = useLocomotiveScroll()
   const path = useRef(router.asPath)
-
+  
+  const [loading, isLoading] = useState(false)
   useEffect(()=>{
     router.events.on('routeChangeStart', (url, { shallow }) => {   
       if (router.asPath != url  && !url.includes('?')){

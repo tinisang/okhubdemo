@@ -747,3 +747,14 @@ color: #000000;
 .project-detail__mobile .mobile__result--project {
   height: 500px;
 }
+
+
+
+.projects-list{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}

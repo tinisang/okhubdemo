@@ -475,7 +475,7 @@ export default function Projects(props) {
     } else {
       return (
         <>
-        <div>
+        <div className="projects-list">
 
 
           {

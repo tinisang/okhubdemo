@@ -50,6 +50,7 @@ import { Refresh } from '../components/RefreshScrollTriger';
 import { Ref } from 'semantic-ui-react';
 import { useMediaQuery } from 'react-responsive';
 import { BaseMobile } from '../components/BaseMobile';
+import '../styles/Story.css'
 
 
 
