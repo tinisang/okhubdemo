@@ -364,7 +364,7 @@ input {
 .footer__form .button {
   position: absolute;
   right: 8%;
-  bottom: -10%;
+  bottom: -4%;
   cursor: pointer;
 }
 
@@ -400,6 +400,9 @@ input {
 
   .footer__form--title {
     font-size: 48px;
+  }
+  .footer__form .button {
+    bottom: -8%;
   }
 
 }

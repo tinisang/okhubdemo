@@ -210,6 +210,9 @@ export default function Projects(props) {
         }
           
       },1200)
+
+      // var scaleElement = document.querySelector(`list__peoject--item-${index}`);
+      // scaleElement.style.transform = "scaleY(1.05)";
   
     }
   
@@ -240,7 +243,9 @@ export default function Projects(props) {
       playImages(index)
       resetImage(currentActive.current)
       currentActive.current=index
-  
+
+
+      
       
       
     }
@@ -452,6 +457,7 @@ export default function Projects(props) {
                     category={value.projectFields.map(value => value.name).join(' / ')}
                     key={index}
                     hoverFunction={()=> {handleHover(index)}}
+                    index = {index}
                   />
       
                   )

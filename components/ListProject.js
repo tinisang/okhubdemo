@@ -1,11 +1,11 @@
 import React from 'react'
 import Link from 'next/link'
 
-export const ListProject = ({id, name, toDoData, category, hoverFunction}) => {
+export const ListProject = ({id, name, toDoData, category, hoverFunction, index}) => {
 
     
   return (
-    <div onMouseEnter={hoverFunction} >
+    <div className = {`list__peoject--item-${index}`} onMouseEnter={hoverFunction} >
 
     
     <Link href="/project/abc" className='list--container' >

@@ -50,6 +50,7 @@
   display: flex;
   justify-content: space-between;
   margin-top: 16px;
+  column-gap: 32px;
 }
 
 .card__project--des .card__project--des-todo {
@@ -198,3 +199,17 @@
   width: 44px;
   height: 34px;
 }
+
+@media (max-width: 1024px){
+  .card__project--des .card__project--des-todo {
+    font-size: 16px;
+    line-height: 23px;
+  }
+  .card__project--des .card__project--des-category{
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+
+
