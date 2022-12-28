@@ -1,5 +1,5 @@
 .story-project-item{
-    height: 100vh;
+    height: var(--app-height);
     background-color: #000000;
     overflow: scroll;
     position: relative;
@@ -163,7 +163,7 @@
 
 .story-project-item .story-content-area .blur-background .video-react{
    
-   height: 100vh;
+   height: var(--app-height);
    padding: 0px !important;
    display: flex;
    position: relative;

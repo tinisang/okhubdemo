@@ -18,7 +18,8 @@ html {
 
 :root{
   --lightTransparentGrey: rgba(255, 255, 255, 0.09);
-  --lightYellow: #F7F5F2
+  --lightYellow: #F7F5F2;
+  --app-height: 100%
 }
 
 
