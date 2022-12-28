@@ -120,3 +120,14 @@
   line-height: 24px;
   color: #ffffff;
 }
+
+
+@media (max-width: 1024px) {
+  .footer__nav--company p {
+    line-height: 33px;
+    font-size: 18px;
+  }
+  .footer__nav--fb svg, .footer__nav--ins svg, .footer__nav--be svg, .footer__nav--other svg, .footer__nav--tiktok svg {
+    width: 50px;
+  }
+}
