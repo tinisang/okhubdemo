@@ -367,3 +367,39 @@ input {
   bottom: -10%;
   cursor: pointer;
 }
+
+
+
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+  .footer__form--email-and-phone,
+  .footer__form-company-and-service,
+  .footer__form--name-and-footer__form--company-name {
+    flex-direction: column;
+  }
+
+  .footer__form--company-name, .footer__form--phone{
+    padding-top: 26px;
+    border-top: var(--boder-bottom-footer);
+    margin-top: 40px;
+  }
+
+  .footer__form--phone::after,
+  .footer__form--company-name::after{
+    top: 30%;
+  }
+
+  .footer__form {
+    margin: 0 72px 0 0px;
+  }
+  .footer {
+    margin: 0 50px;
+  }
+
+  .footer__form--title {
+    font-size: 48px;
+  }
+
+}

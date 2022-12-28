@@ -1,3 +1,4 @@
+
 .news__title {
   display: flex;
   align-items: center;
@@ -261,6 +262,9 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 32px;
   margin-top: 32px;
+}
+.news__status__item .card__container {
+  width: auto;
 }
 
 .news__status--item-btn {
