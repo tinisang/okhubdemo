@@ -12,12 +12,16 @@ import Image from "next/image";
 import { LocomotiveScrollProvider, useLocomotiveScroll } from "react-locomotive-scroll";
 import { ScrollTriggerProxy } from "./ScrollTriggerProxy";
 import { Refresh } from "./RefreshScrollTriger";
+import { useMediaQuery } from "react-responsive";
 import { HeaderMobile } from "./Header/HeaderMobile";
 import { FooterMobile } from "./Footer/FooterMobile";
 
 
 
 export const Base = (props) => {
+  const isMobile = useMediaQuery({
+    maxDeviceWidth: 768
+  }, );
   
   const containerRef = useRef(null)
   const router = useRouter()
@@ -68,38 +72,48 @@ export const Base = (props) => {
     }
 
     {
-        <div>
-           
-            <LocomotiveScrollProvider
-              options={
-                {
-                  smooth: true,
-                  lerp:0.1,
-                  getSpeed: true
-                  // ... all available Locomotive Scroll instance options 
-                }
-              }
-              watch={
-                [
-                  //..all the dependencies you want to watch to update the scroll.
-                  //  Basicaly, you would want to watch page/location changes
-                  //  For exemple, on Next.js you would want to watch properties like `router.asPath` (you may want to add more criterias if the instance should be update on locations with query parameters)
-                ]
-              }
-              location={router.asPath}
-              containerRef={containerRef}
-              onLocationChange={scroll => scroll.scrollTo(0, { duration: 0, disableLerp: true })}
-            
-          >
-            <main data-scroll-container ref={containerRef}>
-              <Header/>
-              {props.children}
-              <Footer/>
+        isMobile == false ? (
 
-              <Refresh/>
-            </main>
-          </LocomotiveScrollProvider>
-        </div>
+          <div>
+           
+          <LocomotiveScrollProvider
+            options={
+              {
+                smooth: true,
+                lerp:0.1,
+                getSpeed: true
+                // ... all available Locomotive Scroll instance options 
+              }
+            }
+            watch={
+              [
+                //..all the dependencies you want to watch to update the scroll.
+                //  Basicaly, you would want to watch page/location changes
+                //  For exemple, on Next.js you would want to watch properties like `router.asPath` (you may want to add more criterias if the instance should be update on locations with query parameters)
+              ]
+            }
+            location={router.asPath}
+            containerRef={containerRef}
+            onLocationChange={scroll => scroll.scrollTo(0, { duration: 0, disableLerp: true })}
+          
+        >
+          <main data-scroll-container ref={containerRef}>
+            <Header/>
+            {props.children}
+            <Footer/>
+
+            <Refresh/>
+          </main>
+        </LocomotiveScrollProvider>
+      </div>
+        ) : (
+          <>
+          <HeaderMobile/>
+            {props.children}
+            <FooterMobile/>
+          
+          </>
+        )
             }    
  
     </>
