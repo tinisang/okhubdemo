@@ -24,7 +24,7 @@
 }
 
 .project__header--text p span.animation-text {
-  font-family: Be Vietnam Pro;
+  font-family: 'Be Vietnam Pro';
   font-size: 80px;
   font-weight: 700;
   line-height: 98px;
@@ -750,6 +750,13 @@
 
   .project__categories--title-bg {
     top: 23%;
+  }
+
+
+  .project__header--text p {
+    padding-left: 80px;
+    font-size: 67px;
+    line-height: 65px;
   }
 
 

@@ -60,6 +60,34 @@
     transition: .3s;
 }
 
+
+.menu-trigger .hamburger-icon-black{
+    width: 66px;
+    height: 66px;
+    border: 2px solid black;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+.menu-trigger .hamburger-icon-black .line{
+    height: 2px;
+    width:30px ;
+    background-color: white;
+    border-radius: 100px;
+    display: block;
+    transition: .3s;
+} 
+
+.hamburger-icon-black {
+    position: fixed;
+    top: 30%;
+    right: 10%;
+}
+
 .menu-trigger.opening .line2{
     transform: translateX(-50px);
     opacity: 0;

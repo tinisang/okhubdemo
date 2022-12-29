@@ -205,3 +205,25 @@ position: relative;
     background-color: white;
     display: block;
 }
+
+
+@media (max-width: 1024px){
+    .our-services .introduction .title {
+        font-size: 100px;
+    }
+}
+
+
+@media (max-width: 1600px){
+    .our-services .introduction .title {
+        font-size: 100px;
+        line-height: 90px;
+    }
+
+    .our-services .services-list .row .service-item .name,
+    .our-services .row .separator{
+       font-size: 60px;
+        line-height: 82px;
+    }
+   
+}
