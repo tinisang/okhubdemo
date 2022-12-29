@@ -64,3 +64,24 @@
   background-color: black;
   margin-right: 13px;
 }
+
+
+@media (max-width: 1024px){
+  .card-report__title p {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .card-report__dow p{
+    font-size: 11px;
+    line-height: 19px;
+  }
+  .card-report__dow .card-report__dow-img {
+    width: 31px;
+    height: 28px;
+  }
+
+  .card-report__time p {
+    font-size: 12px;
+    line-height: 20px;
+  }
+}

@@ -125,3 +125,28 @@
 .card__next-text {
   /* margin-right: 33px; */
 }
+
+
+@media (max-width: 10224px) {
+  .NewsDetail__title--bg {
+    font-size: 100px;
+    top: 28%;
+  }
+  .NewsDetail__document--bg {
+    font-size: 100px; 
+  }
+  .card__title{
+    font-size: 17px;
+    line-height: 27px;
+  }
+  .card__infor-time p{
+    line-height: 13px;
+  }
+
+  .card__btn-next {
+    justify-content: center;
+  }
+  .card__img {
+    height: 245px;
+  }
+}

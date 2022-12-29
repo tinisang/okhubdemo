@@ -15,6 +15,7 @@
   font-size: 18px;
   line-height: 34px;
   color: #111215;
+  padding-top: 10px;
 }
 .list--container .list__name {
   width: 50%;
@@ -30,7 +31,7 @@
 }
 .list--container .list__to-do {
   width: 20%;
-  padding-top: 23px;
+  padding-top: 20px;
 }
 
 .list--container .list__to-do p {
@@ -53,6 +54,7 @@
   font-size: 22px;
   line-height: 34px;
   color: #111215;
+  padding-top: 20px;
 }
 
 .list--container p{
@@ -62,4 +64,33 @@
     color: #AEAEAE;
     cursor: pointer;
    
+}
+
+@media (max-width: 1024px){
+  .project__list--header .project__list--header-NO p,
+  .project__list--header .project__list--header-name-project p,
+  .project__list--header .project__list--header-to-do p,
+  .project__list--header .project__list--header-categories p{
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .list--container .list__category p{
+    font-size: 12px;
+    line-height: 26px;
+    padding-top: 20px;
+  }
+  .list--container .list__to-do p{
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .list--container .list__name p{
+    font-size: 20px;
+    padding-top: 4px;
+  }
+  .list--container .list__NO p{
+    font-size: 12px;
+    padding-top: 20px;
+  }
 }

@@ -495,3 +495,23 @@ background: linear-gradient(90deg, rgba(58,69,180,1) 0%, rgba(175,136,201,1) 100
 .NewsDetail__document--prev:hover svg g path {
   fill: white;
 }
+
+/* Tablet */
+
+
+@media (max-width: 1024px){
+  .NewsDetail__primary-title {
+    font-size: 36px;
+    line-height: 50px;
+  }
+
+  .NewsDetail__primary-img-container {
+    height: 300px;
+  }
+
+
+  .NewsDetail__info-des p {
+    font-size: 24px;
+    line-height: 44px;
+  }
+}

@@ -190,3 +190,40 @@
 .review-section .navigation .arrow:hover svg path{
     fill:white
 }
+
+
+
+/* Tablet  */
+
+
+@media (max-width: 1024px){
+    .review-section .column-1 .review-content-description .review-text {
+        font-size: 22px;
+    }
+    .review-section .column-2 .swiper-slide-active .video-wrapper{
+        padding-left: 78px;
+    }
+    .review-section .column-2 .swiper-slide {
+        height: 300px !important;
+    }
+    .review-section .column-2 .swiper-slide-active {
+        height: 500px !important;
+    }
+   
+    .review-section .column-2 .swiper-slide-active .video-wrapper .client-company{
+        width: 120px;
+        height: 120px;
+    }
+
+    .client-section .clients-introduction .column-1 .value{
+        font-size: 100px;
+    }
+    .client-section .clients-introduction .column-1 .description {
+        font-size: 23px;
+    }
+
+    .iconic-projects-slide .introduction .heading-english {
+        font-size: 100px;
+    }
+
+}
