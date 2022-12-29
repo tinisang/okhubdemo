@@ -13,9 +13,13 @@ import gsap from "gsap";
 
 export const Header = () => {
 
+
+  const [stateHamburger, setStateHamburger] = useState();
+ 
   const {scroll : locoScroll} = useLocomotiveScroll()
   const [isOpen,setOpen] = useState(false)
   const header = useRef()
+  const hamburgerHeader = useRef();
 
   const handleOpenMenu= ()=>{
      
@@ -58,6 +62,7 @@ export const Header = () => {
 
         header.current.style.transform = "translateY(0%)"
         header.current.style.background = "white"
+        setStateHamburger(false)
         
       }
       /*---SCROLL DOWN----*/
@@ -65,6 +70,10 @@ export const Header = () => {
         
         header.current.style.background = "white"
         header.current.style.transform = "translateY(-100%)"
+        setStateHamburger(true);
+       
+   
+               
         
       }
       
@@ -217,7 +226,19 @@ export const Header = () => {
               <span className="line1 line"></span>
               <span className="line2 line"></span>
               <span className="line3 line"></span>
-            </div>
+              </div>
+        
+              
+              {
+                stateHamburger == false ?? (
+                  <div className="hamburger-icon-black" ref = {hamburgerHeader} >
+                  <span className="line1 line"></span>
+                  <span className="line2 line"></span>
+                  <span className="line3 line"></span>
+                  </div>
+                )
+              }
+            
           </div>
           
       </div>

@@ -94,3 +94,22 @@
     padding-top: 20px;
   }
 }
+
+
+@media (max-width: 1600px){
+  .list--container .list__category p,
+  .list--container .list__to-do p {
+    font-size: 15px;
+    line-height: 30px;
+  }
+  .list--container .list__name p {
+    font-size: 25px;
+    line-height: 61px;
+    padding-top: 8px;
+  }
+  .list--container .list__NO p {
+    font-size: 15px;
+    line-height: 32px;
+    padding-top: 24px;
+  }
+}

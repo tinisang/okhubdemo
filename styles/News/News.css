@@ -293,3 +293,18 @@
 
   color: #000000;
 }
+
+
+@media (max-width: 1024px){
+  .news__title-text p,
+  .news__title-text p span.animation-text{
+    font-size: 56px;
+    line-height: 70px;
+    
+  }
+
+  .news__title-btn .button {
+    width: 110px;
+    margin-right: 80px;
+  }
+}
