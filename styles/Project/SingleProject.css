@@ -755,6 +755,10 @@
     font-size: 44px;
     line-height: 56px;  
   }
+  .judge__cmt--img {
+    width: 300px;
+    height: 300px;
+  }
 
   .problem__content--hide {
     font-size: 100px;
@@ -787,6 +791,7 @@
     top: 13%;
     font-size: 19px;
     line-height: 49px;
+    width: 400px;
   }
 
   .judge__cmt--author {
