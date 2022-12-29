@@ -713,3 +713,97 @@
 .judge__cmt--author span{
   font-size: 18px;
 }
+
+
+
+@media (max-width: 1024px){
+  .bgHead__logo {
+    width: 200px;
+    height: 165px;
+  }
+
+  .bgHead__txt {
+    font-size: 50px;
+    line-height: 62px;
+  }
+  .bgHead__txt span {
+    opacity: 1;
+  }
+
+  .bgHead__wrap {
+
+  }
+  .bgHead__txt p{
+    padding-left: 32px;
+    padding-top: 32px;
+  }
+
+  .problem__data--title > img {
+    width: 20px;
+  }
+
+  .problem__data--up {
+    width: 132px;
+    align-items: center;
+  }
+  .problem__data--title {
+    font-size: 9px;
+    line-height: 20px;
+  }
+
+  .problem__content--heading {
+    font-size: 44px;
+    line-height: 56px;  
+  }
+
+  .problem__content--hide {
+    font-size: 100px;
+    line-height: 70px;
+  }
+
+  .why-okhub .column-2 {
+    font-weight: 700;
+    line-height: 53px;
+    font-size: 44px;
+  }
+  .why-okhub .column-2 .the-trust {
+    font-size: 100px;
+  }
+
+  .showcase-section .mobile-version .version-mobile-text {
+    font-size: 6vw;
+    text-align: center;
+    transform: translateX(-21%);
+  }
+
+  .achievement .title {
+    font-size: 46px;
+    line-height: 66px;
+  }
+
+  .judge__cmt--txt{
+    position: absolute;
+    right: -30%;
+    top: 13%;
+    font-size: 19px;
+    line-height: 49px;
+  }
+
+  .judge__cmt--author {
+    margin-top: 264px;
+  }
+  .judge__heading {
+    font-size: 36px;
+    line-height: 59px;
+  }
+
+  .judge__content--img {
+    width: 190px;
+    height: 190px;
+  }
+
+  .judge__content {
+    column-gap: 86px;
+    align-items: center;
+  }
+}
